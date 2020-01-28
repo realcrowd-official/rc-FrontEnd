@@ -1,0 +1,26 @@
+.bottomsheet_container{
+    display: flex;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    max-width: 420px;
+    min-width: 320px;
+    transform: translate(-50%, 0);
+}
+
+.home_icon,
+.feed_icon,
+.profile_icon{
+    height: 9.3vh;
+    width: 33.3vw;
+    text-align: center;
+}
+
+.home_icon>img,
+.feed_icon>img,
+.profile_icon>img{
+    display: block;
+    margin: auto;
+    padding-bottom: 3px;
+}

@@ -1,0 +1,29 @@
+.header_container{
+    display: flex;
+}
+
+.header_hambuger_div,
+.header_notification_div{
+    width: 17.5vw;
+    height: 17.5vw;
+    max-width: 84px;
+    min-width: 56px;
+    max-height: 84px;
+    min-height: 56px;
+    display: flex;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_notification_div{
+    margin-left: auto;
+}
+
+.header_hambuger_icon,
+.header_notification_icon{
+    display: block;
+    margin: auto;
+    position: relative;
+
+}
