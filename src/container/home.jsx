@@ -7,8 +7,8 @@ const home = () => {
     return (
         <div className="home_body">
             <Header/>
-            {/* <TabBar/>
-            <FeedCardView/> */}
+            <TabBar/>
+            <FeedCardView/>
         </div>
     );
 };

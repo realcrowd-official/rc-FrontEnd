@@ -5,4 +5,8 @@
 @import './style/tabbar.scss';
 @import './style/feedcardview.scss';
 
-$vw-size: 100vw;
+.max_container{
+    width: 100vw;
+    max-width: 480px;
+    min-width: 320px;
+}

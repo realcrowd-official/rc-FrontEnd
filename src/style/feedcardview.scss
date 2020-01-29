@@ -1,3 +1,19 @@
+.card_view_container{
+    padding-top: 148.8px
+}
+
+@media (max-width: 480px){
+    .card_view_container{
+        padding-top: 31vw
+    }
+}
+
+@media (max-width: 320px){
+    .card_view_container{
+        padding-top: 99.2px;
+    }
+}
+
 .card_view_img_div{
     object-fit: contain;
     min-width: 320px;
@@ -18,7 +34,11 @@
 
 .card_view_user_profile_img_div{
     width: 15vw;
+    max-width: 72px;
+    min-width: 48px;
     height: 15vw;
+    max-height: 72px;
+    min-height: 48px;
     z-index: 2;
 }
 
