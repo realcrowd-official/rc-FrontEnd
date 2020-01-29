@@ -1,0 +1,17 @@
+.punding_progress_bar_div{
+    width: 90vw;
+    max-width: 442px;
+    min-width: 288px;
+    background-color: $progress_bar;
+}
+
+.punding_progress_bar{
+    width: 30%;
+    background-color: $primary_blue;
+    height: 4px;
+}
+
+.punding_progress_bar_div,
+.punding_progress_bar{
+    border-radius: 18px;
+}
