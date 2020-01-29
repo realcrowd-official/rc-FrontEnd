@@ -1,0 +1,28 @@
+.card_view_img_div{
+    object-fit: contain;
+    min-width: 320px;
+    max-width: 480px;
+    max-height: calc(480px*(3/4));
+    min-height: calc(320px*(3/4));
+    width: 100vw;
+    height: calc(100vw*(3/4));
+    display: flex;
+    z-index: 1;
+    position: relative;
+}
+.card_view_img{
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_view_user_profile_img_div{
+    width: 15vw;
+    height: 15vw;
+    z-index: 2;
+}
+
+.card_view_user_profile_img{
+    width: 100%;
+    height: 100%;
+}

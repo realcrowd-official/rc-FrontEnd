@@ -1,5 +1,9 @@
 .header_container{
+    width: 100vw;
+    max-width: 480px;
+    min-width: 320px;
     display: flex;
+    position: fixed;
 }
 
 .header_hambuger_div,
