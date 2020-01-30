@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import TabContext from '../context/tab';
 
-const tabBar = () => {
+const TabBar = () => {
+    const { state, action } = useContext(TabContext)
     return (
         <div className="tabBar_container">
-            <div className="punding_doing_div">
-                <p>진행중인 펀딩</p>
-            </div>
-            <div className="punding_reservate_div">
-                <p>예정된 펀딩</p>
-            </div>
-        </div>
+            <button className={ "punding_doing_btn" + (state.tabMenu === 'doing'?' btn_active':'')} onClick={() => action.setTabMenu('doing')}>진행중인 펀딩</button>
+            <button className={ "punding_reservate_btn" + (state.tabMenu === 'reservate'?' btn_active':'')} onClick={() => action.setTabMenu('reservate')}>예정된 펀딩</button>
+        </div>        
     );
 };
 
-export default tabBar;
+export default TabBar;

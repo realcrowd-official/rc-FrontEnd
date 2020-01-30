@@ -1,14 +1,17 @@
 import React from 'react';
 import Header from './header'
-import TabBar from '../component/tabBar'
-import FeedCardView from '../component/feedCardView'
+import TabBar from '../component/TabBar'
+import FeedCardView from '../component/FeedCardView'
+import { TabProvider } from '../context/tab'
 
 const home = () => {
     return (
         <div className="home_body">
             <Header/>
-            <TabBar/>
-            <FeedCardView/>
+            <TabProvider>
+                <TabBar/>
+                <FeedCardView/> 
+            </TabProvider>
         </div>
     );
 };

@@ -8,6 +8,8 @@
     display: flex;
     padding-top: 84px;
     position: fixed;
+    background-color: white;
+    z-index: 1;
     // border-bottom:1px solid #F0F;
 
 }
@@ -24,15 +26,15 @@
     }
 }
 
-.punding_doing_div,
-.punding_reservate_div{
+.punding_doing_btn,
+.punding_reservate_btn{
     width:50%;
-    // display: flex;
     text-align: center;
-    margin: auto;
+    background-color: white;
+    border : 1px solid transparent;
 }
 
-.punding_doing_div>p,
-.punding_reservate_div>p{
-    margin: auto;
+.btn_active{
+    border-bottom : 1px solid #00aaff; //왜 변수가 안들어오지....
+    color : #00aaff;
 }

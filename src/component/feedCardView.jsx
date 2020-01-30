@@ -1,8 +1,8 @@
 import React from 'react';
-import PundingProgress from './pundingProgress';
+import PundingProgress from './PundingProgress';
 
 
-const feedCardView = () => {
+const FeedCardView = () => {
     return (
         <div className="card_view_container max_container">
             <div className="card_view_img_div">
@@ -26,4 +26,4 @@ const feedCardView = () => {
     );
 };
 
-export default feedCardView;
+export default FeedCardView;

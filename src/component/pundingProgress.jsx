@@ -1,6 +1,6 @@
 import React from 'react';
 
-const pundingProgress = () => {
+const PundingProgress = () => {
     return (
         <div>
             <div className="punding_progress_bar_div">
@@ -14,4 +14,4 @@ const pundingProgress = () => {
     );
 };
 
-export default pundingProgress;
+export default PundingProgress;

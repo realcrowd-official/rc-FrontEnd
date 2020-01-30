@@ -15,3 +15,34 @@
 .punding_progress_bar{
     border-radius: 18px;
 }
+
+.punding_information_div{
+    display: flex;
+    margin-top: 4px;
+}
+
+.punding_percentage{
+    object-fit: contain;
+    font-family: SpoqaHanSans;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $primary_blue;
+}
+
+.punding_cost{
+    margin-left: 4px;
+    margin-top: 2px;
+    object-fit: contain;
+    font-family: SpoqaHanSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.54);
+}
