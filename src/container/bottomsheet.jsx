@@ -3,7 +3,7 @@ import homeIcon from '../img/bottomsheet/ic-tab-feed-stroke-black.svg'
 import feedIcon from '../img/bottomsheet/ic-tab-projects-stroke-black.svg'
 import profileIcon from '../img/bottomsheet/ic-tab-profile-stroke-black.svg'
 
-const bottomsheet = () => {
+const Bottomsheet = () => {
     return (
         <div className="bottomsheet_container max_container">
             <div className="home_icon"><img src={homeIcon} alt=""/>피드</div>
@@ -13,4 +13,4 @@ const bottomsheet = () => {
     );
 };
 
-export default bottomsheet;
+export default Bottomsheet;

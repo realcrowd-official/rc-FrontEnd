@@ -1,27 +1,27 @@
-.punding_progress_bar_div{
+.funding_progress_bar_div{
     width: 90vw;
     max-width: 442px;
     min-width: 288px;
     background-color: $progress_bar;
 }
 
-.punding_progress_bar{
+.funding_progress_bar{
     width: 30%;
     background-color: $primary_blue;
     height: 4px;
 }
 
-.punding_progress_bar_div,
-.punding_progress_bar{
+.funding_progress_bar_div,
+.funding_progress_bar{
     border-radius: 18px;
 }
 
-.punding_information_div{
+.funding_information_div{
     display: flex;
     margin-top: 4px;
 }
 
-.punding_percentage{
+.funding_percentage{
     object-fit: contain;
     font-family: SpoqaHanSans;
     font-size: 14px;
@@ -33,7 +33,7 @@
     color: $primary_blue;
 }
 
-.punding_cost{
+.funding_cost{
     margin-left: 4px;
     margin-top: 2px;
     object-fit: contain;

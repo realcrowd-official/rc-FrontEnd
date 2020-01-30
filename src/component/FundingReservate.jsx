@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PundingReservate = () => {
+const FundingReservate = () => {
     return (
         <div>
             <button className="reservate_btn">시작하면 알림 받기</button>
@@ -13,4 +13,4 @@ const PundingReservate = () => {
     );
 };
 
-export default PundingReservate;
+export default FundingReservate;
