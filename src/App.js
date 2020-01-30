@@ -1,13 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Home from './container/home'
+import Home from './container/Home'
 import BottomSheet from './container/bottomsheet'
+import { TabProvider } from './context/tab';
 
 function App() {
   return (
     <>
-      <Home/>
+      <TabProvider>
+        <Home/>
+      </TabProvider>
       <BottomSheet/>
     </>
   );

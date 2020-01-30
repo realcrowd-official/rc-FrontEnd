@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 
 const TabContext = createContext({
-    state: { tabMenu: 'doing' },
+    state: { tabMenu: 'reservate' },
     action: {
         setTabMenu: () => {}
     }
@@ -10,7 +10,7 @@ const TabContext = createContext({
 const { Consumer: TabConsumer } = TabContext;
 
 const TabProvider = ({ children }) => {
-    const [ tabMenu, setTabMenu ] = useState('doing');
+    const [ tabMenu, setTabMenu ] = useState('reservate');
     
     const value = {
         state: { tabMenu },

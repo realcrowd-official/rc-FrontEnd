@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PundingProgress from './PundingProgress';
-
+import TabContext from '../context/tab';
+import PundingReservate from './PundingReservate';
 
 const FeedCardView = () => {
+    const {state} = useContext(TabContext);
     return (
         <div className="card_view_container max_container">
             <div className="card_view_img_div">
@@ -20,7 +22,7 @@ const FeedCardView = () => {
                 <p>메이커 닉네임</p>
             </div>
             <div className="card_view_punding_left_margin">
-                <PundingProgress/>
+                {state.tabMenu==="doing"? <PundingProgress/>:<PundingReservate/>}
             </div>
         </div>
     );

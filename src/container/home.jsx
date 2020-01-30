@@ -1,19 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Header from './header'
 import TabBar from '../component/TabBar'
-import FeedCardView from '../component/FeedCardView'
-import { TabProvider } from '../context/tab'
+import DoingFeed from './DoingFeed';
+import TabContext from '../context/tab';
+import ReservateFeed from './ReservateFeed';
 
-const home = () => {
+const Home = () => {
+    const {state}=useContext(TabContext);
     return (
         <div className="home_body">
             <Header/>
-            <TabProvider>
-                <TabBar/>
-                <FeedCardView/> 
-            </TabProvider>
+            <TabBar/>
+            {state.tabMenu==='doing' ? <DoingFeed/> : <ReservateFeed/>}
         </div>
     );
 };
 
-export default home;
+export default Home;
