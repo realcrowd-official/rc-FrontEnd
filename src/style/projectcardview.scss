@@ -1,18 +1,6 @@
 .card_view_container{
-    padding-top: 148.8px;
+    padding-top: $topTabBar;
     background-color: white;
-}
-
-@media (max-width: 480px){
-    .card_view_container{
-        padding-top: 31vw
-    }
-}
-
-@media (max-width: 320px){
-    .card_view_container{
-        padding-top: 99.2px;
-    }
 }
 
 .card_view_img_div,

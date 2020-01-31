@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import ProjectHome from './container/ProjectHome'
-import BottomSheet from './container/Bottomsheet'
+import BottomNav from './container/BottomNav'
 import { TabProvider } from './context/tab';
 import {
   BrowserRouter as Router,
@@ -27,7 +27,7 @@ function App() {
           </TabProvider>
         }/>
       </Switch>
-      <BottomSheet/>
+      <BottomNav/>
     </Router>
   );
 }

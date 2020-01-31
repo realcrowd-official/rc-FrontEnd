@@ -1,0 +1,40 @@
+.tabBar_container{
+    left: 0;
+    height: $grid * 10;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    z-index: 6;
+    width: 100vw;
+    @include strokeBottom;
+    @include text-14-regular-b54-center;
+}
+
+.tabBar_wraapper {
+    display: flex;
+    justify-content: space-between;
+    @include adjustWidth;
+}
+
+button {
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    border : none;
+    outline: none;
+}
+
+.funding_doing_btn {
+    display: flex-start;
+}
+
+.funding_reservate_btn {
+    display: flex-end;
+}
+
+.btn_active {
+    z-index: 7;
+    border-bottom : 1px solid $primary;
+    @include text-14-bold-primary-center;
+}

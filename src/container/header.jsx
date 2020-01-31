@@ -4,14 +4,16 @@ import notification from '../img/header/ic-notification-stroke-black.svg'
 
 const Header = () => {
     return (
-        <div className="max_container header_container">
-            <div className="header_hambuger_div">
-                <img className="header_hambuger_icon" src={hamburgerIcon}/>
+        <header className="max_container header_container">
+            <div className="header_wrapper">
+                <div className="header_hambuger_div">
+                    <img className="header_hambuger_icon" src={hamburgerIcon}/>
+                </div>
+                <div className="header_notification_div">
+                    <img className="header_notification_icon" src={notification}/>
+                </div>
             </div>
-            <div className="header_notification_div">
-                <img className="header_notification_icon" src={notification}/>
-            </div>
-        </div>
+        </header>
     );
 };
 

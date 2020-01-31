@@ -1,21 +1,26 @@
 .carousel_div{
-    padding-top: 84px;
+    height: 100%;
+    min-height: calc(320 * (320 / 240));
+    max-height: calc(480 * (320 / 240));
+    @include adjustWidth;
 }
 
-@media(max-width: 480px){
-    .carousel_div{
-        padding-top: 17.5vw;
-    }
-}
+// @media(max-width: 480px){
+//     .carousel_div{
+//         padding-top: $header;
+//     }
+// }
 
-@media(max-width: 320px){
-    .carousel_div{
-        padding-top: 56px;
-    }
-}
+// @media(max-width: 320px){
+//     .carousel_div{
+//         padding-top: $header;
+//     }
+// }
 
 .carousel_img{
-    height: calc(100vw*(2/3));
-    max-height: 320px;
-    min-height: 213px;
+    height: 100%;
+    min-height: calc(320 * (320 / 240));
+    max-height: calc(480 * (320 / 240));
+    object-fit: cover !important;
+    @include adjustWidth;
 }

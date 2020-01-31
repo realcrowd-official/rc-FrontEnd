@@ -1,32 +1,36 @@
 .header_container{
-    height: 17.5vw;
-    max-height: 84px;
-    min-height: 56px;
+    height: $header;
     display: flex;
+    justify-content: space-between;
     position: fixed;
     background-color: white;
-    z-index: 2;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
+    z-index: 5;
+    width: 100vw;
+    @include strokeBottom;
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include adjustWidth;
 }
 
 .header_hambuger_div,
 .header_notification_div{
-    width: 17.5vw;
-    height: 17.5vw;
-    max-width: 84px;
-    min-width: 56px;
-    max-height: 84px;
-    min-height: 56px;
+    width: $header;
+    height: $header;
     display: flex;
     object-fit: contain;
     justify-content: center;
     align-items: center;
 }
 
+.header_hambuger_div {
+    display: flex-start;
+}
+
 .header_notification_div{
-    margin-left: auto;
+    display: flex-end;
 }
 
 .header_hambuger_icon,
@@ -34,5 +38,4 @@
     display: block;
     margin: auto;
     position: relative;
-
 }

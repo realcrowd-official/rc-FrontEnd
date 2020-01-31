@@ -1,37 +1,25 @@
 @import './style/normalize.scss';
-@import './style/fonts.scss';
-@import './style/header.scss';
+
+@import './style/modules/grid.scss';
+@import './style/modules/spoqa.scss';
+@import './style/modules/fonts.scss';
+@import './style/modules/color.scss';
+@import './style/modules/misc.scss';
+
+@import './style/layout/header.scss';
+@import './style/layout/bottomNav.scss';
+@import './style/layout/tabBar.scss';
+
 @import './style/home.scss';
-@import './style/bottomSheet.scss';
-@import './style/tabbar.scss';
 @import './style/projectcardview.scss';
-@import './style/color.scss';
-@import './style/pundingProgressBar.scss';
-@import './style/pundingReservate.scss';
+@import './style/fundingProgressBar.scss';
+@import './style/fundingReservate.scss';
 @import './style/feedCarousel.scss';
 @import './style/feedCardView.scss';
-
-.max_container{
-    width: 100vw;
-    max-width: 480px;
-    min-width: 320px;
-}
 
 .margin_auto{
     margin-left: auto;
     margin-right: auto;
-}
-
-.width_ninth{
-    width: 90vw;
-    max-width: 432px;
-    min-width: 288px;
-}
-
-.height_ninth{
-    width: 90vw;
-    max-width: 432px;
-    min-width: 288px;
 }
 
 a:link { color: red; text-decoration: none;};

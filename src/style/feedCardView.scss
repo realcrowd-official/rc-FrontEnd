@@ -1,12 +1,12 @@
 .feed_card_view_div{
-    margin-top:12px;
+    margin-top: $grid * 3;
+    background-color: #fff;
+    padding: $grid * 4;
+    @include strokeBottom;
 }
 
 .feed_card_view_header{
     display: flex;
-    width: 90vw;
-    max-width: 432px;
-    min-width: 288px;
     margin: auto;
 }
 
@@ -37,12 +37,9 @@
 }
 
 .feed_card_view_header_button{
-    width: 20vw;
-    max-width: 96px;
-    min-width: 64px;
-    height: 10vw;
-    max-height: 32px;
-    min-height: 48px;
+    width: $grid * 16;
+    height: $grid * 8;
+    cursor: pointer;
     object-fit: contain;
     border-radius: 8px;
     background-color: $primary16;
@@ -57,8 +54,9 @@
 }
 
 .feed_card_view_image{
-    border-radius: 8px;
+    border-radius: $grid * 2;
     object-fit: contain;
+    margin: auto;
 }
 
 .feed_card_view_image_slick{

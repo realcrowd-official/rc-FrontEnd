@@ -1,0 +1,14 @@
+@mixin strokeBottom ($height: 1px, $color: $eeeeee) {
+    border-bottom: solid $height $color;
+}
+
+@mixin strokeTop ($height: 1px, $color: $eeeeee) {
+    border-top: solid $height $color;
+}
+
+@mixin adjustWidth {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 480px;
+    min-width: 320px;
+}
