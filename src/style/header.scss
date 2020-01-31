@@ -6,6 +6,9 @@
     position: fixed;
     background-color: white;
     z-index: 2;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
 }
 
 .header_hambuger_div,

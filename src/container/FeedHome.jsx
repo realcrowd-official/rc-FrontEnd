@@ -6,7 +6,6 @@ import FeedCardView from '../component/FeedCardView';
 const FeedHome = () => {
     return (
         <div className="home_body">
-            <Header/>
             <FeedCarousel/>
             <FeedCardView/>
         </div>

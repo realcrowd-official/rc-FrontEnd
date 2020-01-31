@@ -11,10 +11,12 @@ import {
   Link
 } from 'react-router-dom';
 import FeedHome from './container/FeedHome';
+import Header from './container/Header';
 
 function App() {
   return (
     <Router>
+      <Header/>
       <Switch>
         <Route exact path="/">
           <FeedHome/>
