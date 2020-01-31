@@ -6,6 +6,10 @@
     transform: translate(-50%, 0);
 }
 
+.current_path>img{
+    color: #00aaff;
+}
+
 .home_icon,
 .feed_icon,
 .profile_icon{
@@ -22,4 +26,21 @@
     display: block;
     margin: auto;
     padding-bottom: 3px;
+}
+
+p{
+    margin-top: 1px;
+}
+
+.current_path>p{
+    object-fit: contain;
+    font-family: SpoqaHanSans;
+    font-size: 1em;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #00aaff;
 }

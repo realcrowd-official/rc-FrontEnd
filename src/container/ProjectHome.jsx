@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
-import Header from './header'
+import Header from './Header'
 import TabBar from '../component/TabBar'
 import DoingFeed from './DoingFeed';
 import TabContext from '../context/tab';
 import ReservateFeed from './ReservateFeed';
 
-const Home = () => {
+const ProjectHome = () => {
     const {state}=useContext(TabContext);
     return (
         <div className="home_body">
@@ -16,4 +16,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default ProjectHome;

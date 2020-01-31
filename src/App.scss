@@ -3,13 +3,18 @@
 @import './style/home.scss';
 @import './style/bottomSheet.scss';
 @import './style/tabbar.scss';
-@import './style/feedcardview.scss';
+@import './style/projectcardview.scss';
 @import './style/color.scss';
 @import './style/pundingProgressBar.scss';
 @import './style/pundingReservate.scss';
+@import './style/feedCarousel.scss';
 
 .max_container{
     width: 100vw;
     max-width: 480px;
     min-width: 320px;
 }
+
+a:link { color: red; text-decoration: none;};
+a:visited { color: black; text-decoration: none;};
+a:hover { color: black; text-decoration: none;};

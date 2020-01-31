@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import Home from './container/Home'
+import ProjectHome from './container/ProjectHome'
 import BottomSheet from './container/Bottomsheet'
 import { TabProvider } from './context/tab';
 import {
@@ -10,17 +10,18 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import FeedHome from './container/FeedHome';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          {/* <Feed/> */}
+          <FeedHome/>
         </Route>
         <Route path="/project" children={
           <TabProvider>
-            <Home/>
+            <ProjectHome/>
           </TabProvider>
         }/>
       </Switch>
