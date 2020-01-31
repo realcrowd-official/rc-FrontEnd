@@ -13,7 +13,7 @@ const FeedCarousel = () => {
     }
     return (
         <div className="max_container carousel_div">
-            <Slider {...carouselSetting}>
+            <Slider {...carouselSetting} className="max_container">
                 <div>
                     <img className="carousel_img max_container" src="https://via.placeholder.com/480x320"></img>
                 </div>
