@@ -25,6 +25,12 @@
 .home_icon>img,
 .feed_icon>img,
 .profile_icon>img{
+    width:7.5vw;
+    height:7.5vw;
+    min-width: 24px;
+    max-width: 30px;
+    min-height: 24px;
+    max-height: 30px;
     display: block;
     margin: auto;
     padding-bottom: 3px;
