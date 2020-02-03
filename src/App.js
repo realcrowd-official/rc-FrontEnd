@@ -4,6 +4,7 @@ import './App.scss';
 import ProjectHome from './container/ProjectHome'
 import BottomNav from './container/BottomNav'
 import { TabProvider } from './context/tab';
+import { HeaderProvider } from './context/header';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,16 +17,20 @@ import Header from './container/Header';
 function App() {
   return (
     <Router>
-      <Header/>
+      <HeaderProvider>
+        <Header/>
+      </HeaderProvider>
       <Switch>
-        <Route exact path="/">
-          <FeedHome/>
-        </Route>
-        <Route path="/project" children={
-          <TabProvider>
-            <ProjectHome/>
+        <HeaderProvider>
+          <Route exact path="/">
+            <FeedHome/>
+          </Route>
+          <Route path="/project" children={
+            <TabProvider>    
+              <ProjectHome/>
           </TabProvider>
         }/>
+        </HeaderProvider>
       </Switch>
       <BottomNav/>
     </Router>
