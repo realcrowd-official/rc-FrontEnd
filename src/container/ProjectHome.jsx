@@ -14,6 +14,7 @@ const ProjectHome = () => {
     const habContext = useContext(HABContext);
     useEffect(() => {
         habContext.action.setHeaderType('regular');
+        habContext.action.setBottomType('true');
     });
     return (
         <div className="home_body">

@@ -7,6 +7,7 @@ const FeedHome = () => {
     const { state, action } = useContext(HABContext);
     useEffect(() => {
         action.setHeaderType('regular');
+        action.setBottomType('true');
     });
     return (
         <div className="home_body">

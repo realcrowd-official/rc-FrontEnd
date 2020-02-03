@@ -12,7 +12,6 @@ import HABContext from '../context/headerAndBottom';
 const BottomNav = () => {
     const [ nowPath, setNowPath ] = useState('home');
     const habContext = useContext(HABContext);
-    console.log(habContext.state.bottomType);
     return (
         <>
         {

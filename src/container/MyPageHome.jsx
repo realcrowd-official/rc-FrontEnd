@@ -4,7 +4,8 @@ import HABContext from '../context/headerAndBottom';
 const MyPageHome = () => {
     const { state, action } = useContext(HABContext);
     useEffect(()=>{
-        action.setHeaderType('back')
+        action.setHeaderType('regular');
+        action.setBottomType('true');
     },[])
     return (
         <div className="home_body">
