@@ -5,7 +5,7 @@ import backIcon from '../img/header/ic-back-stroke-black.svg';
 import HABContext from '../context/headerAndBottom';
 
 const Header = () => {
-    const { state, action } = useContext(HABContext);
+    const { state } = useContext(HABContext);
     return (
         <header className="max_container header_container">
             <div className="header_wrapper">

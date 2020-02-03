@@ -6,7 +6,7 @@ const MyPageHome = () => {
     useEffect(()=>{
         action.setHeaderType('regular');
         action.setBottomType('true');
-    },[])
+    },[action])
     return (
         <div className="home_body">
             <h2>{state.headerType}</h2>

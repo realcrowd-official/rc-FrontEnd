@@ -4,7 +4,7 @@ import FeedCardView from '../component/FeedCardView';
 import HABContext from '../context/headerAndBottom';
 
 const FeedHome = () => {
-    const { state, action } = useContext(HABContext);
+    const { action } = useContext(HABContext);
     useEffect(() => {
         action.setHeaderType('regular');
         action.setBottomType('true');
