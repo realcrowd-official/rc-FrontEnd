@@ -65,13 +65,13 @@
     margin-top: 12px;
 }
 
-.feed_card_view_punding_div{
+.feed_card_view_funding_div{
     margin-top: $grid*6;
     display: flex;
     margin-bottom: $grid * 5;
 }
 
-.feed_card_view_punding_img{
+.feed_card_view_funding_img{
     width: 40vw;
     height: 30vw;
     max-width: 192px;
@@ -82,7 +82,7 @@
     object-fit: cover !important;
 }
 
-.feed_card_view_punding_title{
+.feed_card_view_funding_title{
     word-break: keep-all;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -93,40 +93,40 @@
     @include text-14-bold-b78;
 }
 
-.feed_card_view_punding_header_text_div{
+.feed_card_view_funding_header_text_div{
     width: 46.25vw;
     max-width: 222px;
     min-width: 148px;
     margin-left: $grid * 3;
 }
 
-.feed_card_view_punding_user{
+.feed_card_view_funding_user{
     object-fit: contain;
     @include text-14-regular-b54;
     margin-top: $grid * 4;
     bottom: 0;
 }
 
-.feed_card_view_punding_explain_div{
+.feed_card_view_funding_explain_div{
     margin-top: $grid * 4;
 }
 
-.feed_card_view_punding_explain_text{
+.feed_card_view_funding_explain_text{
     object-fit: contain;
     @include text-14-regular-b78;
 }
 
-.feed_card_view_punding_like_comment_div{
+.feed_card_view_funding_like_comment_div{
     display: flex;
     margin-top: $grid * 4;
     object-fit: contain;
     @include text-12-regular-b54;
 }
 
-.feed_card_view_punding_icon_div{
+.feed_card_view_funding_icon_div{
     margin-top: $grid * 3;
 }
 
-.feed_card_view_punding_icon_div > img{
+.feed_card_view_funding_icon_div > img{
     margin-right: $grid * 4;
 }
