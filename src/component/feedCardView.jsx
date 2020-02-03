@@ -1,5 +1,10 @@
 import React from 'react';
 import Slick from 'react-slick';
+import FundingProgress from './FundingProgress';
+import icHeart from '../img/feedCard/ic-heart-stroke-black.svg';
+import icComment from '../img/feedCard/ic-comment-stroke-black.svg';
+import icShare from '../img/feedCard/ic-share-stroke-black.svg';
+
 
 const FeedCardView = () => {
     const carouselSetting = {
@@ -23,9 +28,28 @@ const FeedCardView = () => {
             <Slick className="margin_auto width_ninth height_ninth feed_card_view_image_slick">
                 <img className="feed_card_view_image width_ninth height_ninth" src="https://via.placeholder.com/150"/>
             </Slick>
-
+            <div className="feed_card_view_punding_div">
+                <img className="feed_card_view_punding_img" src="https://via.placeholder.com/150" alt=""/>
+                <div className="feed_card_view_punding_header_text_div">
+                    <p className="feed_card_view_punding_title">이미지 크기 고정, 타이틀 텍스트 너비 가변, 최대 3줄 이후 ellipsis 3세줄테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트3줄 테스트</p>
+                    <p className="feed_card_view_punding_user">메이커 닉네임</p>
+                </div>
+            </div>
+            <FundingProgress/>
+            <div className="feed_card_view_punding_explain_div">
+                <p className="feed_card_view_punding_explain_text">피드 카드의 본문 내용은 최대 3줄까지 숨김 없이 보여지며, 3줄이 넘어가게 될 경우에는 다음 예시와 같이 ellipsis 더 보기 처리가 됩니다 ...</p>
+            </div>
+            {/* 더보기는 추후 구현 */}
+            <div className="feed_card_view_punding_like_comment_div">
+                <div className="feed_card_view_punding_like_comment_p"><span>좋아요 96 ㆍ 댓글 32</span></div>
+            </div>
+            <div className="feed_card_view_punding_icon_div">
+                <img src={icHeart} alt=""/>
+                <img src={icComment} alt=""/>
+                <img src={icShare} alt=""/>
+            </div>
         </div>
-    );
+        );
 };
 
 export default FeedCardView;

@@ -79,15 +79,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     height: 2.4em;
-    object-fit: contain;
-    font-family: SpoqaHanSans;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.78);
+    @include text-14-bold-b78;
     margin-bottom: 0.3em;
 }
 
