@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import HeaderContext from '../context/header';
+import HABContext from '../context/headerAndBottom';
 
 const MyPageHome = () => {
-    const { state, action } = useContext(HeaderContext);
+    const { state, action } = useContext(HABContext);
     useEffect(()=>{
         action.setHeaderType('back')
     },[])

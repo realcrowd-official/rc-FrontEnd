@@ -2,10 +2,10 @@ import React,{useContext} from 'react';
 import hamburgerIcon from '../img/header/ic-hamburger-stroke-black.svg';
 import notification from '../img/header/ic-notification-stroke-black.svg';
 import backIcon from '../img/header/ic-back-stroke-black.svg';
-import HeaderContext from '../context/header';
+import HABContext from '../context/headerAndBottom';
 
 const Header = () => {
-    const { state, action } = useContext(HeaderContext);
+    const { state, action } = useContext(HABContext);
     return (
         <header className="max_container header_container">
             <div className="header_wrapper">

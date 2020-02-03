@@ -5,15 +5,15 @@ import DoingFeed from './DoingFeed';
 import ReservateFeed from './ReservateFeed';
 
 import TabContext from '../context/tab';
-import HeaderContext from '../context/header';
+import HABContext from '../context/headerAndBottom';
 
 
 
 const ProjectHome = () => {
     const {state}=useContext(TabContext);
-    const headerContext = useContext(HeaderContext);
+    const habContext = useContext(HABContext);
     useEffect(() => {
-        headerContext.action.setHeaderType('regular');
+        habContext.action.setHeaderType('regular');
     });
     return (
         <div className="home_body">

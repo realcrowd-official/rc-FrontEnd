@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../img/BottomNav/ic-tab-feed-stroke-black.svg';
 import homeIconPrimary from '../img/BottomNav/ic-tab-feed-stroke-primary.svg';
@@ -7,9 +7,16 @@ import feedIconPrimary from '../img/BottomNav/ic-tab-projects-stroke-primary.svg
 import profileIcon from '../img/BottomNav/ic-tab-profile-stroke-black.svg';
 import profileIconPrimary from '../img/BottomNav/ic-tab-profile-stroke-primary.svg';
 
+import HABContext from '../context/headerAndBottom';
+
 const BottomNav = () => {
     const [ nowPath, setNowPath ] = useState('home');
+    const habContext = useContext(HABContext);
+    console.log(habContext.state.bottomType);
     return (
+        <>
+        {
+        habContext.state.bottomType==="true" ? 
         <div className="BottomNav_container max_container">
             <div className="BottomNav_wrapper">
                 <Link to="/" 
@@ -32,6 +39,11 @@ const BottomNav = () => {
                 </Link>
             </div>
         </div>
+        :
+        null
+        }
+        
+        </>
     );
 };
 

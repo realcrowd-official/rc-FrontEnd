@@ -1,10 +1,10 @@
 import React,{useContext, useEffect} from 'react';
 import FeedCarousel from '../component/FeedCarousel';
 import FeedCardView from '../component/FeedCardView';
-import HeaderContext from '../context/header';
+import HABContext from '../context/headerAndBottom';
 
 const FeedHome = () => {
-    const { state, action } = useContext(HeaderContext);
+    const { state, action } = useContext(HABContext);
     useEffect(() => {
         action.setHeaderType('regular');
     });

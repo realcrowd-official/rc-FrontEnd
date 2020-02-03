@@ -4,8 +4,7 @@ import './App.scss';
 import ProjectHome from './container/ProjectHome'
 import BottomNav from './container/BottomNav'
 import { TabProvider } from './context/tab';
-import { HeaderProvider } from './context/header';
-import { BottomProvider } from './context/bottom';
+import { HABProvider } from './context/headerAndBottom';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,13 +14,12 @@ import {
 import FeedHome from './container/FeedHome';
 import Header from './container/Header';
 import MyPageHome from './container/MyPageHome';
-import FundingDetail from './container/fundingDetail';
+import FundingDetail from './container/FundingDetail';
 
 function App() {
   return (
     <Router>
-      <HeaderProvider>
-        <BottomProvider>
+      <HABProvider>
           <Header/>
             <Switch>
                 <Route exact path="/">
@@ -40,8 +38,7 @@ function App() {
                 }/>
             </Switch>
             <BottomNav/>
-        </BottomProvider>
-      </HeaderProvider>
+      </HABProvider>
     </Router>
   );
 }
