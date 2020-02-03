@@ -24,7 +24,7 @@ const BottomNav = () => {
                     <img src={nowPath === 'project' ? feedIconPrimary : feedIcon} alt="프로젝트"/>
                     <p>프로젝트</p>
                 </Link>
-                <Link 
+                <Link to="/profile"
                 className={"profile_icon" + (nowPath==='profile' ? ' current_path' : "")} 
                 onClick={()=>setNowPath("profile")}>
                     <img src={nowPath === 'profile' ? profileIconPrimary : profileIcon} alt="프로필"/>

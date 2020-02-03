@@ -13,15 +13,14 @@ import {
 } from 'react-router-dom';
 import FeedHome from './container/FeedHome';
 import Header from './container/Header';
+import MyPageHome from './container/MyPageHome';
 
 function App() {
   return (
     <Router>
       <HeaderProvider>
         <Header/>
-      </HeaderProvider>
       <Switch>
-        <HeaderProvider>
           <Route exact path="/">
             <FeedHome/>
           </Route>
@@ -29,10 +28,13 @@ function App() {
             <TabProvider>    
               <ProjectHome/>
           </TabProvider>
-        }/>
-        </HeaderProvider>
+          }/>
+          <Route path="/profile" children={
+            <MyPageHome/>
+          }/>
       </Switch>
       <BottomNav/>
+      </HeaderProvider>
     </Router>
   );
 }

@@ -15,8 +15,8 @@
     @include adjustWidth;
 }
 
-.header_hambuger_div,
-.header_notification_div{
+.header_left_div,
+.header_right_div{
     width: $header;
     height: $header;
     display: flex;
@@ -25,11 +25,11 @@
     align-items: center;
 }
 
-.header_hambuger_div {
+.header_left_div {
     display: flex-start;
 }
 
-.header_notification_div{
+.header_right_div{
     display: flex-end;
 }
 
