@@ -1,4 +1,4 @@
-import React, {useContext,useEffect} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import TabBar from '../component/TabBar'
 
 import DoingFeed from './DoingFeed';
@@ -9,13 +9,16 @@ import HABContext from '../context/headerAndBottom';
 
 
 
+
 const ProjectHome = () => {
+
     const {state}=useContext(TabContext);
     const habContext = useContext(HABContext);
     useEffect(() => {
         habContext.action.setHeaderType('regular');
         habContext.action.setBottomType('true');
     });
+
     return (
         <div className="home_body">
             <TabBar/>

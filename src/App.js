@@ -16,6 +16,8 @@ import Header from './container/Header';
 import MyPageHome from './container/MyPageHome';
 import FundingDetail from './container/FundingDetail';
 
+import BtsTest from './container/BottomSheetTest';
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
           <Header/>
             <Switch>
                 <Route exact path="/">
+                  {/* <BtsTest/> */}
                   <FeedHome/>
                 </Route>
                 <Route path="/project" children={
