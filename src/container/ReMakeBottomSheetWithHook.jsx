@@ -25,10 +25,6 @@ const ReMakeBottomSheetWithHook = props => {
         props.visible ? enter() : onClose();
     },[props.visible])
 
-    // const hookSCU = React.memo((props, state) => {
-        
-    // })
-
     const enter = () => {
         setIsShow('shown');
         setTimeout(() => {
@@ -36,14 +32,6 @@ const ReMakeBottomSheetWithHook = props => {
           setAnimationState('enter');
         }, 50);
       };
-    
-    // const leave = () => {
-    //   setAnimationState('leave');
-    //   onClose();
-    //   //   setTimeout(()=>{
-          
-    //   //   }, 500);
-    //   };
     
     const onClose = () => {
         document.getElementsByTagName('html')[0].style.overflow = 'auto';
