@@ -17,6 +17,7 @@ const ProjectHome = () => {
     useEffect(() => {
         habContext.action.setHeaderType('regular');
         habContext.action.setBottomType('true');
+        habContext.action.setPath('project');
     });
 
     return (

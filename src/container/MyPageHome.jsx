@@ -6,6 +6,7 @@ const MyPageHome = () => {
     useEffect(()=>{
         action.setHeaderType('regular');
         action.setBottomType('true');
+        action.setPath('profile');
     },[action])
     return (
         <div className="home_body">
