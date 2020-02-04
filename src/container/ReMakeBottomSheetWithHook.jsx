@@ -10,53 +10,50 @@ const propTypes = {
     customLayout: PropTypes.string
   }
   
-  const defaultProps = {
-    showBlockLayer: true,
-    visible: true,
-    className: '',
-    appendCancelBtn: true
-  }
+const defaultProps = {
+  showBlockLayer: true,
+  visible: true,
+  className: '',
+  appendCancelBtn: true
+}
 
 const ReMakeBottomSheetWithHook = props => {
-
-    const [isShow, setIsShow] = useState(false);
+    const [isShow, setIsShow] = useState('hide');
     const [animationState, setAnimationState] = useState('leave');
 
     useEffect(() => { 
-        props.visible ? enter() : leave();
+        props.visible ? enter() : onClose();
     },[props.visible])
 
     // const hookSCU = React.memo((props, state) => {
         
     // })
 
-    
-
     const enter = () => {
-        setIsShow(true);
+        setIsShow('shown');
         setTimeout(() => {
-          document.getElementsByTagName('html')[0].style.overflow = 'hidden'
-          setAnimationState('enter')
-        }, 50)
-      }
+          document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+          setAnimationState('enter');
+        }, 50);
+      };
     
-    const leave = () => {
-        setAnimationState('leave')
-        setTimeout(onClose.bind(this), 500)
-      }
+    // const leave = () => {
+    //   setAnimationState('leave');
+    //   onClose();
+    //   //   setTimeout(()=>{
+          
+    //   //   }, 500);
+    //   };
     
     const onClose = () => {
-        if (animationState === 'leave') {
-          document.getElementsByTagName('html')[0].style.overflow = 'auto'
-          setIsShow('false')
-        }
-    
-        props.onCloseFinishAnimation && props.onCloseFinishAnimation()
+        document.getElementsByTagName('html')[0].style.overflow = 'auto';
+        setAnimationState('leave');
+        setIsShow('hide');
+        props.onCloseFinishAnimation && props.onCloseFinishAnimation();
       }
-
       const layer = props.showBlockLayer ? <div className='bottom-sheet-block-layer' onClick={props.onClose} /> : null
     return (
-        <div className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ? 'shown' : 'hide'}`}>
+        <div className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow || ''}`}>
         {layer}
         {props.customLayout}
         <div className='bottom-sheet'>

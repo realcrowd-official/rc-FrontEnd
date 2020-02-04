@@ -12,7 +12,7 @@ import {
   Link
 } from 'react-router-dom';
 import FeedHome from './container/FeedHome';
-import Header from './container/Header';
+import Header from './container/header';
 import MyPageHome from './container/MyPageHome';
 import FundingDetail from './container/FundingDetail';
 

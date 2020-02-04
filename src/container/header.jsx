@@ -14,9 +14,8 @@ const Header = () => {
 
     const { state } = useContext(HABContext);
 
-    useEffect(() => {
-        console.log({bottomSheet})
-    }, [{bottomSheet}])
+    // useEffect(() => {
+    // }, [bottomSheet])
 
     return (
         <header className="max_container header_container">
@@ -24,7 +23,7 @@ const Header = () => {
                 <div className="header_left_div">
                     {
                         state.headerType === 'regular' ? 
-                        <img className="header_hambuger_icon" src={hamburgerIcon} onClick={()=> toggleBottomSheet.bind(this)}/> 
+                        <img className="header_hambuger_icon" src={hamburgerIcon} onClick={()=> {toggleBottomSheet()}}/> 
                         : 
                         <img className="header_back_icon" src={backIcon}/>
                     }
