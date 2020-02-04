@@ -1,0 +1,31 @@
+.share_btn_div{
+    height: 15vw;
+    max-height: calc(480px * 0.15);
+    min-height: calc(320px * 0.15);
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.share_btn_div > img{
+    margin : $grid * 3;
+}
+
+.boost_btn_div{
+    width: 100%;
+    margin-right: $grid * 2;
+}
+
+.boost_btn_div > button {
+    width: 72.5vw;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: $primary16;
+}
+
+.boost_btn_div > button > p {
+    margin-top: $grid * 3;
+    margin-bottom : $grid * 3;
+    object-fit: contain;
+    @include text-14-bold-primary-center;
+}

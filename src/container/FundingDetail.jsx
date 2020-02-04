@@ -1,10 +1,11 @@
 import React,{ useEffect, useContext } from 'react';
 
 import FundingProgress from '../component/FundingProgress';
+import ShareBtn from '../component/ShareBtn';
+import ActionBtn from '../component/ActionBtn';
 
 import HABContext from '../context/headerAndBottom';
 
-import ShareIcon from '../img/ic-share-stroke-black.svg';
 
 const FundingDetail = () => {
     const { action } = useContext(HABContext);
@@ -74,12 +75,8 @@ const FundingDetail = () => {
                 </div>
 
                 <div className="fd_funding_btn_div">
-                    <div className = "fd_boost_btn_div">
-                        <button><p>프로젝트 후원하기</p></button>
-                    </div>
-                    <div className="fd_share_btn_div">
-                        <img src={ShareIcon} alt=""/>
-                    </div>
+                    <ActionBtn aText='프로젝트 후원하기'/>
+                    <ShareBtn/>
                 </div>
                 
             </div>
