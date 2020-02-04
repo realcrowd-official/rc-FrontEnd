@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
+import CloseIcon from '../img/bottomsheet/ic-close-stroke-black.svg';
+
 const propTypes = {
     showBlockLayer: PropTypes.bool,
     visible: PropTypes.bool,
@@ -18,8 +20,8 @@ const defaultProps = {
 }
 
 const ReMakeBottomSheetWithHook = props => {
-    const [isShow, setIsShow] = useState('hide');
-    const [animationState, setAnimationState] = useState('leave');
+    const [isShow, setIsShow] = useState('shown');
+    const [animationState, setAnimationState] = useState('enter');
 
     useEffect(() => { 
         props.visible ? enter() : onClose();
@@ -44,7 +46,12 @@ const ReMakeBottomSheetWithHook = props => {
         <div className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow || ''}`}>
         {layer}
         {props.customLayout}
-        <div className='bottom-sheet'>
+        <div className='bottom-sheet home_body'>
+          <div className="bts_top"></div>
+          <div className="bts_middle">
+            <div className="bts_close_div"><img className="bts_close_icon" src={CloseIcon} alt=""/></div>
+            <div className="bts_explain_div"><p className="bts_explain_p">로그인</p></div>
+          </div>
           {props.children}
           {props.list && props.list.map((item, idx) => {
              return (<button key={idx} className='bottom-sheet-item' onClick={item.handler}>

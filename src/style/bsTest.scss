@@ -35,8 +35,10 @@
     @include translate3d(0px,100%,0);
     position: absolute;
     bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 9;
-    width: 100%;
+    padding : 0 !important;
     background-color: #fff;
   }
 
@@ -60,6 +62,35 @@
 
   .toast {
     bottom: 110%;
+  }
+
+  .bts_top{
+    height: $grid * 4;
+    border-radius: 16px 16px 0 0;
+    background-color: $ffffff;
+  }
+
+  .bts_middle{
+    height: $grid * 14;
+    display: flex;
+  }
+
+  .bts_close_div{
+  }
+
+  .bts_close_icon{
+    margin: $grid*4;
+  }
+
+  .bts_explain_div{
+    width: 100%;
+  }
+
+  .bts_explain_p{
+    object-fit: contain;
+    @include text-16-bold-b78-center;
+    margin-top: $grid * 4;
+    margin-bottom: $grid * 4;
   }
 }
 

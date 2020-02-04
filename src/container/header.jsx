@@ -35,7 +35,7 @@ const Header = () => {
             </div>
             <BS
             visible={bottomSheet}
-            onClose={toggleBottomSheet.bind(this)}
+            onClose={()=>toggleBottomSheet()}
             >
                 <button className='bottom-sheet-item' >Menu1</button>
                 <button className='bottom-sheet-item' >Menu2</button>
