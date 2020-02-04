@@ -67,17 +67,13 @@
     margin-top: $grid*6;
     display: flex;
     margin-bottom: $grid * 5;
-}
 
-.feed_card_view_funding_img{
-    width: 40vw;
-    height: 30vw;
-    max-width: 192px;
-    min-width: 128px;
-    max-height: 144px;
-    min-height: 96px;
-    border-radius: 8px;
-    object-fit: cover !important;
+    .feed_card_view_funding_img{
+        width: 128px;
+        height: 96px;
+        border-radius: 8px;
+        object-fit: cover !important;
+    }
 }
 
 .feed_card_view_funding_title{
@@ -92,26 +88,29 @@
 }
 
 .feed_card_view_funding_header_text_div{
-    width: 46.25vw;
-    max-width: 222px;
-    min-width: 148px;
+    width: calc(100% - 128px - 12px);
     margin-left: $grid * 3;
-}
+    
+    .feed_card_view_funding_title {
+        @include text-14-bold-b78;
+        text-align: left;
+    }
 
-.feed_card_view_funding_user{
-    object-fit: contain;
-    @include text-14-regular-b54;
-    margin-top: $grid * 4;
-    bottom: 0;
+    .feed_card_view_funding_user {
+        @include text-14-regular-b54;
+        text-align: left;
+        display: block;
+        bottom: 0;
+    }
 }
 
 .feed_card_view_funding_explain_div{
     margin-top: $grid * 4;
-}
 
-.feed_card_view_funding_explain_text{
-    object-fit: contain;
-    @include text-14-regular-b78;
+    .feed_card_view_funding_explain_text{
+        text-align: left;
+        @include text-14-regular-b78;
+    }
 }
 
 .feed_card_view_funding_like_comment_div{
@@ -121,10 +120,13 @@
     @include text-12-regular-b54;
 }
 
-.feed_card_view_funding_icon_div{
-    margin-top: $grid * 3;
-}
+.feed_card_view_funding_icon_div {
+    margin-top: $grid;
 
-.feed_card_view_funding_icon_div > img{
-    margin-right: $grid * 4;
+    > img{
+        display: inline-block;
+        padding: $grid * 2;
+        padding-top: $grid * 3;
+        padding-bottom: $grid * 3;
+    }
 }

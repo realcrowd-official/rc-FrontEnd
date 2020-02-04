@@ -4,7 +4,7 @@ import notification from '../img/header/ic-notification-stroke-black.svg';
 import backIcon from '../img/header/ic-back-stroke-black.svg';
 import HABContext from '../context/headerAndBottom';
 
-import BS from '../container/ReMakeBottomSheetWithHook';
+import BS from './ReMakeBottomSheetWithHook';
 
 const Header = () => {
     const [bottomSheet,setBottomSheet] = useState(false)
