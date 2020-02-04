@@ -1,5 +1,10 @@
 import React,{ useEffect, useContext } from 'react';
+
+import FundingProgress from '../component/FundingProgress';
+
 import HABContext from '../context/headerAndBottom';
+
+import ShareIcon from '../img/ic-share-stroke-black.svg';
 
 const FundingDetail = () => {
     const { action } = useContext(HABContext);
@@ -57,8 +62,27 @@ const FundingDetail = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="fd_notice_div">
+                    <p>
+                        목표 금액 <span>1,000,000원</span>이 모이면, 프로젝트 후원 종료 다음날인 <span>2020년 4월 5일 일요일</span> 결제가 진행됩니다.  
+                    </p>
+                </div>
+
+                <div className="fd_funding_progress">
+                    <FundingProgress/>
+                </div>
+
+                <div className="fd_funding_btn_div">
+                    <div className = "fd_boost_btn_div">
+                        <button><p>프로젝트 후원하기</p></button>
+                    </div>
+                    <div className="fd_share_btn_div">
+                        <img src={ShareIcon} alt=""/>
+                    </div>
+                </div>
+                
             </div>
-            
         </div>
     );
 };

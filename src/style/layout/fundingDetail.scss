@@ -82,6 +82,7 @@
 
 .funding_detail_current_fund_div{
     display: flex;
+    margin-top: $grid *6;
 }
 
 .funding_detail_current_fund_div > div{
@@ -97,4 +98,69 @@
 .funding_detail_current_fund_change_text{
     object-fit: contain;
     @include text-16-bold-b78;
+}
+
+.fd_notice_div{
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.fd_notice_div > p {
+    padding: $grid * 3;
+    object-fit: contain;
+    @include text-12-regular-b54;
+}
+
+.fd_notice_div > p > span {
+    font-family: SpoqaHanSans;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.fd_funding_progress{
+    margin-top: $grid * 9;
+}
+
+.fd_funding_btn_div{
+    width: 100%;
+    margin-top : $grid * 8;
+    display: flex;
+}
+
+.fd_boost_btn_div{
+    width: 100%;
+    margin-right: $grid * 2;
+}
+
+.fd_boost_btn_div > button {
+    width: 72.5vw;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: $primary16;
+}
+
+.fd_boost_btn_div > button > p {
+    margin-top: $grid * 3;
+    margin-bottom : $grid * 3;
+    object-fit: contain;
+    @include text-14-bold-primary-center;
+}
+
+.fd_share_btn_div{
+    height: 15vw;
+    max-height: calc(480px * 0.15);
+    min-height: calc(320px * 0.15);
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.fd_share_btn_div > img{
+    margin : $grid * 3;
 }
