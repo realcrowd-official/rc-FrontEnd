@@ -1,11 +1,11 @@
 .BottomNav_container{
-    display: flex;
-    position: fixed;
     bottom: 0;
     background-color: white;
     height: $header;
-    width: 100vw !important;
     z-index: 5;
+    width: 100vw;
+    padding: 0;
+    position: fixed;
     @include strokeTop;
 }
 

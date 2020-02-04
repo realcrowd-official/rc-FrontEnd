@@ -1,8 +1,6 @@
 .home_body{
-    width: 100%;
-    @include adjustWidth;
-    background-color: $f4f4f4;
+    width: 100vw;
     padding-top: $header;
     padding-bottom: $header + ($grid * 4);
-    // border:1px solid #F0F;
+    @include adjustWidth;
 }
