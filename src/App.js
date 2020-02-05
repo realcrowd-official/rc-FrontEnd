@@ -7,7 +7,7 @@ import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import FeedHome from './container/FeedHome';
-import Header from './container/header';
+import Header from './container/Header';
 import MyPageHome from './container/MyPageHome';
 import FundingDetail from './container/FundingDetail';
 
