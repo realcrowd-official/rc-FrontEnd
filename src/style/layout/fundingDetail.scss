@@ -1,137 +1,134 @@
-.funding_detail_main_img_div{
-    width: 100%;
+.funding_detail_main_img_div {
+  width: 100%;
 }
 
-.funding_detail_main_img{
-    width: 100%;
-    object-fit: cover;
-    height: 75vw;
-    max-height: 360px;
-    min-height: 240px;
+.funding_detail_main_img {
+  width: 100%;
+  object-fit: cover;
+  height: 75vw;
+  max-height: 360px;
+  min-height: 240px;
 }
 
-.funding_detail_explain_div{
-    margin-left: $grid * 4;
-    margin-right: $grid * 4;
-    margin-top: $grid * 6;
+.funding_detail_explain_div {
+  margin-left: $grid * 4;
+  margin-right: $grid * 4;
+  margin-top: $grid * 6;
 }
 
-.funding_detail_maker_header_div{
-    display: flex;
-    height: $grid * 8;
+.funding_detail_maker_header_div {
+  display: flex;
+  height: $grid * 8;
 }
 
-.funding_detail_maker_header_thumnail_div{
-    width: 10vw;
-    max-width: 48px;
-    min-width: 32px;
-    height: 10vw;
-    max-height: 48px;
-    min-height: 32px;
+.funding_detail_maker_header_thumnail_div {
+  width: 10vw;
+  max-width: 48px;
+  min-width: 32px;
+  height: 10vw;
+  max-height: 48px;
+  min-height: 32px;
 }
 
-.funding_detail_maker_header_thumnail{
-    width: $grid * 8;
-    height: $grid * 8;
-    border-radius: 50%;
+.funding_detail_maker_header_thumnail {
+  width: $grid * 8;
+  height: $grid * 8;
+  border-radius: 50%;
 }
 
-.funding_detail_maker_name_div{
-    margin-left: $grid * 3;
-    height: $grid * 8;
-    text-align: center;
+.funding_detail_maker_name_div {
+  margin-left: $grid * 3;
+  height: $grid * 8;
+  text-align: center;
 }
 
 .funding_detail_maker_name_div > p {
-    margin-top: auto;
-    margin-bottom: auto;
-    object-fit: contain;
-    @include text-14-regular-b54;
+  margin-top: auto;
+  margin-bottom: auto;
+  object-fit: contain;
+  @include text-14-regular-b54;
 }
 
-.funding_detail_maker_follow_btn_div{
-    margin-left: auto;
+.funding_detail_maker_follow_btn_div {
+  margin-left: auto;
 }
 
-.funding_detail_maker_follow_btn_div > button{
-    width: $grid * 16;
-    height: $grid * 8;
-    cursor: pointer;
-    object-fit: contain;
-    border-radius: 8px;
-    background-color: $primary16;
-    border: 0;
-    outline: 0;
+.funding_detail_maker_follow_btn_div > button {
+  width: $grid * 16;
+  height: $grid * 8;
+  cursor: pointer;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: $primary16;
+  border: 0;
+  outline: 0;
 }
 
-.funding_detail_maker_follow_btn_div > button > p{
-    object-fit: contain;
-    @include text-12-bold-primary-center;
-    margin-top: auto;
-    margin-bottom: auto;
+.funding_detail_maker_follow_btn_div > button > p {
+  object-fit: contain;
+  @include text-12-bold-primary-center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.funding_detail_title{
-    margin-top : $grid * 4;
+.funding_detail_title {
+  margin-top: $grid * 4;
 }
 
-.funding_detail_title > p{
-    object-fit: contain;
-    @include text-18-bold-b78;
+.funding_detail_title > p {
+  object-fit: contain;
+  @include text-18-bold-b78;
 }
 
-.funding_detail_current_fund_div{
-    display: flex;
-    margin-top: $grid *6;
+.funding_detail_current_fund_div {
+  display: flex;
+  margin-top: $grid * 6;
 }
 
-.funding_detail_current_fund_div > div{
-    width: $grid * 19;
-    margin-right: $grid * 5;
+.funding_detail_current_fund_div > div {
+  width: $grid * 19;
+  margin-right: $grid * 5;
 }
 
 .funding_detail_current_fund_fix_text {
-    object-fit: contain;
-    @include text-12-regular-b54;
+  object-fit: contain;
+  @include text-12-regular-b54;
 }
 
-.funding_detail_current_fund_change_text{
-    object-fit: contain;
-    @include text-16-bold-b78;
+.funding_detail_current_fund_change_text {
+  object-fit: contain;
+  @include text-16-bold-b78;
 }
 
-.fd_notice_div{
-    object-fit: contain;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.04);
+.fd_notice_div {
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .fd_notice_div > p {
-    padding: $grid * 3;
-    object-fit: contain;
-    @include text-12-regular-b54;
+  padding: $grid * 3;
+  object-fit: contain;
+  @include text-12-regular-b54;
 }
 
 .fd_notice_div > p > span {
-    font-family: SpoqaHanSans;
-    font-size: 12px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.54);
+  font-family: SpoqaHanSans;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.54);
 }
 
-.fd_funding_progress{
-    margin-top: $grid * 9;
+.fd_funding_progress {
+  margin-top: $grid * 9;
 }
 
-.fd_funding_btn_div{
-    width: 100%;
-    margin-top : $grid * 8;
-    display: flex;
+.fd_funding_btn_div {
+  width: 100%;
+  margin-top: $grid * 8;
+  display: flex;
 }
-
-
-

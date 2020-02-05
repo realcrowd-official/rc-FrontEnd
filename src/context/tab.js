@@ -1,28 +1,24 @@
 import React, { createContext, useState } from 'react';
 
 const TabContext = createContext({
-    state: { tabMenu: 'reservate' },
-    action: {
-        setTabMenu: () => {}
-    }
+  state: { tabMenu: 'reservate' },
+  action: {
+    setTabMenu: () => {}
+  }
 });
 
 const { Consumer: TabConsumer } = TabContext;
 
 const TabProvider = ({ children }) => {
-    const [ tabMenu, setTabMenu ] = useState('reservate');
-    
-    const value = {
-        state: { tabMenu },
-        action: { setTabMenu }
-    };
+  const [tabMenu, setTabMenu] = useState('reservate');
 
-    return (
-        <TabContext.Provider value={value}>{children}</TabContext.Provider>
-    )
+  const value = {
+    state: { tabMenu },
+    action: { setTabMenu }
+  };
+
+  return <TabContext.Provider value={value}>{children}</TabContext.Provider>;
 };
-
-
 
 export { TabProvider, TabConsumer };
 

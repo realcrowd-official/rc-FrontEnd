@@ -1,8 +1,8 @@
-.carousel_div{
-    height: 100%;
-    min-height: calc(320 * (320 / 240));
-    max-height: calc(480 * (320 / 240));
-    @include adjustWidth;
+.carousel_div {
+  height: 100%;
+  min-height: calc(320 * (320 / 240));
+  max-height: calc(480 * (320 / 240));
+  @include adjustWidth;
 }
 
 // @media(max-width: 480px){
@@ -17,10 +17,10 @@
 //     }
 // }
 
-.carousel_img{
-    height: 100%;
-    min-height: calc(320 * (320 / 240));
-    max-height: calc(480 * (320 / 240));
-    object-fit: cover !important;
-    @include adjustWidth;
+.carousel_img {
+  height: 100%;
+  min-height: calc(320 * (320 / 240));
+  max-height: calc(480 * (320 / 240));
+  object-fit: cover !important;
+  @include adjustWidth;
 }

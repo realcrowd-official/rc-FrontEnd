@@ -1,41 +1,41 @@
-.header_container{
-    height: $header;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    background-color: white;
-    z-index: 5;
-    width: 100vw;
-    @include strokeBottom;
+.header_container {
+  height: $header;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  background-color: white;
+  z-index: 5;
+  width: 100vw;
+  @include strokeBottom;
 }
 
 .header_wrapper {
-    display: flex;
-    justify-content: space-between;
-    @include adjustWidth;
+  display: flex;
+  justify-content: space-between;
+  @include adjustWidth;
 }
 
 .header_left_div,
-.header_right_div{
-    width: $header;
-    height: $header;
-    display: flex;
-    object-fit: contain;
-    justify-content: center;
-    align-items: center;
+.header_right_div {
+  width: $header;
+  height: $header;
+  display: flex;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
 }
 
 .header_left_div {
-    display: flex-start;
+  display: flex-start;
 }
 
-.header_right_div{
-    display: flex-end;
+.header_right_div {
+  display: flex-end;
 }
 
 .header_hambuger_icon,
-.header_notification_icon{
-    display: block;
-    margin: auto;
-    position: relative;
+.header_notification_icon {
+  display: block;
+  margin: auto;
+  position: relative;
 }

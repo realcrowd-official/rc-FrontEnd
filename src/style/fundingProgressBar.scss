@@ -1,48 +1,48 @@
-.funding_progress_bar_div{
-    width: 90vw;
-    max-width: 442px;
-    min-width: 288px;
-    background-color: $progress_bar;
+.funding_progress_bar_div {
+  width: 90vw;
+  max-width: 442px;
+  min-width: 288px;
+  background-color: $progress_bar;
 }
 
-.funding_progress_bar{
-    width: 30%;
-    background-color: $primary;
-    height: 4px;
+.funding_progress_bar {
+  width: 30%;
+  background-color: $primary;
+  height: 4px;
 }
 
 .funding_progress_bar_div,
-.funding_progress_bar{
-    border-radius: 18px;
+.funding_progress_bar {
+  border-radius: 18px;
 }
 
-.funding_information_div{
-    display: flex;
-    margin-top: 4px;
+.funding_information_div {
+  display: flex;
+  margin-top: 4px;
 }
 
-.funding_percentage{
-    object-fit: contain;
-    font-family: SpoqaHanSans;
-    font-size: 14px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: $primary;
+.funding_percentage {
+  object-fit: contain;
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $primary;
 }
 
-.funding_cost{
-    margin-left: 4px;
-    margin-top: 2px;
-    object-fit: contain;
-    font-family: SpoqaHanSans;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: rgba(0, 0, 0, 0.54);
+.funding_cost {
+  margin-left: 4px;
+  margin-top: 2px;
+  object-fit: contain;
+  font-family: SpoqaHanSans;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.54);
 }

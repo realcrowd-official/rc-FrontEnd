@@ -1,49 +1,49 @@
-.BottomNav_container{
-    bottom: 0;
-    background-color: white;
-    height: $header;
-    width: 100vw;
-    padding: 0;
-    position: fixed;
-    @include strokeTop;
+.BottomNav_container {
+  bottom: 0;
+  background-color: white;
+  height: $header;
+  width: 100vw;
+  padding: 0;
+  position: fixed;
+  @include strokeTop;
 }
 
 .BottomNav_wrapper {
-    height: $header;
-    display: flex;
-    @include adjustWidth;
+  height: $header;
+  display: flex;
+  @include adjustWidth;
 }
 
-.current_path>img{
-    color: #00aaff;
+.current_path > img {
+  color: #00aaff;
 }
 
 .home_icon,
 .feed_icon,
-.profile_icon{
-    min-width: 106px;
-    height: $header;
-    width: calc(100% / 3);
-    text-align: center;
+.profile_icon {
+  min-width: 106px;
+  height: $header;
+  width: calc(100% / 3);
+  text-align: center;
 }
 
-.home_icon>img,
-.feed_icon>img,
-.profile_icon>img{
-    width: $grid * 6;
-    height: $grid * 6;
-    display: block;
-    margin: auto;
-    padding-bottom: 3px;
-    margin-top: 8px;
+.home_icon > img,
+.feed_icon > img,
+.profile_icon > img {
+  width: $grid * 6;
+  height: $grid * 6;
+  display: block;
+  margin: auto;
+  padding-bottom: 3px;
+  margin-top: 8px;
 }
 
-p{
-    margin-top: 1px;
-    margin-bottom: 8px;
-    @include text-10-regular-b78-center;
+p {
+  margin-top: 1px;
+  margin-bottom: 8px;
+  @include text-10-regular-b78-center;
 }
 
-.current_path>p{
-    @include text-10-bold-primary-center;
+.current_path > p {
+  @include text-10-bold-primary-center;
 }

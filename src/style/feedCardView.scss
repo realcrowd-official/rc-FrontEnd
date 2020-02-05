@@ -1,132 +1,132 @@
-.feed_card_view_div{
-    margin-top: $grid * 3;
-    background-color: #fff;
-    padding: $grid * 4;
-    @include strokeBottom;
+.feed_card_view_div {
+  margin-top: $grid * 3;
+  background-color: #fff;
+  padding: $grid * 4;
+  @include strokeBottom;
 }
 
-.feed_card_view_header{
-    display: flex;
-    margin: auto;
+.feed_card_view_header {
+  display: flex;
+  margin: auto;
 }
 
-.feed_card_view_header_margin{
-    margin-top: auto;
-    margin-bottom: auto;
+.feed_card_view_header_margin {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.feed_card_view_thumnail{
-    width: 10vw;
-    max-width: 48px;
-    height: 10vw;
-    max-height: 48px;
-    border-radius: 50%;
-    margin-right: 12px;
+.feed_card_view_thumnail {
+  width: 10vw;
+  max-width: 48px;
+  height: 10vw;
+  max-height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
 }
 
-.feed_card_view_header_maker_name{
-    object-fit: contain;
-    @include text-14-bold-b78;
+.feed_card_view_header_maker_name {
+  object-fit: contain;
+  @include text-14-bold-b78;
 }
 
-.feed_card_view_header_upload_time{
-    object-fit: contain;
-    @include text-14-regular-b54;
+.feed_card_view_header_upload_time {
+  object-fit: contain;
+  @include text-14-regular-b54;
 }
 
-.feed_card_view_header_button{
-    width: $grid * 16;
-    height: $grid * 8;
-    cursor: pointer;
-    object-fit: contain;
+.feed_card_view_header_button {
+  width: $grid * 16;
+  height: $grid * 8;
+  cursor: pointer;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: $primary16;
+  border: 0;
+  outline: 0;
+  margin-left: auto;
+}
+
+.feed_card_view_header_button_text {
+  object-fit: contain;
+  @include text-12-bold-primary-center;
+}
+
+.feed_card_view_image {
+  max-width: calc(480 * (480 / 288) px);
+  min-width: calc(320 * (320 / 288) px);
+  border-radius: $grid * 2;
+  object-fit: cover !important;
+  margin: auto;
+}
+
+.feed_card_view_image_slick {
+  margin-top: 12px;
+}
+
+.feed_card_view_funding_div {
+  margin-top: $grid * 6;
+  display: flex;
+  margin-bottom: $grid * 5;
+
+  .feed_card_view_funding_img {
+    width: 128px;
+    height: 96px;
     border-radius: 8px;
-    background-color: $primary16;
-    border: 0;
-    outline: 0;
-    margin-left: auto;
-}
-
-.feed_card_view_header_button_text{
-    object-fit: contain;
-    @include text-12-bold-primary-center;
-}
-
-.feed_card_view_image{
-    max-width: calc(480*(480/288)px);
-    min-width: calc(320*(320/288)px);
-    border-radius: $grid * 2;
     object-fit: cover !important;
-    margin: auto;
+  }
 }
 
-.feed_card_view_image_slick{
-    margin-top: 12px;
+.feed_card_view_funding_title {
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  object-fit: contain;
+  @include text-14-bold-b78;
 }
 
-.feed_card_view_funding_div{
-    margin-top: $grid*6;
-    display: flex;
-    margin-bottom: $grid * 5;
+.feed_card_view_funding_header_text_div {
+  width: calc(100% - 128px - 12px);
+  margin-left: $grid * 3;
 
-    .feed_card_view_funding_img{
-        width: 128px;
-        height: 96px;
-        border-radius: 8px;
-        object-fit: cover !important;
-    }
-}
-
-.feed_card_view_funding_title{
-    word-break: keep-all;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    object-fit: contain;
+  .feed_card_view_funding_title {
     @include text-14-bold-b78;
+    text-align: left;
+  }
+
+  .feed_card_view_funding_user {
+    @include text-14-regular-b54;
+    text-align: left;
+    display: block;
+    bottom: 0;
+  }
 }
 
-.feed_card_view_funding_header_text_div{
-    width: calc(100% - 128px - 12px);
-    margin-left: $grid * 3;
-    
-    .feed_card_view_funding_title {
-        @include text-14-bold-b78;
-        text-align: left;
-    }
+.feed_card_view_funding_explain_div {
+  margin-top: $grid * 4;
 
-    .feed_card_view_funding_user {
-        @include text-14-regular-b54;
-        text-align: left;
-        display: block;
-        bottom: 0;
-    }
+  .feed_card_view_funding_explain_text {
+    text-align: left;
+    @include text-14-regular-b78;
+  }
 }
 
-.feed_card_view_funding_explain_div{
-    margin-top: $grid * 4;
-
-    .feed_card_view_funding_explain_text{
-        text-align: left;
-        @include text-14-regular-b78;
-    }
-}
-
-.feed_card_view_funding_like_comment_div{
-    display: flex;
-    margin-top: $grid * 4;
-    object-fit: contain;
-    @include text-12-regular-b54;
+.feed_card_view_funding_like_comment_div {
+  display: flex;
+  margin-top: $grid * 4;
+  object-fit: contain;
+  @include text-12-regular-b54;
 }
 
 .feed_card_view_funding_icon_div {
-    margin-top: $grid;
+  margin-top: $grid;
 
-    > img{
-        display: inline-block;
-        padding: $grid * 2;
-        padding-top: $grid * 3;
-        padding-bottom: $grid * 3;
-    }
+  > img {
+    display: inline-block;
+    padding: $grid * 2;
+    padding-top: $grid * 3;
+    padding-bottom: $grid * 3;
+  }
 }
