@@ -235,6 +235,18 @@
   color: $primary;
 }
 
+@mixin text-12-regular-bold {
+  font-family: SpoqaHanSans;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 @mixin text-12-regular-b54-right {
   font-family: SpoqaHanSans;
   font-size: 12px;

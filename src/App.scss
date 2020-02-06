@@ -11,6 +11,8 @@
 @import './style/layout/tabBar.scss';
 @import './style/layout/myPage.scss';
 @import './style/layout/fundingDetail.scss';
+@import './style/layout/bottomSheet.scss';
+
 
 @import './style/components/button.scss';
 
@@ -20,6 +22,8 @@
 @import './style/fundingReservate.scss';
 @import './style/feedCarousel.scss';
 @import './style/feedCardView.scss';
+
+
 
 body {
   background-color: #f4f4f4;
@@ -38,4 +42,3 @@ a:hover {
   text-decoration: none;
 }
 
-@import './style/bsTest.scss';

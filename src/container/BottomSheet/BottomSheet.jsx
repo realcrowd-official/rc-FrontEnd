@@ -2,6 +2,9 @@ import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
+import kakaoIcon from '../../img/bottomsheet/ic-social-kakao.svg';
+import naverIcon from '../../img/bottomsheet/ic-social-naver.svg';
+import fbIcon from '../../img/bottomsheet/ic-social-facebook.svg';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,
@@ -63,7 +66,32 @@ const ReMakeBottomSheetWithHook = props => {
             <p className="bts_explain_p">로그인</p>
           </div>
         </div>
-        {props.children}
+        <div className="bts_login_div">
+          <div className="bts_login_kakao">
+            <img className="bts_login_img" src={kakaoIcon} alt="kakao"/>
+            <p className="bts_login_p">
+              카카오 계정으로 계속하기
+            </p>
+          </div>
+          <div className="bts_login_naver">
+            <img className="bts_login_img" src={naverIcon} alt="naver"/>
+            <p className="bts_login_p">
+              네이버 계정으로 계속하기
+            </p>
+          </div>
+          <div className="bts_login_facebook">
+            <img className="bts_login_img" src={fbIcon} alt="facebook"/>
+            <p className="bts_login_p">
+              페이스북 계정으로 계속하기
+            </p>
+          </div>
+        </div>
+        <div className="bts_waring_div">
+          <div>
+            <p><a>이용약관</a> 및 <a>개인정보처리방침</a>의 내용을 읽었으며, 이에 동의 후 회원가입을 진행합니다.</p>
+          </div>
+        </div>
+        {/* {props.children}
         {props.list &&
           props.list.map((item, idx) => {
             return (
@@ -71,7 +99,7 @@ const ReMakeBottomSheetWithHook = props => {
                 {item.title}
               </button>
             );
-          })}
+          })} */}
         {/* {props.appendCancelBtn &&
           (() => {
             return (

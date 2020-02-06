@@ -14,9 +14,6 @@ const Header = () => {
 
   const { state } = useContext(HABContext);
 
-  // useEffect(() => {
-  // }, [bottomSheet])
-
   return (
     <header className="max_container header_container">
       <div className="header_wrapper">
