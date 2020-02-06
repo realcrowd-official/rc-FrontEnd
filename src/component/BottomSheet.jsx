@@ -19,26 +19,38 @@ const defaultProps = {
   appendCancelBtn: true
 };
 
-const ReMakeBottomSheetWithHook = props => {
-  const [isShow, setIsShow] = useState('shown');
-  const [animationState, setAnimationState] = useState('enter');
+const BottomSheet = props => {
+  const [isShow, setIsShow] = useState('hide');
+  const [animationState, setAnimationState] = useState('leave');
 
   useEffect(() => {
-    props.visible ? enter() : onClose();
+    props.visible ? leave() : enter();
+    return (
+      document.getElementsByTagName('html')[0].style.overflow = 'auto'
+    );
   }, [props.visible]);
 
   const enter = () => {
+    console.log('here');
     setIsShow('shown');
     setTimeout(() => {
       document.getElementsByTagName('html')[0].style.overflow = 'hidden';
       setAnimationState('enter');
-    }, 50);
+    }, 10);
   };
 
-  const onClose = () => {
-    document.getElementsByTagName('html')[0].style.overflow = 'auto';
+  const leave = () => {
     setAnimationState('leave');
-    setIsShow('hide');
+    setTimeout(()=>{
+      onClose();
+    },500)
+  }
+
+  const onClose = () => {
+    if(animationState === 'leave'){
+      setIsShow('hide');
+      document.getElementsByTagName('html')[0].style.overflow = 'auto';
+    }
     props.onCloseFinishAnimation && props.onCloseFinishAnimation();
   };
   const layer = props.showBlockLayer ? (
@@ -54,7 +66,7 @@ const ReMakeBottomSheetWithHook = props => {
       <div className="bottom-sheet home_body">
         <div className="bts_top"></div>
         <div className="bts_middle">
-          <div className="bts_close_div">
+          <div className="bts_close_div"  onClick={props.onClose}>
             <img className="bts_close_icon" src={CloseIcon} alt="" />
           </div>
           <div className="bts_explain_div">
@@ -70,20 +82,20 @@ const ReMakeBottomSheetWithHook = props => {
               </button>
             );
           })}
-        {props.appendCancelBtn &&
+        {/* {props.appendCancelBtn &&
           (() => {
             return (
               <button className="bottom-sheet-item cancel" onClick={props.onClose}>
                 cancel
               </button>
             );
-          })()}
+          })()} */}
       </div>
     </div>
   );
 };
 
-ReMakeBottomSheetWithHook.propTypes = propTypes;
-ReMakeBottomSheetWithHook.defaultProps = defaultProps;
+BottomSheet.propTypes = propTypes;
+BottomSheet.defaultProps = defaultProps;
 
-export default ReMakeBottomSheetWithHook;
+export default BottomSheet;

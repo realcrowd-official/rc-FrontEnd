@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import FeedCarousel from '../component/FeedCarousel';
-import FeedCardView from '../component/FeedCardView';
-import HABContext from '../context/headerAndBottom';
+import FeedCarousel from '../../component/FeedCarousel';
+import FeedCardView from '../../component/FeedCardView';
+import HABContext from '../../context/headerAndBottom';
 
 const FeedHome = () => {
   const { action } = useContext(HABContext);

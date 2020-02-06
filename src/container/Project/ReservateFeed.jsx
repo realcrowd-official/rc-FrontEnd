@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedCardView from '../component/ProjectCardView';
+import FeedCardView from '../../component/ProjectCardView';
 
 const ReservateFeed = () => {
   return (

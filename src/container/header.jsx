@@ -4,7 +4,7 @@ import notification from '../img/header/ic-notification-stroke-black.svg';
 import backIcon from '../img/header/ic-back-stroke-black.svg';
 import HABContext from '../context/headerAndBottom';
 
-import BS from './ReMakeBottomSheetWithHook';
+import BS from './BottomSheet/BottomSheet';
 
 const Header = () => {
   const [bottomSheet, setBottomSheet] = useState(false);
@@ -38,8 +38,6 @@ const Header = () => {
         </div>
       </div>
       <BS visible={bottomSheet} onClose={() => toggleBottomSheet()}>
-        <button className="bottom-sheet-item">Menu1</button>
-        <button className="bottom-sheet-item">Menu2</button>
       </BS>
     </header>
   );
