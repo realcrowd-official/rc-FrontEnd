@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 
 import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
@@ -46,6 +48,14 @@ const ReMakeBottomSheetWithHook = props => {
       props.onCloseFinishAnimation && props.onCloseFinishAnimation();
     },500)
   };
+
+  const Login = (kind) => {
+    const Uri = `http://localhost:7777/api/account/socialLogin/${kind}/login`;
+    axios.get(Uri);
+  }
+
+
+
   const layer = props.showBlockLayer ? (
     <div className="bottom-sheet-block-layer" onClick={props.onClose} />
   ) : null;
@@ -67,7 +77,7 @@ const ReMakeBottomSheetWithHook = props => {
           </div>
         </div>
         <div className="bts_login_div">
-          <div className="bts_login_kakao">
+          <div className="bts_login_kakao" onClick={()=>{Login(`kakao`)}}>
             <img className="bts_login_img" src={kakaoIcon} alt="kakao"/>
             <p className="bts_login_p">
               카카오 계정으로 계속하기
