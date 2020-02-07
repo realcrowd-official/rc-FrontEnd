@@ -13,7 +13,7 @@ const FundingDetail = () => {
     action.setHeaderType('back');
   });
   return (
-    <div className="home_body">
+    <div className="home_body_nobn">
       <div className="funding_detail_main_img_div">
         <img className="funding_detail_main_img" src="https://via.placeholder.com/150" alt="" />
       </div>
