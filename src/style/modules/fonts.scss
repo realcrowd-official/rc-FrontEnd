@@ -27,6 +27,13 @@
   color: rgba(0, 0, 0, 0.78);
 }
 
+@mixin text-16-bold-b54 {
+  font-family: SpoqaHanSans;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 @mixin text-16-bold-b78-right {
   font-family: SpoqaHanSans;
   font-size: 16px;
@@ -87,6 +94,22 @@
   font-size: 16px;
   text-align: center;
   color: rgba(0, 0, 0, 0.78);
+}
+
+@mixin text-14-bold-b54-right {
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+@mixin text-14-bold-w100-right {
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  color: $ffffff;
 }
 
 @mixin text-14-bold-primary-right {
@@ -166,6 +189,19 @@
   color: $primary;
 }
 
+@mixin text-14-regular-w100-right {
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  text-align: right;
+  color: $ffffff;
+}
+
+@mixin text-14-regular-w100 {
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  color: $ffffff;
+}
+
 @mixin text-14-regular-primary {
   font-family: SpoqaHanSans;
   font-size: 14px;
@@ -198,19 +234,19 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
+@mixin text-12-bold-b54 {
+  font-family: SpoqaHanSans;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 @mixin text-12-bold-b78-center {
   font-family: SpoqaHanSans;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
   color: rgba(0, 0, 0, 0.78);
-}
-
-@mixin text-12-bold-b54 {
-  font-family: SpoqaHanSans;
-  font-size: 12px;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 @mixin text-12-bold-b54-center {
@@ -236,22 +272,16 @@
   color: $primary;
 }
 
+@mixin text-12-regular-error {
+  font-family: SpoqaHanSans;
+  font-size: 12px;
+  color: $error;
+}
+
 @mixin text-12-regular-primary {
   font-family: SpoqaHanSans;
   font-size: 12px;
   color: $primary;
-}
-
-@mixin text-12-regular-bold {
-  font-family: SpoqaHanSans;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.54);
 }
 
 @mixin text-12-regular-b54-right {
@@ -265,6 +295,20 @@
   font-family: SpoqaHanSans;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.54);
+}
+
+@mixin text-10-bold-b54 {
+  font-family: SpoqaHanSans;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+@mixin text-10-bold-b78 {
+  font-family: SpoqaHanSans;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.78);
 }
 
 @mixin text-10-bold-w100-center {
