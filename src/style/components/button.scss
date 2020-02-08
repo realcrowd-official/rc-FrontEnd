@@ -3,8 +3,8 @@
   max-height: calc(480px * 0.15);
   min-height: calc(320px * 0.15);
   object-fit: contain;
-  border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.04);
+  @include borderRadius;
 }
 
 .share_btn_div > img {
@@ -19,8 +19,8 @@
 .boost_btn_div > button {
   width: 72.5vw;
   object-fit: contain;
-  border-radius: 8px;
   background-color: $primary16;
+  @include borderRadius;
 }
 
 .boost_btn_div > button > p {

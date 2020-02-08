@@ -1,5 +1,5 @@
 .card_view_container {
-  padding-top: $topTabBar + 8px;
+  margin-top: $topTabBar + 8px;
   background-color: white;
   padding-bottom: $grid * 4;
   @include strokeBottom;
@@ -51,8 +51,8 @@
 .card_view_user_profile_img {
   width: $grid * 16;
   height: $grid * 16;
-  border-radius: $grid * 16;
   cursor: pointer;
+  @include borderRadius($grid * 16);
 }
 
 // .card_view_funding_information_div,

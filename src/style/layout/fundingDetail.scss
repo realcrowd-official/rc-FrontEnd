@@ -33,7 +33,7 @@
 .funding_detail_maker_header_thumnail {
   width: $grid * 8;
   height: $grid * 8;
-  border-radius: 50%;
+  @include borderRadius(50%);
 }
 
 .funding_detail_maker_name_div {
@@ -58,10 +58,10 @@
   height: $grid * 8;
   cursor: pointer;
   object-fit: contain;
-  border-radius: 8px;
   background-color: $primary16;
   border: 0;
   outline: 0;
+  @include borderRadius;
 }
 
 .funding_detail_maker_follow_btn_div > button > p {
@@ -102,8 +102,8 @@
 
 .fd_notice_div {
   object-fit: contain;
-  border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.04);
+  @include borderRadius;
 }
 
 .fd_notice_div > p {

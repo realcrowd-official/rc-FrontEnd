@@ -6,9 +6,9 @@
   margin-bottom: $grid * 4;
   object-fit: contain;
   background-color: $primary16;
-  border-radius: 8px;
   border: 0;
   outline: 0;
+  @include borderRadius;
   @include text-14-bold-primary-center;
 }
 

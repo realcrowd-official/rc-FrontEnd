@@ -25,9 +25,7 @@ const BottomSheet = props => {
 
   useEffect(() => {
     props.visible ? leave() : enter();
-    return (
-      document.getElementsByTagName('html')[0].style.overflow = 'auto'
-    );
+    return (document.getElementsByTagName('html')[0].style.overflow = 'auto');
   }, [props.visible]);
 
   const enter = () => {
@@ -41,13 +39,13 @@ const BottomSheet = props => {
 
   const leave = () => {
     setAnimationState('leave');
-    setTimeout(()=>{
+    setTimeout(() => {
       onClose();
-    },500)
-  }
+    }, 500);
+  };
 
   const onClose = () => {
-    if(animationState === 'leave'){
+    if (animationState === 'leave') {
       setIsShow('hide');
       document.getElementsByTagName('html')[0].style.overflow = 'auto';
     }
@@ -66,7 +64,7 @@ const BottomSheet = props => {
       <div className="bottom-sheet home_body">
         <div className="bts_top"></div>
         <div className="bts_middle">
-          <div className="bts_close_div"  onClick={props.onClose}>
+          <div className="bts_close_div" onClick={props.onClose}>
             <img className="bts_close_icon" src={CloseIcon} alt="" />
           </div>
           <div className="bts_explain_div">

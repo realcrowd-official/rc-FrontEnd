@@ -14,7 +14,7 @@
 
 .funding_progress_bar_div,
 .funding_progress_bar {
-  border-radius: $grid * 4;
+  @include borderRadius($grid * 4);
 }
 
 .funding_information_div {

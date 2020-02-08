@@ -9,6 +9,7 @@
   width: 100vw;
   @include strokeBottom;
   @include text-14-regular-b54-center;
+  @include ipxHomeBtn;
 }
 
 .tabBar_wraapper {

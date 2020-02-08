@@ -25,9 +25,9 @@
   max-width: 48px;
   height: 10vw;
   max-height: 48px;
-  border-radius: 50%;
   margin-right: 12px;
   cursor: pointer;
+  @include borderRadius(50%);
 }
 
 .feed_card_view_header_maker_name {
@@ -46,11 +46,11 @@
   height: $grid * 8;
   cursor: pointer;
   object-fit: contain;
-  border-radius: 8px;
   background-color: $primary16;
   border: 0;
   outline: 0;
   margin-left: auto;
+  @include borderRadius;
 }
 
 .feed_card_view_header_button_text {
@@ -61,8 +61,8 @@
 .feed_card_view_image {
   max-width: calc(480 * (480 / 288) px);
   min-width: calc(320 * (320 / 288) px);
-  border-radius: $grid * 2;
   margin: auto;
+  @include borderRadius;
 }
 
 .feed_card_view_image_slick {
@@ -77,8 +77,8 @@
   .feed_card_view_funding_img {
     width: 128px;
     height: 96px;
-    border-radius: 8px;
     cursor: pointer;
+    @include borderRadius;
   }
 }
 

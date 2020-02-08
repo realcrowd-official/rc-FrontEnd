@@ -5,9 +5,9 @@
 
 .bts_login_div > div {
   margin: $grid * 3 $grid * 4;
-  border-radius: $grid * 2;
   background-color: rgba(0, 0, 0, 0.04);
   display: flex;
+  @include borderRadius;
 }
 
 .bts_login_img {
@@ -25,6 +25,7 @@
 .bts_waring_div {
   background-color: $f4f4f4;
   height: 100%;
+  @include ipxHomeBtn;
 }
 
 .bts_waring_div > div {
