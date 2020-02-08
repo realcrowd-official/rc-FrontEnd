@@ -61,6 +61,7 @@ const FeedCardView = () => {
       <div className="feed_card_view_funding_icon_div">
         <img src={icHeart} alt="" />
         <img src={icComment} alt="" />
+        {/* 공유버튼 누르면 바텀시트 팝업 */}
         <img src={icShare} alt="" />
       </div>
     </div>

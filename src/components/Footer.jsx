@@ -4,9 +4,9 @@ const Footer = props => {
   return (
     <div className="footer">
       <div className="footer-tosLink">
-        <a>서비스 이용약관</a>
-        <a>개인정보처리방침</a>
-        <a>수수료 정책</a>
+        <a target="_blank">서비스 이용약관</a>
+        <a target="_blank">개인정보처리방침</a>
+        <a target="_blank">수수료 정책</a>
       </div>
       <div className="footer-termsOfService">
         <span>

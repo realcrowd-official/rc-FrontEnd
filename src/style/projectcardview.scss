@@ -28,8 +28,8 @@
 }
 
 .card_view_user_profile_img_div {
-  width: calc(100% - 32px) !important;
-  margin: 0 auto;
+  width: $grid * 16;
+  margin-left: $grid * 4;
   height: $grid * 16;
   transform: translate(0, -32px) !important;
   z-index: 2;
@@ -54,12 +54,6 @@
   cursor: pointer;
   @include borderRadius($grid * 16);
 }
-
-// .card_view_funding_information_div,
-// .card_view_user_profile_img_div,
-// .card_view_funding_user_name_div{
-//     background-color: white;
-// }
 
 .card_view_funding_information_div > p {
   margin: 0 auto;

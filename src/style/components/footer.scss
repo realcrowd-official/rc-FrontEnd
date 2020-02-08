@@ -17,13 +17,15 @@
   }
 
   .footer-tosLink {
-    a {
+    > a {
+      cursor: pointer;
       @include text-12-bold-b54;
+
       &:not(:first-child) {
         &::before {
           cursor: default;
           content: '·';
-          margin: 0 $grid * 2;
+          padding: 0 $grid * 2;
         }
       }
     }
@@ -40,6 +42,7 @@
       span:first-child {
         @include text-10-bold-b54;
       }
+
       span:last-child {
         display: inline-block;
         margin-left: $grid * 2;

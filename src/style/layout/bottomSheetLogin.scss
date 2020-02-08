@@ -7,6 +7,7 @@
   margin: $grid * 3 $grid * 4;
   background-color: $black04;
   display: flex;
+  cursor: pointer;
   @include borderRadius;
 }
 
@@ -16,7 +17,7 @@
 
 .bts_login_p {
   line-height: $grid * 12;
-  padding-right: $grid * 4;
+  padding-right: $grid * 8;
   margin: auto;
   object-fit: contain;
   @include text-14-bold-b78-center;
