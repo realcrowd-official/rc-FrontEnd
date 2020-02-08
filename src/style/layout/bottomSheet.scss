@@ -1,6 +1,7 @@
 @import './bottomSheetLogin.scss';
 
 @mixin translate3d($x, $y, $z) {
+  will-change: transform;
   -webkit-transform: translate3d($x, $y, $z);
   -moz-transform: translate3d($x, $y, $z);
   -ms-transform: translate3d($x, $y, $z);
@@ -9,6 +10,7 @@
 }
 
 @mixin transition($type, $duration) {
+  will-change: transition;
   -webkit-transition: $type $duration cubic-bezier(0.03, 0.72, 0.36, 0.99);
   -moz-transition: $type $duration cubic-bezier(0.03, 0.72, 0.36, 0.99);
   -ms-transition: $type $duration cubic-bezier(0.03, 0.72, 0.36, 0.99);
@@ -84,6 +86,8 @@
   .bts_close_div {
     width: $grid * 14;
     height: $grid * 14;
+    min-width: $grid * 14;
+    min-height: $grid * 14;
 
     .bts_close_icon {
       margin: $grid * 4;

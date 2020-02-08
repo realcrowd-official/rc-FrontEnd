@@ -2,9 +2,6 @@
   height: 100%;
   max-height: calc(320 * (4 / 3));
   @include adjustWidth;
-  img {
-    object-fit: cover !important;
-  }
 }
 
 // @media (max-width: 480px) {

@@ -2,6 +2,7 @@
   padding-top: $topTabBar;
   background-color: white;
   padding-bottom: $grid * 4;
+  @include strokeBottom;
 }
 
 .card_view_img_div,
@@ -18,7 +19,7 @@
   z-index: 1;
   position: relative;
   background-color: grey;
-  // border-bottom:1px solid #F0F;
+  cursor: pointer;
 }
 .card_view_img {
   height: 100%;
@@ -51,6 +52,7 @@
   width: $grid * 16;
   height: $grid * 16;
   border-radius: $grid * 16;
+  cursor: pointer;
 }
 
 // .card_view_funding_information_div,
@@ -71,6 +73,7 @@
   @include text-14-bold-b78;
   margin-bottom: $grid;
   text-align: left;
+  cursor: pointer;
 }
 
 .card_view_funding_user_name_div > p {
@@ -78,5 +81,6 @@
   width: calc(100% - 32px);
   text-align: left;
   margin-bottom: $grid * 4;
+  cursor: pointer;
   @include text-14-regular-b54;
 }

@@ -27,10 +27,12 @@
   max-height: 48px;
   border-radius: 50%;
   margin-right: 12px;
+  cursor: pointer;
 }
 
 .feed_card_view_header_maker_name {
   object-fit: contain;
+  cursor: pointer;
   @include text-14-bold-b78;
 }
 
@@ -60,7 +62,6 @@
   max-width: calc(480 * (480 / 288) px);
   min-width: calc(320 * (320 / 288) px);
   border-radius: $grid * 2;
-  object-fit: cover !important;
   margin: auto;
 }
 
@@ -69,7 +70,7 @@
 }
 
 .feed_card_view_funding_div {
-  margin-top: $grid * 6;
+  margin-top: $grid * 4;
   display: flex;
   margin-bottom: $grid * 5;
 
@@ -77,7 +78,7 @@
     width: 128px;
     height: 96px;
     border-radius: 8px;
-    object-fit: cover !important;
+    cursor: pointer;
   }
 }
 
@@ -89,6 +90,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   object-fit: contain;
+  cursor: pointer;
   @include text-14-bold-b78;
 }
 
@@ -106,6 +108,7 @@
     text-align: left;
     display: block;
     bottom: 0;
+    cursor: pointer;
   }
 }
 
@@ -128,6 +131,7 @@
 .feed_card_view_funding_icon_div {
   margin-top: $grid;
   position: relative;
+  cursor: pointer;
 
   > img {
     display: inline-block;
