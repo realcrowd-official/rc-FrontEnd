@@ -5,7 +5,7 @@
 
 .bts_login_div > div {
   margin: $grid * 3 $grid * 4;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $black04;
   display: flex;
   @include borderRadius;
 }

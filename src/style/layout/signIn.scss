@@ -47,7 +47,7 @@
 .si_input_div > div > input {
   width: 100%;
   height: $grid * 12;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $black04;
   border: none;
   @include borderRadius;
 }

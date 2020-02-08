@@ -3,7 +3,7 @@
   max-height: calc(480px * 0.15);
   min-height: calc(320px * 0.15);
   object-fit: contain;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $black04;
   @include borderRadius;
 }
 

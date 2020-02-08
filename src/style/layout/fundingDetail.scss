@@ -102,7 +102,7 @@
 
 .fd_notice_div {
   object-fit: contain;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: $black04;
   @include borderRadius;
 }
 
@@ -120,7 +120,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.54);
+  color: $black54;
 }
 
 .fd_funding_progress {
