@@ -1,10 +1,11 @@
 .bts_login_div {
+  padding: $grid * 2 0px;
   @include adjustWidth;
 }
 
 .bts_login_div > div {
-  margin: $grid * 4;
-  border-radius: 8px;
+  margin: $grid * 3 $grid * 4;
+  border-radius: $grid * 2;
   background-color: rgba(0, 0, 0, 0.04);
   display: flex;
 }

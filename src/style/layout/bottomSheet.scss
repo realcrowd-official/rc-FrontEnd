@@ -73,14 +73,15 @@
   }
 
   .bts_top {
-    height: $grid * 4;
-    border-radius: 16px;
-    background-color: $ffffff;
+    height: $grid * 2;
+    border-radius: 16px 16px 0px 0px;
+    background-color: transparent;
   }
 
   .bts_middle {
     height: $grid * 14;
     display: flex;
+    border-bottom: 1px solid $eeeeee;
   }
 
   .bts_close_div {
