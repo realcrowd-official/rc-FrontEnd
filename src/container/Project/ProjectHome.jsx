@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import TabBar from '../../component/TabBar';
+import TabBar from '../../components/TabBar';
+import Footer from '../../components/Footer';
 
 import DoingFeed from './DoingFeed';
 import ReservateFeed from './ReservateFeed';
@@ -20,6 +21,7 @@ const ProjectHome = () => {
     <div className="home_body">
       <TabBar />
       {state.tabMenu === 'doing' ? <DoingFeed /> : <ReservateFeed />}
+      <Footer />
     </div>
   );
 };

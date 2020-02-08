@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import FeedCarousel from '../../component/FeedCarousel';
-import FeedCardView from '../../component/FeedCardView';
+import FeedCarousel from '../../components/FeedCarousel';
+import FeedCardView from '../../components/FeedCardView';
+import Footer from '../../components/Footer';
+
 import HABContext from '../../context/headerAndBottom';
 
 const FeedHome = () => {
@@ -14,6 +16,7 @@ const FeedHome = () => {
     <div className="home_body">
       <FeedCarousel />
       <FeedCardView />
+      <Footer />
     </div>
   );
 };

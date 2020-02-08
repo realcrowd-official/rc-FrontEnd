@@ -1,0 +1,50 @@
+.footer {
+  margin-top: $grid * 2;
+  padding: $grid * 4;
+  background-color: #fff;
+
+  > div {
+    &:not(:last-child) {
+      padding-bottom: $grid * 8;
+      border-bottom: 1px solid $eeeeee;
+    }
+
+    &:not(:first-child),
+    &:not(:last-child) {
+      display: block;
+      padding: $grid * 8 0px;
+    }
+  }
+
+  .footer-tosLink {
+    a {
+      @include text-12-bold-b54;
+      &:not(:first-child) {
+        &::before {
+          cursor: default;
+          content: '·';
+          margin: 0 $grid * 2;
+        }
+      }
+    }
+  }
+
+  .footer-termsOfService {
+    span {
+      @include text-10-regular-b54;
+    }
+  }
+
+  .footer-infoText {
+    div {
+      span:first-child {
+        @include text-10-bold-b54;
+      }
+      span:last-child {
+        display: inline-block;
+        margin-left: $grid * 2;
+        @include text-10-regular-b54;
+      }
+    }
+  }
+}
