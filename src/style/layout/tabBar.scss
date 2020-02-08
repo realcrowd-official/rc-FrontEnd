@@ -1,5 +1,6 @@
 .tabBar_container {
   left: 0;
+  z-index: 10;
   height: $grid * 10;
   display: flex;
   justify-content: space-between;

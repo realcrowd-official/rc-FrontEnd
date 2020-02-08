@@ -1,7 +1,8 @@
 .funding_progress_bar_div {
-  width: 90vw;
-  max-width: 442px;
-  min-width: 288px;
+  margin: 0 auto;
+  display: block;
+  width: calc(100% - 32px);
+  margin-bottom: $grid;
   background-color: $progress_bar;
 }
 
@@ -13,36 +14,21 @@
 
 .funding_progress_bar_div,
 .funding_progress_bar {
-  border-radius: 18px;
+  border-radius: $grid * 4;
 }
 
 .funding_information_div {
   display: flex;
-  margin-top: 4px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
 }
 
 .funding_percentage {
-  object-fit: contain;
-  font-family: SpoqaHanSans;
-  font-size: 14px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: $primary;
+  @include text-14-bold-primary;
 }
 
 .funding_cost {
-  margin-left: 4px;
+  margin-left: $grid;
   margin-top: 2px;
-  object-fit: contain;
-  font-family: SpoqaHanSans;
-  font-size: 12px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.54);
+  @include text-12-regular-b54;
 }

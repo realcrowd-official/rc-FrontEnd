@@ -1,7 +1,10 @@
 .carousel_div {
-  height: calc(320 * (4 / 3));
-  object-fit: cover !important;
+  height: 100%;
+  max-height: calc(320 * (4 / 3));
   @include adjustWidth;
+  img {
+    object-fit: cover !important;
+  }
 }
 
 // @media (max-width: 480px) {
@@ -17,7 +20,7 @@
 // }
 
 .carousel_img {
-  height: calc(320 * (4 / 3));
-  object-fit: cover !important;
+  height: 100%;
+  max-height: calc(320 * (4 / 3));
   @include adjustWidth;
 }

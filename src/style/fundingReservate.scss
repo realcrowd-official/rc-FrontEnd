@@ -1,42 +1,31 @@
 .reservate_btn {
-  width: 90vw;
-  max-width: 442px;
-  min-width: 288px;
-  height: 48px;
-  margin-top: 2px;
+  margin: 0 auto;
+  display: block;
+  width: calc(100% - 32px);
+  height: $grid * 12;
+  margin-bottom: $grid * 4;
   object-fit: contain;
   background-color: $primary16;
   border-radius: 8px;
-  font-family: SpoqaHanSans;
-  font-size: 14px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: $primary;
   border: 0;
   outline: 0;
+  @include text-14-bold-primary-center;
 }
 
 .start_text_div {
-  margin-top: 12px;
+  margin: 0 auto;
+  width: calc(100% - 32px);
 }
 
 .start_date_span,
 .start_span {
-  object-fit: contain;
-  font-family: SpoqaHanSans;
-  font-size: 12px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.54);
+  @include text-12-bold-b54;
 }
 
 .start_span {
   font-weight: normal;
+
+  &::before {
+    content: ' ';
+  }
 }
