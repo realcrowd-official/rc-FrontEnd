@@ -42,19 +42,17 @@ const ReMakeBottomSheetWithHook = props => {
 
   const onClose = () => {
     setAnimationState('leave');
-    setTimeout(()=>{
+    setTimeout(() => {
       document.getElementsByTagName('html')[0].style.overflow = 'auto';
       setIsShow('hide');
       props.onCloseFinishAnimation && props.onCloseFinishAnimation();
-    },500)
+    }, 500);
   };
 
-  const Login = (kind) => {
+  const Login = kind => {
     const Uri = `http://localhost:7777/api/account/socialLogin/${kind}/login`;
     axios.get(Uri);
-  }
-
-
+  };
 
   const layer = props.showBlockLayer ? (
     <div className="bottom-sheet-block-layer" onClick={props.onClose} />
@@ -70,35 +68,38 @@ const ReMakeBottomSheetWithHook = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div">
-            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={props.onClose}/>
+            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={props.onClose} />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">로그인</p>
           </div>
+          <div className="bts_close_div"></div>
         </div>
         <div className="bts_login_div">
-          <div className="bts_login_kakao" onClick={()=>{Login(`kakao`)}}>
-            <img className="bts_login_img" src={kakaoIcon} alt="kakao"/>
-            <p className="bts_login_p">
-              카카오 계정으로 계속하기
-            </p>
+          <div
+            className="bts_login_kakao"
+            onClick={() => {
+              Login(`kakao`);
+            }}
+          >
+            <img className="bts_login_img" src={kakaoIcon} alt="kakao" />
+            <p className="bts_login_p">카카오 계정으로 계속하기</p>
           </div>
           <div className="bts_login_naver">
-            <img className="bts_login_img" src={naverIcon} alt="naver"/>
-            <p className="bts_login_p">
-              네이버 계정으로 계속하기
-            </p>
+            <img className="bts_login_img" src={naverIcon} alt="naver" />
+            <p className="bts_login_p">네이버 계정으로 계속하기</p>
           </div>
           <div className="bts_login_facebook">
-            <img className="bts_login_img" src={fbIcon} alt="facebook"/>
-            <p className="bts_login_p">
-              페이스북 계정으로 계속하기
-            </p>
+            <img className="bts_login_img" src={fbIcon} alt="facebook" />
+            <p className="bts_login_p">페이스북 계정으로 계속하기</p>
           </div>
         </div>
         <div className="bts_waring_div">
           <div>
-            <p><a>이용약관</a> 및 <a>개인정보처리방침</a>의 내용을 읽었으며, 이에 동의 후 회원가입을 진행합니다.</p>
+            <p>
+              <a>이용약관</a> 및 <a>개인정보처리방침</a>의 내용을 읽었으며, 이에 동의 후 회원가입을
+              진행합니다.
+            </p>
           </div>
         </div>
         {/* {props.children}

@@ -1,45 +1,45 @@
-.bts_login_div{
-    width: 100%;
+.bts_login_div {
+  @include adjustWidth;
 }
 
 .bts_login_div > div {
-    margin: $grid * 4;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.04);
-    display: flex;
+  margin: $grid * 4;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.04);
+  display: flex;
 }
 
 .bts_login_img {
-    margin: $grid * 3;
+  margin: $grid * 3;
 }
 
 .bts_login_p {
-    margin-top : $grid * 4;
-    margin-bottom: $grid * 4;
-    margin: auto;
-    object-fit: contain;
-    @include text-14-bold-b78-center;
+  line-height: $grid * 12;
+  padding-right: $grid * 4;
+  margin: auto;
+  object-fit: contain;
+  @include text-14-bold-b78-center;
 }
 
-.bts_waring_div{
-    background-color: $f4f4f4;
-    height: 100%;
+.bts_waring_div {
+  background-color: $f4f4f4;
+  height: 100%;
 }
 
-.bts_waring_div > div{
-    margin-left : $grid * 4;
-    margin-right : $grid * 4;
+.bts_waring_div > div {
+  margin-left: $grid * 4;
+  margin-right: $grid * 4;
 }
 
 .bts_waring_div > div > p {
-    padding-top : $grid * 5;
-    padding-bottom: $grid * 5;
-    margin: 0;
-    @include text-12-regular-bold;
+  padding-top: $grid * 5;
+  padding-bottom: $grid * 5;
+  margin: 0;
+  @include text-12-regular-bold;
 }
 
 .bts_waring_div > div > p > a {
-    font-weight: bold;
-    color: $primary;
-    text-decoration : underline;
+  font-weight: bold;
+  color: $primary;
+  text-decoration: underline;
 }

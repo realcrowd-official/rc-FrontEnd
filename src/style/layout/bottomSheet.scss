@@ -17,7 +17,7 @@
 }
 
 .bottom-sheet-wrapper {
-  @include transition(opacity, 500ms);
+  @include transition(opacity, 300ms);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -33,11 +33,11 @@
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.54);
   }
 
   .bottom-sheet {
-    @include transition(transform, 500ms);
+    @include transition(transform, 300ms);
     @include translate3d(0px, 100%, 0);
     position: absolute;
     bottom: 0;
@@ -46,6 +46,7 @@
     z-index: 9;
     padding: 0 !important;
     background-color: #fff;
+    border-radius: 16px 16px 0px 0px;
   }
 
   &.hide {
@@ -57,7 +58,6 @@
     width: 100%;
     background-color: #fff;
     text-align: center;
-    // padding: 20px 0;
     border: none;
     border-top: 1px solid #ededed;
     font-size: 16px;
@@ -81,24 +81,30 @@
     display: flex;
   }
 
-  .bts_close_icon {
-    margin: $grid * 4;
+  .bts_close_div {
+    width: $grid * 14;
+    height: $grid * 14;
+
+    .bts_close_icon {
+      margin: $grid * 4;
+    }
   }
 
   .bts_explain_div {
-    width: 100%;
-  }
+    margin: 0 auto;
+    width: calc(100vw - 56px - 56px);
 
-  .bts_explain_p {
-    object-fit: contain;
-    @include text-16-bold-b78-center;
-    margin-top: $grid * 4;
-    margin-bottom: $grid * 4;
+    .bts_explain_p {
+      object-fit: contain;
+      line-height: $grid * 14;
+      @include text-16-bold-b78-center;
+    }
   }
 }
 
 .bottom-sheet-wrapper.enter {
   opacity: 1;
+
   .bottom-sheet {
     @include translate3d(0px, 0px, 0);
   }

@@ -34,8 +34,7 @@ const Header = () => {
           <img className="header_notification_icon" src={notification} />
         </div>
       </div>
-      <BS visible={bottomSheet} onClose={() => toggleBottomSheet()}>
-      </BS>
+      <BS visible={bottomSheet} onClose={() => toggleBottomSheet()}></BS>
     </header>
   );
 };
