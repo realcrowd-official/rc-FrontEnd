@@ -5,6 +5,7 @@
 @import './style/modules/fonts.scss';
 @import './style/modules/color.scss';
 @import './style/modules/misc.scss';
+@import './style/modules/global.scss';
 
 @import './style/layout/header.scss';
 @import './style/layout/bottomNav.scss';
@@ -23,16 +24,3 @@
 @import './style/fundingReservate.scss';
 @import './style/feedCarousel.scss';
 @import './style/feedCardView.scss';
-
-body {
-  background-color: #f4f4f4;
-}
-
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
