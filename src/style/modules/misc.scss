@@ -12,3 +12,9 @@
   max-width: 480px;
   min-width: 320px;
 }
+
+@mixin ipxHomeBtn {
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+}
