@@ -6,12 +6,13 @@ const FeedCarousel = () => {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 500,
+    speed: 400,
     autoplaySpeed: 4000,
     slideToShow: 1,
     slidesToScroll: 1,
     arrows: false
   };
+
   return (
     <div className="max_container carousel_div">
       <Slider {...carouselSetting} className="max_container">

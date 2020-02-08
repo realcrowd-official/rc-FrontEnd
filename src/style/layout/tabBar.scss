@@ -1,6 +1,6 @@
 .tabBar_container {
   left: 0;
-  z-index: 10;
+  z-index: 4;
   height: $grid * 10;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,6 @@
   width: 100vw;
   @include strokeBottom;
   @include text-14-regular-b54-center;
-  @include ipxHomeBtn;
 }
 
 .tabBar_wraapper {

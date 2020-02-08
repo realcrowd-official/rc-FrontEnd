@@ -6,6 +6,7 @@
   padding: 0;
   position: fixed;
   @include strokeTop;
+  @include ipxHomeBtn;
 }
 
 .BottomNav_wrapper {

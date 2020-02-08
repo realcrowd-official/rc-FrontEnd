@@ -3,6 +3,14 @@
   padding-top: $header;
   padding-bottom: $header + ($grid * 2);
   @include adjustWidth;
+
+  @supports (margin-bottom: env(safe-area-inset-bottom)) {
+    margin-bottom: calc($header + $header + env(safe-area-inset-bottom)) !important;
+  }
+
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    padding-bottom: $header + ($grid * 10) + $grid;
+  }
 }
 
 .home_body_nobn {
