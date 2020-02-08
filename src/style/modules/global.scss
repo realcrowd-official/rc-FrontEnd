@@ -24,19 +24,19 @@ a {
 }
 
 ::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.38);
+  color: $black38;
 }
 
 :-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.38);
+  color: $black38;
 }
 
 ::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.38);
+  color: $black38;
 }
 
 ::placeholder {
-  color: rgba(0, 0, 0, 0.38);
+  color: $black38;
 }
 
 button {
@@ -88,5 +88,5 @@ input:-webkit-autofill:active {
 
 input:-webkit-autofill {
   color: rgba(0, 0, 0, 0.78) !important;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.78) !important;
+  -webkit-text-fill-color: $black78 !important;
 }
