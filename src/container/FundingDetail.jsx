@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 
-import FundingProgress from '../component/FundingProgress';
-import ShareBtn from '../component/ShareBtn';
-import ActionBtn from '../component/ActionBtn';
+import FundingProgress from '../components/FundingProgress';
+import ShareBtn from '../components/ShareBtn';
+import ActionBtn from '../components/ActionBtn';
 
 import HABContext from '../context/headerAndBottom';
 
