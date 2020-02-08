@@ -1,4 +1,5 @@
 .home_body {
+  background-color: $f4f4f4;
   padding-top: $header;
   padding-bottom: $header + ($grid * 4);
   @include adjustWidth;

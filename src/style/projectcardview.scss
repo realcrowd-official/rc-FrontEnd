@@ -1,5 +1,5 @@
 .card_view_container {
-  padding-top: $topTabBar;
+  padding-top: $topTabBar + 8px;
   background-color: white;
   padding-bottom: $grid * 4;
   @include strokeBottom;
