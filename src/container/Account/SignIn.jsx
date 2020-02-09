@@ -32,8 +32,9 @@ const SignIn = () => {
                                 <label>0/20</label>
                             </div>
                             <div>
-                                <label htmlFor="">휴대폰 번호</label>
-                                <input type="text" name="" id=""/>
+                                <label htmlFor="input">휴대폰 번호</label>
+                                <input type="text" name="" id="" placeholder="    숫자만 입력해주세요"/>
+                                <label htmlFor="input">후원 및 리워드 배송 시, 연락을 위해 필요합니다.</label>
                             </div>
                     </div>
                 </div>

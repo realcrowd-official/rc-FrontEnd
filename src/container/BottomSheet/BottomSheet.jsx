@@ -50,8 +50,9 @@ const ReMakeBottomSheetWithHook = props => {
   };
 
   const Login = kind => {
-    const Uri = `http://localhost:7777/api/account/socialLogin/${kind}/login`;
-    axios.get(Uri);
+    const Uri = `http://3.135.237.171:7777/api/account/socialLogin/${kind}/login`;
+    // const Uri = `http://localhost:7777/api/account/socialLogin/${kind}/login`;
+    axios.get(Uri).then(res => window.location.href = res.data);
   };
 
   const layer = props.showBlockLayer ? (
