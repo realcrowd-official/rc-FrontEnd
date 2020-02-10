@@ -12,7 +12,7 @@ import FeedHome from './container/Feed/FeedHome';
 import Header from './container/Header';
 import MyPageHome from './container/MyPageHome';
 import FundingDetail from './container/FundingDetail';
-import SignIn from './container/Account/SignIn';
+import SignUp from './container/Account/SignUp';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           />
           <Route path="/profile" children={<MyPageHome />} />
           <Route path="/funding/detail/:id" children={<FundingDetail />} />
-          <Route path="/signIn" children={<SignIn/>}/>
+          <Route path="/signUp" children={<SignUp/>}/>
         </Switch>
         <BottomNav />
       </HABProvider>
