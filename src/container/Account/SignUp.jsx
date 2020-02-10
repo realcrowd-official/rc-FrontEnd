@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import resolveJWT from '../../lib/resolveJwt';
 
 import HABContext from '../../context/headerAndBottom';
+import AuthContext from '../../context/auth';
 
 import EditIcon from '../../img/ic-edit-white.svg';
 
@@ -24,6 +25,7 @@ const SignUp = () => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const { action } = useContext(HABContext);
+    const auth = useContext(AuthContext);
     
     useEffect(() => {
         action.setBottomType('false');
@@ -36,16 +38,23 @@ const SignUp = () => {
     }
 
     const postSignUp = (e) => {
-        console.log(`name is ${name} nickname is ${nickname} phone is ${phone} token is ${token}`)
-        // const signUpUri = "http://localhost:7777/api/account/signUp";
-        const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
+        const signUpUri = "http://localhost:7777/api/account/signUp";
+        // const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
         
         axios.post(signUpUri, {
             name: name,
             nickname: nickname,
             phone: phone,
             token: token
-        }).then((res) => {console.log(res.status)})
+        })
+        .then((res) => {
+            console.log(res.data)
+            auth.action.setAuthToken(res.data.ans);
+            localStorage.setItem('token', JSON.stringify({
+                token: res.data.ans
+            }))
+        })
+        .catch((err)=>{window.location.replace('/')})
         e.preventDefault()
     }
 
