@@ -38,8 +38,8 @@ const SignUp = () => {
     }
 
     const postSignUp = (e) => {
-        const signUpUri = "http://localhost:7777/api/account/signUp";
-        // const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
+        // const signUpUri = "http://localhost:7777/api/account/signUp";
+        const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
         
         axios.post(signUpUri, {
             name: name,
