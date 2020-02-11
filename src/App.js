@@ -38,7 +38,8 @@ function App() {
               }
             />
             <Route path="/profile" children={<MyPageHome />} />
-            <Route path="/funding/detail/:id" children={<FundingDetail />} />
+            
+            <Route path="/funding/detail/:id" children={<TabProvider><FundingDetail /></TabProvider>} />
             <Route path="/signUp" children={<SignUp />} />
             <Route path="/signIn" children={<SignIn />} />
             <Route path="*" component={Error} />

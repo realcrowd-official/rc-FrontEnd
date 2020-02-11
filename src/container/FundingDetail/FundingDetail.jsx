@@ -9,7 +9,7 @@ import FundingDetailMain from './FundingDetailMain';
 import HABContext from '../../context/headerAndBottom';
 import FDTabContext from '../../context/tab';
 import FundingDetailStory from './FundingDetailStory';
-import FundingDetailComunity from './FundingDetailComunity';
+import FundingDetailCommunity from './FundingDetailCommunity';
 import FundingDetailInfo from './FundingDetailInfo';
 
 const FundingDetail = () => {
@@ -25,7 +25,7 @@ const FundingDetail = () => {
       <FundingDetailMain />
       <div className="fd_sub_body">
         {FDTab.state.fundingTab === 'story' && <FundingDetailStory/>}
-        {FDTab.state.fundingTab === 'comunity' && <FundingDetailComunity/>}
+        {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity/>}
         {FDTab.state.fundingTab === 'info' && <FundingDetailInfo/>}
       </div>
     </div>
