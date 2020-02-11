@@ -46,7 +46,7 @@ const SignUp = () => {
             name: name,
             nickname: nickname,
             phone: phone,
-            token: token
+            token: toke
         })
         .then((res) => {
             console.log(res.data)
