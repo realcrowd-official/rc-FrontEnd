@@ -13,9 +13,8 @@
 }
 
 .funding_detail_explain_div {
-  margin-left: $grid * 4;
-  margin-right: $grid * 4;
-  margin-top: $grid * 6;
+  background-color: #fff;
+  padding: $grid * 6 $grid * 4 0;
 }
 
 .funding_detail_maker_header_div {
@@ -25,11 +24,8 @@
 
 .funding_detail_maker_header_thumnail_div {
   width: 10vw;
-  max-width: 48px;
-  min-width: 32px;
-  height: 10vw;
-  max-height: 48px;
-  min-height: 32px;
+  width: $grid * 8;
+  height: $grid * 8;
 }
 
 .funding_detail_maker_header_thumnail {
@@ -48,6 +44,7 @@
   margin-top: auto;
   margin-bottom: auto;
   object-fit: contain;
+  line-height: $grid * 8;
   @include text-14-regular-b54;
 }
 
@@ -78,7 +75,7 @@
 }
 
 .funding_detail_title > p {
-  object-fit: contain;
+  text-align: left;
   @include text-18-bold-b78;
 }
 
@@ -88,29 +85,29 @@
 }
 
 .funding_detail_current_fund_div > div {
-  width: $grid * 19;
-  margin-right: $grid * 5;
+  flex-grow: 3;
 }
 
 .funding_detail_current_fund_fix_text {
-  object-fit: contain;
+  text-align: left;
   @include text-12-regular-b54;
 }
 
 .funding_detail_current_fund_change_text {
-  object-fit: contain;
+  text-align: left;
   @include text-16-bold-b78;
 }
 
 .fd_notice_div {
   object-fit: contain;
+  margin: $grid * 4 0;
   background-color: $black04;
   @include borderRadius;
 }
 
 .fd_notice_div > p {
   padding: $grid * 3;
-  object-fit: contain;
+  text-align: left;
   @include text-12-regular-b54;
 }
 
@@ -127,12 +124,35 @@
 
 .fd_funding_progress {
   margin-top: $grid * 9;
+
+  .funding_progress_bar_div,
+  .funding_information_div {
+    width: 100%;
+  }
 }
 
 .fd_funding_btn_div {
   width: 100%;
   margin-top: $grid * 8;
   display: flex;
+  justify-content: space-between;
+
+  .boost_btn_div {
+    padding-bottom: $grid * 4;
+
+    button {
+      display: flex-start;
+      width: calc(100vw - 48px - 8px - 32px);
+      max-width: calc(480px - 48px - 8px - 32px);
+      height: $grid * 12;
+    }
+  }
+
+  .share_btn_div {
+    display: flex-end;
+    width: $grid * 12;
+    height: $grid * 12;
+  }
 }
 
 .fd_main_body{
