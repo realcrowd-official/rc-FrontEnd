@@ -1,5 +1,6 @@
 @import './style/normalize.scss';
 
+// modules
 @import './style/modules/mqbp.scss';
 @import './style/modules/grid.scss';
 @import './style/modules/spoqa.scss';
@@ -8,6 +9,7 @@
 @import './style/modules/misc.scss';
 @import './style/modules/global.scss';
 
+// layout
 @import './style/layout/header.scss';
 @import './style/layout/bottomNav.scss';
 @import './style/layout/tabBar.scss';
@@ -16,9 +18,14 @@
 @import './style/layout/bottomSheet.scss';
 @import './style/layout/signIn.scss';
 
+// components
 @import './style/components/button.scss';
 @import './style/components/footer.scss';
 
+// pages
+@import './style/pages/error.scss';
+
+//
 @import './style/home.scss';
 @import './style/projectCardView.scss';
 @import './style/fundingProgressBar.scss';

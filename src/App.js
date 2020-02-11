@@ -17,6 +17,8 @@ import FundingDetail from './container/FundingDetail';
 import SignUp from './container/Account/SignUp';
 import SignIn from './container/Account/SignIn';
 
+import Error from './pages/Error';
+
 function App() {
   return (
     <Router>
@@ -37,8 +39,9 @@ function App() {
             />
             <Route path="/profile" children={<MyPageHome />} />
             <Route path="/funding/detail/:id" children={<FundingDetail />} />
-            <Route path="/signUp" children={<SignUp/>}/>
-            <Route path="/signIn" children={<SignIn/>}/>
+            <Route path="/signUp" children={<SignUp />} />
+            <Route path="/signIn" children={<SignIn />} />
+            <Route path="*" component={Error} />
           </Switch>
           <BottomNav />
         </HABProvider>
