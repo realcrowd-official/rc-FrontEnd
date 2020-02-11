@@ -1,7 +1,84 @@
-.fd_story_div{
-    padding: $grid * 8 $grid * 4 0;
+@mixin sidePadding {
+  padding-left: $grid * 4;
+  padding-right: $grid * 4;
 }
 
-.fd_story_div > h1 {
-    @include text-18-bold-b78;
+.fd_sub_body {
+  .fd_story_div {
+    padding: $grid * 8 0;
+
+    > h1 {
+      padding: $grid * 4 0 $grid * 6;
+      @include sidePadding;
+      @include text-18-bold-b78;
+    }
+
+    > h2 {
+      @include sidePadding;
+      @include text-16-bold-b78;
+    }
+
+    > p {
+      text-align: left;
+      padding: $grid * 2 0 $grid * 4;
+      @include sidePadding;
+      @include text-14-regular-b78;
+
+      &[data-caption] {
+        margin-bottom: $grid * 8;
+        @include text-16-regular-b54-center;
+      }
+
+      a {
+        display: inline-block;
+        @include text-14-regular-primary;
+      }
+    }
+
+    > a {
+      display: inline-block;
+      @include sidePadding;
+      @include text-14-regular-primary;
+    }
+
+    > img {
+      width: 100%;
+      display: block;
+      padding: $grid * 2 0 0;
+
+      &[alt='caption'] {
+        width: $grid * 6;
+        height: $grid * 6;
+        display: block;
+        margin: $grid * 8 auto $grid;
+      }
+    }
+
+    > label[for='img'] {
+      display: block;
+      padding: $grid * 2 0 $grid * 8;
+      @include sidePadding;
+      @include text-14-regular-b54-center;
+    }
+
+    > hr {
+      border: 1px solid #ccc;
+      margin: $grid * 8 auto;
+      width: calc(100% - #{$grid * 8});
+    }
+
+    > ol {
+      padding: $grid * 2 auto $grid * 4;
+      li {
+        @include text-14-regular-b78;
+      }
+    }
+
+    > ul {
+      padding: $grid * 2 auto $grid * 4;
+      li {
+        @include text-14-regular-b78;
+      }
+    }
+  }
 }

@@ -22,13 +22,13 @@ const FundingDetail = () => {
     <div className="home_body_nobn">
       <FundingDetailMain />
       <div className="fd_sub_body">
-        {FDTab.state.fundingTab === 'story' && <FundingDetailStory/>}
-        {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity/>}
-        {FDTab.state.fundingTab === 'info' && <FundingDetailInfo/>}
+        {FDTab.state.fundingTab === 'story' && <FundingDetailStory />}
+        {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity />}
+        {FDTab.state.fundingTab === 'info' && <FundingDetailInfo />}
       </div>
       <div className="fd_user_body">
         <h2>메이커 소개</h2>
-        <ProfileUserInfo/>
+        <ProfileUserInfo />
       </div>
     </div>
   );
