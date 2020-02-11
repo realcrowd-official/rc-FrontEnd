@@ -1,4 +1,5 @@
 @import './FundingDetail/fundingDetailTab.scss';
+@import './FundingDetail/fundingDetailStory.scss';
 
 .funding_detail_main_img_div {
   width: 100%;
@@ -161,4 +162,5 @@
 
 .fd_sub_body{
   margin-top: $grid * 2;
+  background-color: white;
 }

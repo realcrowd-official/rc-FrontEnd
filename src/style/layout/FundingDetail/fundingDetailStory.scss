@@ -1,0 +1,7 @@
+.fd_story_div{
+    padding: $grid * 8 $grid * 4 0;
+}
+
+.fd_story_div > h1 {
+    @include text-18-bold-b78;
+}
