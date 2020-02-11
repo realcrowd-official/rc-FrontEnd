@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from 'react';
 import FundingProgress from '../../components/FundingProgress';
 import ShareBtn from '../../components/ShareBtn';
 import ActionBtn from '../../components/ActionBtn';
-import FundingDetailMain from './FundingDetailMain'
+import FundingDetailMain from './FundingDetailMain';
 
 import HABContext from '../../context/headerAndBottom';
 
@@ -15,8 +15,8 @@ const FundingDetail = () => {
   });
   return (
     <div className="home_body_nobn">
-      <FundingDetailMain/>
+      <FundingDetailMain />
     </div>
-  )
+  );
 };
 export default FundingDetail;
