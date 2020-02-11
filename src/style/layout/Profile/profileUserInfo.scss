@@ -72,6 +72,7 @@
     }
   }
   .share_btn_div {
+    cursor: pointer;
     display: flex-end;
     width: $grid * 12;
     height: $grid * 12;
