@@ -9,7 +9,7 @@ import AuthContext from '../../context/auth';
 
 import EditIcon from '../../img/ic-edit-white.svg';
 
-function useQuery() {
+const useQuery = () => {
     return new URLSearchParams(useLocation().search);
   }
 
