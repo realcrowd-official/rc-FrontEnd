@@ -3,10 +3,11 @@ import React from 'react';
 import FundingProgress from '../../components/FundingProgress';
 import ShareBtn from '../../components/ShareBtn';
 import ActionBtn from '../../components/ActionBtn';
+import FundingDetailTab from './FundingDetailTab';
 
 const FundingDetailMain = () => {
     return (
-        <div>
+        <div className="fd_main_body">
             <div className="funding_detail_main_img_div">
                 <img className="funding_detail_main_img" src="https://via.placeholder.com/150" alt="" />
             </div>
@@ -73,6 +74,7 @@ const FundingDetailMain = () => {
                     <ShareBtn />
                 </div>
             </div>
+            <FundingDetailTab/>
         </div>
     );
 };
