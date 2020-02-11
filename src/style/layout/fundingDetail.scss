@@ -24,6 +24,7 @@
 }
 
 .funding_detail_maker_header_thumnail_div {
+  cursor: pointer;
   width: 10vw;
   width: $grid * 8;
   height: $grid * 8;
@@ -36,6 +37,7 @@
 }
 
 .funding_detail_maker_name_div {
+  cursor: pointer;
   margin-left: $grid * 3;
   height: $grid * 8;
   text-align: center;
@@ -110,6 +112,7 @@
   padding: $grid * 3;
   text-align: left;
   @include text-12-regular-b54;
+  @include line-height(12px);
 }
 
 .fd_notice_div > p > span {
@@ -150,23 +153,24 @@
   }
 
   .share_btn_div {
+    cursor: pointer;
     display: flex-end;
     width: $grid * 12;
     height: $grid * 12;
   }
 }
 
-.fd_main_body{
+.fd_main_body {
   background-color: white;
 }
 
 .fd_sub_body,
-.fd_user_body{
+.fd_user_body {
   margin-top: $grid * 2;
   background-color: white;
 }
 
-.fd_user_body > h2{
+.fd_user_body > h2 {
   padding: $grid * 4 $grid * 4 $grid * 2 $grid * 4;
   @include text-16-bold-b78;
 }

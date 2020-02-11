@@ -22,6 +22,8 @@ const FundingDetailStory = () => {
       </p>
       <ol>
         <li>본문 OL, 14px, regular, b78</li>
+        <li>본문 OL, 14px, regular, b78</li>
+        <li>본문 OL, 14px, regular, b78</li>
       </ol>
 
       <hr />
@@ -33,10 +35,9 @@ const FundingDetailStory = () => {
       <img src="https://via.placeholder.com/150" alt="" />
       <label htmlFor="img">캡션입니다.</label>
       <ul>
-        <li>
-          법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여
-          퇴직하게 할 수 있다.
-        </li>
+        <li>법률이 정하는 바에 의하여 법관을 둘 수 있다.</li>
+        <li>법률이 정하는 바에 의하여 법관을 둘 수 있다.</li>
+        <li>법률이 정하는 바에 의하여 법관을 둘 수 있다.</li>
       </ul>
       <a href="">본문 outlink 14px regular primary</a>
     </div>

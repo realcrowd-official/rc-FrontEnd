@@ -11,11 +11,13 @@
       padding: $grid * 4 0 $grid * 6;
       @include sidePadding;
       @include text-18-bold-b78;
+      @include line-height(18px);
     }
 
     > h2 {
       @include sidePadding;
       @include text-16-bold-b78;
+      @include line-height(16px);
     }
 
     > p {
@@ -23,15 +25,18 @@
       padding: $grid * 2 0 $grid * 4;
       @include sidePadding;
       @include text-14-regular-b78;
+      @include line-height(14px);
 
       &[data-caption] {
         margin-bottom: $grid * 8;
         @include text-16-regular-b54-center;
+        @include line-height(16px);
       }
 
       a {
-        display: inline-block;
+        display: inline;
         @include text-14-regular-primary;
+        @include line-height(14px);
       }
     }
 
@@ -39,6 +44,7 @@
       display: inline-block;
       @include sidePadding;
       @include text-14-regular-primary;
+      @include line-height(14px);
     }
 
     > img {
@@ -59,6 +65,7 @@
       padding: $grid * 2 0 $grid * 8;
       @include sidePadding;
       @include text-14-regular-b54-center;
+      @include line-height(14px);
     }
 
     > hr {
@@ -70,14 +77,18 @@
     > ol {
       padding: $grid * 2 auto $grid * 4;
       li {
+        padding-right: $grid * 4;
         @include text-14-regular-b78;
+        @include line-height(14px);
       }
     }
 
     > ul {
       padding: $grid * 2 auto $grid * 4;
       li {
+        padding-right: $grid * 4;
         @include text-14-regular-b78;
+        @include line-height(14px);
       }
     }
   }

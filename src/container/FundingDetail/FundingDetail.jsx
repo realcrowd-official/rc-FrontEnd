@@ -6,6 +6,7 @@ import FundingDetailCommunity from './FundingDetailCommunity';
 import FundingDetailInfo from './FundingDetailInfo';
 
 import ProfileUserInfo from '../../components/Profile/ProfileUserInfo';
+import Footer from '../../components/Footer';
 
 import HABContext from '../../context/headerAndBottom';
 import FDTabContext from '../../context/tab';
@@ -30,6 +31,7 @@ const FundingDetail = () => {
         <h2>메이커 소개</h2>
         <ProfileUserInfo />
       </div>
+      <Footer />
     </div>
   );
 };

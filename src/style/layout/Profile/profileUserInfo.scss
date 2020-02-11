@@ -1,77 +1,79 @@
-.pui_body{
-    padding: 0 $grid * 4 $grid *4 $grid *4
+.pui_body {
+  padding: 0 $grid * 4 $grid * 4 $grid * 4;
 }
 
-.pui_body > div{
-    display: flex;
+.pui_body > div {
+  display: flex;
 }
 
-.pui_header{
-    h2{
-        margin-right: auto;
-        @include text-18-bold-b78;
-    }
-    img{
-        width: $grid * 12;
-        height: $grid * 12;
-        margin-left: auto;
-        border-radius: 50%;
-    }
+.pui_header {
+  cursor: pointer;
+
+  h2 {
+    margin-right: auto;
+    @include text-18-bold-b78;
+  }
+  img {
+    width: $grid * 12;
+    height: $grid * 12;
+    margin-left: auto;
+    border-radius: 50%;
+  }
 }
 
-.pui_follow_follwing_div{
-    padding-top : $grid * 4;
-    div{
-        width: 50%;
-    }
-    p{
-        padding:0;
-        margin:0;
-    }
-    .pui_plain_p{
-        text-align: left;
-        @include text-12-regular-b54;
-    }
-    
-    .pui_value_p{
-        text-align: left;
-        @include text-16-bold-b78;
-    }
+.pui_follow_follwing_div {
+  padding-top: $grid * 4;
+  div {
+    width: 50%;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .pui_plain_p {
+    text-align: left;
+    @include text-12-regular-b54;
+  }
+
+  .pui_value_p {
+    text-align: left;
+    @include text-16-bold-b78;
+  }
 }
 
-.pui_info_div{
-    padding-top : $grid * 4;
-    p{
-        text-align: left;
-        @include text-14-regular-b54;
-        word-break: keep-all;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
+.pui_info_div {
+  padding-top: $grid * 4;
+  p {
+    text-align: left;
+    @include text-14-regular-b54;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 
-.pui_btn_div{
-    width: 100%;
-    margin-top: $grid * 8;
-    display: flex;
-    justify-content: space-between;
+.pui_btn_div {
+  width: 100%;
+  margin-top: $grid * 8;
+  display: flex;
+  justify-content: space-between;
 
-    .boost_btn_div {
-        padding-bottom: $grid * 4;
+  .boost_btn_div {
+    padding-bottom: $grid * 4;
 
-        button {
-        display: flex-start;
-        width: calc(100vw - 48px - 8px - 32px);
-        max-width: calc(480px - 48px - 8px - 32px);
-        height: $grid * 12;
-        }
+    button {
+      display: flex-start;
+      width: calc(100vw - 48px - 8px - 32px);
+      max-width: calc(480px - 48px - 8px - 32px);
+      height: $grid * 12;
     }
-    .share_btn_div {
-        display: flex-end;
-        width: $grid * 12;
-        height: $grid * 12;
-      }
+  }
+  .share_btn_div {
+    display: flex-end;
+    width: $grid * 12;
+    height: $grid * 12;
+  }
 }

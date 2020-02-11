@@ -30,7 +30,7 @@ const FundingDetailMain = () => {
           </div>
         </div>
         <div className="funding_detail_title">
-          <p>펀딩 상세페이지 내의 펀딩 타이틀은 글줄 수의 제한이 없습니다.</p>
+          <p>펀딩 상세페이지 내의 펀딩 타이틀은 글줄 수의 제한이 없습니다.</p>
         </div>
         <div className="funding_detail_current_fund_div">
           <div>

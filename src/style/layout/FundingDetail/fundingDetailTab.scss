@@ -3,26 +3,28 @@
   z-index: 4;
   height: $grid * 10;
   display: flex;
+  top: $header;
+  position: sticky;
   justify-content: space-between;
   background-color: white;
   width: 100%;
-  // @include strokeBottom;
+  @include strokeBottom;
   @include text-14-regular-b54-center;
-}
 
-.fd_tab_wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 !important;
-  @include adjustWidth;
-}
+  .fd_tab_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 !important;
+    @include adjustWidth;
 
-.fd_tab_container > .fd_tab_wrapper > button {
-  width: 33.3%;
-  text-align: center;
-  background-color: white;
-  border: none;
-  outline: none;
+    button {
+      width: calc(100% / 3);
+      text-align: center;
+      background-color: white;
+      border: none;
+      outline: none;
+    }
+  }
 }
 
 .funding_doing_btn {

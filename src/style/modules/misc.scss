@@ -23,3 +23,7 @@
   -webkit-border-radius: $r;
   border-radius: $r;
 }
+
+@mixin line-height($size) {
+  line-height: $size * 1.6;
+}

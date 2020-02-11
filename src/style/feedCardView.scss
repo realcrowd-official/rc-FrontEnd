@@ -59,6 +59,7 @@
 }
 
 .feed_card_view_image {
+  cursor: pointer;
   max-width: calc(480 * (480 / 288) px);
   min-width: calc(320 * (320 / 288) px);
   margin: auto;
