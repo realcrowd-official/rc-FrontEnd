@@ -24,6 +24,7 @@ const SignUp = () => {
     const [nickNameLength, setNickNameLength] = useState(nickname.length);
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
+    const [idCheck, setIdCheck] = useState(true);
     const { action } = useContext(HABContext);
     const auth = useContext(AuthContext);
     
@@ -38,8 +39,8 @@ const SignUp = () => {
     }
 
     const postSignUp = (e) => {
-        // const signUpUri = "http://localhost:7777/api/account/signUp";
-        const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
+        const signUpUri = "http://localhost:7777/api/account/signUp";
+        // const signUpUri = "http://3.135.237.171:7777/api/account/signUp";
         
         axios.post(signUpUri, {
             name: name,
@@ -49,12 +50,20 @@ const SignUp = () => {
         })
         .then((res) => {
             console.log(res.data)
-            auth.action.setAuthToken(res.data.ans);
-            localStorage.setItem('token', JSON.stringify({
-                token: res.data.ans
-            }))
+            switch (res.data.statusCode) {
+                case 201:
+                    auth.action.setAuthToken(res.data.ans);
+                    localStorage.setItem('token', JSON.stringify({
+                        token: res.data.ans
+                    }))
+                    break;
+                case 409:
+                    res.data.ans === 'nickname' && setIdCheck(false)
+                default:
+                    break;
+            }
+            
         })
-        .catch((err)=>{window.location.replace('/')})
         e.preventDefault()
     }
 
@@ -76,7 +85,7 @@ const SignUp = () => {
                             <div>
                                 <label htmlFor="input">닉네임</label>
                                 <input type="text" name="" id="" defaultValue={nickname} onChange={(e)=>changeNickNameValue(e)} maxLength="20"/>
-                                <label>{nickNameLength}/20</label>
+                                {idCheck ? <label>{nickNameLength}/20</label> : <label>이미 사용중인 닉네임 입니다.</label>} 
                             </div>
                             <div>
                                 <label htmlFor="input">휴대폰 번호</label>
