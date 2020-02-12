@@ -1,3 +1,42 @@
 .error {
-  padding-top: $header;
+  width: calc(100% - #{$grid * 8});
+  max-width: 480px;
+  margin: 0 auto;
+  padding-top: calc(#{$header} + #{$grid * 16});
+
+  .error-text {
+    text-align: center;
+
+    p {
+      @include text-16-regular-b78;
+    }
+  }
+
+  .error-button {
+    div {
+      margin-top: $grid * 8;
+      display: inline-block;
+      width: calc(50% - #{$grid * 2});
+
+      button {
+        display: inline-block;
+        width: 100%;
+        height: $grid * 14;
+        line-height: $grid * 14;
+        font-weight: 700;
+        background-color: $primary;
+        color: #fff;
+        @include borderRadius;
+      }
+
+      &:last-child {
+        margin-left: $grid * 4;
+
+        button {
+          background-color: #fff;
+          color: $primary;
+        }
+      }
+    }
+  }
 }

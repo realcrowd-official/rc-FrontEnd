@@ -8,6 +8,8 @@ import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
 import { AuthProvider } from './context/auth';
 
+import ScrollToTop from './components/misc/ScrollToTop';
+
 import ProjectHome from './container/Project/ProjectHome';
 import BottomNav from './container/BottomNav';
 import FeedHome from './container/Feed/FeedHome';
@@ -27,12 +29,14 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/">
+              {/* <ScrollToTop /> */}
               <FeedHome />
             </Route>
             <Route
               path="/project"
               children={
                 <TabProvider>
+                  {/* <ScrollToTop /> */}
                   <ProjectHome />
                 </TabProvider>
               }
@@ -43,17 +47,18 @@ function App() {
               path="/funding/detail/:id"
               children={
                 <TabProvider>
+                  {/* <ScrollToTop /> */}
                   <FundingDetail />
                 </TabProvider>
               }
             />
             <Route path="/signUp" children={<SignUp />} />
             <Route path="/signIn" children={<SignIn />} />
-            <Route path="*" component={Error} />
           </Switch>
           <BottomNav />
         </HABProvider>
       </AuthProvider>
+      <Route path="*" component={Error} />
     </Router>
   );
 }

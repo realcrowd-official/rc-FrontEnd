@@ -86,20 +86,22 @@
 .funding_detail_current_fund_div {
   display: flex;
   margin-top: $grid * 6;
-}
 
-.funding_detail_current_fund_div > div {
-  flex-grow: 3;
-}
+  > div {
+    flex-grow: 3;
 
-.funding_detail_current_fund_fix_text {
-  text-align: left;
-  @include text-12-regular-b54;
-}
+    .funding_detail_current_fund_fix_text {
+      text-align: left;
+      @include text-12-regular-b54;
+    }
 
-.funding_detail_current_fund_change_text {
-  text-align: left;
-  @include text-16-bold-b78;
+    .funding_detail_current_fund_change_text {
+      text-align: left;
+      margin-top: -#{$grid * 2};
+      margin-bottom: $grid * 4;
+      @include text-16-bold-b78;
+    }
+  }
 }
 
 .fd_notice_div {
@@ -107,24 +109,17 @@
   margin: $grid * 4 0;
   background-color: $black04;
   @include borderRadius;
-}
 
-.fd_notice_div > p {
-  padding: $grid * 3;
-  text-align: left;
-  @include text-12-regular-b54;
-  @include line-height(12px);
-}
+  > p {
+    padding: $grid * 3;
+    text-align: left;
+    @include text-12-regular-b54;
+    @include line-height(12px);
 
-.fd_notice_div > p > span {
-  font-family: SpoqaHanSans;
-  font-size: 12px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: $black54;
+    > span {
+      @include text-12-bold-b54;
+    }
+  }
 }
 
 .fd_funding_progress {
@@ -165,9 +160,13 @@
   background-color: white;
 }
 
-.fd_sub_body,
+.fd_sub_body {
+  margin: $grid * 2 0;
+  @include strokeBottom;
+}
+
 .fd_user_body {
-  margin-top: $grid * 2;
+  margin: $grid * 2 0;
   background-color: white;
 }
 
