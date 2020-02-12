@@ -1,5 +1,9 @@
 import React from 'react';
 
+import ProfileUserInfo from '../../components/Profile/ProfileUserInfo';
+import FundingItem from '../../components/Funding/FundingItem';
+
+
 import quoteIcon from '../../img/fundingDetail/ic-quote-fill-grey.svg';
 
 const FundingDetailStory = () => {
@@ -40,6 +44,13 @@ const FundingDetailStory = () => {
         <li>법률이 정하는 바에 의하여 법관을 둘 수 있다.</li>
       </ul>
       <a href="">본문 outlink 14px regular primary</a>
+      <div className="fd_user_body">
+        <h2>메이커 소개</h2>
+        <ProfileUserInfo />
+      </div>
+      <div>
+      <FundingItem/>
+      </div>
     </div>
   );
 };
