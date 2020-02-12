@@ -34,7 +34,7 @@ const Footer = props => {
         </div>
         <div>
           <span>대표전화</span>
-          <span>010-1234-5678</span>
+          <span>010-2167-5629</span>
         </div>
         <div>
           <span>주소</span>
