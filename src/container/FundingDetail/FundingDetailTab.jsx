@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import FDTabContext from '../../context/tab';
 
-const FundingDetailTab = () => {
+const FundingDetailTab = React.forwardRef((props,ref) => {
   const FDTab = useContext(FDTabContext);
   return (
-    <div className="fd_tab_container">
+    <div className={`fd_tab_container ${props.sendClass}`} ref={ref}>
       <div className="fd_tab_wrapper">
         <button
           // className={'funding_doing_btn' + (state.tabMenu === 'doing' ? ' btn_active' : '')}
@@ -24,6 +24,6 @@ const FundingDetailTab = () => {
       </div>
     </div>
   );
-};
+});
 
 export default FundingDetailTab;

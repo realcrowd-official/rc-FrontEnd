@@ -1,5 +1,4 @@
 .fd_tab_container {
-  left: 0;
   z-index: 4;
   height: $grid * 10;
   display: flex;
@@ -25,6 +24,15 @@
       outline: none;
     }
   }
+}
+
+.fd_tab_top {
+  width: 100%;
+  position: fixed;
+}
+
+.fd_tab_middle{
+  left: 0;
 }
 
 .funding_doing_btn {

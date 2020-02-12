@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 
 import FundingProgress from '../../components/FundingProgress';
 import ShareBtn from '../../components/ShareBtn';
@@ -6,6 +7,25 @@ import ActionBtn from '../../components/ActionBtn';
 import FundingDetailTab from './FundingDetailTab';
 
 const FundingDetailMain = () => {
+  const tabRef = useRef(null);
+  const [scroll,setScroll] = useState(0);
+  const [tabTop,setTabTop] = useState(false);
+
+  useEffect(()=>{
+    window.addEventListener('scroll',onScroll);
+  },[])
+
+  useEffect(() => {
+    tabTop ^ scroll.scrollTop >= 800 && setTabTop(!tabTop);
+  },[scroll])
+
+
+  const onScroll = (e) => {
+    const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
+    setScroll({scrollTop})
+  }
+
+
   return (
     <div className="fd_main_body">
       <div className="funding_detail_main_img_div">
@@ -74,7 +94,10 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <FundingDetailTab />
+      <FundingDetailTab 
+        ref={tabRef}
+        sendClass = {tabTop ? 'fd_tab_top':'fd_tab_middle' }
+      />
     </div>
   );
 };
