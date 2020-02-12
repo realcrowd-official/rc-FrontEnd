@@ -1,32 +1,39 @@
-.fd_btn{
-    bottom: 0;
+.fd_btn {
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: $grid * 20;
+  padding: 0;
+  position: fixed;
+  justify-content: space-between;
+  background-color: white;
+  z-index: 6;
+  left: 0;
+  @include strokeTop;
+  @include ipxHomeBtn;
+
+  .fd_btn_wrapper {
     display: flex;
     width: 100%;
     max-width: 480px;
-    padding: 0;
-    position: fixed;
-    @include strokeTop;
-    @include ipxHomeBtn;
-    // margin-top: $grid * 8;
-    justify-content: space-between;
-    background-color: white;
-    z-index: 6;
+    margin: 0 auto;
+  }
 
-    .boost_btn_div {
-        padding: $grid * 4 0 $grid * 4 $grid *4;
+  .boost_btn_div {
+    padding: $grid * 4 0 $grid * 4 $grid * 4;
 
-        button {
-            display: flex-start;
-            width: calc(100vw - 48px - 8px - 32px);
-            max-width: calc(480px - 48px - 8px - 32px);
-            height: $grid * 12;
-        }
+    button {
+      display: flex-start;
+      width: calc(100vw - 48px - 8px - 32px);
+      max-width: calc(480px - 48px - 8px - 32px);
+      height: $grid * 12;
     }
-    .share_btn_div {
-        margin: $grid * 4 $grid * 4 $grid * 4 0;
-        cursor: pointer;
-        display: flex-end;
-        width: $grid * 12;
-        height: $grid * 12;
-    }
+  }
+  .share_btn_div {
+    margin: $grid * 4 $grid * 4 $grid * 4 0;
+    cursor: pointer;
+    display: flex-end;
+    width: $grid * 12;
+    height: $grid * 12;
+  }
 }

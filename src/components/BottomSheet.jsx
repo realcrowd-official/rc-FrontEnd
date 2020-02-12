@@ -51,9 +51,11 @@ const BottomSheet = props => {
     }
     props.onCloseFinishAnimation && props.onCloseFinishAnimation();
   };
+
   const layer = props.showBlockLayer ? (
     <div className="bottom-sheet-block-layer" onClick={props.onClose} />
   ) : null;
+
   return (
     <div
       className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ||

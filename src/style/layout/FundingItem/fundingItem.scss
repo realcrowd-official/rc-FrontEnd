@@ -1,6 +1,6 @@
 .fi_div {
   background-color: white;
-  margin-top: $grid * 2;
+  margin: $grid * 3 0;
   padding: $grid * 4;
 }
 
@@ -9,7 +9,10 @@
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.04);
   padding: $grid * 4;
-  margin-top: $grid * 4;
+
+  &:not(:first-child) {
+    margin-top: $grid * 4;
+  }
 
   p {
     text-align: left;

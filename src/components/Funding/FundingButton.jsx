@@ -6,26 +6,26 @@ import ShareBtn from '../ShareBtn';
 import FundingBottomSheet from '../../container/BottomSheet/SelectRewardBottomSheet';
 
 const FundingButton = () => {
-    const [bottomSheet, setBottomSheet] = useState(false);
-    const toggleBottomSheet = () => {
-      bottomSheet ? setBottomSheet(false) : setBottomSheet(true);
-    };
+  const [bottomSheet, setBottomSheet] = useState(false);
+  const toggleBottomSheet = () => {
+    bottomSheet ? setBottomSheet(false) : setBottomSheet(true);
+  };
 
-    return (
-        <div className="fd_btn">
-           <div onClick={() => {
-               toggleBottomSheet()
-           }}>
-               <ActionBtn aText="프로젝트 후원하기" />
-           </div>
-            <ShareBtn />
-
-            <FundingBottomSheet
-                visible={bottomSheet}
-                onClose={() => toggleBottomSheet()}
-            /> 
+  return (
+    <div className="fd_btn">
+      <div className="fd_btn_wrapper">
+        <div
+          onClick={() => {
+            toggleBottomSheet();
+          }}
+        >
+          <ActionBtn aText="프로젝트 후원하기" />
         </div>
-    );
+        <ShareBtn />
+        <FundingBottomSheet visible={bottomSheet} onClose={() => toggleBottomSheet()} />
+      </div>
+    </div>
+  );
 };
 
 export default FundingButton;
