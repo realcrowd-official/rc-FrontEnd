@@ -54,11 +54,11 @@ function App() {
             />
             <Route path="/signUp" children={<SignUp />} />
             <Route path="/signIn" children={<SignIn />} />
+            <Route path="*" component={Error} />
           </Switch>
           <BottomNav />
         </HABProvider>
       </AuthProvider>
-      <Route path="*" component={Error} />
     </Router>
   );
 }
