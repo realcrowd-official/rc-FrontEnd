@@ -75,6 +75,7 @@
   .bts_top {
     height: $grid * 2;
     background-color: transparent;
+    position: fixed;
     @include borderRadius(16px 16px 0px 0px);
   }
 

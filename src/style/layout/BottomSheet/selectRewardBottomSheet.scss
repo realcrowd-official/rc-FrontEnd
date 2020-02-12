@@ -1,0 +1,33 @@
+.srbs_bottom_div{
+    // position: fixed;
+    // height: clac($header + $grid * 20)
+    padding: 0 $grid * 4 0 $grid * 4;
+    @include strokeTop;
+
+    .srbs_count_div{
+        display: flex;
+        height: $header;
+        justify-content: space-between;
+        p{
+            margin-top: auto;
+            margin-bottom: auto;
+            line-height: $grid * 8;
+            @include text-14-regular-b54;
+        }
+        .srbs_count_btn_div{
+            display: flex;
+            p{
+                @include text-16-bold-b78-center;
+            }
+        }
+        .boost_btn_div > button{
+            width: $grid * 8;
+            height: $grid * 8;
+        }
+    }
+
+    .boost_btn_div{
+        width: 100%;
+    }
+}
+
