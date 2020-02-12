@@ -27,11 +27,11 @@ const FundingDetail = () => {
         {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity />}
         {FDTab.state.fundingTab === 'info' && <FundingDetailInfo />}
       </div>
-      
-      <div className={FDTab.state.fundingTab === "story" && `fd_story_footer`}>
-      <Footer />
+
+      <div className={FDTab.state.fundingTab === 'story' && `fd_story_footer`}>
+        <Footer />
       </div>
-      {FDTab.state.fundingTab === 'story' && <FundingButton/>}
+      {FDTab.state.fundingTab === 'story' && <FundingButton />}
     </div>
   );
 };

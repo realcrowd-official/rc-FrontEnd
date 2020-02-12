@@ -12,8 +12,9 @@
 
   .fd_tab_wrapper {
     display: flex;
+    max-width: 480px;
     justify-content: space-between;
-    margin: 0 !important;
+    margin: 0 auto !important;
     @include adjustWidth;
 
     button {
@@ -27,11 +28,12 @@
 }
 
 .fd_tab_top {
-  width: 100%;
+  width: 100vw;
+  left: 0;
   position: fixed;
 }
 
-.fd_tab_middle{
+.fd_tab_middle {
   left: 0;
 }
 

@@ -8,23 +8,21 @@ import FundingDetailTab from './FundingDetailTab';
 
 const FundingDetailMain = () => {
   const tabRef = useRef(null);
-  const [scroll,setScroll] = useState(0);
-  const [tabTop,setTabTop] = useState(false);
-
-  useEffect(()=>{
-    window.addEventListener('scroll',onScroll);
-  },[])
+  const [scroll, setScroll] = useState(0);
+  const [tabTop, setTabTop] = useState(false);
 
   useEffect(() => {
-    tabTop ^ scroll.scrollTop >= 800 && setTabTop(!tabTop);
-  },[scroll])
+    window.addEventListener('scroll', onScroll);
+  }, []);
 
+  useEffect(() => {
+    tabTop ^ (scroll.scrollTop >= 800) && setTabTop(!tabTop);
+  }, [scroll]);
 
-  const onScroll = (e) => {
+  const onScroll = e => {
     const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
-    setScroll({scrollTop})
-  }
-
+    setScroll({ scrollTop });
+  };
 
   return (
     <div className="fd_main_body">
@@ -94,10 +92,7 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <FundingDetailTab 
-        ref={tabRef}
-        sendClass = {tabTop ? 'fd_tab_top':'fd_tab_middle' }
-      />
+      <FundingDetailTab ref={tabRef} sendClass={tabTop ? 'fd_tab_top' : 'fd_tab_middle'} />
     </div>
   );
 };

@@ -3,7 +3,6 @@ import React from 'react';
 import ProfileUserInfo from '../../components/Profile/ProfileUserInfo';
 import FundingItem from '../../components/Funding/FundingItem';
 
-
 import quoteIcon from '../../img/fundingDetail/ic-quote-fill-grey.svg';
 
 const FundingDetailStory = () => {
@@ -49,7 +48,7 @@ const FundingDetailStory = () => {
         <ProfileUserInfo />
       </div>
       <div>
-      <FundingItem/>
+        <FundingItem />
       </div>
     </div>
   );

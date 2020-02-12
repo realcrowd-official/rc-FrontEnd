@@ -8,51 +8,51 @@ import ActionBtn from '../../components/ActionBtn';
 import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
 
 const propTypes = {
-    showBlockLayer: PropTypes.bool,
-    visible: PropTypes.bool,
-    className: PropTypes.string,
-    onClose: PropTypes.func.isRequired,
-    appendCancelBtn: PropTypes.bool,
-    customLayout: PropTypes.string
-  };
-  
-  const defaultProps = {
-    showBlockLayer: true,
-    visible: true,
-    className: '',
-    appendCancelBtn: true
-  };
+  showBlockLayer: PropTypes.bool,
+  visible: PropTypes.bool,
+  className: PropTypes.string,
+  onClose: PropTypes.func.isRequired,
+  appendCancelBtn: PropTypes.bool,
+  customLayout: PropTypes.string
+};
+
+const defaultProps = {
+  showBlockLayer: true,
+  visible: true,
+  className: '',
+  appendCancelBtn: true
+};
 
 const SelectRewardBottomSheet = props => {
-    const [isShow, setIsShow] = useState('shown');
-    const [animationState, setAnimationState] = useState('enter');
+  const [isShow, setIsShow] = useState('shown');
+  const [animationState, setAnimationState] = useState('enter');
 
-    useEffect(() => {
-        props.visible ? enter() : onClose();
-    }, [props.visible]);
+  useEffect(() => {
+    props.visible ? enter() : onClose();
+  }, [props.visible]);
 
-    const enter = () => {
-        setIsShow('shown');
-        setTimeout(() => {
-        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-        setAnimationState('enter');
-        }, 50);
-    };
+  const enter = () => {
+    setIsShow('shown');
+    setTimeout(() => {
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      setAnimationState('enter');
+    }, 50);
+  };
 
-    const onClose = () => {
-        setAnimationState('leave');
-        setTimeout(() => {
-        document.getElementsByTagName('html')[0].style.overflow = 'auto';
-        setIsShow('hide');
-        props.onCloseFinishAnimation && props.onCloseFinishAnimation();
-        }, 500);
-    };
+  const onClose = () => {
+    setAnimationState('leave');
+    setTimeout(() => {
+      document.getElementsByTagName('html')[0].style.overflow = 'auto';
+      setIsShow('hide');
+      props.onCloseFinishAnimation && props.onCloseFinishAnimation();
+    }, 500);
+  };
 
-    const layer = props.showBlockLayer ? (
-        <div className="bottom-sheet-block-layer" onClick={props.onClose} />
-    ) : null;
-    return (
-        <div
+  const layer = props.showBlockLayer ? (
+    <div className="bottom-sheet-block-layer" onClick={props.onClose} />
+  ) : null;
+  return (
+    <div
       className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ||
         ''}`}
     >
@@ -70,22 +70,22 @@ const SelectRewardBottomSheet = props => {
           <div className="bts_close_div"></div>
         </div>
         <div>
-            <FundingItem/>
+          <FundingItem />
         </div>
         <div className="srbs_bottom_div">
-            <div className="srbs_count_div">
-                <p>수량 선택</p>
-                <div className="srbs_count_btn_div">
-                    <ActionBtn aText="-"/>
-                    <p>0</p>
-                    <ActionBtn aText="+"/>
-                </div>
+          <div className="srbs_count_div">
+            <p>수량 선택</p>
+            <div className="srbs_count_btn_div">
+              <ActionBtn aText="-" />
+              <p>0</p>
+              <ActionBtn aText="+" />
             </div>
-            <ActionBtn/>
+          </div>
+          <ActionBtn aText="다음 단계로" />
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 SelectRewardBottomSheet.propTypes = propTypes;
