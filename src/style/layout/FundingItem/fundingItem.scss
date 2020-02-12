@@ -1,0 +1,31 @@
+.fi_div{
+    background-color: white;
+    margin-top: $grid * 2;
+    padding: $grid * 4 $grid * 4 $grid * 4 $grid * 4;
+}
+
+.fi_item_div{
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+    padding: $grid * 4;
+    margin-top: $grid * 4;
+    p{
+        text-align: left;
+        @include text-12-regular-b54;
+        margin: 0;
+    }
+
+    .fi_item_cost{
+        @include text-16-bold-b78;
+        margin: 0 0 $grid 0;
+    }
+
+    .fi_item_option{
+        @include text-14-regular-b78;
+        margin: 0 0 $grid * 2 0;
+    }
+}
+
+.fi_item_sold_out{
+    background-color: white !important;
+}

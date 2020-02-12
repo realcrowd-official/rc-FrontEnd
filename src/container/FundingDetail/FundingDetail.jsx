@@ -10,6 +10,7 @@ import Footer from '../../components/Footer';
 
 import HABContext from '../../context/headerAndBottom';
 import FDTabContext from '../../context/tab';
+import FundingItem from '../../components/Funding/FundingItem';
 
 const FundingDetail = () => {
   const { action } = useContext(HABContext);
@@ -30,6 +31,9 @@ const FundingDetail = () => {
       <div className="fd_user_body">
         <h2>메이커 소개</h2>
         <ProfileUserInfo />
+      </div>
+      <div>
+        <FundingItem/>
       </div>
       <Footer />
     </div>
