@@ -3,17 +3,15 @@ import hamburgerIcon from '../img/header/ic-hamburger-stroke-black.svg';
 import notification from '../img/header/ic-notification-stroke-black.svg';
 import backIcon from '../img/header/ic-back-stroke-black.svg';
 import HABContext from '../context/headerAndBottom';
+import BSContext from '../context/bottomSheet';
 
-import BS from './BottomSheet/BottomSheet';
+import LBS from '../container/BottomSheet/LoginBottomSheet';
+import SRBS from '../container/BottomSheet/SelectRewardBottomSheet';
+
 
 const Header = () => {
-  const [bottomSheet, setBottomSheet] = useState(false);
-  const toggleBottomSheet = () => {
-    bottomSheet ? setBottomSheet(false) : setBottomSheet(true);
-  };
-
   const { state } = useContext(HABContext);
-
+  const BSState = useContext(BSContext);
   return (
     <header className="max_container header_container">
       <div className="header_wrapper">
@@ -23,7 +21,7 @@ const Header = () => {
               className="header_hambuger_icon"
               src={hamburgerIcon}
               onClick={() => {
-                toggleBottomSheet();
+                BSState.action.setBottomSheet(true);
               }}
             />
           ) : (
@@ -34,7 +32,8 @@ const Header = () => {
           <img className="header_notification_icon" src={notification} />
         </div>
       </div>
-      <BS visible={bottomSheet} onClose={() => toggleBottomSheet()}></BS>
+      { BSState.state.kindOfBS === 'login' && <LBS/> }
+      { BSState.state.kindOfBS === 'funding' && <SRBS/> }
     </header>
   );
 };

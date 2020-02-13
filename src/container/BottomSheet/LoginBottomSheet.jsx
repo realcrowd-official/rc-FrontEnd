@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -8,18 +8,17 @@ import kakaoIcon from '../../img/bottomsheet/ic-social-kakao.svg';
 import naverIcon from '../../img/bottomsheet/ic-social-naver.svg';
 import fbIcon from '../../img/bottomsheet/ic-social-facebook.svg';
 
+import BSContext from '../../context/bottomSheet';
+
 const propTypes = {
   showBlockLayer: PropTypes.bool,
-  visible: PropTypes.bool,
   className: PropTypes.string,
-  onClose: PropTypes.func.isRequired,
   appendCancelBtn: PropTypes.bool,
   customLayout: PropTypes.string
 };
 
 const defaultProps = {
   showBlockLayer: true,
-  visible: true,
   className: '',
   appendCancelBtn: true
 };
@@ -28,9 +27,11 @@ const ReMakeBottomSheetWithHook = props => {
   const [isShow, setIsShow] = useState('shown');
   const [animationState, setAnimationState] = useState('enter');
 
+  const { state, action } = useContext(BSContext);
+
   useEffect(() => {
-    props.visible ? enter() : onClose();
-  }, [props.visible]);
+    state.bottomSheet ? enter() : onClose();
+  }, [state.bottomSheet]);
 
   const enter = () => {
     setIsShow('shown');
@@ -56,7 +57,7 @@ const ReMakeBottomSheetWithHook = props => {
   };
 
   const layer = props.showBlockLayer ? (
-    <div className="bottom-sheet-block-layer" onClick={props.onClose} />
+    <div className="bottom-sheet-block-layer" onClick={()=>{action.setBottomSheet(false)}} />
   ) : null;
   return (
     <div
@@ -69,7 +70,7 @@ const ReMakeBottomSheetWithHook = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div">
-            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={props.onClose} />
+            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={()=>action.setBottomSheet(false)} />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">로그인</p>
@@ -103,23 +104,6 @@ const ReMakeBottomSheetWithHook = props => {
             </p>
           </div>
         </div>
-        {/* {props.children}
-        {props.list &&
-          props.list.map((item, idx) => {
-            return (
-              <button key={idx} className="bottom-sheet-item" onClick={item.handler}>
-                {item.title}
-              </button>
-            );
-          })} */}
-        {/* {props.appendCancelBtn &&
-          (() => {
-            return (
-              <button className="bottom-sheet-item cancel" onClick={props.onClose}>
-                cancel
-              </button>
-            );
-          })()} */}
       </div>
     </div>
   );

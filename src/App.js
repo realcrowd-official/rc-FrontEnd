@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
 import { AuthProvider } from './context/auth';
+import { BSProvider } from './context/bottomSheet';
 
 import ScrollToTop from './components/misc/ScrollToTop';
 
@@ -26,6 +27,7 @@ function App() {
     <Router>
       <AuthProvider>
         <HABProvider>
+          <BSProvider>
           <Header />
           <Switch>
             <Route exact path="/">
@@ -57,6 +59,7 @@ function App() {
             <Route path="*" component={Error} />
           </Switch>
           <BottomNav />
+          </BSProvider>
         </HABProvider>
       </AuthProvider>
     </Router>
