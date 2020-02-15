@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { footerInfoText } from '../global/globalVar.ts';
+
 const Footer = props => {
   return (
     <div className="footer">
@@ -16,34 +18,14 @@ const Footer = props => {
         </span>
       </div>
       <div className="footer-infoText">
-        <div>
-          <span>상호명</span>
-          <span>리얼크라우드</span>
-        </div>
-        <div>
-          <span>대표이사</span>
-          <span>임동완</span>
-        </div>
-        <div>
-          <span>사업자등록번호</span>
-          <span>123-45-67890</span>
-        </div>
-        <div>
-          <span>통신판매업신고번호</span>
-          <span>2020-인천연수-1234</span>
-        </div>
-        <div>
-          <span>대표전화</span>
-          <span>010-2167-5629</span>
-        </div>
-        <div>
-          <span>주소</span>
-          <span>인천광역시 연수구 송도동 1-23</span>
-        </div>
-        <div>
-          <span>이메일</span>
-          <span>support@mircrowd.com</span>
-        </div>
+        {footerInfoText.map(Data => {
+          return (
+            <div>
+              <span>{Data.title}</span>
+              <span>{Data.value}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
