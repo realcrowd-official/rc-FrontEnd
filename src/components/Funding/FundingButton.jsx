@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import ActionBtn from '../ActionBtn';
 import ShareBtn from '../ShareBtn';
 
-import FundingBottomSheet from '../../container/BottomSheet/SelectRewardBottomSheet';
+import BSContext from '../../context/bottomSheet';
 
 const FundingButton = () => {
-  const [bottomSheet, setBottomSheet] = useState(false);
-  const toggleBottomSheet = () => {
-    bottomSheet ? setBottomSheet(false) : setBottomSheet(true);
-  };
+  const BS = useContext(BSContext);
 
   return (
     <div className="fd_btn">
       <div className="fd_btn_wrapper">
         <div
           onClick={() => {
-            toggleBottomSheet();
+            BS.action.setBottomSheet(true);
           }}
         >
           <ActionBtn aText="프로젝트 후원하기" />
         </div>
         <ShareBtn />
-        <FundingBottomSheet visible={bottomSheet} onClose={() => toggleBottomSheet()} />
       </div>
     </div>
   );

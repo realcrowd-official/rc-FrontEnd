@@ -9,14 +9,19 @@ import Footer from '../../components/Footer';
 
 import HABContext from '../../context/headerAndBottom';
 import FDTabContext from '../../context/tab';
+import BSContext from '../../context/bottomSheet';
+
 import FundingButton from '../../components/Funding/FundingButton';
 
 const FundingDetail = () => {
   const { action } = useContext(HABContext);
   const FDTab = useContext(FDTabContext);
+  const BS = useContext(BSContext);
+
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
+    BS.action.setKindOfBS('funding')
   });
 
   return (
