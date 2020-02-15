@@ -1,6 +1,6 @@
 .bts_FundingItem {
   &.scroll {
-    max-height: calc(100vh - #{$grid * 6} - 56px - 145px - 1px);
+    max-height: calc(100vh - #{$grid * 6} - #{$header} - 145px - 1px - 32px);
     overflow-x: scroll;
   }
 

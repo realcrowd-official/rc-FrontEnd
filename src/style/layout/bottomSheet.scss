@@ -39,7 +39,7 @@
   }
 
   .bottom-sheet {
-    max-height: calc(100vh - #{$grid * 6});
+    max-height: calc(100vh - #{$grid * 8});
     @include transition(transform, 300ms);
     @include translate3d(0px, 100%, 0);
     position: absolute;

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { numberWithCommas } from '../global/utils.ts';
+
 const FundingProgress = () => {
   return (
     <div>
@@ -8,7 +10,7 @@ const FundingProgress = () => {
       </div>
       <div className="funding_information_div">
         <div className="funding_percentage">34%</div>
-        <div className="funding_cost">339,000원</div>
+        <div className="funding_cost">{numberWithCommas(339000)}원</div>
       </div>
     </div>
   );

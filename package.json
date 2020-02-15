@@ -70,12 +70,26 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "root": [
+            "./src"
+          ],
+          "alias": {
+            "@": "./src"
+          }
+        }
+      ]
     ]
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/eslint-plugin-tslint": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
+    "babel-plugin-module-resolver": "^4.0.0",
     "dotenv": "^8.2.0",
     "dotenv-expand": "^5.1.0",
     "eslint": "^6.8.0",

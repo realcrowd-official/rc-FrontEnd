@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
+import { numberWithCommas } from '../../global/utils.ts';
+
 import FundingProgress from '../../components/FundingProgress';
 import ShareBtn from '../../components/ShareBtn';
 import ActionBtn from '../../components/ActionBtn';
@@ -56,7 +58,9 @@ const FundingDetailMain = () => {
               <p className="funding_detail_current_fund_fix_text">모인 후원금</p>
             </div>
             <div>
-              <p className="funding_detail_current_fund_change_text">339,000원</p>
+              <p className="funding_detail_current_fund_change_text">
+                {numberWithCommas(339000)}원
+              </p>
             </div>
           </div>
           <div>
@@ -72,14 +76,14 @@ const FundingDetailMain = () => {
               <p className="funding_detail_current_fund_fix_text">후원자</p>
             </div>
             <div>
-              <p className="funding_detail_current_fund_change_text">128명</p>
+              <p className="funding_detail_current_fund_change_text">{numberWithCommas(128)}명</p>
             </div>
           </div>
         </div>
         <div className="fd_notice_div">
           <p>
-            목표 금액 <span>1,000,000원</span>이 모이면, 프로젝트 후원 종료 다음날인{' '}
-            <span>2020년 4월 5일 일요일</span> 결제가 진행됩니다.
+            목표 금액 <span>{numberWithCommas(1000000)}원</span>이 모이면, 프로젝트 후원 종료
+            다음날인 <span>2020년 4월 5일 일요일</span> 결제가 진행됩니다.
           </p>
         </div>
 
