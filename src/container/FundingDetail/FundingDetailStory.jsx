@@ -47,7 +47,7 @@ const FundingDetailStory = () => {
         <h2>메이커 소개</h2>
         <ProfileUserInfo />
       </div>
-      <div>
+      <div className="bts_FundingItem noScroll">
         <FundingItem />
       </div>
     </div>

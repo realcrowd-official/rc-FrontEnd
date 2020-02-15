@@ -12,14 +12,21 @@ const FundingItem = () => {
     {
       cost: '30,000',
       option: '에코백 4개',
-      leftItem: '80',
+      leftItem: '64',
       shipPay: '2,500',
       shipDay: '2020년 4월초 예정'
     },
     {
       cost: '100,000',
       option: '에코백 3개 + 다이어리 1개',
-      leftItem: '0',
+      leftItem: '42',
+      shipPay: '2,500',
+      shipDay: '2020년 4월초 예정'
+    },
+    {
+      cost: '120,000',
+      option: '에코백 4개 + 다이어리 2개',
+      leftItem: '40',
       shipPay: '2,500',
       shipDay: '2020년 4월초 예정'
     }

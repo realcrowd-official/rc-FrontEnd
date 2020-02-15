@@ -75,7 +75,7 @@ const SelectRewardBottomSheet = props => {
           </div>
           <div className="bts_close_div"></div>
         </div>
-        <div>
+        <div className="bts_FundingItem scroll">
           <FundingItem />
         </div>
         <div className="srbs_bottom_div">
