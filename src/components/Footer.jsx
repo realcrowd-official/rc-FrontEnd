@@ -1,14 +1,18 @@
 import React from 'react';
 
-import { footerInfoText } from '../global/globalVar.ts';
+import { footerInfoText, footerTosLink } from '../global/globalVar.ts';
 
 const Footer = props => {
   return (
     <div className="footer">
       <div className="footer-tosLink">
-        <a target="_blank">서비스 이용약관</a>
-        <a target="_blank">개인정보처리방침</a>
-        <a target="_blank">수수료 정책</a>
+        {footerTosLink.map(Data => {
+          return (
+            <a href={Data.href} target="_blank">
+              {Data.title}
+            </a>
+          );
+        })}
       </div>
       <div className="footer-termsOfService">
         <span>
