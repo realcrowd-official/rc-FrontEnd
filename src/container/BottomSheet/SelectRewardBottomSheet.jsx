@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -7,18 +7,17 @@ import ActionBtn from '../../components/ActionBtn';
 
 import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
 
+import BSContext from '../../context/bottomSheet';
+
 const propTypes = {
   showBlockLayer: PropTypes.bool,
-  visible: PropTypes.bool,
   className: PropTypes.string,
-  onClose: PropTypes.func.isRequired,
   appendCancelBtn: PropTypes.bool,
   customLayout: PropTypes.string
 };
 
 const defaultProps = {
   showBlockLayer: true,
-  visible: true,
   className: '',
   appendCancelBtn: true
 };
@@ -27,9 +26,11 @@ const SelectRewardBottomSheet = props => {
   const [isShow, setIsShow] = useState('shown');
   const [animationState, setAnimationState] = useState('enter');
 
+  const { state, action } = useContext(BSContext);
+
   useEffect(() => {
-    props.visible ? enter() : onClose();
-  }, [props.visible]);
+    state.bottomSheet ? enter() : onClose();
+  }, [state.bottomSheet]);
 
   const enter = () => {
     setIsShow('shown');
@@ -49,7 +50,7 @@ const SelectRewardBottomSheet = props => {
   };
 
   const layer = props.showBlockLayer ? (
-    <div className="bottom-sheet-block-layer" onClick={props.onClose} />
+    <div className="bottom-sheet-block-layer" onClick={()=>action.setBottomSheet(false)} />
   ) : null;
   return (
     <div
@@ -62,7 +63,7 @@ const SelectRewardBottomSheet = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div">
-            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={props.onClose} />
+            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={()=>action.setBottomSheet(false)} />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">리워드 선택</p>
