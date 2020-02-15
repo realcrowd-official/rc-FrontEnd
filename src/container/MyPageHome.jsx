@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useContext, useEffect } from 'react';
-import HABContext from '../context/headerAndBottom';
+import HABContext from '@/context/headerAndBottom';
 
 const MyPageHome = () => {
   const { state, action } = useContext(HABContext);

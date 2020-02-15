@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { numberWithCommas } from '../../global/utils.ts';
+import { numberWithCommas } from '@/global/utils.ts';
 
 const FundingItem = () => {
   const itemArray = [

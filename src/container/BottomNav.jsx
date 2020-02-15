@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import homeIcon from '../img/BottomNav/ic-tab-feed-stroke-black.svg';
-import homeIconPrimary from '../img/BottomNav/ic-tab-feed-stroke-primary.svg';
-import feedIcon from '../img/BottomNav/ic-tab-projects-stroke-black.svg';
-import feedIconPrimary from '../img/BottomNav/ic-tab-projects-stroke-primary.svg';
-import profileIcon from '../img/BottomNav/ic-tab-profile-stroke-black.svg';
-import profileIconPrimary from '../img/BottomNav/ic-tab-profile-stroke-primary.svg';
+import homeIcon from '@/img/BottomNav/ic-tab-feed-stroke-black.svg';
+import homeIconPrimary from '@/img/BottomNav/ic-tab-feed-stroke-primary.svg';
+import feedIcon from '@/img/BottomNav/ic-tab-projects-stroke-black.svg';
+import feedIconPrimary from '@/img/BottomNav/ic-tab-projects-stroke-primary.svg';
+import profileIcon from '@/img/BottomNav/ic-tab-profile-stroke-black.svg';
+import profileIconPrimary from '@/img/BottomNav/ic-tab-profile-stroke-primary.svg';
 
-import HABContext from '../context/headerAndBottom';
+import HABContext from '@/context/headerAndBottom';
 
 const BottomNav = () => {
   const habContext = useContext(HABContext);

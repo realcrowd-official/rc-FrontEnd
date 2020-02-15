@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import TabContext from '../context/tab';
+import TabContext from '@/context/tab';
 
 const TabBar = () => {
   const { state, action } = useContext(TabContext);

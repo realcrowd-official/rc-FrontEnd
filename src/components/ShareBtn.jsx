@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ShareIcon from '../img/ic-share-stroke-black.svg';
+import ShareIcon from '@/img/ic-share-stroke-black.svg';
 
 const ShareBtn = () => {
   return (

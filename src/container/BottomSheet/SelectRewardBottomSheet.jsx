@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import FundingItem from '../../components/Funding/FundingItem';
-import ActionBtn from '../../components/ActionBtn';
+import FundingItem from '@/components/Funding/FundingItem';
+import ActionBtn from '@/components/ActionBtn';
 
-import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
+import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
 
-import BSContext from '../../context/bottomSheet';
+import BSContext from '@/context/bottomSheet';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,

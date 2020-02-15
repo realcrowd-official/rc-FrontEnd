@@ -1,6 +1,7 @@
 import React from 'react';
-import ActionBtn from '../ActionBtn';
-import ShareBtn from '../ShareBtn';
+
+import ActionBtn from '@/components/ActionBtn';
+import ShareBtn from '@/components/ShareBtn';
 
 import { numberWithCommas } from '@/global/utils.ts';
 

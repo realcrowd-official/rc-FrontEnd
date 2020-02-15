@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import resolveJWT from '../../lib/resolveJwt';
+import resolveJWT from '@/lib/resolveJwt';
 
-import AuthContext from '../../context/auth';
+import AuthContext from '@/context/auth';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);

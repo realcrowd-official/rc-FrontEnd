@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import { numberWithCommas } from '../../global/utils.ts';
+import { numberWithCommas } from '@/global/utils.ts';
 
-import FundingProgress from '../../components/FundingProgress';
-import ShareBtn from '../../components/ShareBtn';
-import ActionBtn from '../../components/ActionBtn';
-import FundingDetailTab from './FundingDetailTab';
+import FundingProgress from '@/components/FundingProgress';
+import ShareBtn from '@/components/ShareBtn';
+import ActionBtn from '@/components/ActionBtn';
+import FundingDetailTab from '@/container/FundingDetail/FundingDetailTab';
 
 const FundingDetailMain = () => {
   const tabRef = useRef(null);

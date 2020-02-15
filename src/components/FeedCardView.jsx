@@ -1,9 +1,9 @@
 import React from 'react';
 import Slick from 'react-slick';
-import FundingProgress from './FundingProgress';
-import icHeart from '../img/feedCard/ic-heart-stroke-black.svg';
-import icComment from '../img/feedCard/ic-comment-stroke-black.svg';
-import icShare from '../img/feedCard/ic-share-stroke-black.svg';
+import FundingProgress from '@/components/FundingProgress';
+import icHeart from '@/img/feedCard/ic-heart-stroke-black.svg';
+import icComment from '@/img/feedCard/ic-comment-stroke-black.svg';
+import icShare from '@/img/feedCard/ic-share-stroke-black.svg';
 
 const FeedCardView = () => {
   const carouselSetting = {

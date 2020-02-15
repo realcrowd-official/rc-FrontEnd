@@ -1,13 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
-import hamburgerIcon from '../img/header/ic-hamburger-stroke-black.svg';
-import notification from '../img/header/ic-notification-stroke-black.svg';
-import backIcon from '../img/header/ic-back-stroke-black.svg';
-import HABContext from '../context/headerAndBottom';
-import BSContext from '../context/bottomSheet';
+import hamburgerIcon from '@/img/header/ic-hamburger-stroke-black.svg';
+import notification from '@/img/header/ic-notification-stroke-black.svg';
+import backIcon from '@/img/header/ic-back-stroke-black.svg';
+import HABContext from '@/context/headerAndBottom';
+import BSContext from '@/context/bottomSheet';
 
-import LBS from '../container/BottomSheet/LoginBottomSheet';
-import SRBS from '../container/BottomSheet/SelectRewardBottomSheet';
-
+import LBS from '@/container/BottomSheet/LoginBottomSheet';
+import SRBS from '@/container/BottomSheet/SelectRewardBottomSheet';
 
 const Header = () => {
   const { state } = useContext(HABContext);
@@ -32,8 +31,8 @@ const Header = () => {
           <img className="header_notification_icon" src={notification} />
         </div>
       </div>
-      { BSState.state.kindOfBS === 'login' && <LBS/> }
-      { BSState.state.kindOfBS === 'funding' && <SRBS/> }
+      {BSState.state.kindOfBS === 'login' && <LBS />}
+      {BSState.state.kindOfBS === 'funding' && <SRBS />}
     </header>
   );
 };

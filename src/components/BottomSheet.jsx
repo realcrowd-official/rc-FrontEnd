@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-import CloseIcon from '../img/bottomsheet/ic-close-stroke-black.svg';
+import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { footerInfoText, footerTosLink } from '../global/globalVar.ts';
+import { footerInfoText, footerTosLink } from '@/global/globalVar.ts';
 
 const Footer = props => {
   return (

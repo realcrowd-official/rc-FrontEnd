@@ -1,5 +1,5 @@
 import React, { useContext, forwardRef } from 'react';
-import FDTabContext from '../../context/tab';
+import FDTabContext from '@/context/tab';
 
 const FundingDetailTab = React.forwardRef((props, ref) => {
   const FDTab = useContext(FDTabContext);

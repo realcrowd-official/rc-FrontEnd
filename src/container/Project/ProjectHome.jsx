@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
-import TabBar from '../../components/TabBar';
-import Footer from '../../components/Footer';
+import TabBar from '@/components/TabBar';
+import Footer from '@/components/Footer';
 
-import DoingFeed from './DoingFeed';
-import ReservateFeed from './ReservateFeed';
+import DoingFeed from '@/container/Project/DoingFeed';
+import ReservateFeed from '@/container/Project/ReservateFeed';
 
-import TabContext from '../../context/tab';
-import HABContext from '../../context/headerAndBottom';
+import TabContext from '@/context/tab';
+import HABContext from '@/context/headerAndBottom';
 
 const ProjectHome = () => {
   const { state } = useContext(TabContext);

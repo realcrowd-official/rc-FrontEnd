@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
-import resolveJWT from '../../lib/resolveJwt';
+import resolveJWT from '@/lib/resolveJwt';
 
-import HABContext from '../../context/headerAndBottom';
-import AuthContext from '../../context/auth';
+import HABContext from '@/context/headerAndBottom';
+import AuthContext from '@/context/auth';
 
-import EditIcon from '../../img/ic-edit-white.svg';
+import EditIcon from '@/img/ic-edit-white.svg';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);

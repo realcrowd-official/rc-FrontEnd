@@ -1,17 +1,17 @@
 import React, { useEffect, useContext } from 'react';
 
-import FundingDetailMain from './FundingDetailMain';
-import FundingDetailStory from './FundingDetailStory';
-import FundingDetailCommunity from './FundingDetailCommunity';
-import FundingDetailInfo from './FundingDetailInfo';
+import FundingDetailMain from '@/container/FundingDetail/FundingDetailMain';
+import FundingDetailStory from '@/container/FundingDetail/FundingDetailStory';
+import FundingDetailCommunity from '@/container/FundingDetail/FundingDetailCommunity';
+import FundingDetailInfo from '@/container/FundingDetail/FundingDetailInfo';
 
-import Footer from '../../components/Footer';
+import Footer from '@/components/Footer';
 
-import HABContext from '../../context/headerAndBottom';
-import FDTabContext from '../../context/tab';
-import BSContext from '../../context/bottomSheet';
+import HABContext from '@/context/headerAndBottom';
+import FDTabContext from '@/context/tab';
+import BSContext from '@/context/bottomSheet';
 
-import FundingButton from '../../components/Funding/FundingButton';
+import FundingButton from '@/components/Funding/FundingButton';
 
 const FundingDetail = () => {
   const { action } = useContext(HABContext);
@@ -21,7 +21,7 @@ const FundingDetail = () => {
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
-    BS.action.setKindOfBS('funding')
+    BS.action.setKindOfBS('funding');
   });
 
   return (

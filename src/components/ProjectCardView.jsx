@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import FundingProgress from './FundingProgress';
-import TabContext from '../context/tab';
-import FundingReservate from './FundingReservate';
+import FundingProgress from '@/components/FundingProgress';
+import TabContext from '@/context/tab';
+import FundingReservate from '@/components/FundingReservate';
 
 const ProjectCardView = () => {
   const { state } = useContext(TabContext);

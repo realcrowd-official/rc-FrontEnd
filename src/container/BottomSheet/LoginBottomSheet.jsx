@@ -3,12 +3,12 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import CloseIcon from '../../img/bottomsheet/ic-close-stroke-black.svg';
-import kakaoIcon from '../../img/bottomsheet/ic-social-kakao.svg';
-import naverIcon from '../../img/bottomsheet/ic-social-naver.svg';
-import fbIcon from '../../img/bottomsheet/ic-social-facebook.svg';
+import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
+import kakaoIcon from '@/img/bottomsheet/ic-social-kakao.svg';
+import naverIcon from '@/img/bottomsheet/ic-social-naver.svg';
+import fbIcon from '@/img/bottomsheet/ic-social-facebook.svg';
 
-import BSContext from '../../context/bottomSheet';
+import BSContext from '@/context/bottomSheet';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,
@@ -57,7 +57,12 @@ const ReMakeBottomSheetWithHook = props => {
   };
 
   const layer = props.showBlockLayer ? (
-    <div className="bottom-sheet-block-layer" onClick={()=>{action.setBottomSheet(false)}} />
+    <div
+      className="bottom-sheet-block-layer"
+      onClick={() => {
+        action.setBottomSheet(false);
+      }}
+    />
   ) : null;
   return (
     <div
@@ -70,7 +75,12 @@ const ReMakeBottomSheetWithHook = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div">
-            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={()=>action.setBottomSheet(false)} />
+            <img
+              className="bts_close_icon"
+              src={CloseIcon}
+              alt=""
+              onClick={() => action.setBottomSheet(false)}
+            />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">로그인</p>

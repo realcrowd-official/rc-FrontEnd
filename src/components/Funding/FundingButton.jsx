@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 
-import ActionBtn from '../ActionBtn';
-import ShareBtn from '../ShareBtn';
+import ActionBtn from '@/components/ActionBtn';
+import ShareBtn from '@/components/ShareBtn';
 
-import BSContext from '../../context/bottomSheet';
+import BSContext from '@/context/bottomSheet';
 
 const FundingButton = () => {
   const BS = useContext(BSContext);

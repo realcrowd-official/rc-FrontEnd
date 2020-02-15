@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ProfileUserInfo from '../../components/Profile/ProfileUserInfo';
-import FundingItem from '../../components/Funding/FundingItem';
+import ProfileUserInfo from '@/components/Profile/ProfileUserInfo';
+import FundingItem from '@/components/Funding/FundingItem';
 
-import quoteIcon from '../../img/fundingDetail/ic-quote-fill-grey.svg';
+import quoteIcon from '@/img/fundingDetail/ic-quote-fill-grey.svg';
 
 const FundingDetailStory = () => {
   return (
