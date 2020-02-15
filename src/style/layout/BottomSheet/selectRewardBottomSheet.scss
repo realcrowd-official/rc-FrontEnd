@@ -1,36 +1,63 @@
 .srbs_bottom_div {
-  // position: fixed;
-  // height: clac($header + $grid * 20)
-  padding: 0 $grid * 4 0 $grid * 4;
+  padding: $grid * 4;
+  padding-top: $grid * 2;
   @include strokeTop;
 
   .srbs_count_div {
     display: flex;
-    height: $header;
+    height: $grid * 14;
+    margin-bottom: $grid * 4;
     justify-content: space-between;
 
-    p {
+    .srbs_count_div_setCountText {
       margin-top: auto;
       margin-bottom: auto;
       line-height: $grid * 8;
+      width: calc(100% - 144px - 16px);
+      text-align: left;
       @include text-14-regular-b54;
     }
 
     .srbs_count_btn_div {
       display: flex;
+      vertical-align: bottom;
 
-      > p {
+      .srbs_count_btn_count {
+        margin: 0;
         width: $grid * 16;
+        line-height: $grid * 14;
         @include text-16-bold-b78-center;
       }
-    }
 
-    .boost_btn_div {
-      width: 100%;
-
-      > button {
+      .ActionBtn {
+        margin: $grid * 3 0;
         width: $grid * 8;
         height: $grid * 8;
+
+        .boost_btn_div {
+          .ActionBtn_countBtn {
+            width: $grid * 8;
+            height: $grid * 8;
+            padding: 0;
+
+            p {
+              margin: 0;
+              text-align: center;
+              @include text-14-bold-primary-center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ActionBtn {
+    .ActionBtn_toNext {
+      width: 100%;
+      height: $grid * 12;
+
+      p {
+        @include text-14-bold-primary-center;
       }
     }
   }

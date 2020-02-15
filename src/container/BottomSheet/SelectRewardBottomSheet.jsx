@@ -50,7 +50,7 @@ const SelectRewardBottomSheet = props => {
   };
 
   const layer = props.showBlockLayer ? (
-    <div className="bottom-sheet-block-layer" onClick={()=>action.setBottomSheet(false)} />
+    <div className="bottom-sheet-block-layer" onClick={() => action.setBottomSheet(false)} />
   ) : null;
   return (
     <div
@@ -63,7 +63,12 @@ const SelectRewardBottomSheet = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div">
-            <img className="bts_close_icon" src={CloseIcon} alt="" onClick={()=>action.setBottomSheet(false)} />
+            <img
+              className="bts_close_icon"
+              src={CloseIcon}
+              alt=""
+              onClick={() => action.setBottomSheet(false)}
+            />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">리워드 선택</p>
@@ -75,14 +80,14 @@ const SelectRewardBottomSheet = props => {
         </div>
         <div className="srbs_bottom_div">
           <div className="srbs_count_div">
-            <p>수량 선택</p>
+            <p className="srbs_count_div_setCountText">수량 선택</p>
             <div className="srbs_count_btn_div">
-              <ActionBtn aText="-" />
-              <p>0</p>
-              <ActionBtn aText="+" />
+              <ActionBtn btnClass="ActionBtn_countBtn" aText="-" />
+              <p className="srbs_count_btn_count">0</p>
+              <ActionBtn btnClass="ActionBtn_countBtn" aText="+" />
             </div>
           </div>
-          <ActionBtn aText="다음 단계로" />
+          <ActionBtn btnClass="ActionBtn_toNext" aText="다음 단계로" />
         </div>
       </div>
     </div>
