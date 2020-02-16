@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 // eslint-disable-next-line consistent-return
-const authMiddleware = (token) => {
+const authMiddleware = token => {
   // token does not exist
   if (!token) {
     return false;
@@ -9,9 +9,9 @@ const authMiddleware = (token) => {
 
   // create a promise that decodes the token
   return jwt.verify(token, 'ReAlCrOwD', (err, decoded) => {
-      if(err) return err.message;
-      return decoded;
-  })
+    if (err) return err.message;
+    return decoded;
+  });
 };
 
 module.exports = authMiddleware;

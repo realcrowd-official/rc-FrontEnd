@@ -8,7 +8,7 @@ const Footer = props => {
       <div className="footer-tosLink">
         {footerTosLink.map(Data => {
           return (
-            <a href={Data.href} target="_blank">
+            <a href={Data.href} title={Data.title} target="_blank">
               {Data.title}
             </a>
           );
