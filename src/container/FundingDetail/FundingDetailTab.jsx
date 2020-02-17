@@ -13,7 +13,9 @@ const FundingDetailTab = React.forwardRef((props, ref) => {
         >
           스토리
         </button>
-        <button onClick={() => FDTab.action.setFundingTab('community')}>커뮤니티</button>
+        <button onClick={() => FDTab.action.setFundingTab('community')}>
+          커뮤니티
+        </button>
         <button
           // className={'funding_reservate_btn' + (state.tabMenu === 'reservate' ? ' btn_active' : '')}
           className="funding_reservate_btn"

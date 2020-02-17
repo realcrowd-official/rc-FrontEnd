@@ -18,19 +18,34 @@ const BottomNav = () => {
           <div className="BottomNav_wrapper">
             <Link
               to="/"
-              className={'home_icon' + (habContext.state.path === 'home' ? ' current_path' : '')}
+              className={
+                'home_icon' +
+                (habContext.state.path === 'home' ? ' current_path' : '')
+              }
               onClick={() => habContext.action.setPath('home')}
             >
-              <img src={habContext.state.path === 'home' ? homeIconPrimary : homeIcon} alt="피드" />
+              <img
+                src={
+                  habContext.state.path === 'home' ? homeIconPrimary : homeIcon
+                }
+                alt="피드"
+              />
               <p>피드</p>
             </Link>
             <Link
               to="/project"
-              className={'feed_icon' + (habContext.state.path === 'project' ? ' current_path' : '')}
+              className={
+                'feed_icon' +
+                (habContext.state.path === 'project' ? ' current_path' : '')
+              }
               onClick={() => habContext.action.setPath('project')}
             >
               <img
-                src={habContext.state.path === 'project' ? feedIconPrimary : feedIcon}
+                src={
+                  habContext.state.path === 'project'
+                    ? feedIconPrimary
+                    : feedIcon
+                }
                 alt="프로젝트"
               />
               <p>프로젝트</p>
@@ -38,12 +53,17 @@ const BottomNav = () => {
             <Link
               to="/profile"
               className={
-                'profile_icon' + (habContext.state.path === 'profile' ? ' current_path' : '')
+                'profile_icon' +
+                (habContext.state.path === 'profile' ? ' current_path' : '')
               }
               onClick={() => habContext.action.setPath('profile')}
             >
               <img
-                src={habContext.state.path === 'profile' ? profileIconPrimary : profileIcon}
+                src={
+                  habContext.state.path === 'profile'
+                    ? profileIconPrimary
+                    : profileIcon
+                }
                 alt="프로필"
               />
               <p>프로필</p>

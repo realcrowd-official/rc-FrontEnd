@@ -50,12 +50,15 @@ const SelectRewardBottomSheet = props => {
   };
 
   const layer = props.showBlockLayer ? (
-    <div className="bottom-sheet-block-layer" onClick={() => action.setBottomSheet(false)} />
+    <div
+      className="bottom-sheet-block-layer"
+      onClick={() => action.setBottomSheet(false)}
+    />
   ) : null;
   return (
     <div
-      className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ||
-        ''}`}
+      className={`bottom-sheet-wrapper ${props.className ||
+        ''} ${animationState || ''} ${isShow || ''}`}
     >
       {layer}
       {props.customLayout}

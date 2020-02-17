@@ -47,7 +47,8 @@ const FundingItem = () => {
         return (
           <div
             title="이 리워드 선택하기"
-            className={`fi_item_div ${Data.leftItem === 0 && `fi_item_sold_out`}`}
+            className={`fi_item_div ${Data.leftItem === 0 &&
+              `fi_item_sold_out`}`}
           >
             <p className="fi_item_cost">
               <span>{numberWithCommas(Data.cost)}</span>원을 후원합니다

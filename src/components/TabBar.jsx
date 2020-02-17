@@ -7,13 +7,19 @@ const TabBar = () => {
     <div className="tabBar_container">
       <div className="tabBar_wraapper">
         <button
-          className={'funding_doing_btn' + (state.tabMenu === 'doing' ? ' btn_active' : '')}
+          className={
+            'funding_doing_btn' +
+            (state.tabMenu === 'doing' ? ' btn_active' : '')
+          }
           onClick={() => action.setTabMenu('doing')}
         >
           진행중인 펀딩
         </button>
         <button
-          className={'funding_reservate_btn' + (state.tabMenu === 'reservate' ? ' btn_active' : '')}
+          className={
+            'funding_reservate_btn' +
+            (state.tabMenu === 'reservate' ? ' btn_active' : '')
+          }
           onClick={() => action.setTabMenu('reservate')}
         >
           예정된 펀딩

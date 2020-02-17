@@ -74,7 +74,11 @@ const SignUp = () => {
       <form action="" onSubmit={postSignUp}>
         <div className="si_body">
           <div className="si_img_thumbnail_div">
-            <img className="si_img_thumbnail" src="https://via.placeholder.com/150" alt="" />
+            <img
+              className="si_img_thumbnail"
+              src="https://via.placeholder.com/150"
+              alt=""
+            />
             <img className="si_img_edit" src={EditIcon} alt="" />
           </div>
 
@@ -116,7 +120,9 @@ const SignUp = () => {
                 defaultValue={phone}
                 onChange={e => setPhone(e.target.value)}
               />
-              <label htmlFor="input">후원 및 리워드 배송 시, 연락을 위해 필요합니다.</label>
+              <label htmlFor="input">
+                후원 및 리워드 배송 시, 연락을 위해 필요합니다.
+              </label>
             </div>
           </div>
         </div>

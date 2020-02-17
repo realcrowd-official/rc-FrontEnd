@@ -29,7 +29,11 @@ const FundingDetailMain = () => {
   return (
     <div className="fd_main_body">
       <div className="funding_detail_main_img_div">
-        <img className="funding_detail_main_img" src="https://via.placeholder.com/150" alt="" />
+        <img
+          className="funding_detail_main_img"
+          src="https://via.placeholder.com/150"
+          alt=""
+        />
       </div>
       <div className="funding_detail_explain_div">
         <div className="funding_detail_maker_header_div">
@@ -55,7 +59,9 @@ const FundingDetailMain = () => {
         <div className="funding_detail_current_fund_div">
           <div>
             <div>
-              <p className="funding_detail_current_fund_fix_text">모인 후원금</p>
+              <p className="funding_detail_current_fund_fix_text">
+                모인 후원금
+              </p>
             </div>
             <div>
               <p className="funding_detail_current_fund_change_text">
@@ -65,7 +71,9 @@ const FundingDetailMain = () => {
           </div>
           <div>
             <div>
-              <p className="funding_detail_current_fund_fix_text">후원 종료까지</p>
+              <p className="funding_detail_current_fund_fix_text">
+                후원 종료까지
+              </p>
             </div>
             <div>
               <p className="funding_detail_current_fund_change_text">14일</p>
@@ -76,14 +84,17 @@ const FundingDetailMain = () => {
               <p className="funding_detail_current_fund_fix_text">후원자</p>
             </div>
             <div>
-              <p className="funding_detail_current_fund_change_text">{numberWithCommas(128)}명</p>
+              <p className="funding_detail_current_fund_change_text">
+                {numberWithCommas(128)}명
+              </p>
             </div>
           </div>
         </div>
         <div className="fd_notice_div">
           <p>
-            목표 금액 <span>{numberWithCommas(1000000)}원</span>이 모이면, 프로젝트 후원 종료
-            다음날인 <span>2020년 4월 5일 일요일</span> 결제가 진행됩니다.
+            목표 금액 <span>{numberWithCommas(1000000)}원</span>이 모이면,
+            프로젝트 후원 종료 다음날인 <span>2020년 4월 5일 일요일</span>{' '}
+            결제가 진행됩니다.
           </p>
         </div>
 
@@ -96,7 +107,10 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <FundingDetailTab ref={tabRef} sendClass={tabTop ? 'fd_tab_top' : 'fd_tab_middle'} />
+      <FundingDetailTab
+        ref={tabRef}
+        sendClass={tabTop ? 'fd_tab_top' : 'fd_tab_middle'}
+      />
     </div>
   );
 };

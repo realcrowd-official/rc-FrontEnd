@@ -58,8 +58,8 @@ const BottomSheet = props => {
 
   return (
     <div
-      className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ||
-        ''}`}
+      className={`bottom-sheet-wrapper ${props.className ||
+        ''} ${animationState || ''} ${isShow || ''}`}
     >
       {layer}
       {props.customLayout}
@@ -77,7 +77,11 @@ const BottomSheet = props => {
         {props.list &&
           props.list.map((item, idx) => {
             return (
-              <button key={idx} className="bottom-sheet-item" onClick={item.handler}>
+              <button
+                key={idx}
+                className="bottom-sheet-item"
+                onClick={item.handler}
+              >
                 {item.title}
               </button>
             );

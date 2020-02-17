@@ -24,9 +24,9 @@ const ProfileUserInfo = () => {
       </div>
       <div className="pui_info_div">
         <p>
-          메이커의 한 줄 소개는 최대 2줄까지 보여지며, 이후로는 ellipsis 처리됩니다 (60자
-          제한).메이커의 한 줄 소개는 최대 2줄까지 보여지며, 이후로는 ellipsis 처리됩니다 (60자
-          제한).
+          메이커의 한 줄 소개는 최대 2줄까지 보여지며, 이후로는 ellipsis
+          처리됩니다 (60자 제한).메이커의 한 줄 소개는 최대 2줄까지 보여지며,
+          이후로는 ellipsis 처리됩니다 (60자 제한).
         </p>
       </div>
       <div className="pui_btn_div">

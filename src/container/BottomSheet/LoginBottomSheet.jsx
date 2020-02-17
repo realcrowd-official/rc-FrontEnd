@@ -66,8 +66,8 @@ const ReMakeBottomSheetWithHook = props => {
   ) : null;
   return (
     <div
-      className={`bottom-sheet-wrapper ${props.className || ''} ${animationState || ''} ${isShow ||
-        ''}`}
+      className={`bottom-sheet-wrapper ${props.className ||
+        ''} ${animationState || ''} ${isShow || ''}`}
     >
       {layer}
       {props.customLayout}
@@ -109,8 +109,8 @@ const ReMakeBottomSheetWithHook = props => {
         <div className="bts_waring_div">
           <div>
             <p>
-              <a>이용약관</a> 및 <a>개인정보처리방침</a>의 내용을 읽었으며, 이에 동의 후 회원가입을
-              진행합니다.
+              <a>이용약관</a> 및 <a>개인정보처리방침</a>의 내용을 읽었으며, 이에
+              동의 후 회원가입을 진행합니다.
             </p>
           </div>
         </div>
