@@ -1,0 +1,51 @@
+.uh_div{
+    padding: $grid * 3 $grid * 4 $grid * 3 $grid * 4;
+}
+
+.uh_header_div {
+    display: flex;
+    margin: auto;
+}
+
+.uh_margin {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.uh_thumnail {
+    width: 10vw;
+    max-width: 48px;
+    height: 10vw;
+    max-height: 48px;
+    margin-right: 12px;
+    cursor: pointer;
+    @include borderRadius(50%);
+}
+
+.uh_maker_name {
+    object-fit: contain;
+    cursor: pointer;
+    @include text-14-bold-b78;
+}
+
+.uh_upload_time {
+    object-fit: contain;
+    @include text-14-regular-b54;
+}
+
+.uh_button {
+    width: $grid * 16;
+    height: $grid * 8;
+    cursor: pointer;
+    object-fit: contain;
+    background-color: $primary16;
+    border: 0;
+    outline: 0;
+    margin-left: auto;
+    @include borderRadius;
+}
+
+.uh_button_text {
+    object-fit: contain;
+    @include text-12-bold-primary-center;
+}

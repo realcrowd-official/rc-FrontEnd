@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 
 const TabContext = createContext({
-  state: { tabMenu: 'doing', fundingTab: 'story' },
+  state: { tabMenu: 'doing', fundingTab: 'community' },
   action: {
     setTabMenu: () => {},
     setFundingTab: () => {}
@@ -12,7 +12,7 @@ const { Consumer: TabConsumer } = TabContext;
 
 const TabProvider = ({ children }) => {
   const [tabMenu, setTabMenu] = useState('doing');
-  const [fundingTab, setFundingTab] = useState('story');
+  const [fundingTab, setFundingTab] = useState('community');
 
   const value = {
     state: { tabMenu, fundingTab },
