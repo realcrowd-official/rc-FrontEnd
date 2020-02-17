@@ -1,6 +1,7 @@
 import React from 'react';
 import Slick from 'react-slick';
 import FundingProgress from '@/components/FundingProgress';
+import UserHeader from '@/components/Post/UserHeader';
 import icHeart from '@/img/feedCard/ic-heart-stroke-black.svg';
 import icComment from '@/img/feedCard/ic-comment-stroke-black.svg';
 import icShare from '@/img/feedCard/ic-share-stroke-black.svg';
@@ -16,19 +17,7 @@ const FeedCardView = () => {
 
   return (
     <div className="feed_card_view_div">
-      <div className="feed_card_view_header">
-        <img
-          className="feed_card_view_thumnail feed_card_view_header_margin"
-          src="https://via.placeholder.com/150"
-        />
-        <div className="feed_card_view_header_margin">
-          <div className="feed_card_view_header_maker_name">메이커닉네임</div>
-          <div className="feed_card_view_header_upload_time">1일 전</div>
-        </div>
-        <button className="feed_card_view_header_margin feed_card_view_header_button feed_card_view_header_button_text">
-          팔로우
-        </button>
-      </div>
+      <UserHeader/>
       <Slick className="margin_auto width_ninth height_ninth feed_card_view_image_slick">
         <img
           className="feed_card_view_image width_ninth height_ninth"
