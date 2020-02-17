@@ -1,7 +1,12 @@
 import React from 'react';
 import Slick from 'react-slick';
+
+//components
 import FundingProgress from '@/components/FundingProgress';
 import UserHeader from '@/components/Post/UserHeader';
+import PostSlick from '@/components/Post/PostSlick';
+
+
 import icHeart from '@/img/feedCard/ic-heart-stroke-black.svg';
 import icComment from '@/img/feedCard/ic-comment-stroke-black.svg';
 import icShare from '@/img/feedCard/ic-share-stroke-black.svg';
@@ -18,12 +23,7 @@ const FeedCardView = () => {
   return (
     <div className="feed_card_view_div">
       <UserHeader/>
-      <Slick className="margin_auto width_ninth height_ninth feed_card_view_image_slick">
-        <img
-          className="feed_card_view_image width_ninth height_ninth"
-          src="https://via.placeholder.com/150"
-        />
-      </Slick>
+      <PostSlick/>
       <div className="feed_card_view_funding_div">
         <img className="feed_card_view_funding_img" src="https://via.placeholder.com/150" alt="" />
         <div className="feed_card_view_funding_header_text_div">
