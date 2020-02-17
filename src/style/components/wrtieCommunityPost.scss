@@ -1,12 +1,35 @@
-.wcp_div{
-    @include backgroundWhite;
-    margin-bottom: $grid * 2;
-    .ActionBtn{
-        padding: $grid * 4;
-    }
-    button {
-        width: calc(100vw - 48px - 8px - 32px);
-        max-width: calc(480px - 32px);
-        height: $grid * 12;
+.wcp_div {
+  @include backgroundWhite;
+  margin-bottom: $grid * 2;
+  .ActionBtn {
+    padding: $grid * 4;
+  }
+  button {
+    width: calc(100vw - 48px - 8px - 32px);
+    max-width: calc(480px - 32px);
+    height: $grid * 12;
+  }
+
+  .wcp_img_div {
+    display: flex;
+    padding: $grid * 4 $grid * 4 $grid * 4 - 1 $grid * 4;
+    .wcp_img_add_btn {
+      @include borderRadius;
+      background-color: rgba(0, 0, 0, 0.04);
+      img {
+        padding: $grid * 3 $grid * 5 0 $grid * 5;
       }
+      p {
+        @include text-12-bold-b38-center;
+        padding: 0 $grid * 5 $grid * 3 $grid * 5;
+        margin: 0;
+      }
+    }
+  }
+  img {
+  }
+
+  hr {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
 }
