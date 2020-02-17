@@ -27,3 +27,7 @@
 @mixin line-height($size) {
   line-height: $size * 1.6;
 }
+
+@mixin backgroundWhite {
+  background: white;
+}

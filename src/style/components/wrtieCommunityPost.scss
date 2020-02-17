@@ -1,0 +1,12 @@
+.wcp_div{
+    @include backgroundWhite;
+    margin-bottom: $grid * 2;
+    .ActionBtn{
+        padding: $grid * 4;
+    }
+    button {
+        width: calc(100vw - 48px - 8px - 32px);
+        max-width: calc(480px - 32px);
+        height: $grid * 12;
+      }
+}
