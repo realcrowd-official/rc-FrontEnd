@@ -2,3 +2,28 @@
     background-color: white;
     padding: $grid * 3 $grid * 4 $grid * 3 $grid * 4
 }
+
+.fcp_explain_div{
+    margin-top: $grid * 4;
+    p{
+        @include text-14-regular-b78;
+        text-align: left;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        object-fit: contain;
+    }
+    a{
+        font-family: SpoqaHanSans;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: rgba(0, 0, 0, 0.38);
+    }
+}

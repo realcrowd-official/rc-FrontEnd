@@ -18,7 +18,7 @@ const FundingDetailMain = () => {
   }, []);
 
   useEffect(() => {
-    tabTop ^ (scroll.scrollTop >= 800) && setTabTop(!tabTop);
+    tabTop ^ (scroll.scrollTop >= 815) && setTabTop(!tabTop);
   }, [scroll]);
 
   const onScroll = e => {
