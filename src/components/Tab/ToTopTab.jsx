@@ -28,6 +28,7 @@ const ToTopTab = props => {
             <button
               // className={'funding_doing_btn' + (state.tabMenu === 'doing' ? ' btn_active' : '')}
               className="ttt_start_btn"
+              key={Data.tabId}
               onClick={() => TabC.action.setFundingTab(Data.tabId)}
             >
               {Data.tabName}

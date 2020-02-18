@@ -6,7 +6,7 @@ import FundingProgress from '@/components/FundingProgress';
 import ShareBtn from '@/components/ShareBtn';
 import ActionBtn from '@/components/ActionBtn';
 
-import TestTab from '@/components/Tab/ToTopTab';
+import ToTopTab from '@/components/Tab/ToTopTab';
 
 const FundingDetailMain = () => {
   const tabJson = [
@@ -95,7 +95,7 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <TestTab tabJson={tabJson}/>
+      <ToTopTab tabJson={tabJson}/>
     </div>
   );
 };
