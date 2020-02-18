@@ -5,7 +5,6 @@ import { numberWithCommas } from '@/global/utils.ts';
 import FundingProgress from '@/components/FundingProgress';
 import ShareBtn from '@/components/ShareBtn';
 import ActionBtn from '@/components/ActionBtn';
-import FundingDetailTab from '@/container/FundingDetail/FundingDetailTab';
 
 import TestTab from '@/components/Tab/ToTopTab';
 
@@ -96,7 +95,6 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      {/* <FundingDetailTab /> */}
       <TestTab tabJson={tabJson}/>
     </div>
   );
