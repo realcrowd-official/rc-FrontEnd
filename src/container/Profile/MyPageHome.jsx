@@ -4,6 +4,9 @@ import React, { useContext, useEffect } from 'react';
 import HABContext from '@/context/headerAndBottom';
 import ProfileUserInfo from '@/components/Profile/ProfileUserInfo';
 import ToTopTab from '@/components/Tab/ToTopTab';
+import FeedCardView from '@/components/FeedCardView';
+import ProjectCardView from '@/components/ProjectCardView';
+import Footer from '@/components/Footer';
 
 const MyPageHome = () => {
   const { state, action } = useContext(HABContext);
@@ -22,7 +25,12 @@ const MyPageHome = () => {
       <div className="mph_user_div">
         <ProfileUserInfo />
       </div>
-      <ToTopTab tabJson={tabJson}/>
+      <ToTopTab tabJson={tabJson} />
+      <div className="mph_content_div">
+        {/* <FeedCardView /> */}
+        <ProjectCardView />
+      </div>
+      <Footer />
     </div>
   );
 };

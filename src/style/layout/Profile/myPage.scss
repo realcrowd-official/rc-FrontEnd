@@ -1,4 +1,11 @@
-.mph_user_div{
-    padding: $grid * 2 $grid * 4 $grid * 4 $grid * 4 ;
-    @include backgroundWhite;
+.mph_user_div {
+  padding: $grid * 2 $grid * 4 $grid * 4 $grid * 4;
+  @include backgroundWhite;
 }
+
+.mph_content_div {
+    margin-top: $grid * 2;
+    .card_view_container {
+      margin-top: 0;
+    }
+  }
