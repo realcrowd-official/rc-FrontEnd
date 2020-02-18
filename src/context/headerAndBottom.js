@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 
 const HABContext = createContext({
-  state: { headerType: 'regular', bottomType: 'true', path: 'home' },
+  state: { headerType: 'regular', bottomType: 'true', path: 'profile' },
   action: {
     setHeaderType: () => {},
     setBottomType: () => {},
@@ -14,7 +14,7 @@ const { Consumer: HABConsumer } = HABContext;
 const HABProvider = ({ children }) => {
   const [headerType, setHeaderType] = useState('regular');
   const [bottomType, setBottomType] = useState('true');
-  const [path, setPath] = useState('home');
+  const [path, setPath] = useState('profile');
 
   const value = {
     state: { headerType, bottomType, path },

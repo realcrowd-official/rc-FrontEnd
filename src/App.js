@@ -15,7 +15,7 @@ import ProjectHome from './container/Project/ProjectHome';
 import BottomNav from './container/BottomNav';
 import FeedHome from './container/Feed/FeedHome';
 import Header from './container/Header';
-import MyPageHome from './container/MyPageHome';
+import MyPageHome from './container/Profile/MyPageHome';
 import FundingDetail from './container/FundingDetail/FundingDetail';
 import SignUp from './container/Account/SignUp';
 import SignIn from './container/Account/SignIn';
