@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 import { numberWithCommas } from '@/global/utils.ts';
 
@@ -8,24 +7,14 @@ import ShareBtn from '@/components/ShareBtn';
 import ActionBtn from '@/components/ActionBtn';
 import FundingDetailTab from '@/container/FundingDetail/FundingDetailTab';
 
+import TestTab from '@/components/Tab/ToTopTab';
+
 const FundingDetailMain = () => {
-  const tabRef = useRef(null);
-  const [scroll, setScroll] = useState(0);
-  const [tabTop, setTabTop] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    tabTop ^ (scroll.scrollTop >= 815) && setTabTop(!tabTop);
-  }, [scroll]);
-
-  const onScroll = e => {
-    const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
-    setScroll({ scrollTop });
-  };
-
+  const tabJson = [
+    { tabName: '스토리', tabId: 'story' },
+    { tabName: '커뮤니티', tabId: 'community' },
+    { tabName: '정보', tabId: 'info' }
+  ];
   return (
     <div className="fd_main_body">
       <div className="funding_detail_main_img_div">
@@ -107,10 +96,8 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <FundingDetailTab
-        ref={tabRef}
-        sendClass={tabTop ? 'fd_tab_top' : 'fd_tab_middle'}
-      />
+      {/* <FundingDetailTab /> */}
+      <TestTab tabJson={tabJson}/>
     </div>
   );
 };

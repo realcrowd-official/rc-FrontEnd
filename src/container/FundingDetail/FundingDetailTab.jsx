@@ -1,10 +1,27 @@
-import React, { useContext, forwardRef } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import FDTabContext from '@/context/tab';
 
-const FundingDetailTab = React.forwardRef((props, ref) => {
+const FundingDetailTab = props => {
   const FDTab = useContext(FDTabContext);
+
+  const [scroll, setScroll] = useState(0);
+  const [tabTop, setTabTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    tabTop ^ (scroll.scrollTop >= 815) && setTabTop(!tabTop);
+  }, [scroll]);
+
+  const onScroll = e => {
+    const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
+    setScroll({ scrollTop });
+  };
+
   return (
-    <div className={`fd_tab_container ${props.sendClass}`} ref={ref}>
+    <div className={`fd_tab_container ${tabTop && 'fd_tab_top'}`}>
       <div className="fd_tab_wrapper">
         <button
           // className={'funding_doing_btn' + (state.tabMenu === 'doing' ? ' btn_active' : '')}
@@ -26,6 +43,6 @@ const FundingDetailTab = React.forwardRef((props, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default FundingDetailTab;

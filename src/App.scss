@@ -13,7 +13,7 @@
 @import './style/layout/header.scss';
 @import './style/layout/bottomNav.scss';
 @import './style/layout/tabBar.scss';
-@import './style/layout/myPage.scss';
+@import './style/layout/Profile/myPage.scss';
 @import './style/layout/fundingDetail.scss';
 @import './style/layout/bottomSheet.scss';
 @import './style/layout/signIn.scss';
@@ -28,6 +28,7 @@
 @import './style/components/postSlick.scss';
 @import './style/components/communityNotice.scss';
 @import './style/components/wrtieCommunityPost.scss';
+@import './style/components/toTopTab.scss';
 
 // pages
 @import './style/pages/error.scss';

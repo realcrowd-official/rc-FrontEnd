@@ -13,12 +13,10 @@
 }
 
 .boost_btn_div {
-  width: 100%;
   margin-right: $grid * 2;
 }
 
 .boost_btn_div > button {
-  width: 72.5vw;
   object-fit: contain;
   background-color: $primary16;
   @include borderRadius;

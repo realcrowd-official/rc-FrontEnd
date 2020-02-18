@@ -2,6 +2,7 @@
 
 import React, { useContext, useEffect } from 'react';
 import HABContext from '@/context/headerAndBottom';
+import ProfileUserInfo from '@/components/Profile/ProfileUserInfo';
 
 const MyPageHome = () => {
   const { state, action } = useContext(HABContext);
@@ -12,7 +13,9 @@ const MyPageHome = () => {
   }, [action]);
   return (
     <div className="home_body">
-      <h2>{state.headerType}</h2>
+      <div className="mph_user_div">
+        <ProfileUserInfo />
+      </div>
     </div>
   );
 };
