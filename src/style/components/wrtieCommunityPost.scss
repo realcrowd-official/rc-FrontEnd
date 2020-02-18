@@ -30,6 +30,17 @@
   }
 
   hr {
+    border: 0;
+    height: 1px;
     background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .wcp_write_div {
+    padding: $grid * 4 - 1 $grid * 4 $grid * 4 $grid * 4;
+    textarea {
+      cursor: text;
+      width: 100%;
+      @include text-14-regular-b78;
+    }
   }
 }
