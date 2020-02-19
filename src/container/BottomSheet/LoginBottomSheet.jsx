@@ -3,10 +3,17 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
-import kakaoIcon from '@/img/bottomsheet/ic-social-kakao.svg';
-import naverIcon from '@/img/bottomsheet/ic-social-naver.svg';
-import fbIcon from '@/img/bottomsheet/ic-social-facebook.svg';
+import {
+  IC_CLOSE_STROKE_BLACK,
+  IC_SOCIAL_FACEBOOK,
+  IC_SOCIAL_KAKAO,
+  IC_SOCIAL_NAVER
+} from '@/global/img/bottomSheet';
+
+// import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
+// import kakaoIcon from '@/img/bottomsheet/ic-social-kakao.svg';
+// import naverIcon from '@/img/bottomsheet/ic-social-naver.svg';
+// import fbIcon from '@/img/bottomsheet/ic-social-facebook.svg';
 
 import BSContext from '@/context/bottomSheet';
 
@@ -77,7 +84,7 @@ const ReMakeBottomSheetWithHook = props => {
           <div className="bts_close_div">
             <img
               className="bts_close_icon"
-              src={CloseIcon}
+              src={IC_CLOSE_STROKE_BLACK}
               alt=""
               onClick={() => action.setBottomSheet(false)}
             />
@@ -94,15 +101,19 @@ const ReMakeBottomSheetWithHook = props => {
               Login(`kakao`);
             }}
           >
-            <img className="bts_login_img" src={kakaoIcon} alt="kakao" />
+            <img className="bts_login_img" src={IC_SOCIAL_KAKAO} alt="kakao" />
             <p className="bts_login_p">카카오 계정으로 계속하기</p>
           </div>
           <div className="bts_login_naver">
-            <img className="bts_login_img" src={naverIcon} alt="naver" />
+            <img className="bts_login_img" src={IC_SOCIAL_NAVER} alt="naver" />
             <p className="bts_login_p">네이버 계정으로 계속하기</p>
           </div>
           <div className="bts_login_facebook">
-            <img className="bts_login_img" src={fbIcon} alt="facebook" />
+            <img
+              className="bts_login_img"
+              src={IC_SOCIAL_FACEBOOK}
+              alt="facebook"
+            />
             <p className="bts_login_p">페이스북 계정으로 계속하기</p>
           </div>
         </div>

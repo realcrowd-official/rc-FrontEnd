@@ -1,8 +1,17 @@
 import React, { useState, useContext, useEffect } from 'react';
-import hamburgerIcon from '@/img/header/ic-hamburger-stroke-black.svg';
-import notification from '@/img/header/ic-notification-stroke-black.svg';
-import backIcon from '@/img/header/ic-back-stroke-black.svg';
+
+import {
+  IC_HAMBURGER_STROKE_BLACK,
+  IC_NOTIFICATION_STROKE_BLACK,
+  IC_BACK_STROKE_BLACK
+} from '@/global/img/header';
+
+// import hamburgerIcon from '@/img/header/ic-hamburger-stroke-black.svg';
+// import notification from '@/img/header/ic-notification-stroke-black.svg';
+// import backIcon from '@/img/header/ic-back-stroke-black.svg';
+
 import HABContext from '@/context/headerAndBottom';
+
 import BSContext from '@/context/bottomSheet';
 
 import LBS from '@/container/BottomSheet/LoginBottomSheet';
@@ -18,17 +27,20 @@ const Header = () => {
           {state.headerType === 'regular' ? (
             <img
               className="header_hambuger_icon"
-              src={hamburgerIcon}
+              src={IC_HAMBURGER_STROKE_BLACK}
               onClick={() => {
                 BSState.action.setBottomSheet(true);
               }}
             />
           ) : (
-            <img className="header_back_icon" src={backIcon} />
+            <img className="header_back_icon" src={IC_BACK_STROKE_BLACK} />
           )}
         </div>
         <div className="header_right_div">
-          <img className="header_notification_icon" src={notification} />
+          <img
+            className="header_notification_icon"
+            src={IC_NOTIFICATION_STROKE_BLACK}
+          />
         </div>
       </div>
       {BSState.state.kindOfBS === 'login' && <LBS />}

@@ -1,11 +1,21 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import homeIcon from '@/img/BottomNav/ic-tab-feed-stroke-black.svg';
-import homeIconPrimary from '@/img/BottomNav/ic-tab-feed-stroke-primary.svg';
-import feedIcon from '@/img/BottomNav/ic-tab-projects-stroke-black.svg';
-import feedIconPrimary from '@/img/BottomNav/ic-tab-projects-stroke-primary.svg';
-import profileIcon from '@/img/BottomNav/ic-tab-profile-stroke-black.svg';
-import profileIconPrimary from '@/img/BottomNav/ic-tab-profile-stroke-primary.svg';
+
+import {
+  IC_TAB_FEED,
+  IC_TAB_FEED_PRIMARY,
+  IC_TAB_PROJECTS,
+  IC_TAB_PROJECTS_PRIMARY,
+  IC_TAB_PROFILE,
+  IC_TAB_PROFILE_PRIMARY
+} from '@/global/img/bottomNav.ts';
+
+// import homeIcon from '@/img/BottomNav/ic-tab-feed-stroke-black.svg';
+// import homeIconPrimary from '@/img/BottomNav/ic-tab-feed-stroke-primary.svg';
+// import feedIcon from '@/img/BottomNav/ic-tab-projects-stroke-black.svg';
+// import feedIconPrimary from '@/img/BottomNav/ic-tab-projects-stroke-primary.svg';
+// import profileIcon from '@/img/BottomNav/ic-tab-profile-stroke-black.svg';
+// import profileIconPrimary from '@/img/BottomNav/ic-tab-profile-stroke-primary.svg';
 
 import HABContext from '@/context/headerAndBottom';
 
@@ -26,7 +36,9 @@ const BottomNav = () => {
             >
               <img
                 src={
-                  habContext.state.path === 'home' ? homeIconPrimary : homeIcon
+                  habContext.state.path === 'home'
+                    ? IC_TAB_FEED_PRIMARY
+                    : IC_TAB_FEED
                 }
                 alt="피드"
               />
@@ -43,8 +55,8 @@ const BottomNav = () => {
               <img
                 src={
                   habContext.state.path === 'project'
-                    ? feedIconPrimary
-                    : feedIcon
+                    ? IC_TAB_PROJECTS_PRIMARY
+                    : IC_TAB_PROJECTS
                 }
                 alt="프로젝트"
               />
@@ -61,8 +73,8 @@ const BottomNav = () => {
               <img
                 src={
                   habContext.state.path === 'profile'
-                    ? profileIconPrimary
-                    : profileIcon
+                    ? IC_TAB_PROFILE_PRIMARY
+                    : IC_TAB_PROFILE
                 }
                 alt="프로필"
               />

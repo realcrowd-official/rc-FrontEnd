@@ -3,7 +3,9 @@ import React from 'react';
 import ProfileUserInfo from '@/components/Profile/ProfileUserInfo';
 import FundingItem from '@/components/Funding/FundingItem';
 
-import quoteIcon from '@/img/fundingDetail/ic-quote-fill-grey.svg';
+import { IC_QUOTE_FILL_GREY } from '@/global/img/fundingDetail';
+
+// import quoteIcon from '@/img/fundingDetail/ic-quote-fill-grey.svg';
 
 const FundingDetailStory = () => {
   return (
@@ -33,7 +35,7 @@ const FundingDetailStory = () => {
       </ol>
 
       <hr />
-      <img src={quoteIcon} alt="caption" />
+      <img src={IC_QUOTE_FILL_GREY} alt="caption" />
       <p data-caption>
         대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 국채를
         모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는

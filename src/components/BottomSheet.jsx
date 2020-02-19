@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
+import { IC_CLOSE_STROKE_BLACK } from '@/global/img/bottomSheet';
+
+// import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,
@@ -67,7 +69,11 @@ const BottomSheet = props => {
         <div className="bts_top"></div>
         <div className="bts_middle">
           <div className="bts_close_div" onClick={props.onClose}>
-            <img className="bts_close_icon" src={CloseIcon} alt="" />
+            <img
+              className="bts_close_icon"
+              src={IC_CLOSE_STROKE_BLACK}
+              alt=""
+            />
           </div>
           <div className="bts_explain_div">
             <p className="bts_explain_p">로그인</p>

@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import FundingItem from '@/components/Funding/FundingItem';
 import ActionBtn from '@/components/ActionBtn';
 
-import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
+import { IC_CLOSE_STROKE_BLACK } from '@/global/img/bottomSheet';
+
+// import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
 
 import BSContext from '@/context/bottomSheet';
 
@@ -68,7 +70,7 @@ const SelectRewardBottomSheet = props => {
           <div className="bts_close_div">
             <img
               className="bts_close_icon"
-              src={CloseIcon}
+              src={IC_CLOSE_STROKE_BLACK}
               alt=""
               onClick={() => action.setBottomSheet(false)}
             />
