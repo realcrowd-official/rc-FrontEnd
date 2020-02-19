@@ -16,7 +16,6 @@ const PrivateRouter = ({ path, children, ...rest }) => {
         })
       );
   };
-  console.log(path);
   return (
     <Route
       {...rest}
