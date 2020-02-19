@@ -39,6 +39,7 @@
     padding: $grid * 4 - 1 $grid * 4 $grid * 4 $grid * 4;
     textarea {
       cursor: text;
+      resize: none;
       width: 100%;
       @include text-14-regular-b78;
     }
