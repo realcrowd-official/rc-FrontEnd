@@ -10,6 +10,7 @@ import { AuthProvider } from './context/auth';
 import { BSProvider } from './context/bottomSheet';
 
 import ScrollToTop from './components/misc/ScrollToTop';
+import PrivateRouter from './components/common/PrivateRouter';
 
 import ProjectHome from './container/Project/ProjectHome';
 import BottomNav from './container/BottomNav';
@@ -43,7 +44,9 @@ function App() {
                   </TabProvider>
                 }
               />
-              <Route path="/profile" children={<MyPageHome />} />
+              <PrivateRouter path="/profile">
+                <MyPageHome />
+              </PrivateRouter>
 
               <Route
                 path="/funding/detail/:id"
