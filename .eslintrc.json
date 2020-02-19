@@ -11,7 +11,13 @@
     }
   },
   "max-len": [2, { "code": 80, "tabWidth": 2, "ignoreUrls": true }],
-  "plugins": ["@typescript-eslint/tslint", "react", "react-hooks", "react", "prettier"],
+  "plugins": [
+    "@typescript-eslint/tslint",
+    "react",
+    "react-hooks",
+    "react",
+    "prettier"
+  ],
   "rules": {
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
