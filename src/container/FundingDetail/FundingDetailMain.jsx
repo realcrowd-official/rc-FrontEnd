@@ -95,7 +95,7 @@ const FundingDetailMain = () => {
           <ShareBtn />
         </div>
       </div>
-      <ToTopTab tabJson={tabJson}/>
+      <ToTopTab tabJson={tabJson} />
     </div>
   );
 };

@@ -1,62 +1,62 @@
-export const appTitle_En = 'MIR';
-export const appTitle_Ko = '미르';
+export const APP_TITLE_EN = 'MIR';
+export const APP_TITLE_KO = '미르';
 
-export const company_NameEn = 'RealCrowd';
-export const company_NameKo = '리얼크라우드';
-export const company_ID = '123-45-67890';
-export const company_ITC = '2020-인천연수-1234';
-export const company_Tel = '010-2167-5629';
-export const company_Addr = '인천광역시 연수구 송도동 1-23';
-export const company_Email = 'support@mircrowd.com';
+export const COMPANY_NAME_EN = 'RealCrowd';
+export const COMPANY_NAME_KO = '리얼크라우드';
+export const COMPANY_ID = '123-45-67890';
+export const COMPANY_ITC = '2020-인천연수-1234';
+export const COMPANY_TEL = '010-2167-5629';
+export const COMPANY_ADDR = '인천광역시 연수구 송도동 1-23';
+export const COMPANY_EMAIL = 'support@mircrowd.com';
 
-export const ceo_Name = '임동완';
+export const CEO_NAME = '임동완';
 
-export const tos_service = '';
-export const tos_privacy = '';
-export const tos_fee = '';
+export const TOS_SERVICE = '';
+export const TOS_PRIVACY = '';
+export const TOS_FEE = '';
 
-export const footerTosLink = [
+export const FOOTER_TOS_LINK = [
   {
     title: '서비스 이용약관',
-    href: tos_service
+    href: TOS_SERVICE
   },
   {
     title: '개인정보처리방침',
-    href: tos_privacy
+    href: TOS_PRIVACY
   },
   {
     title: '수수료 정책',
-    href: tos_fee
+    href: TOS_FEE
   }
 ];
 
-export const footerInfoText = [
+export const FOOTER_INFO_LINK = [
   {
     title: '상호명',
-    value: company_NameKo
+    value: COMPANY_NAME_KO
   },
   {
     title: '대표이사',
-    value: ceo_Name
+    value: CEO_NAME
   },
   {
     title: '사업자등록번호',
-    value: company_ID
+    value: COMPANY_ID
   },
   {
     title: '통신판매업신고번호',
-    value: company_ITC
+    value: COMPANY_ITC
   },
   {
     title: '대표전화',
-    value: company_Tel
+    value: COMPANY_TEL
   },
   {
     title: '주소',
-    value: company_Addr
+    value: COMPANY_ADDR
   },
   {
     title: '이메일',
-    value: company_Email
+    value: COMPANY_EMAIL
   }
 ];

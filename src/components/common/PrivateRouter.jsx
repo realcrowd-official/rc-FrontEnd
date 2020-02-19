@@ -7,21 +7,19 @@ import { isLogin } from '@/lib/auth';
 
 const PrivateRouter = ({ path, children, ...rest }) => {
   const BS = useContext(BSContext);
-  const toLogin = (toPath) => {
+  const toLogin = toPath => {
     BS.action.setBottomSheet(true);
     localStorage.setItem(
-        'historyPath',
-        JSON.stringify({
-          path: toPath
-        })
-      );
+      'historyPath',
+      JSON.stringify({
+        path: toPath
+      })
+    );
   };
   return (
     <Route
       {...rest}
-      render={({ location }) =>
-        isLogin() ? children : toLogin(path)
-      }
+      render={({ location }) => (isLogin() ? children : toLogin(path))}
     />
   );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { footerInfoText, footerTosLink } from '@/global/globalVar.ts';
+import { FOOTER_INFO_LINK, FOOTER_TOS_LINK } from '@/global/globalVar.ts';
 
 const Footer = props => {
   return (
     <div className="footer">
       <div className="footer-tosLink">
-        {footerTosLink.map(Data => {
+        {FOOTER_TOS_LINK.map(Data => {
           return (
             <a href={Data.href} title={Data.title} target="_blank">
               {Data.title}
@@ -23,7 +23,7 @@ const Footer = props => {
         </span>
       </div>
       <div className="footer-infoText">
-        {footerInfoText.map(Data => {
+        {FOOTER_INFO_LINK.map(Data => {
           return (
             <div>
               <span>{Data.title}</span>
