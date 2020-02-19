@@ -6,9 +6,9 @@ const Footer = props => {
   return (
     <div className="footer">
       <div className="footer-tosLink">
-        {FOOTER_TOS_LINK.map(Data => {
+        {FOOTER_TOS_LINK.map((Data, i) => {
           return (
-            <a href={Data.href} title={Data.title} target="_blank">
+            <a key={i} href={Data.href} title={Data.title} target="_blank">
               {Data.title}
             </a>
           );
@@ -23,9 +23,9 @@ const Footer = props => {
         </span>
       </div>
       <div className="footer-infoText">
-        {FOOTER_INFO_LINK.map(Data => {
+        {FOOTER_INFO_LINK.map((Data, i) => {
           return (
-            <div>
+            <div key={i}>
               <span>{Data.title}</span>
               <span>{Data.value}</span>
             </div>
