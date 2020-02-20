@@ -1,6 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import BSContext from '@/context/bottomSheet';
+import HABContext from '@/context/headerAndBottom';
+
+import { isLogin } from '@/lib/auth';
+
 import {
   IC_TAB_FEED,
   IC_TAB_FEED_PRIMARY,
@@ -17,10 +22,20 @@ import {
 // import profileIcon from '@/img/BottomNav/ic-tab-profile-stroke-black.svg';
 // import profileIconPrimary from '@/img/BottomNav/ic-tab-profile-stroke-primary.svg';
 
-import HABContext from '@/context/headerAndBottom';
-
 const BottomNav = () => {
   const habContext = useContext(HABContext);
+  const BS = useContext(BSContext);
+  const toLogin = toPath => {
+    BS.action.setBottomSheet(true);
+    localStorage.setItem(
+      'historyPath',
+      JSON.stringify({
+        path: toPath
+      })
+    );
+  };
+
+  console.log(isLogin());
   return (
     <>
       {habContext.state.bottomType === 'true' ? (
@@ -62,24 +77,31 @@ const BottomNav = () => {
               />
               <p>프로젝트</p>
             </Link>
-            <Link
-              to="/profile"
-              className={
-                'profile_icon' +
-                (habContext.state.path === 'profile' ? ' current_path' : '')
-              }
-              onClick={() => habContext.action.setPath('profile')}
-            >
-              <img
-                src={
-                  habContext.state.path === 'profile'
-                    ? IC_TAB_PROFILE_PRIMARY
-                    : IC_TAB_PROFILE
+            {isLogin() ? (
+              <Link
+                to="/profile"
+                className={
+                  'profile_icon' +
+                  (habContext.state.path === 'profile' ? ' current_path' : '')
                 }
-                alt="프로필"
-              />
-              <p>프로필</p>
-            </Link>
+                onClick={() => habContext.action.setPath('profile')}
+              >
+                <img
+                  src={
+                    habContext.state.path === 'profile'
+                      ? IC_TAB_PROFILE_PRIMARY
+                      : IC_TAB_PROFILE
+                  }
+                  alt="프로필"
+                />
+                <p>프로필</p>
+              </Link>
+            ) : (
+              <div className='profile_icon' onClick={() => toLogin('/profile')}>
+                <img src={IC_TAB_PROFILE} alt='프로필'/>
+                <p>프로필</p>
+              </div>
+            )}
           </div>
         </div>
       ) : null}

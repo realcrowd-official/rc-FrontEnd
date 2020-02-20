@@ -44,9 +44,9 @@ function App() {
                   </TabProvider>
                 }
               />
-              <PrivateRouter path="/profile">
+              <Route path="/profile">
                 <MyPageHome />
-              </PrivateRouter>
+              </Route>
 
               <Route
                 path="/funding/detail/:id"
