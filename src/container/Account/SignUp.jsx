@@ -72,17 +72,17 @@ const SignUp = () => {
   return (
     <div className="home_body_nobn">
       <form action="" onSubmit={postSignUp}>
-        <div className="si_body">
-          <div className="si_img_thumbnail_div">
+        <div className="su_body">
+          <div className="su_img_thumbnail_div">
             <img
-              className="si_img_thumbnail"
+              className="su_img_thumbnail"
               src="https://via.placeholder.com/150"
               alt=""
             />
-            <img className="si_img_edit" src={EditIcon} alt="" />
+            <img className="su_img_edit" src={EditIcon} alt="" />
           </div>
 
-          <div className="si_input_div">
+          <div className="su_input_div">
             <div>
               <label htmlFor="input">이름</label>
               <input
@@ -126,7 +126,7 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-        <div className="si_submit_div">
+        <div className="su_submit_div">
           <button type="submit">
             <span>가입완료</span>
           </button>

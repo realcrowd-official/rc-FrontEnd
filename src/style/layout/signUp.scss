@@ -1,23 +1,23 @@
-.si_body {
+.su_body {
   padding-left: $grid * 4;
   padding-right: $grid * 4;
   padding-top: $grid * 2;
   background-color: white;
 }
 
-.si_img_thumbnail_div {
+.su_img_thumbnail_div {
   text-align: center;
   margin-top: $grid * 6;
   margin-bottom: $grid * 5;
 }
 
-.si_img_thumbnail {
+.su_img_thumbnail {
   width: $grid * 24;
   height: $grid * 24;
   @include borderRadius(50%);
 }
 
-.si_img_edit {
+.su_img_edit {
   width: $grid * 8;
   height: $grid * 8;
   background-color: $primary;
@@ -27,42 +27,45 @@
   @include borderRadius(50%);
 }
 
-.si_input_div {
+.su_input_div {
   display: block;
   padding-top: $grid * 5;
   padding-bottom: $grid * 8;
 }
 
-.si_input_div > div {
+.su_input_div > div {
   margin-top: $grid * 5;
+
+  label {
+    display: block;
+    margin-top: $grid;
+    margin-bottom: $grid;
+    @include text-14-regular-b54;
+  }
+  input {
+    width: 100%;
+    height: $grid * 12;
+    background-color: $black04;
+    border: none;
+    @include borderRadius;
+  }
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px $primary;
+  }
 }
 
-.si_input_div > div > label {
-  display: block;
-  margin-top: $grid;
-  margin-bottom: $grid;
-  @include text-14-regular-b54;
-}
-
-.si_input_div > div > input {
-  width: 100%;
-  height: $grid * 12;
-  background-color: $black04;
-  border: none;
-  @include borderRadius;
-}
-
-.si_submit_div {
+.su_submit_div {
   bottom: 0;
   background-color: white;
   // height: $header;
   width: 100vw;
-  position: fixed;
+  posution: fixed;
   margin: 0 auto;
   @include strokeTop;
 }
 
-.si_submit_div > button {
+.su_submit_div > button {
   margin: $grid * 4;
   padding: 0;
   height: 100%;
@@ -71,7 +74,7 @@
   @include borderRadius;
 }
 
-.si_submit_div > button > span {
+.su_submit_div > button > span {
   margin-top: $grid * 4;
   margin-bottom: $grid * 4;
   object-fit: contain;
