@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 import resolveJWT from '@/lib/resolveJwt';
 
@@ -16,6 +16,8 @@ const useQuery = () => {
 const SignUp = () => {
   const token = useQuery().get('token');
   const decodedToken = resolveJWT(token);
+  const history = useHistory();
+
 
   decodedToken === 'jwt expired' && window.location.replace('/');
 
@@ -40,13 +42,13 @@ const SignUp = () => {
   const postSignUp = e => {
     // const signUpUri = 'http://localhost:7777/api/account/signUp';
     const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
-
+    console.log('axios');
     axios
       .post(signUpUri, {
         name: name,
         nickname: nickname,
         phone: phone,
-        token: toke
+        token: token
       })
       .then(res => {
         console.log(res.data);
@@ -59,6 +61,7 @@ const SignUp = () => {
                 token: res.data.ans
               })
             );
+            history.push(JSON.parse(localStorage.getItem('historyPath')).path);
             break;
           case 409:
             res.data.ans === 'nickname' && setIdCheck(false);
