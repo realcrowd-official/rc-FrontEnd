@@ -28,9 +28,9 @@ const Header = () => {
             <img
               className="header_hambuger_icon"
               src={IC_HAMBURGER_STROKE_BLACK}
-              onClick={() => {
-                BSState.action.setBottomSheet(true);
-              }}
+              // onClick={() => {
+              //   BSState.action.setBottomSheet(true);
+              // }}
             />
           ) : (
             <img className="header_back_icon" src={IC_BACK_STROKE_BLACK} />
