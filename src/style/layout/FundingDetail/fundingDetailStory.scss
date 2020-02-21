@@ -77,6 +77,7 @@
 
     > ol {
       padding: $grid * 2 auto $grid * 4;
+
       li {
         padding-right: $grid * 4;
         @include text-14-regular-b78;
@@ -86,6 +87,7 @@
 
     > ul {
       padding: $grid * 2 auto $grid * 4;
+
       li {
         padding-right: $grid * 4;
         @include text-14-regular-b78;
