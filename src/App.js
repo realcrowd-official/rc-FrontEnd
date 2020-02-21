@@ -10,6 +10,7 @@ import {
   META_DESCRIPTION,
   META_KEYWORDS,
   META_BASE_URL,
+  FB_APP_ID,
   TWITTER_USERNAME
 } from './global/globalVar';
 
@@ -36,8 +37,11 @@ function App() {
   return (
     <Router>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>{META_TITLE}</title>
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="fb:admins" content={FB_APP_ID} />
+        <meta property="fb:app_id" content={FB_APP_ID} />
         <meta name="title" content={META_TITLE} />
         <meta name="description" content={META_DESCRIPTION} />
         <meta name="keywords" content={META_KEYWORDS} />
@@ -53,6 +57,9 @@ function App() {
         {/* <meta name="twitter:image" content={IMG_STORE} /> */}
         {/* <meta name="twitter:image:src" content={IMG_STORE} /> */}
         <meta name="twitter:image:alt" content={META_DESCRIPTION} />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index,follow" />
+        <link rel="canonical" href={META_BASE_URL} />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
