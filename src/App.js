@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+
+import {
+  META_TITLE,
+  META_DESCRIPTION,
+  META_KEYWORDS,
+  META_BASE_URL,
+  TWITTER_USERNAME
+} from './global/globalVar';
 
 import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
@@ -26,6 +35,29 @@ import Error from './pages/Error';
 function App() {
   return (
     <Router>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{META_TITLE}</title>
+        <meta name="title" content={META_TITLE} />
+        <meta name="description" content={META_DESCRIPTION} />
+        <meta name="keywords" content={META_KEYWORDS} />
+        <meta property="og:title" content={META_TITLE} />
+        <meta property="og:description" content={META_DESCRIPTION} />
+        {/* <meta property="og:image" content={IMG_STORE} /> */}
+        <meta property="og:url" content={META_BASE_URL} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={META_BASE_URL} />
+        <meta name="twitter:title" content={META_TITLE} />
+        <meta name="twitter:description" content={META_DESCRIPTION} />
+        <meta name="twitter:creator" content={`@${TWITTER_USERNAME}`} />
+        {/* <meta name="twitter:image" content={IMG_STORE} /> */}
+        {/* <meta name="twitter:image:src" content={IMG_STORE} /> */}
+        <meta name="twitter:image:alt" content={META_DESCRIPTION} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+        />
+      </Helmet>
       <AuthProvider>
         <HABProvider>
           <BSProvider>
