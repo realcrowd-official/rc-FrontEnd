@@ -1,6 +1,9 @@
 export const APP_TITLE_EN = 'MIR';
 export const APP_TITLE_KO = '미르';
 
+export const __OG_DESCRIPTION__ = '';
+export const __OG_KEYWORDS__ = '';
+
 export const COMPANY_NAME_EN = 'RealCrowd';
 export const COMPANY_NAME_KO = '리얼크라우드';
 export const COMPANY_ID = '123-45-67890';
