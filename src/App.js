@@ -13,6 +13,7 @@ import {
   FB_APP_ID,
   TWITTER_USERNAME
 } from './global/globalVar';
+import { FAVICON_16, FAVICON_32, APPLE_TOUCH_ICON } from './global/img/favicon';
 
 import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
@@ -60,6 +61,10 @@ function App() {
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index,follow" />
         <link rel="canonical" href={META_BASE_URL} />
+        <link rel="apple-touch-icon" sizes="180x180" href={APPLE_TOUCH_ICON} />
+        <link rel="icon" type="image/png" sizes="32x32" href={FAVICON_32} />
+        <link rel="icon" type="image/png" sizes="16x16" href={FAVICON_16} />
+        <link rel="manifest" href="@/img/favicon/site.webmanifest" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
