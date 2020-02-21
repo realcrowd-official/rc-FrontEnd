@@ -18,7 +18,6 @@ const SignUp = () => {
   const decodedToken = resolveJWT(token);
   const history = useHistory();
 
-
   decodedToken === 'jwt expired' && window.location.replace('/');
 
   const [nickname, setnickName] = useState(decodedToken.nickname);
@@ -118,21 +117,17 @@ const SignUp = () => {
                 type="text"
                 name=""
                 id=""
-                placeholder="    숫자만 입력해주세요"
-                maxLength="11"
+                placeholder="숫자만 입력해주세요"
+                maxLength="12"
                 defaultValue={phone}
                 onChange={e => setPhone(e.target.value)}
               />
-              <label htmlFor="input">
-                후원 및 리워드 배송 시, 연락을 위해 필요합니다.
-              </label>
+              <label>후원 및 리워드 배송 시, 연락을 위해 필요합니다.</label>
             </div>
           </div>
         </div>
         <div className="su_submit_div">
-          <button type="submit">
-            <span>가입완료</span>
-          </button>
+          <button type="submit">가입완료</button>
         </div>
       </form>
     </div>
