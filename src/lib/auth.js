@@ -1,11 +1,14 @@
 const axios = require('axios');
 
+const url = "http://3.135.237.171:7777/api/account/checkJWT";
+// const url = "http://localhost:7777/api/account/checkJWT"
+
 const isLogin = () => {
   if (localStorage.getItem('token') == null) {
     return false;
   } else {
     axios
-      .get('http://localhost:7777/api/account/checkJWT', {
+      .get(url, {
         headers: { 'x-access-token': JSON.parse(localStorage.getItem('token')).token }
       })
       .then(res => {
