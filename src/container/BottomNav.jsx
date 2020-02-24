@@ -40,7 +40,6 @@ const BottomNav = () => {
   useEffect(() => {
     isLogin()?Auth.action.setIsLogin(true) : Auth.action.setIsLogin(false)
   }, [isLogin()])
-console.log(Auth.state.isLogin);
   return (
     <>
       {habContext.state.bottomType === 'true' ? (

@@ -4,7 +4,6 @@ const isLogin = () => {
   if (localStorage.getItem('token') == null) {
     return false;
   } else {
-    console.log(localStorage.getItem('token'))
     axios
       .get('http://localhost:7777/api/account/checkJWT', {
         headers: { 'x-access-token': JSON.parse(localStorage.getItem('token')).token }
