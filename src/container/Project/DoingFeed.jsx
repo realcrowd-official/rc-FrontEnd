@@ -1,10 +1,15 @@
 import React from 'react';
-import FeedCardView from '@/components/ProjectCardView';
+import ProjectCardView from '@/components/ProjectCardView';
 
-const DoingFeed = () => {
+const DoingFeed = props => {
   return (
     <div>
-      <FeedCardView />
+      {
+        props.value.map(Data => {
+          return <ProjectCardView value={Data} type={'doing'}/>
+        })
+      }
+      
     </div>
   );
 };

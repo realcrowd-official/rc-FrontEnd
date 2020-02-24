@@ -16,7 +16,7 @@ import {
 // import icComment from '@/img/feedCard/ic-comment-stroke-black.svg';
 // import icShare from '@/img/feedCard/ic-share-stroke-black.svg';
 
-const FeedCardView = () => {
+const FeedCardView = props => {
   const carouselSetting = {
     dots: false,
     infinite: false,
@@ -24,7 +24,7 @@ const FeedCardView = () => {
     slideToShow: 1,
     slidesToScroll: 1
   };
-
+  console.log(props.value);
   return (
     <div className="feed_card_view_div">
       <UserHeader />

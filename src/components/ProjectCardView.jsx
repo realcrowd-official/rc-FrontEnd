@@ -3,14 +3,15 @@ import FundingProgress from '@/components/FundingProgress';
 import TabContext from '@/context/tab';
 import FundingReservate from '@/components/FundingReservate';
 
-const ProjectCardView = () => {
+const ProjectCardView = props => {
   const { state } = useContext(TabContext);
+  console.log(props.value);
   return (
     <div className="card_view_container max_container">
       <div className="card_view_img_div">
         <img
           className="card_view_img"
-          src="https://via.placeholder.com/150"
+          src={props.value.maker.thumNailPic ? props.value.maker.thumNailPic : "https://via.placeholder.com/150"}
         ></img>
       </div>
       <div className="card_view_user_profile_img_div card_view_funding_left_margin">
@@ -21,16 +22,14 @@ const ProjectCardView = () => {
       </div>
       <div className="card_view_funding_information_div card_view_funding_left_margin">
         <p>
-          펀딩 타이틀은 최대 2줄이며,
-          <br /> 2줄 이상부터는 ellipsis 처리 됩니다. <br /> 이것은 3번째
-          줄입니다.
+          {props.value.title}
         </p>
       </div>
       <div className="card_view_funding_user_name_div card_view_funding_left_margin">
-        <p>메이커 닉네임</p>
+        <p>{props.value.maker.nickName}</p>
       </div>
       <div className="card_view_funding_left_margin">
-        {state.tabMenu === 'doing' ? <FundingProgress /> : <FundingReservate />}
+        {state.tabMenu === 'doing' ? <FundingProgress aggregate={props.value.aggregateAmount} target={props.value.targetAmount} dueDate={props.value.dueDate} /> : <FundingReservate />}
       </div>
     </div>
   );
