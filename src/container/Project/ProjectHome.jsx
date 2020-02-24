@@ -14,6 +14,8 @@ const ProjectHome = () => {
   const [reservateArray, setReservateArray] = useState([]);
   const { state } = useContext(TabContext);
   const habContext = useContext(HABContext);
+  // const url = "http://localhost:7777/api/project/crud";
+  const url = "http://3.135.237.171:7777/api/project/crud";
   useEffect(() => {
     habContext.action.setHeaderType('regular');
     habContext.action.setBottomType('true');
@@ -21,7 +23,7 @@ const ProjectHome = () => {
   }, []);
 
   useEffect(() => {
-    Axios.get('http://localhost:7777/api/project/crud').then(res => {
+    Axios.get(url).then(res => {
       res.data.listArray.map(Data => {
         new Date(Data.startDate) < new Date()
           ? setDoingArray([...doingArray, Data])
