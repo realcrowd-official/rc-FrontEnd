@@ -31,52 +31,59 @@
   display: block;
   padding-top: $grid * 5;
   padding-bottom: $grid * 8;
-}
 
-.su_input_div > div {
-  margin-top: $grid * 5;
+  div {
+    margin-top: $grid * 5;
 
-  label {
-    display: block;
-    margin-top: $grid;
-    margin-bottom: $grid;
-    @include text-14-regular-b54;
-  }
-  input {
-    width: 100%;
-    height: $grid * 12;
-    background-color: $black04;
-    border: none;
-    @include borderRadius;
-  }
-  input:focus {
-    outline: none;
-    box-shadow: 0 0 3px 2px $primary;
+    label {
+      display: block;
+      margin-top: $grid;
+      margin-bottom: $grid;
+      @include text-12-regular-b54;
+
+      &[for='input'] {
+        @include text-14-regular-b54;
+      }
+    }
+
+    input {
+      width: calc(100% - #{$grid * 8});
+      background-color: $black04;
+      border: none;
+      padding: $grid * 3 $grid * 4;
+      @include borderRadius;
+
+      ::placeholder {
+        padding: 0;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 3px 2px $primary;
+      }
+    }
   }
 }
 
 .su_submit_div {
   bottom: 0;
+  left: 0;
   background-color: white;
-  // height: $header;
   width: 100vw;
-  posution: fixed;
+  position: fixed;
   margin: 0 auto;
+  padding: $grid * 4 0;
   @include strokeTop;
-}
 
-.su_submit_div > button {
-  margin: $grid * 4;
-  padding: 0;
-  height: 100%;
-  object-fit: contain;
-  background-color: $primary16;
-  @include borderRadius;
-}
-
-.su_submit_div > button > span {
-  margin-top: $grid * 4;
-  margin-bottom: $grid * 4;
-  object-fit: contain;
-  @include text-14-bold-primary-center;
+  button {
+    left: 0;
+    display: block;
+    margin: 0 auto;
+    height: $grid * 12;
+    width: calc(100% - #{$grid * 8});
+    max-width: calc(480px - #{$grid * 8});
+    background-color: $primary16;
+    @include text-14-bold-primary-center;
+    @include borderRadius;
+  }
 }

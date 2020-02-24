@@ -1,6 +1,7 @@
 .cpn_div {
-  @include backgroundWhite;
   margin-bottom: $grid * 2;
+  @include backgroundWhite;
+
   p {
     @include text-14-bold-b54-center;
     padding: $grid * 8 - 2px 0;
