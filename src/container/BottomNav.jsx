@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import BSContext from '@/context/bottomSheet';
 import HABContext from '@/context/headerAndBottom';
+import AuthContext from '@/context/auth';
 
 import { isLogin } from '@/lib/auth';
 
@@ -25,6 +26,7 @@ import {
 const BottomNav = () => {
   const habContext = useContext(HABContext);
   const BS = useContext(BSContext);
+  const Auth = useContext(AuthContext);
   const toLogin = toPath => {
     BS.action.setBottomSheet(true);
     localStorage.setItem(
@@ -34,8 +36,11 @@ const BottomNav = () => {
       })
     );
   };
-
-  console.log(isLogin());
+  
+  useEffect(() => {
+    isLogin()?Auth.action.setIsLogin(true) : Auth.action.setIsLogin(false)
+  }, [isLogin()])
+console.log(Auth.state.isLogin);
   return (
     <>
       {habContext.state.bottomType === 'true' ? (
@@ -77,7 +82,7 @@ const BottomNav = () => {
               />
               <p>프로젝트</p>
             </Link>
-            {isLogin() ? (
+            {Auth.state.isLogin ? (
               <Link
                 to="/profile"
                 className={

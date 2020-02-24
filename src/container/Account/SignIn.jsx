@@ -18,8 +18,8 @@ const SignIn = () => {
   const token = useQuery().get('token');
   const decodedToken = resolveJWT(token);
   const history = useHistory();
-  // const signInUri = 'http://localhost:7777/api/account/signIn';
-  const signInUri = 'http://3.135.237.171:7777/api/account/signIn';
+  const signInUri = 'http://localhost:7777/api/account/signIn';
+  // const signInUri = 'http://3.135.237.171:7777/api/account/signIn';
   useEffect(() => {
     axios
       .post(signInUri, {
