@@ -14,8 +14,8 @@ const FeedHome = () => {
   });
   return (
     <div className="home_body">
-      <FeedCarousel />
-      <FeedCardView />
+      {/* <FeedCarousel />
+      <FeedCardView /> */}
       <Footer />
     </div>
   );
