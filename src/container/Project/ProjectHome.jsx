@@ -15,7 +15,16 @@ const ProjectHome = () => {
   const { state } = useContext(TabContext);
   const habContext = useContext(HABContext);
   // const url = "http://localhost:7777/api/project/crud";
-  const url = "http://3.135.237.171:7777/api/project/crud";
+  const url = 'http://3.135.237.171:7777/api/project/crud';
+
+  const separateArray = async array => {
+    await array.map(Data => {
+      new Date(Data.startDate) < new Date()
+        ? setDoingArray(doingArray => [...doingArray, Data])
+        : setReservateArray(reservateArray => [...reservateArray, Data]);
+    });
+  };
+
   useEffect(() => {
     habContext.action.setHeaderType('regular');
     habContext.action.setBottomType('true');
@@ -24,18 +33,19 @@ const ProjectHome = () => {
 
   useEffect(() => {
     Axios.get(url).then(res => {
-      res.data.listArray.map(Data => {
-        new Date(Data.startDate) < new Date()
-          ? setDoingArray([...doingArray, Data])
-          : setReservateArray([...reservateArray, Data]);
-      });
+      // console.log(res.data);
+      separateArray(res.data.listArray);
     });
   }, []);
 
   return (
     <div className="home_body">
       <TabBar />
-      {state.tabMenu === 'doing' ? <DoingFeed value={doingArray} /> : <ReservateFeed value={reservateArray} />}
+      {state.tabMenu === 'doing' ? (
+        <DoingFeed value={doingArray} />
+      ) : (
+        <ReservateFeed value={reservateArray} />
+      )}
       <Footer />
     </div>
   );
