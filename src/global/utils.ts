@@ -49,8 +49,10 @@ export const convertDate = (originDate: string) => {
   const day = originDate.substr(8, 2);
   const hour = originDate.substr(11, 2);
   const min = originDate.substr(14, 2);
-  const date = new Date(`${year}-${month}-${day}`).toString().substr(0, 3);
+  const ISODate = new Date(`${year}-${month}-${day}`)
+  const date = ISODate.toString().substr(0, 3);
   const koDate = converKoDate(date);
 
-  return [month, day, hour, min, koDate];
+
+  return [month, day, hour, min, koDate, ISODate];
 };
