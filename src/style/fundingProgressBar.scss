@@ -20,6 +20,15 @@
   display: flex;
   margin: 0 auto;
   width: calc(100% - 32px);
+  .funding_left_day{
+    margin-left: auto;
+    p{
+      @include text-12-regular-b54-right;
+    }
+    span{
+      @include text-12-bold-b54;
+    }
+  }
 }
 
 .funding_percentage {
