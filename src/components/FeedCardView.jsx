@@ -27,7 +27,10 @@ const FeedCardView = props => {
   console.log(props.value);
   return (
     <div className="feed_card_view_div">
-      <UserHeader />
+      <UserHeader
+        maker={props.value.maker}
+        uploadDate={props.value.uploadDate}
+      />
       <PostSlick />
       <div className="feed_card_view_funding_div">
         <img
@@ -37,25 +40,30 @@ const FeedCardView = props => {
         />
         <div className="feed_card_view_funding_header_text_div">
           <p className="feed_card_view_funding_title">
-            이미지 크기 고정, 타이틀 텍스트 너비 가변, 최대 3줄 이후 ellipsis
-            3세줄테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트 3줄 테스트
-            3줄 테스트 3줄 테스트 3줄 테스트3줄 테스트
+            {props.value.fundingItem.title}
           </p>
-          <p className="feed_card_view_funding_user">메이커 닉네임</p>
+          <p className="feed_card_view_funding_user">
+            {props.value.maker.nickName}
+          </p>
         </div>
       </div>
-      <FundingProgress />
+      <FundingProgress
+        aggregate={props.value.fundingItem.aggregateAmount}
+        target={props.value.fundingItem.targetAmount}
+        dueDate={props.value.fundingItem.dueDate}
+      />
       <div className="feed_card_view_funding_explain_div">
         <p className="feed_card_view_funding_explain_text">
-          피드 카드의 본문 내용은 최대 3줄까지 숨김 없이 보여지며, 3줄이
-          넘어가게 될 경우에는 다음 예시와 같이 ellipsis 더 보기 처리가 됩니다
-          ...
+          {props.value.content}
         </p>
       </div>
       {/* 더보기는 추후 구현 */}
       <div className="feed_card_view_funding_like_comment_div">
         <div className="feed_card_view_funding_like_comment_p">
-          <span>좋아요 96 ㆍ 댓글 32</span>
+          <span>
+            좋아요 {props.value.likeMember.length} ㆍ 댓글{' '}
+            {props.value.comment.length}
+          </span>
         </div>
       </div>
       <div className="feed_card_view_funding_icon_div">
