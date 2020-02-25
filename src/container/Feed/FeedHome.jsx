@@ -10,8 +10,8 @@ const FeedHome = () => {
   const { action } = useContext(HABContext);
   const [listArray, setListArray] = useState([]);
 
-  const url = 'http://localhost:7777/api/feed/crud';
-  // const url = 'http://3.135.237.171:7777/api/project/crud';
+  // const url = 'http://localhost:7777/api/feed/crud';
+  const url = 'http://3.135.237.171:7777/api/feed/crud';
 
   useEffect(() => {
     action.setHeaderType('regular');

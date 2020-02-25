@@ -1,5 +1,5 @@
 import React from 'react';
-import { convertDate } from '@/global/utils.ts';
+import { convertDate } from '@/lib/date';
 
 const FundingReservate = props => {
   const parsingDate = convertDate(props.startDate);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { leftDay } from '@/lib/date';
 
 const UserHeader = props => {
   return (
@@ -10,7 +11,7 @@ const UserHeader = props => {
         />
         <div className="uh_header_margin">
           <div className="uh_maker_name">{props.maker.nickName}</div>
-          <div className="uh_upload_time">1일 전</div>
+          <div className="uh_upload_time">{leftDay(props.uploadDate)} 전</div>
         </div>
         <button className="uh_margin uh_button uh_button_text">팔로우</button>
       </div>
