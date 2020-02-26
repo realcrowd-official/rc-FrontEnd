@@ -3,6 +3,7 @@
   background-color: white;
   height: $header;
   width: 100vw;
+  z-index: 997;
   padding: 0;
   position: fixed;
   @include strokeTop;

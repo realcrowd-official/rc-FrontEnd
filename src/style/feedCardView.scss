@@ -95,3 +95,15 @@
     }
   }
 }
+
+.not_show {
+  margin-top: $topTabBar + 8px;
+  display: table;
+  height: $grid * 40;
+  p {
+    display: table-cell;
+    margin-left: auto;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
