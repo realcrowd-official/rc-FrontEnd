@@ -53,7 +53,9 @@ export const leftDay = originDate => {
   const currMonth = currDay * 30; // 월 만듬
   const currYear = currMonth * 12; // 년 만듬
 
-  return diff / currSec < 60
+  return diff / currSec < 0
+    ? 'finish'
+    : diff / currSec < 60
     ? `${Math.floor(diff / currSec)}초`
     : diff / currMin < 60
     ? `${Math.floor(diff / currMin)}분`

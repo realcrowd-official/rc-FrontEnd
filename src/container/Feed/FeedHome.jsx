@@ -28,10 +28,10 @@ const FeedHome = () => {
   }, []);
   return (
     <div className="home_body">
+      <FeedCarousel />
       {listArray.map(Data => {
         return (
           <div>
-            <FeedCarousel />
             <FeedCardView value={Data} />
           </div>
         );
