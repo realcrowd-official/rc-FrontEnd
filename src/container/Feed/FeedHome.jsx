@@ -17,7 +17,7 @@ const FeedHome = () => {
     action.setHeaderType('regular');
     action.setBottomType('true');
     action.setPath('home');
-  });
+  }, []);
 
   useEffect(() => {
     Axios.get(url).then(res => {

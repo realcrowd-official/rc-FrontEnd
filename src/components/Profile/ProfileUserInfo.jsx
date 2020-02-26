@@ -5,29 +5,30 @@ import ShareBtn from '@/components/ShareBtn';
 
 import { numberWithCommas } from '@/global/utils.ts';
 
-const ProfileUserInfo = () => {
+const ProfileUserInfo = props => {
+  console.log(props.value);
   return (
     <div className="pui_body">
       <div className="pui_header">
-        <h2>메이커닉네임</h2>
+        <h2>{props.value.nickName}</h2>
         <img src="https://via.placeholder.com/150" alt="" />
       </div>
       <div className="pui_follow_follwing_div">
         <div>
           <p className="pui_plain_p">팔로워</p>
-          <p className="pui_value_p">{numberWithCommas(1408)}</p>
+          <p className="pui_value_p">
+            {numberWithCommas(props.value.followerList.length)}
+          </p>
         </div>
         <div>
           <p className="pui_plain_p">팔로잉</p>
-          <p className="pui_value_p">{numberWithCommas(226)}</p>
+          <p className="pui_value_p">
+            {numberWithCommas(props.value.followingList.length)}
+          </p>
         </div>
       </div>
       <div className="pui_info_div">
-        <p>
-          메이커의 한 줄 소개는 최대 2줄까지 보여지며, 이후로는 ellipsis
-          처리됩니다 (60자 제한).메이커의 한 줄 소개는 최대 2줄까지 보여지며,
-          이후로는 ellipsis 처리됩니다 (60자 제한).
-        </p>
+        <p>{props.value.infoMessage}</p>
       </div>
       <div className="pui_btn_div">
         <ActionBtn aText="팔로우" />

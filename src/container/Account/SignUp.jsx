@@ -39,8 +39,8 @@ const SignUp = () => {
   };
 
   const postSignUp = e => {
-    // const signUpUri = 'http://localhost:7777/api/account/signUp';
-    const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
+    const signUpUri = 'http://localhost:7777/api/account/signUp';
+    // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
     console.log('axios');
     axios
       .post(signUpUri, {
@@ -53,7 +53,7 @@ const SignUp = () => {
         console.log(res.data);
         switch (res.data.statusCode) {
           case 201:
-            history.push(`/signIn?token=${token}`)
+            history.push(`/signIn?token=${token}`);
             // auth.action.setAuthToken(res.data.ans);
             // localStorage.setItem(
             //   'token',
