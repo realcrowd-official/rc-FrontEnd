@@ -5,7 +5,8 @@ import { convertDate, leftDay } from '@/lib/date';
 
 const FundingProgress = props => {
   const funding_bar_width = {
-    width: `${(props.aggregate / props.target) * 100}%`
+    width: `${(props.aggregate / props.target) * 100}%`,
+    maxWidth: '100%'
   };
   return (
     <div>
