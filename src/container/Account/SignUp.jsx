@@ -21,7 +21,7 @@ const SignUp = () => {
   decodedToken === 'jwt expired' && window.location.replace('/');
 
   const [nickname, setnickName] = useState(decodedToken.nickname);
-  const [nickNameLength, setNickNameLength] = useState(nickname.length);
+  const [nickNameLength, setNickNameLength] = useState(0 /*nickname.length*/);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [idCheck, setIdCheck] = useState(true);
@@ -41,7 +41,6 @@ const SignUp = () => {
   const postSignUp = e => {
     const signUpUri = 'http://localhost:7777/api/account/signUp';
     // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
-    console.log('axios');
     axios
       .post(signUpUri, {
         name: name,
@@ -50,18 +49,9 @@ const SignUp = () => {
         token: token
       })
       .then(res => {
-        console.log(res.data);
         switch (res.data.statusCode) {
           case 201:
             history.push(`/signIn?token=${token}`);
-            // auth.action.setAuthToken(res.data.ans);
-            // localStorage.setItem(
-            //   'token',
-            //   JSON.stringify({
-            //     token: res.data.ans
-            //   })
-            // );
-            // history.push(JSON.parse(localStorage.getItem('historyPath')).path);
             break;
           case 409:
             res.data.ans === 'nickname' && setIdCheck(false);
