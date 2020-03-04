@@ -29,9 +29,9 @@ const FeedHome = () => {
   return (
     <div className="home_body">
       <FeedCarousel />
-      {listArray.map(Data => {
+      {listArray.map((Data, index) => {
         return (
-          <div>
+          <div key={index}>
             <FeedCardView value={Data} />
           </div>
         );
