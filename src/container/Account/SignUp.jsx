@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useLocation, useHistory } from 'react-router-dom';
 
@@ -24,14 +24,21 @@ const SignUp = () => {
   const [nickNameLength, setNickNameLength] = useState(0 /*nickname.length*/);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [mount, setMount] = useState(false);
   const [idCheck, setIdCheck] = useState(true);
   const { action } = useContext(HABContext);
   const auth = useContext(AuthContext);
+
+  const imgInputRef = useRef(null);
 
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
   });
+
+  useEffect(() => {
+    mount || setMount(true);
+  }, []);
 
   const changeNickNameValue = e => {
     setnickName(e.target.value);
@@ -62,6 +69,10 @@ const SignUp = () => {
     e.preventDefault();
   };
 
+  const clickImgInput = e => {
+    imgInputRef.current.click();
+  };
+
   return (
     <div className="home_body_nobn">
       <form action="" onSubmit={postSignUp}>
@@ -72,7 +83,21 @@ const SignUp = () => {
               src="https://via.placeholder.com/150"
               alt=""
             />
-            <img className="su_img_edit" src={EditIcon} alt="" />
+            <input
+              type="file"
+              name=""
+              id="selectedFile"
+              style={{ display: 'none' }}
+              ref={imgInputRef}
+            />
+            {mount ? (
+              <img
+                className="su_img_edit"
+                src={EditIcon}
+                alt=""
+                onClick={() => clickImgInput()}
+              />
+            ) : null}
           </div>
 
           <div className="su_input_div">

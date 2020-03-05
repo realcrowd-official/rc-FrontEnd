@@ -6,7 +6,6 @@ import ShareBtn from '@/components/ShareBtn';
 import { numberWithCommas } from '@/global/utils.ts';
 
 const ProfileUserInfo = props => {
-  console.log(props.value);
   return (
     <div className="pui_body">
       <div className="pui_header">
