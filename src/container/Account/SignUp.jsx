@@ -44,12 +44,17 @@ const SignUp = () => {
   const postSignUp = e => {
     const signUpUri = 'http://localhost:7777/api/account/signUp';
     // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
+    const formData = new FormData();
+    formData.append('img', file);
+    formData.append('name', name);
+    formData.append('nickname', nickname);
+    formData.append('phone', phone);
     axios
-      .post(signUpUri, {
-        name: name,
-        nickname: nickname,
-        phone: phone,
-        token: token
+      .post(signUpUri, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'x-access-token': token
+        }
       })
       .then(res => {
         switch (res.data.statusCode) {
