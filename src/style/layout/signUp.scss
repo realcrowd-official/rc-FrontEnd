@@ -22,8 +22,8 @@
   height: $grid * 8;
   background-color: $primary;
   border: solid 2px $ffffff;
-  margin-left: $grid * 16;
-  margin-top: $grid * 16;
+  // margin-left: $grid * 16;
+  // margin-top: $grid * 16;
   @include borderRadius(50%);
 }
 

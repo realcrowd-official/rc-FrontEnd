@@ -24,8 +24,8 @@ const SignUp = () => {
   const [nickNameLength, setNickNameLength] = useState(0 /*nickname.length*/);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [mount, setMount] = useState(false);
   const [idCheck, setIdCheck] = useState(true);
+  const [file, setFile] = useState(null);
   const { action } = useContext(HABContext);
   const auth = useContext(AuthContext);
 
@@ -35,10 +35,6 @@ const SignUp = () => {
     action.setBottomType('false');
     action.setHeaderType('back');
   });
-
-  useEffect(() => {
-    mount || setMount(true);
-  }, []);
 
   const changeNickNameValue = e => {
     setnickName(e.target.value);
@@ -73,6 +69,11 @@ const SignUp = () => {
     imgInputRef.current.click();
   };
 
+  const handleImg = e => {
+    console.log(e.target.files[0]);
+    setFile(e.target.files[0]);
+  };
+
   return (
     <div className="home_body_nobn">
       <form action="" onSubmit={postSignUp}>
@@ -80,7 +81,11 @@ const SignUp = () => {
           <div className="su_img_thumbnail_div">
             <img
               className="su_img_thumbnail"
-              src="https://via.placeholder.com/150"
+              src={
+                file == null
+                  ? 'https://via.placeholder.com/150'
+                  : URL.createObjectURL(file)
+              }
               alt=""
             />
             <input
@@ -89,15 +94,14 @@ const SignUp = () => {
               id="selectedFile"
               style={{ display: 'none' }}
               ref={imgInputRef}
+              onChange={e => handleImg(e)}
             />
-            {mount ? (
-              <img
-                className="su_img_edit"
-                src={EditIcon}
-                alt=""
-                onClick={() => clickImgInput()}
-              />
-            ) : null}
+            <img
+              className="su_img_edit"
+              src={EditIcon}
+              alt=""
+              onClick={() => clickImgInput()}
+            />
           </div>
 
           <div className="su_input_div">
