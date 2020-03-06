@@ -7,7 +7,11 @@ const UserHeader = props => {
       <div className="uh_header_div">
         <img
           className="uh_thumnail uh_margin"
-          src="https://via.placeholder.com/150"
+          src={
+            props.maker.thumNailPic
+              ? props.maker.thumNailPic
+              : 'https://via.placeholder.com/150'
+          }
         />
         <div className="uh_header_margin">
           <div className="uh_maker_name">{props.maker.nickName}</div>

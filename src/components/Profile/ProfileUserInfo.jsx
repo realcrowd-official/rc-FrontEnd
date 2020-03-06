@@ -10,7 +10,14 @@ const ProfileUserInfo = props => {
     <div className="pui_body">
       <div className="pui_header">
         <h2>{props.value.nickName}</h2>
-        <img src="https://via.placeholder.com/150" alt="" />
+        <img
+          src={
+            props.value.thumNailPic
+              ? props.value.thumNailPic
+              : 'https://via.placeholder.com/150'
+          }
+          alt=""
+        />
       </div>
       <div className="pui_follow_follwing_div">
         <div>

@@ -10,17 +10,17 @@ const ProjectCardView = props => {
       <div className="card_view_img_div">
         <img
           className="card_view_img"
-          src={
-            props.value.maker.thumNailPic
-              ? props.value.maker.thumNailPic
-              : 'https://via.placeholder.com/150'
-          }
+          src="https://via.placeholder.com/150"
         ></img>
       </div>
       <div className="card_view_user_profile_img_div card_view_funding_left_margin">
         <img
           className="card_view_user_profile_img"
-          src="https://via.placeholder.com/150"
+          src={
+            props.value.maker.thumNailPic
+              ? props.value.maker.thumNailPic
+              : 'https://via.placeholder.com/150'
+          }
         ></img>
       </div>
       <div className="card_view_funding_information_div card_view_funding_left_margin">
