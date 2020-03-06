@@ -42,8 +42,8 @@ const SignUp = () => {
   };
 
   const postSignUp = e => {
-    const signUpUri = 'http://localhost:7777/api/account/signUp';
-    // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
+    // const signUpUri = 'http://localhost:7777/api/account/signUp';
+    const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
     const formData = new FormData();
     formData.append('img', file);
     formData.append('name', name);
