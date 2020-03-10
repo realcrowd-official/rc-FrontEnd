@@ -34,7 +34,6 @@ const SignUp = () => {
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
-    console.log(nickname);
   }, []);
 
   const changeNickNameValue = e => {

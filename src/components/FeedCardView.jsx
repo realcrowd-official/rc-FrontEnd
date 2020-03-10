@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slick from 'react-slick';
+import Axios from 'axios';
 
 //components
 import FundingProgress from '@/components/FundingProgress';
@@ -8,15 +9,13 @@ import PostSlick from '@/components/Post/PostSlick';
 
 import {
   IC_HEART_STROKE_BLACK,
+  IC_HEART_FILL_PRIMARY,
   IC_COMMENT_STROKE_BLACK,
   IC_SHARE_STROKE_BLACK
 } from '@/global/img/feedCard';
 
-// import icHeart from '@/img/feedCard/ic-heart-stroke-black.svg';
-// import icComment from '@/img/feedCard/ic-comment-stroke-black.svg';
-// import icShare from '@/img/feedCard/ic-share-stroke-black.svg';
-
 const FeedCardView = props => {
+  const [like, setLike] = useState(false);
   const carouselSetting = {
     dots: false,
     infinite: false,
@@ -24,7 +23,32 @@ const FeedCardView = props => {
     slideToShow: 1,
     slidesToScroll: 1
   };
-  console.log(props.value);
+  console.log(props.value._id);
+  const likeHandle = () => {
+    const url = 'http://localhost:7777/api/feed/like';
+    // const url = 'http://3.135.237.171:7777/api/feed/like';
+    Axios.put(
+      url,
+      {
+        id: props.value._id
+      },
+      {
+        headers: {
+          'x-access-token': JSON.parse(localStorage.getItem('token')).token
+        }
+      }
+    ).then(res => {
+      console.log(res.data);
+      if ((res.data.statusCode = 200)) {
+        if (res.data.ans == 'like') {
+          setLike(true);
+        } else {
+          setLike(false);
+        }
+      }
+    });
+  };
+
   return (
     <div className="feed_card_view_div">
       <UserHeader
@@ -67,7 +91,11 @@ const FeedCardView = props => {
         </div>
       </div>
       <div className="feed_card_view_funding_icon_div">
-        <img src={IC_HEART_STROKE_BLACK} alt="" />
+        <img
+          src={like ? IC_HEART_FILL_PRIMARY : IC_HEART_STROKE_BLACK}
+          alt=""
+          onClick={() => likeHandle()}
+        />
         <img src={IC_COMMENT_STROKE_BLACK} alt="" />
         {/* 공유버튼 누르면 바텀시트 팝업 */}
         <img src={IC_SHARE_STROKE_BLACK} alt="" />
