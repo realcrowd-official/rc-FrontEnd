@@ -21,8 +21,8 @@ const SignUp = () => {
   decodedToken === 'jwt expired' && window.location.replace('/');
 
   const [nickname, setnickName] = useState(decodedToken.nickname);
-  const [nickNameLength, setNickNameLength] = useState(0 /*nickname.length*/);
-  const [name, setName] = useState('');
+  const [nickNameLength, setNickNameLength] = useState(0);
+  const [name, setName] = useState(decodedToken.name);
   const [phone, setPhone] = useState('');
   const [idCheck, setIdCheck] = useState(true);
   const [file, setFile] = useState(null);
@@ -34,7 +34,8 @@ const SignUp = () => {
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
-  });
+    console.log(nickname);
+  }, []);
 
   const changeNickNameValue = e => {
     setnickName(e.target.value);
