@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Slick from 'react-slick';
 import Axios from 'axios';
 
@@ -6,6 +6,8 @@ import Axios from 'axios';
 import FundingProgress from '@/components/FundingProgress';
 import UserHeader from '@/components/Post/UserHeader';
 import PostSlick from '@/components/Post/PostSlick';
+
+import BSContext from '@/context/bottomSheet';
 
 import {
   IC_HEART_STROKE_BLACK,
@@ -17,6 +19,7 @@ import {
 const FeedCardView = props => {
   const [like, setLike] = useState(false);
   const [likeLength, setLikeLength] = useState(0);
+  const BS = useContext(BSContext);
 
   useEffect(() => {
     setLikeLength(props.value.likeMember.length);
@@ -36,8 +39,8 @@ const FeedCardView = props => {
     slidesToScroll: 1
   };
   const likeHandle = () => {
-    const url = 'http://localhost:7777/api/feed/like';
-    // const url = 'http://3.135.237.171:7777/api/feed/like';
+    // const url = 'http://localhost:7777/api/feed/like';
+    const url = 'http://3.135.237.171:7777/api/feed/like';
     Axios.put(
       url,
       {
@@ -49,7 +52,6 @@ const FeedCardView = props => {
         }
       }
     ).then(res => {
-      console.log(res.data);
       if ((res.data.statusCode = 200)) {
         if (res.data.ans == 'like') {
           setLike(true);
@@ -59,6 +61,16 @@ const FeedCardView = props => {
         setLikeLength(res.data.length);
       }
     });
+  };
+
+  const toLogin = toPath => {
+    BS.action.setBottomSheet(true);
+    localStorage.setItem(
+      'historyPath',
+      JSON.stringify({
+        path: toPath
+      })
+    );
   };
 
   return (
@@ -105,7 +117,9 @@ const FeedCardView = props => {
         <img
           src={like ? IC_HEART_FILL_PRIMARY : IC_HEART_STROKE_BLACK}
           alt=""
-          onClick={() => likeHandle()}
+          onClick={() =>
+            localStorage.getItem('token') ? likeHandle() : toLogin('/')
+          }
         />
         <img src={IC_COMMENT_STROKE_BLACK} alt="" />
         {/* 공유버튼 누르면 바텀시트 팝업 */}
