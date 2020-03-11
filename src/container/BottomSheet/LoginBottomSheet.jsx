@@ -104,7 +104,12 @@ const ReMakeBottomSheetWithHook = props => {
             <img className="bts_login_img" src={IC_SOCIAL_KAKAO} alt="kakao" />
             <p className="bts_login_p">카카오 계정으로 계속하기</p>
           </div>
-          <div className="bts_login_naver">
+          <div
+            className="bts_login_naver"
+            onClick={() => {
+              Login(`naver`);
+            }}
+          >
             <img className="bts_login_img" src={IC_SOCIAL_NAVER} alt="naver" />
             <p className="bts_login_p">네이버 계정으로 계속하기</p>
           </div>

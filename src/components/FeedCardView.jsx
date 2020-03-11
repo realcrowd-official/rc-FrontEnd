@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slick from 'react-slick';
 import Axios from 'axios';
 
@@ -16,6 +16,18 @@ import {
 
 const FeedCardView = props => {
   const [like, setLike] = useState(false);
+  const [likeLength, setLikeLength] = useState(0);
+
+  useEffect(() => {
+    setLikeLength(props.value.likeMember.length);
+    const isin = localStorage.getItem('oid')
+      ? props.value.likeMember.findIndex(item => {
+          return item == JSON.parse(localStorage.getItem('oid')).oid;
+        })
+      : -1;
+    isin > -1 && setLike(true);
+  }, []);
+
   const carouselSetting = {
     dots: false,
     infinite: false,
@@ -23,7 +35,6 @@ const FeedCardView = props => {
     slideToShow: 1,
     slidesToScroll: 1
   };
-  console.log(props.value._id);
   const likeHandle = () => {
     const url = 'http://localhost:7777/api/feed/like';
     // const url = 'http://3.135.237.171:7777/api/feed/like';
@@ -45,6 +56,7 @@ const FeedCardView = props => {
         } else {
           setLike(false);
         }
+        setLikeLength(res.data.length);
       }
     });
   };
@@ -85,8 +97,7 @@ const FeedCardView = props => {
       <div className="feed_card_view_funding_like_comment_div">
         <div className="feed_card_view_funding_like_comment_p">
           <span>
-            좋아요 {props.value.likeMember.length} ㆍ 댓글{' '}
-            {props.value.comment.length}
+            좋아요 {likeLength} ㆍ 댓글 {props.value.comment.length}
           </span>
         </div>
       </div>
