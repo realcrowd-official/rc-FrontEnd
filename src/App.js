@@ -8,6 +8,8 @@ import { Helmet } from 'react-helmet';
 import globalVar from './data/globalVar';
 import { FAVICON_16, FAVICON_32, APPLE_TOUCH_ICON } from './global/img/favicon';
 
+import Pixel from './pixel/pixel';
+
 import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
 import { AuthProvider } from './context/auth';
@@ -66,6 +68,7 @@ function App() {
           content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
         />
       </Helmet>
+      <Pixel />
       <AuthProvider>
         <HABProvider>
           <BSProvider>
