@@ -5,15 +5,19 @@ import { numberWithCommas } from '@/global/utils.ts';
 import FundingProgress from '@/components/FundingProgress';
 import ShareBtn from '@/components/ShareBtn';
 import ActionBtn from '@/components/ActionBtn';
-
 import ToTopTab from '@/components/Tab/ToTopTab';
 
-const FundingDetailMain = () => {
+import { convertDate, leftDay } from '@/lib/date';
+
+const FundingDetailMain = props => {
   const tabJson = [
     { tabName: '스토리', tabId: 'story' },
     { tabName: '커뮤니티', tabId: 'community' },
     { tabName: '정보', tabId: 'info' }
   ];
+  const item = props.value;
+  const convDate = convertDate(item.dueDate);
+  console.log(props.value);
   return (
     <div className="fd_main_body">
       <div className="funding_detail_main_img_div">
@@ -42,7 +46,7 @@ const FundingDetailMain = () => {
           </div>
         </div>
         <div className="funding_detail_title">
-          <p>펀딩 상세페이지 내의 펀딩 타이틀은 글줄 수의 제한이 없습니다.</p>
+          <p>{item.title}</p>
         </div>
         <div className="funding_detail_current_fund_div">
           <div>
@@ -53,7 +57,7 @@ const FundingDetailMain = () => {
             </div>
             <div>
               <p className="funding_detail_current_fund_change_text">
-                {numberWithCommas(339000)}원
+                {numberWithCommas(item.aggregateAmount)}원
               </p>
             </div>
           </div>
@@ -64,7 +68,9 @@ const FundingDetailMain = () => {
               </p>
             </div>
             <div>
-              <p className="funding_detail_current_fund_change_text">14일</p>
+              <p className="funding_detail_current_fund_change_text">
+                {leftDay(item.dueDate)}
+              </p>
             </div>
           </div>
           <div>
@@ -73,21 +79,27 @@ const FundingDetailMain = () => {
             </div>
             <div>
               <p className="funding_detail_current_fund_change_text">
-                {numberWithCommas(128)}명
+                {numberWithCommas(item.fundingMember.length)}명
               </p>
             </div>
           </div>
         </div>
         <div className="fd_notice_div">
           <p>
-            목표 금액 <span>{numberWithCommas(1000000)}원</span>이 모이면,
-            프로젝트 후원 종료 다음날인 <span>2020년 4월 5일 일요일</span>{' '}
+            목표 금액 <span>{numberWithCommas(item.targetAmount)}원</span>이
+            모이면, 프로젝트 후원 종료 다음날인{' '}
+            <span>{`${convDate[6]}년 ${convDate[0]}월 ${convDate[1]}일`}</span>{' '}
             결제가 진행됩니다.
           </p>
         </div>
 
         <div className="fd_funding_progress">
-          <FundingProgress />
+          <FundingProgress
+            id={item._id}
+            aggregate={item.aggregateAmount}
+            target={item.targetAmount}
+            dueDate={item.dueDate}
+          />
         </div>
 
         <div className="fd_funding_btn_div">

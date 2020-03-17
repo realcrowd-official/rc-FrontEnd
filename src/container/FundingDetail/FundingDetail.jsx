@@ -16,7 +16,7 @@ import Axios from 'axios';
 import { Redirect, useHistory } from 'react-router-dom';
 
 const FundingDetail = ({ match }) => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
   const { action } = useContext(HABContext);
   const FDTab = useContext(FDTabContext);
   const BS = useContext(BSContext);
@@ -33,16 +33,17 @@ const FundingDetail = ({ match }) => {
 
   useEffect(() => {
     Axios.get(`${url}/${match.params.id}`).then(res => {
-      console.log(res.data);
-      console.log(res.data.statusCode);
-      res.data.statusCode == 200 ? setData(res.data.ans) : history.push('/err');
+      res.data.statusCode == 200
+        ? setData([res.data.ans])
+        : history.push('/err');
     });
   }, []);
 
   return (
     <div className="home_body_nobn">
-      {/* <FundingDetailMain />
-      <div className="fd_sub_body">
+      {data.length == 1 && <FundingDetailMain value={data[0]} />}
+
+      {/* // <div className="fd_sub_body"> 
         {FDTab.state.fundingTab === 'story' && <FundingDetailStory />}
         {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity />}
         {FDTab.state.fundingTab === 'info' && <FundingDetailInfo />}

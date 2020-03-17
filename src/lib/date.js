@@ -1,4 +1,5 @@
 export const convertDate = originDate => {
+  console.log(originDate);
   const converKoDate = str => {
     let returnValue = '';
     switch (str) {
@@ -38,7 +39,7 @@ export const convertDate = originDate => {
   const date = ISODate.toString().substr(0, 3);
   const koDate = converKoDate(date);
 
-  return [month, day, hour, min, koDate, ISODate];
+  return [month, day, hour, min, koDate, ISODate, year];
 };
 
 export const leftDay = originDate => {
