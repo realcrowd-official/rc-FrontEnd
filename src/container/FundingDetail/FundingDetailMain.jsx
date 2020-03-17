@@ -16,8 +16,9 @@ const FundingDetailMain = props => {
     { tabName: '정보', tabId: 'info' }
   ];
   const item = props.value;
+  const maker = props.value.maker;
   const convDate = convertDate(item.dueDate);
-  console.log(props.value);
+
   return (
     <div className="fd_main_body">
       <div className="funding_detail_main_img_div">
@@ -32,12 +33,16 @@ const FundingDetailMain = props => {
           <div className="funding_detail_maker_header_thumnail_div">
             <img
               className="funding_detail_maker_header_thumnail"
-              src="https://via.placeholder.com/150"
+              src={
+                maker.thumNailPic
+                  ? maker.thumNailPic
+                  : 'https://via.placeholder.com/150'
+              }
               alt=""
             />
           </div>
           <div className="funding_detail_maker_name_div">
-            <p>메이커 닉네임</p>
+            <p>{maker.nickName}</p>
           </div>
           <div className="funding_detail_maker_follow_btn_div">
             <button>

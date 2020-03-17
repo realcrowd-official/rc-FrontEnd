@@ -22,8 +22,8 @@ const FundingDetail = ({ match }) => {
   const BS = useContext(BSContext);
   const history = useHistory();
 
-  const url = 'http://localhost:7777/api/project/crud';
-  // const url = 'http://3.135.237.171:7777/api/project/crud';
+  // const url = 'http://localhost:7777/api/project/crud';
+  const url = 'http://3.135.237.171:7777/api/project/crud';
 
   useEffect(() => {
     action.setBottomType('false');

@@ -1,5 +1,4 @@
 export const convertDate = originDate => {
-  console.log(originDate);
   const converKoDate = str => {
     let returnValue = '';
     switch (str) {
