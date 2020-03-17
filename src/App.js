@@ -69,38 +69,25 @@ function App() {
       <AuthProvider>
         <HABProvider>
           <BSProvider>
-            <Header />
-            <Switch>
-              <Route exact path="/">
-                {/* <ScrollToTop /> */}
-                <FeedHome />
-              </Route>
-              <Route
-                path="/project"
-                children={
-                  <TabProvider>
-                    {/* <ScrollToTop /> */}
-                    <ProjectHome />
-                  </TabProvider>
-                }
-              />
-              <Route path="/profile">
-                <MyPageHome />
-              </Route>
+            <TabProvider>
+              <Header />
+              <Switch>
+                <Route exact path="/">
+                  {/* <ScrollToTop /> */}
+                  <FeedHome />
+                </Route>
+                <Route path="/project" children={<ProjectHome />} />
+                <Route path="/profile">
+                  <MyPageHome />
+                </Route>
 
-              <Route
-                path="/funding/detail/:id"
-                children={
-                  <TabProvider>
-                    {/* <ScrollToTop /> */}
-                    <FundingDetail />
-                  </TabProvider>
-                }
-              />
-              <Route path="/signUp" children={<SignUp />} />
-              <Route path="/signIn" children={<SignIn />} />
-              <Route path="*" component={Error} />
-            </Switch>
+                <Route path="/funding/detail/:id" component={FundingDetail} />
+                <Route path="/signUp" children={<SignUp />} />
+                <Route path="/signIn" children={<SignIn />} />
+                <Route path="*" component={Error} />
+              </Switch>
+            </TabProvider>
+
             <BottomNav />
           </BSProvider>
         </HABProvider>

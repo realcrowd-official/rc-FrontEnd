@@ -12,21 +12,31 @@ import FDTabContext from '@/context/tab';
 import BSContext from '@/context/bottomSheet';
 
 import FundingButton from '@/components/Funding/FundingButton';
+import Axios from 'axios';
 
-const FundingDetail = () => {
+const FundingDetail = ({ match }) => {
   const { action } = useContext(HABContext);
   const FDTab = useContext(FDTabContext);
   const BS = useContext(BSContext);
+
+  const url = 'http://localhost:7777/api/project/crud';
+  // const url = 'http://3.135.237.171:7777/api/project/crud';
 
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
     BS.action.setKindOfBS('funding');
-  });
+  }, []);
+
+  useEffect(() => {
+    Axios.get(`${url}/${match.params.id}`).then(res => {
+      console.log(res.data);
+    });
+  }, []);
 
   return (
     <div className="home_body_nobn">
-      <FundingDetailMain />
+      {/* <FundingDetailMain />
       <div className="fd_sub_body">
         {FDTab.state.fundingTab === 'story' && <FundingDetailStory />}
         {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity />}
@@ -40,7 +50,7 @@ const FundingDetail = () => {
       >
         <Footer />
       </div>
-      {FDTab.state.fundingTab === 'story' && <FundingButton />}
+      {FDTab.state.fundingTab === 'story' && <FundingButton />} */}
     </div>
   );
 };
