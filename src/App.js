@@ -28,6 +28,7 @@ import SignUp from './container/Account/SignUp';
 import SignIn from './container/Account/SignIn';
 
 import Error from './pages/Error';
+import { ItemProvider } from './context/item';
 
 function App() {
   return (
@@ -72,26 +73,28 @@ function App() {
       <AuthProvider>
         <HABProvider>
           <BSProvider>
-            <TabProvider>
-              <Header />
-              <Switch>
-                <Route exact path="/">
-                  {/* <ScrollToTop /> */}
-                  <FeedHome />
-                </Route>
-                <Route path="/project" children={<ProjectHome />} />
-                <Route path="/profile">
-                  <MyPageHome />
-                </Route>
+            <ItemProvider>
+              <TabProvider>
+                <Header />
+                <Switch>
+                  <Route exact path="/">
+                    {/* <ScrollToTop /> */}
+                    <FeedHome />
+                  </Route>
+                  <Route path="/project" children={<ProjectHome />} />
+                  <Route path="/profile">
+                    <MyPageHome />
+                  </Route>
 
-                <Route path="/funding/detail/:id" component={FundingDetail} />
-                <Route path="/signUp" children={<SignUp />} />
-                <Route path="/signIn" children={<SignIn />} />
-                <Route path="*" component={Error} />
-              </Switch>
-            </TabProvider>
+                  <Route path="/funding/detail/:id" component={FundingDetail} />
+                  <Route path="/signUp" children={<SignUp />} />
+                  <Route path="/signIn" children={<SignIn />} />
+                  <Route path="*" component={Error} />
+                </Switch>
+              </TabProvider>
 
-            <BottomNav />
+              <BottomNav />
+            </ItemProvider>
           </BSProvider>
         </HABProvider>
       </AuthProvider>

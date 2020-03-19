@@ -16,13 +16,6 @@ import {
   IC_TAB_PROFILE_PRIMARY
 } from '@/global/img/bottomNav.ts';
 
-// import homeIcon from '@/img/BottomNav/ic-tab-feed-stroke-black.svg';
-// import homeIconPrimary from '@/img/BottomNav/ic-tab-feed-stroke-primary.svg';
-// import feedIcon from '@/img/BottomNav/ic-tab-projects-stroke-black.svg';
-// import feedIconPrimary from '@/img/BottomNav/ic-tab-projects-stroke-primary.svg';
-// import profileIcon from '@/img/BottomNav/ic-tab-profile-stroke-black.svg';
-// import profileIconPrimary from '@/img/BottomNav/ic-tab-profile-stroke-primary.svg';
-
 const BottomNav = () => {
   const habContext = useContext(HABContext);
   const BS = useContext(BSContext);
@@ -36,10 +29,10 @@ const BottomNav = () => {
       })
     );
   };
-  
+
   useEffect(() => {
-    isLogin()?Auth.action.setIsLogin(true) : Auth.action.setIsLogin(false)
-  }, [isLogin()])
+    isLogin() ? Auth.action.setIsLogin(true) : Auth.action.setIsLogin(false);
+  }, [isLogin()]);
   return (
     <>
       {habContext.state.bottomType === 'true' ? (
@@ -101,8 +94,8 @@ const BottomNav = () => {
                 <p>프로필</p>
               </Link>
             ) : (
-              <div className='profile_icon' onClick={() => toLogin('/profile')}>
-                <img src={IC_TAB_PROFILE} alt='프로필'/>
+              <div className="profile_icon" onClick={() => toLogin('/profile')}>
+                <img src={IC_TAB_PROFILE} alt="프로필" />
                 <p>프로필</p>
               </div>
             )}

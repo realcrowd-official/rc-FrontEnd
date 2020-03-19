@@ -7,7 +7,7 @@ import { IC_QUOTE_FILL_GREY } from '@/global/img/fundingDetail';
 
 // import quoteIcon from '@/img/fundingDetail/ic-quote-fill-grey.svg';
 
-const FundingDetailStory = () => {
+const FundingDetailStory = props => {
   return (
     <div className="fd_story_div home_container">
       <h1>이곳은 story 타이틀 입니다.</h1>
@@ -51,10 +51,10 @@ const FundingDetailStory = () => {
       <a href="">본문 outlink 14px regular primary</a>
       <div className="fd_user_body">
         <h2>메이커 소개</h2>
-        <ProfileUserInfo />
+        <ProfileUserInfo value={props.maker} />
       </div>
       <div className="bts_FundingItem noScroll">
-        <FundingItem />
+        <FundingItem item={props.item} />
       </div>
     </div>
   );
