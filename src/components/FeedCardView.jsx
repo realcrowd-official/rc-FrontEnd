@@ -9,6 +9,8 @@ import PostSlick from '@/components/Post/PostSlick';
 
 import BSContext from '@/context/bottomSheet';
 
+import { likePost } from '@/lib/api';
+
 import {
   IC_HEART_STROKE_BLACK,
   IC_HEART_FILL_PRIMARY,
@@ -38,29 +40,20 @@ const FeedCardView = props => {
     slideToShow: 1,
     slidesToScroll: 1
   };
-  const likeHandle = () => {
-    // const url = 'http://localhost:7777/api/feed/like';
-    const url = 'http://3.135.237.171:7777/api/feed/like';
-    Axios.put(
-      url,
-      {
-        id: props.value._id
-      },
-      {
-        headers: {
-          'x-access-token': JSON.parse(localStorage.getItem('token')).token
-        }
-      }
-    ).then(res => {
-      if ((res.data.statusCode = 200)) {
-        if (res.data.ans == 'like') {
-          setLike(true);
-        } else {
-          setLike(false);
-        }
-        setLikeLength(res.data.length);
-      }
+  const likeHandle = async () => {
+    const ans = await likePost({
+      id: props.value._id,
+      token: JSON.parse(localStorage.getItem('token')).token
     });
+
+    if ((ans.data.statusCode = 200)) {
+      if (ans.data.ans == 'like') {
+        setLike(true);
+      } else {
+        setLike(false);
+      }
+      setLikeLength(ans.data.length);
+    }
   };
 
   const toLogin = toPath => {
