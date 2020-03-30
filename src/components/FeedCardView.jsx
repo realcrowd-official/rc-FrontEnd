@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Slick from 'react-slick';
-import Axios from 'axios';
 
 //components
 import FundingProgress from '@/components/FundingProgress';

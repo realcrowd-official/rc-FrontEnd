@@ -7,15 +7,14 @@ import ReservateFeed from '@/container/Project/ReservateFeed';
 
 import TabContext from '@/context/tab';
 import HABContext from '@/context/headerAndBottom';
-import Axios from 'axios';
+
+import { pHAxios } from '@/lib/api';
 
 const ProjectHome = () => {
   const [doingArray, setDoingArray] = useState([]);
   const [reservateArray, setReservateArray] = useState([]);
   const { state } = useContext(TabContext);
   const habContext = useContext(HABContext);
-  // const url = "http://localhost:7777/api/project/crud";
-  const url = 'http://3.135.237.171:7777/api/project/crud';
 
   const separateArray = async array => {
     await array.map(Data => {
@@ -31,11 +30,11 @@ const ProjectHome = () => {
     habContext.action.setPath('project');
   }, []);
 
-  useEffect(() => {
-    Axios.get(url).then(res => {
-      // console.log(res.data);
-      separateArray(res.data.listArray);
-    });
+  useEffect(async () => {
+    const ans = await pHAxios();
+    if (ans.data.statusCode == 200) {
+      await separateArray(ans.data.listArray);
+    }
   }, []);
 
   return (

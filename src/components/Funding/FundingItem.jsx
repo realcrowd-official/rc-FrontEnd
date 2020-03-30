@@ -6,7 +6,6 @@ import itemContext from '@/context/item';
 
 const FundingItem = props => {
   const ITEMCONTEXT = useContext(itemContext);
-  console.log(ITEMCONTEXT.state.items);
 
   return (
     <div className="fi_div">

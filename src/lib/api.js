@@ -3,6 +3,17 @@ const axios = require('axios');
 const url = 'http://3.135.237.171:7777/api';
 // const url = "http://localhost:7777/api";
 
+//project
+
+const pHAxios = async () => {
+  const axiosUrl = `${url}/project/crud`;
+  return await axios.get(axiosUrl).then(res => res);
+};
+
+//account
+
+//feed
+
 const follow = async query => {
   const axiosUrl = `${url}/account/follow`;
   return await axios
@@ -38,4 +49,4 @@ const likePost = async query => {
     .then(res => res);
 };
 
-module.exports = { follow, likePost };
+module.exports = { pHAxios, follow, likePost };
