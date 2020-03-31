@@ -10,6 +10,11 @@ const pHAxios = async () => {
   return await axios.get(axiosUrl).then(res => res);
 };
 
+const fDAxios = async query => {
+  const axiosUrl = `${url}/project/crud/${query.pid}`;
+  return await axios.get(axiosUrl).then(res => res);
+};
+
 //account
 const follow = async query => {
   const axiosUrl = `${url}/account/follow`;
@@ -58,4 +63,4 @@ const likePost = async query => {
     .then(res => res);
 };
 
-module.exports = { pHAxios, follow, mPHAxios, likePost };
+module.exports = { pHAxios, fDAxios, follow, mPHAxios, likePost };

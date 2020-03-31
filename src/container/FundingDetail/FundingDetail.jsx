@@ -13,7 +13,9 @@ import BSContext from '@/context/bottomSheet';
 import itemContext from '@/context/item';
 
 import FundingButton from '@/components/Funding/FundingButton';
-import Axios from 'axios';
+
+import { fDAxios } from '@/lib/api';
+
 import { Redirect, useHistory } from 'react-router-dom';
 
 const FundingDetail = ({ match }) => {
@@ -24,9 +26,6 @@ const FundingDetail = ({ match }) => {
   const ITEMCONTEXT = useContext(itemContext);
   const history = useHistory();
 
-  // const url = 'http://localhost:7777/api/project/crud';
-  const url = 'http://3.135.237.171:7777/api/project/crud';
-
   useEffect(() => {
     action.setBottomType('false');
     action.setHeaderType('back');
@@ -34,14 +33,16 @@ const FundingDetail = ({ match }) => {
   }, []);
 
   useEffect(() => {
-    Axios.get(`${url}/${match.params.id}`).then(res => {
-      if (res.data.statusCode == 200) {
-        setData([res.data.ans]);
-        ITEMCONTEXT.action.setItems(res.data.ans.rewardList);
+    async function axios() {
+      const ans = await fDAxios({ pid: match.params.id });
+      if (ans.data.statusCode == 200) {
+        setData([ans.data.ans]);
+        ITEMCONTEXT.action.setItems(ans.data.ans.rewardList);
       } else {
         history.push('/err');
       }
-    });
+    }
+    axios();
   }, []);
 
   return (

@@ -23,7 +23,7 @@ const MyPageHome = () => {
       const ans = await mPHAxios({
         token: JSON.parse(localStorage.getItem('token')).token
       });
-      console.log(ans);
+
       if (ans.data.statusCode == 200) {
         await setProfile(ans.data.profileInfo);
       } else {
