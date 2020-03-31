@@ -30,11 +30,14 @@ const ProjectHome = () => {
     habContext.action.setPath('project');
   }, []);
 
-  useEffect(async () => {
-    const ans = await pHAxios();
-    if (ans.data.statusCode == 200) {
-      await separateArray(ans.data.listArray);
+  useEffect(() => {
+    async function axios() {
+      const ans = await pHAxios();
+      if (ans.data.statusCode == 200) {
+        await separateArray(ans.data.listArray);
+      }
     }
+    axios();
   }, []);
 
   return (

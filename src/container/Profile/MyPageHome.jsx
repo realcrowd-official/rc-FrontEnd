@@ -5,13 +5,12 @@ import ToTopTab from '@/components/Tab/ToTopTab';
 import FeedCardView from '@/components/FeedCardView';
 import ProjectCardView from '@/components/ProjectCardView';
 import Footer from '@/components/Footer';
-import Axios from 'axios';
+
+import { mPHAxios } from '@/lib/api';
 
 const MyPageHome = () => {
   const { state, action } = useContext(HABContext);
   const [profile, setProfile] = useState([]);
-  // const url = 'http://localhost:7777/api/account/profile';
-  const url = 'http://3.135.237.171:7777/api/account/profile';
 
   useEffect(() => {
     action.setHeaderType('regular');
@@ -20,13 +19,18 @@ const MyPageHome = () => {
   }, []);
 
   useEffect(() => {
-    Axios.get(url, {
-      headers: {
-        'x-access-token': JSON.parse(localStorage.getItem('token')).token
+    async function axios() {
+      const ans = await mPHAxios({
+        token: JSON.parse(localStorage.getItem('token')).token
+      });
+      console.log(ans);
+      if (ans.data.statusCode == 200) {
+        await setProfile(ans.data.profileInfo);
+      } else {
+        localStorage.removeItem('token');
       }
-    }).then(res => {
-      setProfile(res.data.profileInfo);
-    });
+    }
+    axios();
   }, []);
 
   const tabJson = [

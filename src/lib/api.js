@@ -11,9 +11,6 @@ const pHAxios = async () => {
 };
 
 //account
-
-//feed
-
 const follow = async query => {
   const axiosUrl = `${url}/account/follow`;
   return await axios
@@ -32,6 +29,18 @@ const follow = async query => {
     .then(res => res);
 };
 
+const mPHAxios = async query => {
+  const axiosUrl = `${url}/account/profile`;
+  return await axios
+    .get(axiosUrl, {
+      headers: {
+        'x-access-token': query.token
+      }
+    })
+    .then(res => res);
+};
+//feed
+
 const likePost = async query => {
   const axiosUrl = `${url}/feed/like`;
   return await axios
@@ -49,4 +58,4 @@ const likePost = async query => {
     .then(res => res);
 };
 
-module.exports = { pHAxios, follow, likePost };
+module.exports = { pHAxios, follow, mPHAxios, likePost };
