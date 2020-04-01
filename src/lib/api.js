@@ -21,6 +21,15 @@ const loginAxios = async query => {
   return await axios.get(axiosUrl).then(res => res);
 };
 
+const signInAxios = async query => {
+  const axiosUrl = `${url}/account/signIn`;
+  return await axios
+    .post(axiosUrl, {
+      id: query.id
+    })
+    .then(res => res);
+};
+
 const followAxios = async query => {
   const axiosUrl = `${url}/account/follow`;
   return await axios
@@ -77,6 +86,7 @@ module.exports = {
   pHAxios,
   fDAxios,
   loginAxios,
+  signInAxios,
   followAxios,
   mPHAxios,
   fHAxios,
