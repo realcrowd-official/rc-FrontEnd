@@ -46,6 +46,11 @@ const mPHAxios = async query => {
 };
 //feed
 
+const fHAxios = async query => {
+  const axiosUrl = `${url}/feed/crud`;
+  return await axios.get(axiosUrl).then(res => res);
+};
+
 const likePost = async query => {
   const axiosUrl = `${url}/feed/like`;
   return await axios
@@ -63,4 +68,4 @@ const likePost = async query => {
     .then(res => res);
 };
 
-module.exports = { pHAxios, fDAxios, follow, mPHAxios, likePost };
+module.exports = { pHAxios, fDAxios, follow, mPHAxios, fHAxios, likePost };

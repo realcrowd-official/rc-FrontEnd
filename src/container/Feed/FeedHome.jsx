@@ -4,14 +4,12 @@ import FeedCardView from '@/components/FeedCardView';
 import Footer from '@/components/Footer';
 
 import HABContext from '@/context/headerAndBottom';
-import Axios from 'axios';
+
+import { fHAxios } from '@/lib/api';
 
 const FeedHome = () => {
   const { action } = useContext(HABContext);
   const [listArray, setListArray] = useState([]);
-
-  // const url = 'http://localhost:7777/api/feed/crud';
-  const url = 'http://3.135.237.171:7777/api/feed/crud';
 
   useEffect(() => {
     action.setHeaderType('regular');
@@ -20,11 +18,13 @@ const FeedHome = () => {
   }, []);
 
   useEffect(() => {
-    Axios.get(url).then(res => {
-      res.data.listArray.map(Data => {
+    async function axios() {
+      const ans = await fHAxios();
+      ans.data.listArray.map(Data => {
         setListArray(listArray => [...listArray, Data]);
       });
-    });
+    }
+    axios();
   }, []);
   return (
     <div className="home_body">
