@@ -10,12 +10,9 @@ import {
   IC_SOCIAL_NAVER
 } from '@/global/img/bottomSheet';
 
-// import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
-// import kakaoIcon from '@/img/bottomsheet/ic-social-kakao.svg';
-// import naverIcon from '@/img/bottomsheet/ic-social-naver.svg';
-// import fbIcon from '@/img/bottomsheet/ic-social-facebook.svg';
-
 import BSContext from '@/context/bottomSheet';
+
+import { loginAxios } from '@/lib/api';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,
@@ -57,10 +54,9 @@ const ReMakeBottomSheetWithHook = props => {
     }, 500);
   };
 
-  const Login = kind => {
-    const Uri = `http://3.135.237.171:7777/api/account/socialLogin/${kind}/login`;
-    // const Uri = `http://localhost:7777/api/account/socialLogin/${kind}/login`;
-    axios.get(Uri).then(res => (window.location.href = res.data));
+  const Login = async kind => {
+    const ans = await loginAxios({ kind: kind });
+    window.location.href = ans.data;
   };
 
   const layer = props.showBlockLayer ? (

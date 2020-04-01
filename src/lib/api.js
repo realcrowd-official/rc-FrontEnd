@@ -16,7 +16,12 @@ const fDAxios = async query => {
 };
 
 //account
-const follow = async query => {
+const loginAxios = async query => {
+  const axiosUrl = `${url}/account/socialLogin/${query.kind}/login`;
+  return await axios.get(axiosUrl).then(res => res);
+};
+
+const followAxios = async query => {
   const axiosUrl = `${url}/account/follow`;
   return await axios
     .put(
@@ -68,4 +73,12 @@ const likePost = async query => {
     .then(res => res);
 };
 
-module.exports = { pHAxios, fDAxios, follow, mPHAxios, fHAxios, likePost };
+module.exports = {
+  pHAxios,
+  fDAxios,
+  loginAxios,
+  followAxios,
+  mPHAxios,
+  fHAxios,
+  likePost
+};
