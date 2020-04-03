@@ -18,10 +18,8 @@ const UserHeader = props => {
       uid: JSON.parse(localStorage.getItem('oid')).oid
     });
     if (ans.data.statusCode == 200) {
-      console.log(ans.data.ans);
       if (ans.data.ans == 'unfollow') {
         setFollow(false);
-        console.log(follow);
       } else {
         setFollow(true);
       }
@@ -40,7 +38,9 @@ const UserHeader = props => {
         />
         <div className="uh_header_margin">
           <div className="uh_maker_name">{props.maker.nickName}</div>
-          <div className="uh_upload_time">{leftDay(props.uploadDate)} 전</div>
+          {props.uploadDate ? (
+            <div className="uh_upload_time">{leftDay(props.uploadDate)} 전</div>
+          ) : null}
         </div>
         <button
           className="uh_margin uh_button uh_button_text"

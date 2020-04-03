@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { numberWithCommas } from '@/global/utils.ts';
 
@@ -8,8 +8,10 @@ import ActionBtn from '@/components/ActionBtn';
 import ToTopTab from '@/components/Tab/ToTopTab';
 
 import { convertDate, leftDay } from '@/lib/date';
+import { followAxios } from '@/lib/api';
 
 const FundingDetailMain = props => {
+  const [follow, setFollow] = useState(false);
   const tabJson = [
     { tabName: '스토리', tabId: 'story' },
     { tabName: '커뮤니티', tabId: 'community' },
@@ -18,6 +20,28 @@ const FundingDetailMain = props => {
   const item = props.value;
   const maker = props.value.maker;
   const convDate = convertDate(item.dueDate);
+
+  useEffect(() => {
+    const isin = localStorage.getItem('oid')
+      ? maker.followerList.findIndex(item => {
+          return item == JSON.parse(localStorage.getItem('oid')).oid;
+        })
+      : -1;
+    isin > -1 && setFollow(true);
+  }, []);
+  const followClickListner = async () => {
+    const ans = await followAxios({
+      oid: maker._id,
+      uid: JSON.parse(localStorage.getItem('oid')).oid
+    });
+    if (ans.data.statusCode == 200) {
+      if (ans.data.ans == 'unfollow') {
+        setFollow(false);
+      } else {
+        setFollow(true);
+      }
+    }
+  };
 
   return (
     <div className="fd_main_body">
@@ -45,8 +69,8 @@ const FundingDetailMain = props => {
             <p>{maker.nickName}</p>
           </div>
           <div className="funding_detail_maker_follow_btn_div">
-            <button>
-              <p>팔로우</p>
+            <button onClick={() => followClickListner()}>
+              <p>{follow ? '언팔로우' : '팔로우'}</p>
             </button>
           </div>
         </div>
