@@ -1,7 +1,9 @@
 const axios = require('axios');
 
 const url = 'http://3.135.237.171:7777/api';
-// const url = "http://localhost:7777/api";
+const localurl = 'http://localhost:7777/api';
+
+const token = JSON.parse(localStorage.getItem('token')).token;
 
 //project
 
@@ -41,14 +43,15 @@ const signUpAxios = async query => {
     .post(axiosUrl, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'x-access-token': query.token
+        'x-access-token': token
       }
     })
     .then(res => res);
 };
 
 const followAxios = async query => {
-  const axiosUrl = `${url}/account/follow`;
+  const axiosUrl = `${localurl}/account/follow`;
+  console.log(query);
   return await axios
     .put(
       axiosUrl,
@@ -58,7 +61,7 @@ const followAxios = async query => {
       },
       {
         headers: {
-          'x-access-token': query.token
+          'x-access-token': token
         }
       }
     )
@@ -70,7 +73,7 @@ const mPHAxios = async query => {
   return await axios
     .get(axiosUrl, {
       headers: {
-        'x-access-token': query.token
+        'x-access-token': token
       }
     })
     .then(res => res);
@@ -92,7 +95,7 @@ const likePost = async query => {
       },
       {
         headers: {
-          'x-access-token': query.token
+          'x-access-token': token
         }
       }
     )
