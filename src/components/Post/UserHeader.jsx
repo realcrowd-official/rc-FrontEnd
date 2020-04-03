@@ -17,7 +17,6 @@ const UserHeader = props => {
       oid: props.maker._id,
       uid: JSON.parse(localStorage.getItem('oid')).oid
     });
-    console.log(ans);
     if (ans.data.statusCode == 200) {
       console.log(ans.data.ans);
       if (ans.data.ans == 'unfollow') {
