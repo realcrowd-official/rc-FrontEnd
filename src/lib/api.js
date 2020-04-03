@@ -30,6 +30,23 @@ const signInAxios = async query => {
     .then(res => res);
 };
 
+const signUpAxios = async query => {
+  const axiosUrl = `${url}/account/signUp`;
+  const formData = new FormData();
+  formData.append('img', query.file);
+  formData.append('name', query.name);
+  formData.append('nickname', query.nickname);
+  formData.append('phone', query.phone);
+  return await axios
+    .post(axiosUrl, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'x-access-token': query.token
+      }
+    })
+    .then(res => res);
+};
+
 const followAxios = async query => {
   const axiosUrl = `${url}/account/follow`;
   return await axios
@@ -87,6 +104,7 @@ module.exports = {
   fDAxios,
   loginAxios,
   signInAxios,
+  signUpAxios,
   followAxios,
   mPHAxios,
   fHAxios,

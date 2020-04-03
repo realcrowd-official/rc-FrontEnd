@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { useLocation, useHistory } from 'react-router-dom';
 
 import resolveJWT from '@/lib/resolveJwt';
+import { signUpAxios } from '@/lib/api';
 
 import HABContext from '@/context/headerAndBottom';
 import AuthContext from '@/context/auth';
@@ -42,31 +43,50 @@ const SignUp = () => {
   };
 
   const postSignUp = e => {
-    // const signUpUri = 'http://localhost:7777/api/account/signUp';
-    const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
-    const formData = new FormData();
-    formData.append('img', file);
-    formData.append('name', name);
-    formData.append('nickname', nickname);
-    formData.append('phone', phone);
-    axios
-      .post(signUpUri, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          'x-access-token': token
-        }
-      })
-      .then(res => {
-        switch (res.data.statusCode) {
-          case 201:
-            history.push(`/signIn?token=${token}`);
-            break;
-          case 409:
-            res.data.ans === 'nickname' && setIdCheck(false);
-          default:
-            break;
-        }
+    // // const signUpUri = 'http://localhost:7777/api/account/signUp';
+    // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
+    // const formData = new FormData();
+    // formData.append('img', file);
+    // formData.append('name', name);
+    // formData.append('nickname', nickname);
+    // formData.append('phone', phone);
+    // axios
+    //   .post(signUpUri, formData, {
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data',
+    //       'x-access-token': token
+    //     }
+    //   })
+    //   .then(res => {
+    //     switch (res.data.statusCode) {
+    //       case 201:
+    //         history.push(`/signIn?token=${token}`);
+    //         break;
+    //       case 409:
+    //         res.data.ans === 'nickname' && setIdCheck(false);
+    //       default:
+    //         break;
+    //     }
+    //   });
+
+    async function axios() {
+      const ans = await signUpAxios({
+        file: file,
+        name: name,
+        nickname: nickname,
+        phone: phone
       });
+      switch (ans.data.statusCode) {
+        case 201:
+          history.push(`/signIn?token=${token}`);
+          break;
+        case 409:
+          ans.data.ans === 'nickname' && setIdCheck(false);
+        default:
+          break;
+      }
+    }
+    axios();
     e.preventDefault();
   };
 
