@@ -32,7 +32,7 @@ const FundingDetailMain = props => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
         })
       : -1;
-    isin > -1 && setFollow(true);
+    isin > -1 && AC.action.setIsFollow(true);
   }, []);
   const followClickListner = async () => {
     const ans = await followAxios({
@@ -41,9 +41,9 @@ const FundingDetailMain = props => {
     });
     if (ans.data.statusCode == 200) {
       if (ans.data.ans == 'unfollow') {
-        setFollow(false);
+        AC.action.setIsFollow(false);
       } else {
-        setFollow(true);
+        AC.action.setIsFollow(true);
       }
       AC.action.setFollower(ans.data.data.length);
     }
@@ -76,7 +76,7 @@ const FundingDetailMain = props => {
           </div>
           <div className="funding_detail_maker_follow_btn_div">
             <button onClick={() => followClickListner()}>
-              <p>{follow ? '언팔로우' : '팔로우'}</p>
+              <p>{AC.state.isFollow ? '언팔로우' : '팔로우'}</p>
             </button>
           </div>
         </div>

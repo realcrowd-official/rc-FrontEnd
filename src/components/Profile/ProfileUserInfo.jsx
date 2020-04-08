@@ -5,10 +5,26 @@ import ShareBtn from '@/components/ShareBtn';
 
 import ACContext from '@/context/account';
 
+import { followAxios } from '@/lib/api';
+
 import { numberWithCommas } from '@/global/utils.ts';
 
 const ProfileUserInfo = props => {
   const AC = useContext(ACContext);
+  const followClickListner = async () => {
+    const ans = await followAxios({
+      oid: props.value._id,
+      uid: JSON.parse(localStorage.getItem('oid')).oid
+    });
+    if (ans.data.statusCode == 200) {
+      if (ans.data.ans == 'unfollow') {
+        AC.action.setIsFollow(false);
+      } else {
+        AC.action.setIsFollow(true);
+      }
+      AC.action.setFollower(ans.data.data.length);
+    }
+  };
   return (
     <div className="pui_body">
       <div className="pui_header">
@@ -36,7 +52,9 @@ const ProfileUserInfo = props => {
         <p>{props.value.infoMessage}</p>
       </div>
       <div className="pui_btn_div">
-        <ActionBtn aText="팔로우" />
+        <div onClick={() => followClickListner()}>
+          <ActionBtn aText={AC.state.isFollow ? '언팔로우' : '팔로우'} />
+        </div>
         <ShareBtn />
       </div>
     </div>
