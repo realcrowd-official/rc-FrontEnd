@@ -50,7 +50,7 @@ const signUpAxios = async query => {
 };
 
 const followAxios = async query => {
-  const axiosUrl = `${url}/account/follow`;
+  const axiosUrl = `${localurl}/account/follow`;
   return await axios
     .put(
       axiosUrl,

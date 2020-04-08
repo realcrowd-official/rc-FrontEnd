@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { numberWithCommas } from '@/global/utils.ts';
 
@@ -7,11 +7,14 @@ import ShareBtn from '@/components/ShareBtn';
 import ActionBtn from '@/components/ActionBtn';
 import ToTopTab from '@/components/Tab/ToTopTab';
 
+import ACContext from '@/context/account';
+
 import { convertDate, leftDay } from '@/lib/date';
 import { followAxios } from '@/lib/api';
 
 const FundingDetailMain = props => {
   const [follow, setFollow] = useState(false);
+  const AC = useContext(ACContext);
   const tabJson = [
     { tabName: '스토리', tabId: 'story' },
     { tabName: '커뮤니티', tabId: 'community' },
@@ -22,6 +25,8 @@ const FundingDetailMain = props => {
   const convDate = convertDate(item.dueDate);
 
   useEffect(() => {
+    AC.action.setFollower(maker.followerList.length);
+    AC.action.setFollowing(maker.followingList.length);
     const isin = localStorage.getItem('oid')
       ? maker.followerList.findIndex(item => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
@@ -40,6 +45,7 @@ const FundingDetailMain = props => {
       } else {
         setFollow(true);
       }
+      AC.action.setFollower(ans.data.data.length);
     }
   };
 

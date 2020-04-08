@@ -14,6 +14,7 @@ import { TabProvider } from './context/tab';
 import { HABProvider } from './context/headerAndBottom';
 import { AuthProvider } from './context/auth';
 import { BSProvider } from './context/bottomSheet';
+import { AccountProvider } from './context/account';
 
 import ScrollToTop from './components/misc/ScrollToTop';
 import PrivateRouter from './components/common/PrivateRouter';
@@ -75,22 +76,27 @@ function App() {
           <BSProvider>
             <ItemProvider>
               <TabProvider>
-                <Header />
-                <Switch>
-                  <Route exact path="/">
-                    {/* <ScrollToTop /> */}
-                    <FeedHome />
-                  </Route>
-                  <Route path="/project" children={<ProjectHome />} />
-                  <Route path="/profile">
-                    <MyPageHome />
-                  </Route>
+                <AccountProvider>
+                  <Header />
+                  <Switch>
+                    <Route exact path="/">
+                      {/* <ScrollToTop /> */}
+                      <FeedHome />
+                    </Route>
+                    <Route path="/project" children={<ProjectHome />} />
+                    <Route path="/profile">
+                      <MyPageHome />
+                    </Route>
 
-                  <Route path="/funding/detail/:id" component={FundingDetail} />
-                  <Route path="/signUp" children={<SignUp />} />
-                  <Route path="/signIn" children={<SignIn />} />
-                  <Route path="*" component={Error} />
-                </Switch>
+                    <Route
+                      path="/funding/detail/:id"
+                      component={FundingDetail}
+                    />
+                    <Route path="/signUp" children={<SignUp />} />
+                    <Route path="/signIn" children={<SignIn />} />
+                    <Route path="*" component={Error} />
+                  </Switch>
+                </AccountProvider>
               </TabProvider>
 
               <BottomNav />

@@ -1,10 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+
 import { leftDay } from '@/lib/date';
 import { followAxios } from '@/lib/api';
 
+import ACContext from '@/context/account';
+
 const UserHeader = props => {
   const [follow, setFollow] = useState(false);
+  const AC = useContext(ACContext);
+
   useEffect(() => {
+    AC.action.setFollower(props.maker.followerList.length);
+    AC.action.setFollowing(props.maker.followingList.length);
     const isin = localStorage.getItem('oid')
       ? props.maker.followerList.findIndex(item => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
@@ -23,6 +30,7 @@ const UserHeader = props => {
       } else {
         setFollow(true);
       }
+      AC.action.setFollower(ans.data.data.length);
     }
   };
   return (

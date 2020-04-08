@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import ActionBtn from '@/components/ActionBtn';
 import ShareBtn from '@/components/ShareBtn';
 
+import ACContext from '@/context/account';
+
 import { numberWithCommas } from '@/global/utils.ts';
 
 const ProfileUserInfo = props => {
+  const AC = useContext(ACContext);
   return (
     <div className="pui_body">
       <div className="pui_header">
@@ -22,15 +25,11 @@ const ProfileUserInfo = props => {
       <div className="pui_follow_follwing_div">
         <div>
           <p className="pui_plain_p">팔로워</p>
-          <p className="pui_value_p">
-            {numberWithCommas(props.value.followerList.length)}
-          </p>
+          <p className="pui_value_p">{numberWithCommas(AC.state.follower)}</p>
         </div>
         <div>
           <p className="pui_plain_p">팔로잉</p>
-          <p className="pui_value_p">
-            {numberWithCommas(props.value.followingList.length)}
-          </p>
+          <p className="pui_value_p">{numberWithCommas(AC.state.following)}</p>
         </div>
       </div>
       <div className="pui_info_div">
