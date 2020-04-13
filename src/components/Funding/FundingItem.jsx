@@ -3,7 +3,6 @@ import React, { useState, useContext } from 'react';
 import { numberWithCommas } from '@/global/utils.ts';
 
 import itemContext from '@/context/item';
-import ItemContext from '../../context/item';
 
 const FundingItem = (props) => {
   const ITEMCONTEXT = useContext(itemContext);

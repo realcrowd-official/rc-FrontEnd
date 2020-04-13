@@ -1,14 +1,11 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import {
   IC_HAMBURGER_STROKE_BLACK,
   IC_NOTIFICATION_STROKE_BLACK,
-  IC_BACK_STROKE_BLACK
+  IC_BACK_STROKE_BLACK,
 } from '@/global/img/header';
-
-// import hamburgerIcon from '@/img/header/ic-hamburger-stroke-black.svg';
-// import notification from '@/img/header/ic-notification-stroke-black.svg';
-// import backIcon from '@/img/header/ic-back-stroke-black.svg';
 
 import HABContext from '@/context/headerAndBottom';
 
@@ -20,6 +17,11 @@ import SRBS from '@/container/BottomSheet/SelectRewardBottomSheet';
 const Header = () => {
   const { state } = useContext(HABContext);
   const BSState = useContext(BSContext);
+  const history = useHistory();
+
+  const goBack = () => {
+    history.goBack();
+  };
   return (
     <header className="max_container header_container">
       <div className="header_wrapper">
@@ -28,12 +30,13 @@ const Header = () => {
             <img
               className="header_hambuger_icon"
               src={IC_HAMBURGER_STROKE_BLACK}
-              // onClick={() => {
-              //   BSState.action.setBottomSheet(true);
-              // }}
             />
           ) : (
-            <img className="header_back_icon" src={IC_BACK_STROKE_BLACK} />
+            <img
+              className="header_back_icon"
+              src={IC_BACK_STROKE_BLACK}
+              onClick={() => goBack()}
+            />
           )}
         </div>
         <div className="header_right_div">
