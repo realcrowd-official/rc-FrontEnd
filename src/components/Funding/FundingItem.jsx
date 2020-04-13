@@ -19,11 +19,11 @@ const FundingItem = (props) => {
               title="이 리워드 선택하기"
               key={Data.itemId}
               className={`fi_item_div ${
-                Data.leftItem === 0 && `fi_item_sold_out`
-              } ${
-                Data.itemId == ITEMCONTEXT.state.selectItem &&
-                `fi_item_selected`
-              }`}
+                Data.leftItem === 0
+                  ? `fi_item_sold_out`
+                  : Data.itemId == ITEMCONTEXT.state.selectItem &&
+                    `fi_item_selected`
+              } `}
               onClick={() => itemSelectListner(Data.itemId)}
             >
               <p className="fi_item_cost">
