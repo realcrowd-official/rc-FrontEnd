@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Slick from 'react-slick';
+import { useHistory } from 'react-router-dom';
 
 //components
 import FundingProgress from '@/components/FundingProgress';
@@ -14,18 +15,19 @@ import {
   IC_HEART_STROKE_BLACK,
   IC_HEART_FILL_PRIMARY,
   IC_COMMENT_STROKE_BLACK,
-  IC_SHARE_STROKE_BLACK
+  IC_SHARE_STROKE_BLACK,
 } from '@/global/img/feedCard';
 
-const FeedCardView = props => {
+const FeedCardView = (props) => {
   const [like, setLike] = useState(false);
   const [likeLength, setLikeLength] = useState(0);
   const BS = useContext(BSContext);
+  const history = useHistory();
 
   useEffect(() => {
     setLikeLength(props.value.likeMember.length);
     const isin = localStorage.getItem('oid')
-      ? props.value.likeMember.findIndex(item => {
+      ? props.value.likeMember.findIndex((item) => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
         })
       : -1;
@@ -37,12 +39,12 @@ const FeedCardView = props => {
     infinite: false,
     speed: 500,
     slideToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
   const likeHandle = async () => {
     const ans = await likePost({
       id: props.value._id,
-      token: JSON.parse(localStorage.getItem('token')).token
+      token: JSON.parse(localStorage.getItem('token')).token,
     });
 
     if ((ans.data.statusCode = 200)) {
@@ -55,14 +57,18 @@ const FeedCardView = props => {
     }
   };
 
-  const toLogin = toPath => {
+  const toLogin = (toPath) => {
     BS.action.setBottomSheet(true);
     localStorage.setItem(
       'historyPath',
       JSON.stringify({
-        path: toPath
+        path: toPath,
       })
     );
+  };
+
+  const gotoFundingDetail = (pid) => {
+    history.push(`/funding/detail/${pid}`);
   };
 
   return (
@@ -72,7 +78,12 @@ const FeedCardView = props => {
         uploadDate={props.value.uploadDate}
       />
       <PostSlick />
-      <div className="feed_card_view_funding_div">
+      <div
+        className="feed_card_view_funding_div"
+        onClick={() => {
+          gotoFundingDetail(props.value.fundingItem._id);
+        }}
+      >
         <img
           className="feed_card_view_funding_img"
           src="https://via.placeholder.com/150"

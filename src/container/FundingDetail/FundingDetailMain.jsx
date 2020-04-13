@@ -8,17 +8,19 @@ import ActionBtn from '@/components/ActionBtn';
 import ToTopTab from '@/components/Tab/ToTopTab';
 
 import ACContext from '@/context/account';
+import BSContext from '@/context/bottomSheet';
 
 import { convertDate, leftDay } from '@/lib/date';
 import { followAxios } from '@/lib/api';
 
-const FundingDetailMain = props => {
+const FundingDetailMain = (props) => {
   const [follow, setFollow] = useState(false);
   const AC = useContext(ACContext);
+  const BS = useContext(BSContext);
   const tabJson = [
     { tabName: '스토리', tabId: 'story' },
     { tabName: '커뮤니티', tabId: 'community' },
-    { tabName: '정보', tabId: 'info' }
+    { tabName: '정보', tabId: 'info' },
   ];
   const item = props.value;
   const maker = props.value.maker;
@@ -28,7 +30,7 @@ const FundingDetailMain = props => {
     AC.action.setFollower(maker.followerList.length);
     AC.action.setFollowing(maker.followingList.length);
     const isin = localStorage.getItem('oid')
-      ? maker.followerList.findIndex(item => {
+      ? maker.followerList.findIndex((item) => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
         })
       : -1;
@@ -37,7 +39,7 @@ const FundingDetailMain = props => {
   const followClickListner = async () => {
     const ans = await followAxios({
       oid: maker._id,
-      uid: JSON.parse(localStorage.getItem('oid')).oid
+      uid: JSON.parse(localStorage.getItem('oid')).oid,
     });
     if (ans.data.statusCode == 200) {
       if (ans.data.ans == 'unfollow') {
@@ -138,7 +140,13 @@ const FundingDetailMain = props => {
         </div>
 
         <div className="fd_funding_btn_div">
-          <ActionBtn aText="프로젝트 후원하기" />
+          <div
+            onClick={() => {
+              BS.action.setBottomSheet(true);
+            }}
+          >
+            <ActionBtn aText="프로젝트 후원하기" />
+          </div>
           <ShareBtn />
         </div>
       </div>
