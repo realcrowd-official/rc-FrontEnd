@@ -15,16 +15,16 @@ const propTypes = {
   showBlockLayer: PropTypes.bool,
   className: PropTypes.string,
   appendCancelBtn: PropTypes.bool,
-  customLayout: PropTypes.string
+  customLayout: PropTypes.string,
 };
 
 const defaultProps = {
   showBlockLayer: true,
   className: '',
-  appendCancelBtn: true
+  appendCancelBtn: true,
 };
 
-const SelectRewardBottomSheet = props => {
+const SelectRewardBottomSheet = (props) => {
   const [isShow, setIsShow] = useState('shown');
   const [animationState, setAnimationState] = useState('enter');
 
@@ -59,8 +59,9 @@ const SelectRewardBottomSheet = props => {
   ) : null;
   return (
     <div
-      className={`bottom-sheet-wrapper ${props.className ||
-        ''} ${animationState || ''} ${isShow || ''}`}
+      className={`bottom-sheet-wrapper ${props.className || ''} ${
+        animationState || ''
+      } ${isShow || ''}`}
     >
       {layer}
       {props.customLayout}
@@ -84,14 +85,14 @@ const SelectRewardBottomSheet = props => {
           <FundingItem />
         </div>
         <div className="srbs_bottom_div">
-          <div className="srbs_count_div">
+          {/* <div className="srbs_count_div">
             <p className="srbs_count_div_setCountText">수량 선택</p>
             <div className="srbs_count_btn_div">
               <ActionBtn btnClass="ActionBtn_countBtn" aText="-" />
               <p className="srbs_count_btn_count">0</p>
               <ActionBtn btnClass="ActionBtn_countBtn" aText="+" />
             </div>
-          </div>
+          </div> */}
           <ActionBtn btnClass="ActionBtn_toNext" aText="다음 단계로" />
         </div>
       </div>
