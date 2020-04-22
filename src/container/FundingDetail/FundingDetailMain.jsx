@@ -9,6 +9,7 @@ import ToTopTab from '@/components/Tab/ToTopTab';
 
 import ACContext from '@/context/account';
 import BSContext from '@/context/bottomSheet';
+import itemContext from '@/context/item';
 
 import { convertDate, leftDay } from '@/lib/date';
 import { followAxios } from '@/lib/api';
@@ -17,6 +18,8 @@ const FundingDetailMain = (props) => {
   const [follow, setFollow] = useState(false);
   const AC = useContext(ACContext);
   const BS = useContext(BSContext);
+  const ITEMCONTEXT = useContext(itemContext);
+
   const tabJson = [
     { tabName: '스토리', tabId: 'story' },
     { tabName: '커뮤니티', tabId: 'community' },
@@ -29,6 +32,8 @@ const FundingDetailMain = (props) => {
   useEffect(() => {
     AC.action.setFollower(maker.followerList.length);
     AC.action.setFollowing(maker.followingList.length);
+    ITEMCONTEXT.action.setSelectItem('');
+
     const isin = localStorage.getItem('oid')
       ? maker.followerList.findIndex((item) => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;

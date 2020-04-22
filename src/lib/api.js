@@ -3,36 +3,38 @@ const axios = require('axios');
 const url = 'http://3.135.237.171:7777/api';
 const localurl = 'http://localhost:7777/api';
 
-const token = JSON.parse(localStorage.getItem('token')).token;
+const token = localStorage.getItem('token')
+  ? JSON.parse(localStorage.getItem('token')).token
+  : '';
 
 //project
 
-const pHAxios = async () => {
+export const pHAxios = async () => {
   const axiosUrl = `${url}/project/crud`;
-  return await axios.get(axiosUrl).then(res => res);
+  return await axios.get(axiosUrl).then((res) => res);
 };
 
-const fDAxios = async query => {
+export const fDAxios = async (query) => {
   const axiosUrl = `${url}/project/crud/${query.pid}`;
-  return await axios.get(axiosUrl).then(res => res);
+  return await axios.get(axiosUrl).then((res) => res);
 };
 
 //account
-const loginAxios = async query => {
+export const loginAxios = async (query) => {
   const axiosUrl = `${url}/account/socialLogin/${query.kind}/login`;
-  return await axios.get(axiosUrl).then(res => res);
+  return await axios.get(axiosUrl).then((res) => res);
 };
 
-const signInAxios = async query => {
+export const signInAxios = async (query) => {
   const axiosUrl = `${url}/account/signIn`;
   return await axios
     .post(axiosUrl, {
-      id: query.id
+      id: query.id,
     })
-    .then(res => res);
+    .then((res) => res);
 };
 
-const signUpAxios = async query => {
+export const signUpAxios = async (query) => {
   const axiosUrl = `${url}/account/signUp`;
   const formData = new FormData();
   formData.append('img', query.file);
@@ -43,72 +45,72 @@ const signUpAxios = async query => {
     .post(axiosUrl, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'x-access-token': token
-      }
+        'x-access-token': token,
+      },
     })
-    .then(res => res);
+    .then((res) => res);
 };
 
-const followAxios = async query => {
+export const followAxios = async (query) => {
   const axiosUrl = `${localurl}/account/follow`;
   return await axios
     .put(
       axiosUrl,
       {
         oid: query.oid,
-        uid: query.uid
+        uid: query.uid,
       },
       {
         headers: {
-          'x-access-token': token
-        }
+          'x-access-token': token,
+        },
       }
     )
-    .then(res => res);
+    .then((res) => res);
 };
 
-const mPHAxios = async query => {
+export const mPHAxios = async (query) => {
   const axiosUrl = `${url}/account/profile`;
   return await axios
     .get(axiosUrl, {
       headers: {
-        'x-access-token': token
-      }
+        'x-access-token': token,
+      },
     })
-    .then(res => res);
+    .then((res) => res);
 };
 //feed
 
-const fHAxios = async query => {
+export const fHAxios = async (query) => {
   const axiosUrl = `${url}/feed/crud`;
-  return await axios.get(axiosUrl).then(res => res);
+  return await axios.get(axiosUrl).then((res) => res);
 };
 
-const likePost = async query => {
+export const likePost = async (query) => {
   const axiosUrl = `${url}/feed/like`;
   return await axios
     .put(
       axiosUrl,
       {
-        id: query.id
+        id: query.id,
       },
       {
         headers: {
-          'x-access-token': token
-        }
+          'x-access-token': token,
+        },
       }
     )
-    .then(res => res);
+    .then((res) => res);
 };
 
-module.exports = {
-  pHAxios,
-  fDAxios,
-  loginAxios,
-  signInAxios,
-  signUpAxios,
-  followAxios,
-  mPHAxios,
-  fHAxios,
-  likePost
-};
+// exports = {
+//   pHAxios,
+//   // fDAxios,
+//   loginAxios,
+//   signInAxios,
+//   signUpAxios,
+//   followAxios,
+//   mPHAxios,
+//   fHAxios,
+//   likePost,
+// };

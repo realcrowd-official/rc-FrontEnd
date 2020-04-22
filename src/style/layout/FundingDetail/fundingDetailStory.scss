@@ -100,7 +100,7 @@
 .fd_story_footer {
   @supports (margin-bottom: env(safe-area-inset-bottom)) {
     margin-bottom: calc(
-      $header + $header + env(safe-area-inset-bottom)
+      #{$header} + #{$header} + env(safe-area-inset-bottom)
     ) !important;
   }
 
