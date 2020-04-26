@@ -1,7 +1,8 @@
 const axios = require('axios');
 
-const url = 'http://3.135.237.171:7777/api';
-const localurl = 'http://localhost:7777/api';
+// const url = 'http://api.mircrowd.com/api';
+const url = 'http://dev.api.mircrowd.com/api';
+// const url = 'http://localhost:7777/api';
 
 const token = localStorage.getItem('token')
   ? JSON.parse(localStorage.getItem('token')).token
@@ -52,7 +53,7 @@ export const signUpAxios = async (query) => {
 };
 
 export const followAxios = async (query) => {
-  const axiosUrl = `${localurl}/account/follow`;
+  const axiosUrl = `${url}/account/follow`;
   return await axios
     .put(
       axiosUrl,

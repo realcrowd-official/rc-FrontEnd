@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const url = "http://3.135.237.171:7777/api/account/checkJWT";
+const url = 'http://api.mircrowd.com/api/account/checkJWT';
 // const url = "http://localhost:7777/api/account/checkJWT"
 
 const isLogin = () => {
@@ -9,15 +9,17 @@ const isLogin = () => {
   } else {
     axios
       .get(url, {
-        headers: { 'x-access-token': JSON.parse(localStorage.getItem('token')).token }
+        headers: {
+          'x-access-token': JSON.parse(localStorage.getItem('token')).token,
+        },
       })
-      .then(res => {
+      .then((res) => {
         switch (res.data.statusCode) {
           case 201:
             localStorage.setItem(
               'token',
               JSON.stringify({
-                token: res.data.ans
+                token: res.data.ans,
               })
             );
             return true;
