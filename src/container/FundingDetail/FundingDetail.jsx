@@ -30,6 +30,9 @@ const FundingDetail = ({ match }) => {
     action.setBottomType('false');
     action.setHeaderType('back');
     BS.action.setKindOfBS('funding');
+    return () => {
+      BS.action.setKindOfBS('login');
+    };
   }, []);
 
   useEffect(() => {
