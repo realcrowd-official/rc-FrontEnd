@@ -1,7 +1,4 @@
 .pi_info {
-  margin: $grid * 2 0;
-  background-color: white;
-  padding: $grid * 4 $grid * 4 $grid * 4 $grid * 4;
   .pi_info_title {
     @include text-16-bold-b78;
     text-align: left;
@@ -54,9 +51,6 @@
 }
 
 .pi_set {
-  margin: $grid * 2 0;
-  background-color: white;
-  padding: $grid * 4;
   .set {
     display: flex;
     justify-content: space-between;
@@ -76,9 +70,6 @@
 }
 
 .pi_address_comment {
-  margin: $grid * 2 0;
-  padding: $grid * 4;
-  background-color: white;
   .header {
     @include text-16-bold-b78;
     margin-bottom: $grid * 4;
@@ -91,6 +82,7 @@
     padding: $grid * 3 $grid * 4;
     margin: $grid 0;
     @include text-16-regular-b38;
+    border-radius: 8px;
   }
   label {
     text-align: left;
@@ -104,4 +96,92 @@
   .check_label {
     @include text-14-regular-b78;
   }
+}
+
+.pi_user_inform {
+  input,
+  label {
+    width: 100%;
+  }
+  input {
+    width: calc(100% - #{$grid * 8});
+    border: none;
+    background-color: $black04;
+    padding: $grid * 3 $grid * 4;
+    margin: $grid 0;
+    @include text-16-regular-b78;
+    border-radius: 8px;
+  }
+}
+
+.pi_summary {
+  p {
+    text-align: left;
+    @include text-12-regular-b54;
+  }
+  .header {
+    @include text-16-bold-b78;
+  }
+
+  .cost_div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $grid * 3;
+    .info {
+      @include text-14-regular-b54;
+    }
+    .cost {
+      @include text-14-bold-b78-right;
+    }
+    .info_bold {
+      @include text-14-bold-b78;
+    }
+    .cost_primary {
+      @include text-14-bold-primary-right;
+    }
+  }
+  span {
+    @include text-12-bold-b54;
+  }
+
+  textarea {
+    width: calc(100% - #{$grid * 8});
+    resize: none;
+    border: none;
+    border-radius: 8px;
+    background-color: $black04;
+    padding: $grid * 4 $grid * 4 0 $grid * 4;
+    @include text-12-regular-b54;
+  }
+
+  .agree_checkbox {
+    width: $grid * 4;
+    margin-right: $grid * 3;
+  }
+  .agree_check_label {
+    @include text-14-regular-b78;
+  }
+}
+
+.pi_button {
+  margin-top: $grid * 2;
+  padding: $grid * 4;
+  background-color: white;
+  button {
+    width: 100%;
+    padding: $grid * 4;
+    border-radius: 8px;
+    background-color: $primary16;
+    p {
+      @include text-14-bold-primary-center;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.section {
+  margin: $grid * 2 0;
+  padding: $grid * 4;
+  background-color: white;
 }
