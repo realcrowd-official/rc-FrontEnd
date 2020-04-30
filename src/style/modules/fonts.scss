@@ -234,6 +234,12 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
+@mixin text-14-regular-b38 {
+  font-family: SpoqaHanSans;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.38);
+}
+
 @mixin text-12-bold-b54 {
   font-family: SpoqaHanSans;
   font-size: 12px;

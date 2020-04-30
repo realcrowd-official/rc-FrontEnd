@@ -1,0 +1,107 @@
+.pi_info {
+  margin: $grid * 2 0;
+  background-color: white;
+  padding: $grid * 4 $grid * 4 $grid * 4 $grid * 4;
+  .pi_info_title {
+    @include text-16-bold-b78;
+    text-align: left;
+    padding: 0 0 $grid * 4 0;
+  }
+  .pi_info_header {
+    display: flex;
+    img {
+      border-radius: 8px;
+      width: $grid * 32;
+      height: $grid * 24;
+    }
+    div {
+      margin-left: $grid * 3;
+    }
+    p {
+      text-align: left;
+      word-break: keep-all;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .title {
+      @include text-14-bold-b78;
+    }
+    .content {
+      @include text-14-regular-b54;
+    }
+  }
+
+  .pi_info_cost {
+    margin-top: 22px;
+    margin-bottom: 14px;
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .info {
+      @include text-14-regular-b54;
+      text-align: left;
+    }
+    .cost {
+      @include text-14-bold-b78-right;
+      text-align: right;
+    }
+  }
+}
+
+.pi_set {
+  margin: $grid * 2 0;
+  background-color: white;
+  padding: $grid * 4;
+  .set {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $grid * 4;
+    p {
+      @include text-16-bold-b78;
+    }
+    .button {
+      @include text-14-bold-primary-right;
+      cursor: pointer;
+    }
+  }
+  p {
+    @include text-14-regular-b38;
+    text-align: left;
+  }
+}
+
+.pi_address_comment {
+  margin: $grid * 2 0;
+  padding: $grid * 4;
+  background-color: white;
+  .header {
+    @include text-16-bold-b78;
+    margin-bottom: $grid * 4;
+    text-align: left;
+  }
+  input {
+    width: calc(100% - #{$grid * 8});
+    border: none;
+    background-color: $black04;
+    padding: $grid * 3 $grid * 4;
+    margin: $grid 0;
+    @include text-16-regular-b38;
+  }
+  label {
+    text-align: left;
+    @include text-14-regular-b54;
+  }
+  .checkbox {
+    margin-top: 30px;
+    width: $grid * 4;
+    margin-right: $grid * 3;
+  }
+  .check_label {
+    @include text-14-regular-b78;
+  }
+}

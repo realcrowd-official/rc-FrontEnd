@@ -27,6 +27,7 @@ import MyPageHome from './container/Profile/MyPageHome';
 import FundingDetail from './container/FundingDetail/FundingDetail';
 import SignUp from './container/Account/SignUp';
 import SignIn from './container/Account/SignIn';
+import PurChase from './container/Purchase/Purchase';
 
 import Error from './pages/Error';
 import { ItemProvider } from './context/item';
@@ -94,6 +95,7 @@ function App() {
                     />
                     <Route path="/signUp" children={<SignUp />} />
                     <Route path="/signIn" children={<SignIn />} />
+                    <Route path="/purchase" children={<PurChase />} />
                     <Route path="*" component={Error} />
                   </Switch>
                 </AccountProvider>
