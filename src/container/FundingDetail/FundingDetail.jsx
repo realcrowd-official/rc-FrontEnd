@@ -41,6 +41,7 @@ const FundingDetail = ({ match }) => {
       if (ans.data.statusCode == 200) {
         setData([ans.data.ans]);
         ITEMCONTEXT.action.setItems(ans.data.ans.rewardList);
+        ITEMCONTEXT.action.setItemId(match.params.id);
       } else {
         history.push('/err');
       }

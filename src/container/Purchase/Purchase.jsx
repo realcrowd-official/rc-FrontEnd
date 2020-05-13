@@ -1,15 +1,21 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import PurchaseInfo from '@/components/purchase/PurchaseInfo';
 
 import HABContext from '@/context/headerAndBottom';
 
 const Purchase = () => {
+  const [addressComment, setAddressComment] = useState(0);
   const HAB = useContext(HABContext);
   useEffect(() => {
     HAB.action.setBottomType('false');
     HAB.action.setHeaderType('back');
   }, []);
+
+  const changeAddressComment = (e) => {
+    setAddressComment(e.target.value.length);
+  };
+
   return (
     <div className="home_body_nobn">
       <PurchaseInfo />
@@ -24,8 +30,14 @@ const Purchase = () => {
       <section className="pi_address_comment section">
         <p className="header">배송시 요청사항</p>
         <label htmlFor="address_input">배송시 요청사항</label>
-        <input type="text" name="" id="address_input" maxLength="60" />
-        <label htmlFor="address_input">0/60</label>
+        <input
+          type="text"
+          name=""
+          id="address_input"
+          maxLength="60"
+          onChange={(e) => changeAddressComment(e)}
+        />
+        <label htmlFor="address_input">{addressComment}/60</label>
         <div>
           <input
             className="checkbox"

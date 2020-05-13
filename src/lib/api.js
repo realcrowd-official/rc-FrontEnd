@@ -104,6 +104,24 @@ export const likePost = async (query) => {
     .then((res) => res);
 };
 
+export const checkItem = async (query) => {
+  const axiosUrl = `${url}/purchase/check`;
+  return await axios
+    .post(
+      axiosUrl,
+      {
+        pId: query.pId,
+        iId: query.iId,
+      },
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    )
+    .then((res) => res);
+};
+
 // exports = {
 //   pHAxios,
 //   // fDAxios,

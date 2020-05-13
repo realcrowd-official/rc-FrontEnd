@@ -6,7 +6,6 @@ import itemContext from '@/context/item';
 
 const FundingItem = (props) => {
   const ITEMCONTEXT = useContext(itemContext);
-  const [select, setSelect] = useState(false);
   const itemSelectListner = (iId) => {
     ITEMCONTEXT.action.setSelectItem(iId);
   };
@@ -24,7 +23,9 @@ const FundingItem = (props) => {
                   : Data.itemId == ITEMCONTEXT.state.selectItem &&
                     `fi_item_selected`
               } `}
-              onClick={() => itemSelectListner(Data.itemId)}
+              onClick={() => {
+                Data.leftItem === 0 || itemSelectListner(Data.itemId);
+              }}
             >
               <p className="fi_item_cost">
                 <span>{numberWithCommas(Data.cost)}</span>원을 후원합니다

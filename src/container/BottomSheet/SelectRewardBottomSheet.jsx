@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -10,6 +11,9 @@ import { IC_CLOSE_STROKE_BLACK } from '@/global/img/bottomSheet';
 // import CloseIcon from '@/img/bottomsheet/ic-close-stroke-black.svg';
 
 import BSContext from '@/context/bottomSheet';
+import ItemContext from '@/context/item';
+
+import { checkItem } from '@/lib/api';
 
 const propTypes = {
   showBlockLayer: PropTypes.bool,
@@ -29,6 +33,9 @@ const SelectRewardBottomSheet = (props) => {
   const [animationState, setAnimationState] = useState('enter');
 
   const { state, action } = useContext(BSContext);
+  const ITEMCONTEXT = useContext(ItemContext);
+
+  const history = useHistory();
 
   useEffect(() => {
     state.bottomSheet ? enter() : onClose();
@@ -49,6 +56,24 @@ const SelectRewardBottomSheet = (props) => {
       setIsShow('hide');
       props.onCloseFinishAnimation && props.onCloseFinishAnimation();
     }, 500);
+  };
+
+  const onClickToBuy = async (e) => {
+    console.log('here');
+    if (ITEMCONTEXT.state.selectItem == '') {
+      alert('선택된 아이템이 없습니다');
+    } else {
+      const ans = await checkItem({
+        pId: ITEMCONTEXT.state.itemId,
+        iId: ITEMCONTEXT.state.selectItem,
+      });
+      if (ans.data.ans === 'fail') {
+        alert('매진된 상품입니다');
+      } else if (ans.data.ans === 'success') {
+        action.setBottomSheet(false);
+        history.push(`/purchase`);
+      }
+    }
   };
 
   const layer = props.showBlockLayer ? (
@@ -93,7 +118,9 @@ const SelectRewardBottomSheet = (props) => {
               <ActionBtn btnClass="ActionBtn_countBtn" aText="+" />
             </div>
           </div> */}
-          <ActionBtn btnClass="ActionBtn_toNext" aText="다음 단계로" />
+          <div onClick={() => onClickToBuy()}>
+            <ActionBtn btnClass="ActionBtn_toNext" aText="다음 단계로" />
+          </div>
         </div>
       </div>
     </div>
