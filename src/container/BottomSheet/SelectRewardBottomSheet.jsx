@@ -59,7 +59,6 @@ const SelectRewardBottomSheet = (props) => {
   };
 
   const onClickToBuy = async (e) => {
-    console.log('here');
     if (ITEMCONTEXT.state.selectItem == '') {
       alert('선택된 아이템이 없습니다');
     } else {
@@ -71,7 +70,13 @@ const SelectRewardBottomSheet = (props) => {
         alert('매진된 상품입니다');
       } else if (ans.data.ans === 'success') {
         action.setBottomSheet(false);
-        history.push(`/purchase`);
+        history.push({
+          pathname: `/purchase`,
+          state: {
+            itemId: ITEMCONTEXT.state.itemId,
+            selectItem: ITEMCONTEXT.state.selectItem,
+          },
+        });
       }
     }
   };

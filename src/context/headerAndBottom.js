@@ -1,24 +1,34 @@
 import React, { createContext, useState } from 'react';
 
 const HABContext = createContext({
-  state: { headerType: 'regular', bottomType: 'true', path: 'home' },
+  state: {
+    headerType: 'regular',
+    notiType: 'regular',
+    bottomType: 'true',
+    addType: '',
+    path: 'home',
+  },
   action: {
     setHeaderType: () => {},
+    setNotiType: () => {},
     setBottomType: () => {},
-    setPath: () => {}
-  }
+    setAddType: () => {},
+    setPath: () => {},
+  },
 });
 
 const { Consumer: HABConsumer } = HABContext;
 
 const HABProvider = ({ children }) => {
   const [headerType, setHeaderType] = useState('regular');
+  const [notiType, setNotiType] = useState('regular');
   const [bottomType, setBottomType] = useState('true');
+  const [addType, setAddType] = useState('');
   const [path, setPath] = useState('home');
 
   const value = {
-    state: { headerType, bottomType, path },
-    action: { setHeaderType, setBottomType, setPath }
+    state: { headerType, notiType, bottomType, addType, path },
+    action: { setHeaderType, setNotiType, setBottomType, setAddType, setPath },
   };
 
   return <HABContext.Provider value={value}>{children}</HABContext.Provider>;

@@ -122,6 +122,17 @@ export const checkItem = async (query) => {
     .then((res) => res);
 };
 
+export const purchaseInfoAxios = async ({ pid, iId }) => {
+  const axiosUrl = `http://localhost:7777/api/purchase/deal?pid=${pid}&iId=${iId}`;
+  return await axios
+    .get(axiosUrl, {
+      headers: {
+        'x-access-token': token,
+      },
+    })
+    .then((res) => res);
+};
+
 // exports = {
 //   pHAxios,
 //   // fDAxios,

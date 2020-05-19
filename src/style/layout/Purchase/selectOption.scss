@@ -1,0 +1,49 @@
+.so_section {
+  div {
+    p {
+      text-align: left;
+    }
+  }
+  button {
+    border-radius: 8px;
+    padding: 10px 0;
+  }
+}
+
+.so_header {
+  display: flex;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .so_name {
+    @include text-14-bold-b78;
+  }
+  .so_origin {
+    margin-left: $grid * 2;
+    padding: 1px 4px;
+    @include text-12-bold-primary-center;
+    border-radius: 8px;
+    background-color: $primary16;
+  }
+}
+
+.so_main {
+  margin-top: $grid * 2;
+  .so_address {
+    @include text-14-regular-b78;
+  }
+}
+
+.so_btn {
+  margin-top: $grid * 4;
+  .so_edit {
+    background-color: rgba(0, 0, 0, 0.04);
+    @include text-14-bold-b54-center;
+  }
+
+  .so_select {
+    background-color: $primary16;
+    @include text-14-bold-primary-center;
+  }
+}

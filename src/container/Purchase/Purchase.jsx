@@ -1,28 +1,71 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import PurchaseInfo from '@/components/purchase/PurchaseInfo';
 
 import HABContext from '@/context/headerAndBottom';
+import itemContext from '@/context/item';
 
-const Purchase = () => {
+import { purchaseInfoAxios } from '@/lib/api';
+import { convertDate, leftDay } from '@/lib/date';
+
+import { numberWithCommas } from '@/global/utils.ts';
+
+const Purchase = (props) => {
   const [addressComment, setAddressComment] = useState(0);
+  const [userData, setUserData] = useState([]);
+  const [userName, setUserName] = useState('');
+  const [userTel, setUserTel] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [itemData, setItemData] = useState([]);
   const HAB = useContext(HABContext);
+  const ITEMCONTEXT = useContext(itemContext);
+  const history = useHistory();
   useEffect(() => {
     HAB.action.setBottomType('false');
     HAB.action.setHeaderType('back');
+  }, []);
+
+  useEffect(() => {
+    //iId= history.location.state.itemId, token,
+    async function axios() {
+      const ans = await purchaseInfoAxios({
+        pid: history.location.state.itemId,
+        iId: history.location.state.selectItem,
+      });
+      if (ans.data.statusCode == 200) {
+        setUserName(ans.data.user.name);
+        setUserEmail(ans.data.user.email);
+        setUserTel(ans.data.user.tel);
+        setUserData([ans.data.user]);
+        setItemData([ans.data.item]);
+      }
+    }
+    axios();
   }, []);
 
   const changeAddressComment = (e) => {
     setAddressComment(e.target.value.length);
   };
 
+  const selectAddress = (e) => {
+    history.push({ pathname: '/selectop', state: { kind: 'address' } });
+  };
+
   return (
     <div className="home_body_nobn">
-      <PurchaseInfo />
+      <PurchaseInfo value={history.location.state.itemId} />
       <section className="pi_set section">
         <div className="set">
           <p>배송지 설정</p>
-          <p className="button">설정</p>
+          <p
+            className="button"
+            onClick={() => {
+              selectAddress();
+            }}
+          >
+            설정
+          </p>
         </div>
         <p>배송지를 설정해주세요</p>
       </section>
@@ -61,30 +104,75 @@ const Purchase = () => {
 
       <section className="pi_user_inform section">
         <label htmlFor="user_name">이름</label>
-        <input type="text" name="" id="user_name" />
+        <input
+          type="text"
+          name=""
+          id="user_name"
+          value={userData.length == 0 ? '' : userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
         <label htmlFor="user_email">이메일 주소</label>
-        <input type="text" name="" id="user_email" />
+        <input
+          type="text"
+          name=""
+          id="user_email"
+          value={userData.length == 0 ? '' : userEmail}
+          onChange={(e) => setUserEmail(e.target.value)}
+        />
         <label htmlFor="user_phone">휴대폰 번호</label>
-        <input type="text" name="" id="user_phone" />
+        <input
+          type="text"
+          name=""
+          id="user_phone"
+          maxLength="11"
+          value={userData.length == 0 ? '' : userTel}
+          onChange={(e) => setUserTel(e.target.value)}
+        />
       </section>
 
       <section className="pi_summary section">
         <p className="header">리워드 요약</p>
         <div className="cost_div">
           <p className="info">후원액</p>
-          <p className="cost">99999원</p>
+          <p className="cost">
+            {itemData.length === 0
+              ? numberWithCommas(99999)
+              : numberWithCommas(itemData[0].rewardList[0].cost)}
+            원
+          </p>
         </div>
         <div className="cost_div">
           <p className="info">배송비</p>
-          <p className="cost">99999원</p>
+          <p className="cost">
+            {itemData.length === 0
+              ? numberWithCommas(99999)
+              : numberWithCommas(itemData[0].rewardList[0].shipPay)}
+            원
+          </p>
         </div>
         <div className="cost_div">
           <p className="info_bold">최종 결제금액</p>
-          <p className="cost_primary">99999원</p>
+          <p className="cost_primary">
+            {itemData.length === 0
+              ? numberWithCommas(99999)
+              : numberWithCommas(
+                  itemData[0].rewardList[0].cost +
+                    itemData[0].rewardList[0].shipPay
+                )}
+            원
+          </p>
         </div>
         <p>
-          <span>펀딩 마감일 (2020년 3월 6일 금요일)</span>까지 목표금액이 100%
-          모이지 않을 경우, 결제가 진행되지 않습니다.
+          <span>
+            펀딩 마감일 (
+            {itemData.length == 0
+              ? 'error입니다.'
+              : `${convertDate(itemData[0].dueDate)[6]}년 ${
+                  convertDate(itemData[0].dueDate)[0]
+                }월 ${convertDate(itemData[0].dueDate)[1]}일 금요일`}
+            )
+          </span>
+          까지 목표금액이 100% 모이지 않을 경우, 결제가 진행되지 않습니다.
         </p>
         <textarea name="" id="" cols="30" rows="10" disabled>
           국회의 정기회는 법률이 정하는 바에 의하여 매년 1회 집회되며, 국회의

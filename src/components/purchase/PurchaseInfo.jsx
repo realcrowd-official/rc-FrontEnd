@@ -1,6 +1,7 @@
 import React from 'react';
 
-const PurchaseInfo = () => {
+const PurchaseInfo = (props) => {
+  console.log(props.value);
   return (
     <div className="pi_info section">
       <p className="pi_info_title">후원 상세 내역</p>
