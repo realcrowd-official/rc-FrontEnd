@@ -1,0 +1,30 @@
+.aa_section {
+  label {
+    @include text-14-regular-b54;
+    display: block;
+    margin-top: $grid;
+    margin-bottom: $grid;
+    &[for='input'] {
+      @include text-14-regular-b54;
+    }
+  }
+  input {
+    width: calc(100% - #{$grid * 8});
+    background-color: $black04;
+    border: none;
+    padding: $grid * 3 $grid * 4;
+    @include borderRadius;
+
+    ::placeholder {
+      padding: 0;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 3px 2px $primary;
+    }
+  }
+  .main_address {
+    cursor: pointer;
+  }
+}

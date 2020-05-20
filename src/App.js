@@ -29,6 +29,7 @@ import SignUp from './container/Account/SignUp';
 import SignIn from './container/Account/SignIn';
 import PurChase from './container/Purchase/Purchase';
 import SelectOP from './container/Purchase/SelectOption';
+import AddAddress from './container/Option/AddAddress';
 
 import Error from './pages/Error';
 import { ItemProvider } from './context/item';
@@ -98,6 +99,7 @@ function App() {
                     <Route path="/signIn" children={<SignIn />} />
                     <Route path="/purchase" children={<PurChase />} />
                     <Route path="/selectop" children={<SelectOP />} />
+                    <Route path="/addAddress" children={<AddAddress />} />
                     <Route path="*" component={Error} />
                   </Switch>
                 </AccountProvider>

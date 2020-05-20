@@ -13,6 +13,7 @@ import BSContext from '@/context/bottomSheet';
 
 import LBS from '@/container/BottomSheet/LoginBottomSheet';
 import SRBS from '@/container/BottomSheet/SelectRewardBottomSheet';
+import ABS from '@/container/BottomSheet/AddressBottomSheet';
 
 const Header = () => {
   const { state } = useContext(HABContext);
@@ -54,7 +55,7 @@ const Header = () => {
               className="header_notification_icon"
               src={IC_NOTIFICATION_STROKE_BLACK}
             />
-          ) : (
+          ) : state.notiType === 'add' ? (
             <p
               className="header_add"
               onClick={() => {
@@ -67,11 +68,12 @@ const Header = () => {
             >
               추가
             </p>
-          )}
+          ) : null}
         </div>
       </div>
       {BSState.state.kindOfBS === 'login' && <LBS />}
       {BSState.state.kindOfBS === 'funding' && <SRBS />}
+      {BSState.state.kindOfBS === 'address' && <ABS />}
     </header>
   );
 };
