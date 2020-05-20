@@ -35,8 +35,12 @@ const ReMakeBottomSheetWithHook = (props) => {
 
   useEffect(() => {
     state.bottomSheet ? enter() : onClose();
+    // state.bottomSheet ? loadApi : null;
   }, [state.bottomSheet]);
 
+  //   const loadApi = () => {
+
+  //   };
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
@@ -93,16 +97,30 @@ const ReMakeBottomSheetWithHook = (props) => {
             if (extraAddr !== '') {
               extraAddr = ' (' + extraAddr + ')';
             }
+            console.log(extraAddr);
             // 조합된 참고항목을 해당 필드에 넣는다.
-            // document.getElementById("sample2_extraAddress").value = extraAddr;
+            document.getElementById('sub_addr').value = extraAddr;
           } else {
-            document.getElementById('sample2_extraAddress').value = '';
+            document.getElementById('sub_addr').value = '';
           }
+
+          // 우편번호와 주소 정보를 해당 필드에 넣는다.
+          //   document.getElementById('sample2_postcode').value = data.zonecode;
+          document.getElementById(
+            'main_addr'
+          ).value = `(${data.zonecode}) ${addr}`;
+          // 커서를 상세주소 필드로 이동한다.
+          document.getElementById('sub_addr').focus();
+
+          // iframe을 넣은 element를 안보이게 한다.
+          // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+          //   element_layer.style.display = 'none';
+          action.setBottomSheet(false);
         },
         width: '100%',
         height: '100%',
         maxSuggestItems: 5,
-      }).embed(element_layer);
+      }).embed(element_layer, { autoClose: false });
 
       element_layer.style.display = 'block';
 
@@ -170,13 +188,7 @@ const ReMakeBottomSheetWithHook = (props) => {
           </div>
           <div className="bts_close_div"></div>
         </div>
-        <div id="address_layer" className="bts_login_div">
-          {/* <div>
-            <form action="" method="get">
-              <input type="text"></input>
-            </form>
-          </div> */}
-        </div>
+        <div id="address_layer" className="bts_login_div"></div>
         <div className="bts_waring_div">
           <div>
             <p>

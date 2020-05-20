@@ -35,13 +35,18 @@ const AddAddress = () => {
               kakaoAddress();
             }}
           >
-            <input className="main_address" type="text" disabled />
+            <input
+              id="main_addr"
+              className="main_address"
+              type="text"
+              disabled
+            />
           </div>
         </div>
 
         <div>
           <label htmlFor="input">상세주소</label>
-          <input type="text" />
+          <input id="sub_addr" type="text" />
         </div>
       </section>
       <section></section>
