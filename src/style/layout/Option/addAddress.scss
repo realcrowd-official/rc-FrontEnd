@@ -1,5 +1,5 @@
 .aa_section {
-  label {
+  .input_label {
     @include text-14-regular-b54;
     display: block;
     margin-top: $grid;
@@ -27,4 +27,17 @@
   .main_address {
     cursor: pointer;
   }
+}
+.check_div {
+  margin-top: $grid * 6;
+}
+.addr_checkbox {
+  width: $grid * 4 !important;
+  margin-right: $grid * 3 !important;
+}
+.addr_label {
+  @include text-14-regular-b78;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }

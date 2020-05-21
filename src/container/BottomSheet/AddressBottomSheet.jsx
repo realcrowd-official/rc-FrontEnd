@@ -97,7 +97,6 @@ const ReMakeBottomSheetWithHook = (props) => {
             if (extraAddr !== '') {
               extraAddr = ' (' + extraAddr + ')';
             }
-            console.log(extraAddr);
             // 조합된 참고항목을 해당 필드에 넣는다.
             document.getElementById('sub_addr').value = extraAddr;
           } else {

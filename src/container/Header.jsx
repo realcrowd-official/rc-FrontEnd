@@ -49,27 +49,29 @@ const Header = () => {
             />
           )}
         </div>
-        <div className="header_right_div">
-          {state.notiType === 'regular' ? (
-            <img
-              className="header_notification_icon"
-              src={IC_NOTIFICATION_STROKE_BLACK}
-            />
-          ) : state.notiType === 'add' ? (
-            <p
-              className="header_add"
-              onClick={() => {
-                state.addType == 'address'
-                  ? addAddress()
-                  : state.addType == 'purchase'
-                  ? addPurchase()
-                  : null;
-              }}
-            >
-              추가
-            </p>
-          ) : null}
-        </div>
+        {state.notiType === 'none' ? null : (
+          <div className="header_right_div">
+            {state.notiType === 'regular' ? (
+              <img
+                className="header_notification_icon"
+                src={IC_NOTIFICATION_STROKE_BLACK}
+              />
+            ) : state.notiType === 'add' ? (
+              <p
+                className="header_add"
+                onClick={() => {
+                  state.addType == 'address'
+                    ? addAddress()
+                    : state.addType == 'purchase'
+                    ? addPurchase()
+                    : null;
+                }}
+              >
+                추가
+              </p>
+            ) : null}
+          </div>
+        )}
       </div>
       {BSState.state.kindOfBS === 'login' && <LBS />}
       {BSState.state.kindOfBS === 'funding' && <SRBS />}

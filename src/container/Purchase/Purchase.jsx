@@ -5,6 +5,7 @@ import PurchaseInfo from '@/components/purchase/PurchaseInfo';
 
 import HABContext from '@/context/headerAndBottom';
 import itemContext from '@/context/item';
+import accountContext from '@/context/account';
 
 import { purchaseInfoAxios } from '@/lib/api';
 import { convertDate, leftDay } from '@/lib/date';
@@ -20,6 +21,7 @@ const Purchase = (props) => {
   const [itemData, setItemData] = useState([]);
   const HAB = useContext(HABContext);
   const ITEMCONTEXT = useContext(itemContext);
+  const ACONTEXT = useContext(accountContext);
   const history = useHistory();
   useEffect(() => {
     HAB.action.setBottomType('false');
@@ -39,6 +41,14 @@ const Purchase = (props) => {
         setUserTel(ans.data.user.tel);
         setUserData([ans.data.user]);
         setItemData([ans.data.item]);
+        ACONTEXT.action.setAddr(ans.data.user.address);
+        if (ans.data.user.address.length > 0) {
+          ans.data.user.address.map((Data) => {
+            if (Data.primary && !ACONTEXT.state.addSelected) {
+              ACONTEXT.action.setSelectAddr([Data.addrName, Data.addr]);
+            }
+          });
+        }
       }
     }
     axios();
@@ -67,7 +77,7 @@ const Purchase = (props) => {
             설정
           </p>
         </div>
-        <p>배송지를 설정해주세요</p>
+        <p>배송지를 설정해주세요{ACONTEXT.state.selectAddr}</p>
       </section>
 
       <section className="pi_address_comment section">

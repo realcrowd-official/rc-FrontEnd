@@ -133,6 +133,25 @@ export const purchaseInfoAxios = async ({ pid, iId }) => {
     .then((res) => res);
 };
 
+export const saveAddr = async ({ addrName, addr, primary }) => {
+  const axiosUrl = `http://localhost:7777/api/account/saveAddr`;
+  return await axios
+    .post(
+      axiosUrl,
+      {
+        addrName: addrName,
+        addr: addr,
+        primary: primary,
+      },
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    )
+    .then((res) => res);
+};
+
 // exports = {
 //   pHAxios,
 //   // fDAxios,

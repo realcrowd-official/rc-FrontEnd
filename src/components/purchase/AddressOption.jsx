@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
-const AddressOption = () => {
+import accountContext from '@/context/account';
+
+const AddressOption = (props) => {
+  const history = useHistory();
+  const ACONTEXT = useContext(accountContext);
+  const selectItem = () => {
+    ACONTEXT.action.setSelectAddr([props.data.addrName, props.data.addr]);
+    ACONTEXT.action.setAddSelected(true);
+    history.goBack();
+  };
   return (
     <div>
       <section className="so_section section">
         <div className="so_header">
-          <p className="so_name">홍길동</p>
-          <p className="so_origin">기본</p>
+          <p className="so_name">{props.data.addrName}</p>
+          {props.data.primary && <p className="so_origin">기본</p>}
         </div>
         <div className="so_main">
-          <p className="so_address">
-            [21976] 인천광역시 원인재로 56 ,106동 103호
-          </p>
+          <p className="so_address">{props.data.addr}</p>
         </div>
         <div className="so_btn">
           <button className="so_edit">수정</button>
-          <button className="so_select">선택</button>
+          <button
+            className="so_select"
+            onClick={() => {
+              selectItem();
+            }}
+          >
+            선택
+          </button>
         </div>
       </section>
     </div>

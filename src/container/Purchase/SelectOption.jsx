@@ -4,9 +4,11 @@ import { useHistory } from 'react-router-dom';
 import AddressOption from '@/components/purchase/AddressOption';
 
 import HABContext from '@/context/headerAndBottom';
+import accountContext from '@/context/account';
 
 const SelectOption = () => {
   const HAB = useContext(HABContext);
+  const ACONTEXT = useContext(accountContext);
   const history = useHistory();
 
   useEffect(() => {
@@ -17,7 +19,9 @@ const SelectOption = () => {
   }, []);
   return (
     <div className="home_body_nobn">
-      <AddressOption />
+      {ACONTEXT.state.addr.map((Data) => {
+        return <AddressOption data={Data} />;
+      })}
     </div>
   );
 };
