@@ -5,15 +5,20 @@ import FundingProgress from '@/components/FundingProgress';
 import TabContext from '@/context/tab';
 import FundingReservate from '@/components/FundingReservate';
 
-const ProjectCardView = props => {
+const ProjectCardView = (props) => {
   const { state } = useContext(TabContext);
+  console.log(props.value);
   return (
     <div className="card_view_container max_container">
       <Link to={`/funding/detail/${props.value._id}`}>
         <div className="card_view_img_div">
           <img
             className="card_view_img"
-            src="https://via.placeholder.com/150"
+            src={
+              props.value.mainImg
+                ? props.value.mainImg
+                : 'https://via.placeholder.com/150'
+            }
           ></img>
         </div>
         <div className="card_view_user_profile_img_div card_view_funding_left_margin">
