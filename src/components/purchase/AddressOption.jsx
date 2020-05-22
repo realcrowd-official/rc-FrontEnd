@@ -7,7 +7,11 @@ const AddressOption = (props) => {
   const history = useHistory();
   const ACONTEXT = useContext(accountContext);
   const selectItem = () => {
-    ACONTEXT.action.setSelectAddr([props.data.addrName, props.data.addr]);
+    ACONTEXT.action.setSelectAddr([
+      props.data.addrName,
+      props.data.addr,
+      props.data.primary,
+    ]);
     ACONTEXT.action.setAddSelected(true);
     history.goBack();
   };

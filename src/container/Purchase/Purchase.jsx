@@ -45,7 +45,11 @@ const Purchase = (props) => {
         if (ans.data.user.address.length > 0) {
           ans.data.user.address.map((Data) => {
             if (Data.primary && !ACONTEXT.state.addSelected) {
-              ACONTEXT.action.setSelectAddr([Data.addrName, Data.addr]);
+              ACONTEXT.action.setSelectAddr([
+                Data.addrName,
+                Data.addr,
+                Data.primary,
+              ]);
             }
           });
         }
@@ -77,7 +81,21 @@ const Purchase = (props) => {
             설정
           </p>
         </div>
-        <p>배송지를 설정해주세요{ACONTEXT.state.selectAddr}</p>
+        {ACONTEXT.state.selectAddr == '' ? (
+          <p>배송지를 설정해주세요</p>
+        ) : (
+          <div>
+            <div className="so_header">
+              <p className="so_name">{ACONTEXT.state.selectAddr[0]}</p>
+              {ACONTEXT.state.selectAddr[2] && (
+                <p className="so_origin">기본</p>
+              )}
+            </div>
+            <div className="so_main">
+              <p className="so_address">{ACONTEXT.state.selectAddr[1]}</p>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="pi_address_comment section">
