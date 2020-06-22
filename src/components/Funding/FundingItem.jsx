@@ -20,7 +20,7 @@ const FundingItem = (props) => {
               className={`fi_item_div ${
                 Data.leftItem === 0
                   ? `fi_item_sold_out`
-                  : Data.itemId == ITEMCONTEXT.state.selectItem &&
+                  : Data.itemId === ITEMCONTEXT.state.selectItem &&
                     `fi_item_selected`
               } `}
               onClick={() => {

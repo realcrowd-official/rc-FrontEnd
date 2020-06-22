@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import TabContext from '@/context/tab';
 
-const ToTopTab = props => {
+const ToTopTab = (props) => {
   const TabC = useContext(TabContext);
 
   const [scroll, setScroll] = useState(0);
@@ -15,21 +15,25 @@ const ToTopTab = props => {
     tabTop ^ (scroll.scrollTop >= 815) && setTabTop(!tabTop);
   }, [scroll]);
 
-  const onScroll = e => {
+  const onScroll = (e) => {
     const scrollTop = ('scroll', e.srcElement.scrollingElement.scrollTop);
     setScroll({ scrollTop });
   };
 
   return (
-    <div className={`ttt_container ${tabTop ? 'ttt_top': undefined}`}>
+    <div className={`ttt_container ${tabTop ? 'ttt_top' : undefined}`}>
       <div className="ttt_wrapper">
-        {props.tabJson.map(Data => {
+        {props.tabJson.map((Data) => {
           return (
             <button
               // className={'funding_doing_btn' + (state.tabMenu === 'doing' ? ' btn_active' : '')}
               className="ttt_start_btn"
               key={Data.tabId}
-              onClick={() => TabC.action.setFundingTab(Data.tabId)}
+              onClick={() =>
+                props.type == 'fundingDetail'
+                  ? TabC.action.setFundingTab(Data.tabId)
+                  : TabC.action.setMyPageTab(Data.tabId)
+              }
             >
               {Data.tabName}
             </button>

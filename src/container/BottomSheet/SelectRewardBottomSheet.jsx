@@ -59,7 +59,8 @@ const SelectRewardBottomSheet = (props) => {
   };
 
   const onClickToBuy = async (e) => {
-    if (ITEMCONTEXT.state.selectItem == '') {
+    console.log(ITEMCONTEXT.state.selectItem);
+    if (ITEMCONTEXT.state.selectItem === '') {
       alert('선택된 아이템이 없습니다');
     } else {
       const ans = await checkItem({

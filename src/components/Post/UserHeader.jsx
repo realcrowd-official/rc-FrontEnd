@@ -5,7 +5,7 @@ import { followAxios } from '@/lib/api';
 
 import ACContext from '@/context/account';
 
-const UserHeader = props => {
+const UserHeader = (props) => {
   const [follow, setFollow] = useState(false);
   const AC = useContext(ACContext);
 
@@ -13,16 +13,17 @@ const UserHeader = props => {
     AC.action.setFollower(props.maker.followerList.length);
     AC.action.setFollowing(props.maker.followingList.length);
     const isin = localStorage.getItem('oid')
-      ? props.maker.followerList.findIndex(item => {
+      ? props.maker.followerList.findIndex((item) => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
         })
       : -1;
     isin > -1 && setFollow(true);
   }, []);
+
   const followClickListner = async () => {
     const ans = await followAxios({
       oid: props.maker._id,
-      uid: JSON.parse(localStorage.getItem('oid')).oid
+      uid: JSON.parse(localStorage.getItem('oid')).oid,
     });
     if (ans.data.statusCode == 200) {
       if (ans.data.ans == 'unfollow') {
@@ -33,6 +34,7 @@ const UserHeader = props => {
       AC.action.setFollower(ans.data.data.length);
     }
   };
+
   return (
     <div className="uh_div">
       <div className="uh_header_div">
@@ -50,12 +52,15 @@ const UserHeader = props => {
             <div className="uh_upload_time">{leftDay(props.uploadDate)} 전</div>
           ) : null}
         </div>
-        <button
-          className="uh_margin uh_button uh_button_text"
-          onClick={() => followClickListner()}
-        >
-          {follow ? '언팔로우' : '팔로우'}
-        </button>
+        {JSON.parse(localStorage.getItem('oid')).oid ==
+        props.maker._id ? null : (
+          <button
+            className="uh_margin uh_button uh_button_text"
+            onClick={() => followClickListner()}
+          >
+            {follow ? '언팔로우' : '팔로우'}
+          </button>
+        )}
       </div>
     </div>
   );

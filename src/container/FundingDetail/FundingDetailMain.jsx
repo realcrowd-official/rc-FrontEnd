@@ -61,7 +61,7 @@ const FundingDetailMain = (props) => {
       <div className="funding_detail_main_img_div">
         <img
           className="funding_detail_main_img"
-          src="https://via.placeholder.com/150"
+          src={item.mainImg ? item.mainImg : 'https://via.placeholder.com/150'}
           alt=""
         />
       </div>
@@ -155,7 +155,7 @@ const FundingDetailMain = (props) => {
           <ShareBtn />
         </div>
       </div>
-      <ToTopTab tabJson={tabJson} />
+      <ToTopTab tabJson={tabJson} type={'fundingDetail'} />
     </div>
   );
 };

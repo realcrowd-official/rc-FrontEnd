@@ -1,13 +1,19 @@
 .slick-slide {
-  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+  // width: 100%;
   min-height: 216px;
   max-height: 324px;
   height: 100%;
+  background-color: white;
 
   img {
     height: 67vw;
     min-height: 216px;
     max-height: 324px;
+    max-width: $grid * 108;
+    min-width: $grid * 72;
     object-fit: cover;
+    background-color: white;
   }
 }

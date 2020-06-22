@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import ActionBtn from '@/components/ActionBtn';
 import ShareBtn from '@/components/ShareBtn';
@@ -9,12 +10,13 @@ import { followAxios } from '@/lib/api';
 
 import { numberWithCommas } from '@/global/utils.ts';
 
-const ProfileUserInfo = props => {
+const ProfileUserInfo = (props) => {
   const AC = useContext(ACContext);
+  const history = useHistory();
   const followClickListner = async () => {
     const ans = await followAxios({
       oid: props.value._id,
-      uid: JSON.parse(localStorage.getItem('oid')).oid
+      uid: JSON.parse(localStorage.getItem('oid')).oid,
     });
     if (ans.data.statusCode == 200) {
       if (ans.data.ans == 'unfollow') {
@@ -24,6 +26,20 @@ const ProfileUserInfo = props => {
       }
       AC.action.setFollower(ans.data.data.length);
     }
+  };
+
+  const profileEditListner = async () => {
+    history.push({
+      pathname: '/profileEdit',
+      state: {
+        name: props.value.name,
+        nickName: props.value.nickName,
+        tel: props.value.tel,
+        email: props.value.email,
+        thumNailPic: props.value.thumNailPic,
+        infoMessage: props.value.infoMessage,
+      },
+    });
   };
   return (
     <div className="pui_body">
@@ -52,9 +68,16 @@ const ProfileUserInfo = props => {
         <p>{props.value.infoMessage}</p>
       </div>
       <div className="pui_btn_div">
-        <div onClick={() => followClickListner()}>
-          <ActionBtn aText={AC.state.isFollow ? '언팔로우' : '팔로우'} />
-        </div>
+        {props.type == 'myPage' ? (
+          <div onClick={() => profileEditListner()}>
+            <ActionBtn aText="프로필 수정" />
+          </div>
+        ) : (
+          <div onClick={() => followClickListner()}>
+            <ActionBtn aText={AC.state.isFollow ? '언팔로우' : '팔로우'} />
+          </div>
+        )}
+
         <ShareBtn />
       </div>
     </div>

@@ -8,9 +8,10 @@ import FundingReservate from '@/components/FundingReservate';
 const ProjectCardView = (props) => {
   const { state } = useContext(TabContext);
   console.log(props.value);
+
   return (
     <div className="card_view_container max_container">
-      <Link to={`/funding/detail/${props.value._id}`}>
+      <Link to={props.type === 'doing' && `/funding/detail/${props.value._id}`}>
         <div className="card_view_img_div">
           <img
             className="card_view_img"

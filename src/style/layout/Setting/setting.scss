@@ -1,0 +1,11 @@
+.s_section {
+  text-align: left;
+  p {
+    text-align: left;
+    @include text-16-bold-b78;
+  }
+  h5 {
+    @include text-14-regular-b78;
+    cursor: pointer;
+  }
+}

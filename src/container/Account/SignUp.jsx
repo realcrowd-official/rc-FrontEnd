@@ -37,44 +37,18 @@ const SignUp = () => {
     action.setHeaderType('back');
   }, []);
 
-  const changeNickNameValue = e => {
+  const changeNickNameValue = (e) => {
     setnickName(e.target.value);
     setNickNameLength(e.target.value.length);
   };
 
-  const postSignUp = e => {
-    // // const signUpUri = 'http://localhost:7777/api/account/signUp';
-    // const signUpUri = 'http://3.135.237.171:7777/api/account/signUp';
-    // const formData = new FormData();
-    // formData.append('img', file);
-    // formData.append('name', name);
-    // formData.append('nickname', nickname);
-    // formData.append('phone', phone);
-    // axios
-    //   .post(signUpUri, formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data',
-    //       'x-access-token': token
-    //     }
-    //   })
-    //   .then(res => {
-    //     switch (res.data.statusCode) {
-    //       case 201:
-    //         history.push(`/signIn?token=${token}`);
-    //         break;
-    //       case 409:
-    //         res.data.ans === 'nickname' && setIdCheck(false);
-    //       default:
-    //         break;
-    //     }
-    //   });
-
+  const postSignUp = (e) => {
     async function axios() {
       const ans = await signUpAxios({
         file: file,
         name: name,
         nickname: nickname,
-        phone: phone
+        phone: phone,
       });
       switch (ans.data.statusCode) {
         case 201:
@@ -90,11 +64,11 @@ const SignUp = () => {
     e.preventDefault();
   };
 
-  const clickImgInput = e => {
+  const clickImgInput = (e) => {
     imgInputRef.current.click();
   };
 
-  const handleImg = e => {
+  const handleImg = (e) => {
     console.log(e.target.files[0]);
     setFile(e.target.files[0]);
   };
@@ -119,7 +93,7 @@ const SignUp = () => {
               id="selectedFile"
               style={{ display: 'none' }}
               ref={imgInputRef}
-              onChange={e => handleImg(e)}
+              onChange={(e) => handleImg(e)}
             />
             <img
               className="su_img_edit"
@@ -137,7 +111,7 @@ const SignUp = () => {
                 name=""
                 id=""
                 defaultValue={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
@@ -147,7 +121,7 @@ const SignUp = () => {
                 name=""
                 id=""
                 defaultValue={nickname}
-                onChange={e => changeNickNameValue(e)}
+                onChange={(e) => changeNickNameValue(e)}
                 maxLength="20"
               />
               {idCheck ? (
@@ -165,7 +139,7 @@ const SignUp = () => {
                 placeholder="숫자만 입력해주세요"
                 maxLength="12"
                 defaultValue={phone}
-                onChange={e => setPhone(e.target.value)}
+                onChange={(e) => setPhone(e.target.value)}
               />
               <label>후원 및 리워드 배송 시, 연락을 위해 필요합니다.</label>
             </div>

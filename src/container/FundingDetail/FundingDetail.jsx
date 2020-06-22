@@ -30,8 +30,10 @@ const FundingDetail = ({ match }) => {
     action.setBottomType('false');
     action.setHeaderType('back');
     BS.action.setKindOfBS('funding');
+    ITEMCONTEXT.action.setSelectItem('');
     return () => {
       BS.action.setKindOfBS('login');
+      ITEMCONTEXT.action.setSelectItem('');
     };
   }, []);
 
@@ -60,7 +62,9 @@ const FundingDetail = ({ match }) => {
               item={data[0].rewardList}
             />
           )}
-          {/* {FDTab.state.fundingTab === 'community' && <FundingDetailCommunity />} */}
+          {FDTab.state.fundingTab === 'community' && (
+            <FundingDetailCommunity pid={match.params.id} />
+          )}
           {FDTab.state.fundingTab === 'info' && <FundingDetailInfo />}
         </div>
         <div

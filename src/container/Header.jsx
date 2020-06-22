@@ -5,6 +5,7 @@ import {
   IC_HAMBURGER_STROKE_BLACK,
   IC_NOTIFICATION_STROKE_BLACK,
   IC_BACK_STROKE_BLACK,
+  IC_SETTING_BLACK,
 } from '@/global/img/header';
 
 import HABContext from '@/context/headerAndBottom';
@@ -60,7 +61,7 @@ const Header = () => {
               <p
                 className="header_add"
                 onClick={() => {
-                  state.addType == 'address'
+                  state.addType == 'addr'
                     ? addAddress()
                     : state.addType == 'purchase'
                     ? addPurchase()
@@ -69,6 +70,11 @@ const Header = () => {
               >
                 추가
               </p>
+            ) : state.notiType === 'mypage' ? (
+              <img
+                src={IC_SETTING_BLACK}
+                onClick={() => history.push('/setting')}
+              />
             ) : null}
           </div>
         )}

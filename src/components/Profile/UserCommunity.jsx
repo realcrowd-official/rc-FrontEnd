@@ -1,15 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
-import Slick from 'react-slick';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-
-//components
 import FundingProgress from '@/components/FundingProgress';
 import UserHeader from '@/components/Post/UserHeader';
 import PostSlick from '@/components/Post/PostSlick';
-
-import BSContext from '@/context/bottomSheet';
-
-import { likePost } from '@/lib/api';
+import { cLike } from '@/lib/api';
 
 import {
   IC_HEART_STROKE_BLACK,
@@ -18,33 +12,27 @@ import {
   IC_SHARE_STROKE_BLACK,
 } from '@/global/img/feedCard';
 
-const FeedCardView = (props) => {
+const UserCommunity = (props) => {
+  const history = useHistory();
   const [like, setLike] = useState(false);
   const [likeLength, setLikeLength] = useState(0);
-  const BS = useContext(BSContext);
-  const history = useHistory();
 
   useEffect(() => {
-    setLikeLength(props.value.likeMember.length);
+    setLikeLength(props.value.like.length);
     const isin = localStorage.getItem('oid')
-      ? props.value.likeMember.findIndex((item) => {
+      ? props.value.like.findIndex((item) => {
           return item == JSON.parse(localStorage.getItem('oid')).oid;
         })
       : -1;
     isin > -1 && setLike(true);
   }, []);
 
-  const carouselSetting = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slideToShow: 1,
-    slidesToScroll: 1,
+  const gotoFundingDetail = (pid) => {
+    history.push(`/funding/detail/${pid}`);
   };
+
   const likeHandle = async () => {
-    const ans = await likePost({
-      id: props.value._id,
-    });
+    const ans = await cLike(props.value._id);
 
     if ((ans.data.statusCode = 200)) {
       if (ans.data.ans == 'like') {
@@ -56,52 +44,34 @@ const FeedCardView = (props) => {
     }
   };
 
-  const toLogin = (toPath) => {
-    BS.action.setBottomSheet(true);
-    localStorage.setItem(
-      'historyPath',
-      JSON.stringify({
-        path: toPath,
-      })
-    );
-  };
-
-  const gotoFundingDetail = (pid) => {
-    history.push(`/funding/detail/${pid}`);
-  };
-
-  console.log(props.value);
   return (
     <div className="feed_card_view_div">
-      <UserHeader
-        maker={props.value.maker}
-        uploadDate={props.value.uploadDate}
-      />
-      {/* <PostSlick /> */}
+      <UserHeader maker={props.value.uid} uploadDate={props.value.updateTime} />
+      {props.value.files.length == 0 || <PostSlick value={props.value.files} />}
       <div
         className="feed_card_view_funding_div"
         onClick={() => {
-          gotoFundingDetail(props.value.fundingItem._id);
+          gotoFundingDetail(props.value.pid._id);
         }}
       >
         <img
           className="feed_card_view_funding_img"
-          src="https://via.placeholder.com/150"
+          src={props.value.pid.mainImg}
           alt=""
         />
         <div className="feed_card_view_funding_header_text_div">
           <p className="feed_card_view_funding_title">
-            {props.value.fundingItem.title}
+            {props.value.pid.title}
           </p>
           <p className="feed_card_view_funding_user">
-            {props.value.maker.nickName}
+            {props.value.pid.maker.nickName}
           </p>
         </div>
       </div>
       <FundingProgress
-        aggregate={props.value.fundingItem.aggregateAmount}
-        target={props.value.fundingItem.targetAmount}
-        dueDate={props.value.fundingItem.dueDate}
+        aggregate={props.value.pid.aggregateAmount}
+        target={props.value.pid.targetAmount}
+        dueDate={props.value.pid.dueDate}
       />
       <div className="feed_card_view_funding_explain_div">
         <p className="feed_card_view_funding_explain_text">
@@ -120,9 +90,7 @@ const FeedCardView = (props) => {
         <img
           src={like ? IC_HEART_FILL_PRIMARY : IC_HEART_STROKE_BLACK}
           alt=""
-          onClick={() =>
-            localStorage.getItem('token') ? likeHandle() : toLogin('/')
-          }
+          onClick={() => likeHandle()}
         />
         <img src={IC_COMMENT_STROKE_BLACK} alt="" />
         {/* 공유버튼 누르면 바텀시트 팝업 */}
@@ -132,4 +100,4 @@ const FeedCardView = (props) => {
   );
 };
 
-export default FeedCardView;
+export default UserCommunity;

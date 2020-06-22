@@ -8,6 +8,7 @@ const AccountContext = createContext({
     addr: [],
     selectAddr: [],
     addSelected: false,
+    info: [],
   },
   action: {
     setFollower: () => {},
@@ -16,6 +17,7 @@ const AccountContext = createContext({
     setAddr: () => {},
     setSelectAddr: () => {},
     setAddSelected: () => {},
+    setInfo: () => {},
   },
 });
 
@@ -28,9 +30,18 @@ const AccountProvider = ({ children }) => {
   const [addr, setAddr] = useState([]);
   const [selectAddr, setSelectAddr] = useState([]);
   const [addSelected, setAddSelected] = useState(false);
+  const [info, setInfo] = useState([]);
 
   const value = {
-    state: { follower, following, isFollow, addr, selectAddr, addSelected },
+    state: {
+      follower,
+      following,
+      isFollow,
+      addr,
+      selectAddr,
+      addSelected,
+      info,
+    },
     action: {
       setFollower,
       setFollowing,
@@ -38,6 +49,7 @@ const AccountProvider = ({ children }) => {
       setAddr,
       setSelectAddr,
       setAddSelected,
+      setInfo,
     },
   };
   return (

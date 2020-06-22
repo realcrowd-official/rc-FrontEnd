@@ -8,8 +8,9 @@ const token = localStorage.getItem('token')
   ? JSON.parse(localStorage.getItem('token')).token
   : '';
 
-//project
-
+///////////
+//project//
+///////////
 export const pHAxios = async () => {
   const axiosUrl = `${url}/project/crud`;
   return await axios.get(axiosUrl).then((res) => res);
@@ -20,7 +21,75 @@ export const fDAxios = async (query) => {
   return await axios.get(axiosUrl).then((res) => res);
 };
 
-//account
+export const checkItem = async (query) => {
+  const axiosUrl = `http://localhost:7777/api/purchase/check`;
+  return await axios
+    .post(
+      axiosUrl,
+      {
+        pId: query.pId,
+        iId: query.iId,
+      },
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    )
+    .then((res) => res);
+};
+
+export const purchaseInfoAxios = async ({ pid, iId }) => {
+  const axiosUrl = `http://localhost:7777/api/purchase/deal?pid=${pid}&iId=${iId}`;
+  return await axios
+    .get(axiosUrl, {
+      headers: {
+        'x-access-token': token,
+      },
+    })
+    .then((res) => res);
+};
+
+export const cLike = async (cid) => {
+  console.log(cid);
+  const axiosUrl = `http://localhost:7777/api/project/comment/like`;
+  return await axios
+    .put(
+      axiosUrl,
+      {
+        cid: cid,
+      },
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    )
+    .then((res) => res);
+};
+
+export const commentSave = async ({ files, content, pid }) => {
+  const axiosUrl = `http://localhost:7777/api/project/comment`;
+  const formData = new FormData();
+  formData.append('content', content);
+  formData.append('pid', pid);
+  await files.map((Data) => {
+    formData.append('img', Data);
+  });
+
+  return await axios
+    .post(axiosUrl, formData, { headers: { 'x-access-token': token } })
+    .then((res) => res);
+};
+
+export const getCommentPid = async ({ pid, start }) => {
+  const axiosUrl = `http://localhost:7777/api/project/comment?pid=${pid}&start=${start}`;
+  return await axios.get(axiosUrl).then((res) => res);
+};
+
+///////////
+//account//
+///////////
 export const loginAxios = async (query) => {
   const axiosUrl = `${url}/account/socialLogin/${query.kind}/login`;
   return await axios.get(axiosUrl).then((res) => res);
@@ -37,6 +106,7 @@ export const signInAxios = async (query) => {
 
 export const signUpAxios = async (query) => {
   const axiosUrl = `${url}/account/signUp`;
+  console.log(query);
   const formData = new FormData();
   formData.append('img', query.file);
   formData.append('name', query.name);
@@ -80,8 +150,71 @@ export const mPHAxios = async (query) => {
     })
     .then((res) => res);
 };
-//feed
 
+export const getAddr = async () => {
+  const axiosUrl = `http://localhost:7777/api/account/address`;
+  return await axios
+    .get(axiosUrl, { headers: { 'x-access-token': token } })
+    .then((res) => res);
+};
+
+export const saveAddr = async ({ addrName, addr, primary }) => {
+  const axiosUrl = `http://localhost:7777/api/account/address`;
+  return await axios
+    .post(
+      axiosUrl,
+      {
+        addrName: addrName,
+        addr: addr,
+        primary: primary,
+      },
+      {
+        headers: {
+          'x-access-token': token,
+        },
+      }
+    )
+    .then((res) => res);
+};
+
+export const mPFAxios = async (query) => {
+  const axiosUrl = `http://localhost:7777/api/project/crud/user?start=${query.start}`;
+  return await axios
+    .get(axiosUrl, { headers: { 'x-access-token': token } })
+    .then((res) => res);
+};
+
+export const mPCAxios = async (start) => {
+  const axiosUrl = `http://localhost:7777/api/project/comment/user?start=${start}`;
+  return await axios
+    .get(axiosUrl, { headers: { 'x-access-token': token } })
+    .then((res) => res);
+};
+
+export const editProfileAxios = async (query) => {
+  const axiosUrl = `http://localhost:7777/api/account/profile`;
+  const formData = new FormData();
+
+  formData.append('name', query.name);
+  formData.append('nickName', query.nickname);
+  formData.append('phone', query.phone);
+  formData.append('infoMessage', query.infoMessage);
+  formData.append('email', query.email);
+  // !!query.file && formData.append('img', query.file);
+  console.log(query);
+  return await axios
+    .put(axiosUrl, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'x-access-token': token,
+      },
+    })
+    .then((res) => res);
+};
+
+////////
+//feed//
+////////
 export const fHAxios = async (query) => {
   const axiosUrl = `${url}/feed/crud`;
   return await axios.get(axiosUrl).then((res) => res);
@@ -103,63 +236,3 @@ export const likePost = async (query) => {
     )
     .then((res) => res);
 };
-
-export const checkItem = async (query) => {
-  const axiosUrl = `${url}/purchase/check`;
-  return await axios
-    .post(
-      axiosUrl,
-      {
-        pId: query.pId,
-        iId: query.iId,
-      },
-      {
-        headers: {
-          'x-access-token': token,
-        },
-      }
-    )
-    .then((res) => res);
-};
-
-export const purchaseInfoAxios = async ({ pid, iId }) => {
-  const axiosUrl = `http://localhost:7777/api/purchase/deal?pid=${pid}&iId=${iId}`;
-  return await axios
-    .get(axiosUrl, {
-      headers: {
-        'x-access-token': token,
-      },
-    })
-    .then((res) => res);
-};
-
-export const saveAddr = async ({ addrName, addr, primary }) => {
-  const axiosUrl = `http://localhost:7777/api/account/saveAddr`;
-  return await axios
-    .post(
-      axiosUrl,
-      {
-        addrName: addrName,
-        addr: addr,
-        primary: primary,
-      },
-      {
-        headers: {
-          'x-access-token': token,
-        },
-      }
-    )
-    .then((res) => res);
-};
-
-// exports = {
-//   pHAxios,
-//   // fDAxios,
-//   loginAxios,
-//   signInAxios,
-//   signUpAxios,
-//   followAxios,
-//   mPHAxios,
-//   fHAxios,
-//   likePost,
-// };

@@ -63,12 +63,15 @@ const Purchase = (props) => {
   };
 
   const selectAddress = (e) => {
-    history.push({ pathname: '/selectop', state: { kind: 'address' } });
+    history.push({
+      pathname: '/selectop/addr',
+    });
   };
 
+  // console.log(props.value);
   return (
     <div className="home_body_nobn">
-      <PurchaseInfo value={history.location.state.itemId} />
+      {itemData.length == 0 ? null : <PurchaseInfo value={itemData} />}
       <section className="pi_set section">
         <div className="set">
           <p>배송지 설정</p>
