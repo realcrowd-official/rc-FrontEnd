@@ -12,11 +12,12 @@ const UserHeader = (props) => {
   useEffect(() => {
     AC.action.setFollower(props.maker.followerList.length);
     AC.action.setFollowing(props.maker.followingList.length);
-    const isin = localStorage.getItem('oid')
-      ? props.maker.followerList.findIndex((item) => {
-          return item == JSON.parse(localStorage.getItem('oid')).oid;
-        })
-      : -1;
+    const isin =
+      localStorage.getItem('oid') != null
+        ? props.maker.followerList.findIndex((item) => {
+            return item == JSON.parse(localStorage.getItem('oid')).oid;
+          })
+        : -1;
     isin > -1 && setFollow(true);
   }, []);
 
@@ -52,8 +53,9 @@ const UserHeader = (props) => {
             <div className="uh_upload_time">{leftDay(props.uploadDate)} 전</div>
           ) : null}
         </div>
-        {JSON.parse(localStorage.getItem('oid')).oid ==
-        props.maker._id ? null : (
+        {localStorage.getItem('oid') == null ||
+        JSON.parse(localStorage.getItem('oid')).oid ==
+          props.maker._id ? null : (
           <button
             className="uh_margin uh_button uh_button_text"
             onClick={() => followClickListner()}

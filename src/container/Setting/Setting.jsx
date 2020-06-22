@@ -12,6 +12,12 @@ const Setting = () => {
     HABCONTEXT.action.setNotiType('none');
   }, []);
 
+  const logOut = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('oid');
+    history.replace('/');
+  };
+
   const menuJson = [
     {
       title: '내 정보',
@@ -44,10 +50,7 @@ const Setting = () => {
     },
     {
       title: '계정 설정',
-      subTitle: [
-        { title: '로그아웃', link: 'editProfile' },
-        { title: '회원탈퇴' },
-      ],
+      subTitle: [{ title: '로그아웃', link: 'logout' }, { title: '회원탈퇴' }],
     },
   ];
   return (
@@ -62,9 +65,11 @@ const Setting = () => {
                   <h5
                     onClick={() => {
                       console.log(Data.state);
-                      history.push({
-                        pathname: `${Data.link}`,
-                      });
+                      Data.link === 'logout'
+                        ? logOut()
+                        : history.push({
+                            pathname: `${Data.link}`,
+                          });
                     }}
                   >
                     {Data.title}

@@ -39,79 +39,91 @@ import { ItemProvider } from './context/item';
 function App() {
   return (
     <Router>
-      <Helmet>
-        <title>{globalVar.META_TITLE}</title>
-        <meta charSet="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta property="fb:admins" content={globalVar.FB_APP_ID} />
-        <meta property="fb:app_id" content={globalVar.FB_APP_ID} />
-        <meta name="title" content={globalVar.META_TITLE} />
-        <meta name="description" content={globalVar.META_DESCRIPTION} />
-        <meta name="keywords" content={globalVar.META_KEYWORDS} />
-        <meta property="og:title" content={globalVar.META_TITLE} />
-        <meta property="og:description" content={globalVar.META_DESCRIPTION} />
-        {/* <meta property="og:image" content={IMG_STORE} /> */}
-        <meta property="og:url" content={globalVar.META_BASE_URL} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={globalVar.META_BASE_URL} />
-        <meta name="twitter:title" content={globalVar.META_TITLE} />
-        <meta name="twitter:description" content={globalVar.META_DESCRIPTION} />
-        <meta
-          name="twitter:creator"
-          content={`@${globalVar.TWITTER_USERNAME}`}
-        />
-        {/* <meta name="twitter:image" content={IMG_STORE} /> */}
-        {/* <meta name="twitter:image:src" content={IMG_STORE} /> */}
-        <meta name="twitter:image:alt" content={globalVar.META_DESCRIPTION} />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index,follow" />
-        <link rel="canonical" href={globalVar.META_BASE_URL} />
-        <link rel="apple-touch-icon" sizes="180x180" href={APPLE_TOUCH_ICON} />
-        <link rel="icon" type="image/png" sizes="32x32" href={FAVICON_32} />
-        <link rel="icon" type="image/png" sizes="16x16" href={FAVICON_16} />
-        <link rel="manifest" href="@/img/favicon/site.webmanifest" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
-        />
-      </Helmet>
-      <Pixel />
-      <AuthProvider>
-        <HABProvider>
-          <BSProvider>
-            <ItemProvider>
-              <TabProvider>
-                <AccountProvider>
-                  <Header />
-                  <Switch>
-                    <Route exact path="/">
-                      {/* <ScrollToTop /> */}
-                      <FeedHome />
-                    </Route>
-                    <Route path="/project" children={<ProjectHome />} />
-                    <Route exact path="/profile" children={<MyPageHome />} />
-                    <Route path="/profileEdit" children={<EditProfile />} />
+      <ScrollToTop>
+        <Helmet>
+          <title>{globalVar.META_TITLE}</title>
+          <meta charSet="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <meta property="fb:admins" content={globalVar.FB_APP_ID} />
+          <meta property="fb:app_id" content={globalVar.FB_APP_ID} />
+          <meta name="title" content={globalVar.META_TITLE} />
+          <meta name="description" content={globalVar.META_DESCRIPTION} />
+          <meta name="keywords" content={globalVar.META_KEYWORDS} />
+          <meta property="og:title" content={globalVar.META_TITLE} />
+          <meta
+            property="og:description"
+            content={globalVar.META_DESCRIPTION}
+          />
+          {/* <meta property="og:image" content={IMG_STORE} /> */}
+          <meta property="og:url" content={globalVar.META_BASE_URL} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content={globalVar.META_BASE_URL} />
+          <meta name="twitter:title" content={globalVar.META_TITLE} />
+          <meta
+            name="twitter:description"
+            content={globalVar.META_DESCRIPTION}
+          />
+          <meta
+            name="twitter:creator"
+            content={`@${globalVar.TWITTER_USERNAME}`}
+          />
+          {/* <meta name="twitter:image" content={IMG_STORE} /> */}
+          {/* <meta name="twitter:image:src" content={IMG_STORE} /> */}
+          <meta name="twitter:image:alt" content={globalVar.META_DESCRIPTION} />
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content="index,follow" />
+          <link rel="canonical" href={globalVar.META_BASE_URL} />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href={APPLE_TOUCH_ICON}
+          />
+          <link rel="icon" type="image/png" sizes="32x32" href={FAVICON_32} />
+          <link rel="icon" type="image/png" sizes="16x16" href={FAVICON_16} />
+          <link rel="manifest" href="@/img/favicon/site.webmanifest" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+          />
+        </Helmet>
+        <Pixel />
+        <AuthProvider>
+          <HABProvider>
+            <BSProvider>
+              <ItemProvider>
+                <TabProvider>
+                  <AccountProvider>
+                    <Header />
+                    <Switch>
+                      <Route exact path="/">
+                        {/* <ScrollToTop /> */}
+                        <FeedHome />
+                      </Route>
+                      <Route path="/project" children={<ProjectHome />} />
+                      <Route exact path="/profile" children={<MyPageHome />} />
+                      <Route path="/profileEdit" children={<EditProfile />} />
 
-                    <Route
-                      path="/funding/detail/:id"
-                      component={FundingDetail}
-                    />
-                    <Route path="/signUp" children={<SignUp />} />
-                    <Route path="/signIn" children={<SignIn />} />
-                    <Route path="/purchase" children={<PurChase />} />
-                    <Route path="/selectop/:kind" component={SelectOP} />
-                    <Route path="/addAddress" children={<AddAddress />} />
-                    <Route path="/setting" children={<Setting />} />
-                    <Route path="*" component={Error} />
-                  </Switch>
-                </AccountProvider>
-              </TabProvider>
+                      <Route
+                        path="/funding/detail/:id"
+                        component={FundingDetail}
+                      />
+                      <Route path="/signUp" children={<SignUp />} />
+                      <Route path="/signIn" children={<SignIn />} />
+                      <Route path="/purchase" children={<PurChase />} />
+                      <Route path="/selectop/:kind" component={SelectOP} />
+                      <Route path="/addAddress" children={<AddAddress />} />
+                      <Route path="/setting" children={<Setting />} />
+                      <Route path="*" component={Error} />
+                    </Switch>
+                  </AccountProvider>
+                </TabProvider>
 
-              <BottomNav />
-            </ItemProvider>
-          </BSProvider>
-        </HABProvider>
-      </AuthProvider>
+                <BottomNav />
+              </ItemProvider>
+            </BSProvider>
+          </HABProvider>
+        </AuthProvider>
+      </ScrollToTop>
     </Router>
   );
 }

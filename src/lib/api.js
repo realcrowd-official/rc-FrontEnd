@@ -92,6 +92,7 @@ export const getCommentPid = async ({ pid, start }) => {
 ///////////
 export const loginAxios = async (query) => {
   const axiosUrl = `${url}/account/socialLogin/${query.kind}/login`;
+  console.log(query.kind);
   return await axios.get(axiosUrl).then((res) => res);
 };
 
